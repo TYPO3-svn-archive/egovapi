@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Standard eGov API Template</title>
+</head>
+<body>
+
+<!-- ###SERVICE_LIST### [begin] -->
+
+<h1>###HEADER_SERVICES###</h1>
+
+<!-- ###SERVICES### [begin] -->
+
+<ul class="tx_egovapi_services">
+	<!-- ###SERVICE### [begin] -->
+	<li>
+		###SERVICE_ID###:
+		###SERVICE_NAME### [v.###SERVICE_VERSION_ID###]
+		(<!-- ###SERVICE_LINK_DETAIL### -->details<!-- ###SERVICE_LINK_DETAIL### -->)
+	</li>
+	<!-- ###SERVICE### [end] -->
+</ul>
+
+<!-- ###SERVICES### [end] -->
+
+<!-- ###HAS_PARENT### [begin] -->
+<p>
+	<!-- ###SERVICE_LINK_TOPICS### -->###ACTION_BACK_TO_LIST###<!-- ###SERVICE_LINK_TOPICS### -->
+</p>
+<!-- ###HAS_PARENT### [end] -->
+
+<!-- ###SERVICE_LIST### [end] -->
+
+
+
+
+
+
+
+
+
+
+<!-- ###SERVICE_SINGLE### [begin] -->
+
+<!-- ###SHOW_LEVEL_INFORMATION### [begin] -->
+<h1 class="tx_egovapi_service">1. ###SERVICE_NAME###</h1>
+
+<table class="tx_egovapi_block_header">
+	<tr>
+		<td>###COMMON_SERVICE_ID###</td>
+		<td>###SERVICE_ID###</td>
+	</tr>
+	<tr>
+		<td>###COMMON_VERSION###</td>
+		<td>###SERVICE_VERSION_ID###</td>
+	</tr>
+	<tr>
+		<td>###COMMON_VERSION###</td>
+		<td>###SERVICE_VERSION_NAME###</td>
+	</tr>
+	<tr>
+		<td>###COMMON_LAST_MODIFICATION_DATE###</td>
+		<td>###SERVICE_LAST_MODIFICATION_DATE###</td>
+	</tr>
+	<tr>
+		<td>###COMMON_PROVIDER###</td>
+		<td>###SERVICE_PROVIDER###</td>
+	</tr>
+	<tr>
+		<td>###COMMON_CUSTOMER###</td>
+		<td>###SERVICE_CUSTOMER###</td>
+	</tr>
+</table>
+<!-- ###SHOW_LEVEL_INFORMATION### [end] -->
+
+<!-- ###SHOW_GENERAL_INFORMATION### [begin] -->
+<h2 class="tx_egovapi_block_generalInformation">2. ###BLOCK_GENERAL_INFORMATION###</h2>
+###SERVICE_GENERAL_INFORMATION###
+<!-- ###SHOW_GENERAL_INFORMATION### [end] -->
+
+<!-- ###SHOW_PREREQUISITES### [begin] -->
+<h2 class="tx_egovapi_block_prerequisites">3. ###BLOCK_PREREQUISITES###</h2>
+###SERVICE_PREREQUISITES###
+<!-- ###SHOW_PREREQUISITES### [end] -->
+
+<!-- ###SHOW_PROCEDURE### [begin] -->
+<h2 class="tx_egovapi_block_procedure">4. ###BLOCK_PROCEDURE###</h2>
+###SERVICE_PROCEDURE###
+<!-- ###SHOW_PROCEDURE### [end] -->
+
+<!-- ###SHOW_FORMS### [begin] -->
+<h2 class="tx_egovapi_block_forms">5. ###BLOCK_FORMS###</h2>
+###SERVICE_FORMS###
+<!-- ###SHOW_FORMS### [end] -->
+
+<!-- ###SHOW_DOCUMENTS_REQUIRED### [begin] -->
+<h2 class="tx_egovapi_block_documentsRequired">6. ###BLOCK_DOCUMENTS_REQUIRED###</h2>
+###SERVICE_DOCUMENTS_REQUIRED###
+<!-- ###SHOW_DOCUMENTS_REQUIRED### [end] -->
+
+<!-- ###SHOW_SERVICE_PROVIDED### [begin] -->
+<h2 class="tx_egovapi_block_serviceProvided">7. ###BLOCK_SERVICE_PROVIDED###</h2>
+###SERVICE_SERVICE_PROVIDED###
+<!-- ###SHOW_SERVICE_PROVIDED### [end] -->
+
+<!-- ###SHOW_FEE### [begin] -->
+<h2 class="tx_egovapi_block_fee">8. ###BLOCK_FEE###</h2>
+###SERVICE_FEE###
+<!-- ###SHOW_FEE### [end] -->
+
+<!-- ###SHOW_LEGAL_REGULATION### [begin] -->
+<h2 class="tx_egovapi_block_legalRegulation">9. ###BLOCK_LEGAL_REGULATION###</h2>
+###SERVICE_LEGAL_REGULATION###
+<!-- ###SHOW_LEGAL_REGULATION### [end] -->
+
+<!-- ###SHOW_DOCUMENTS_OTHER### [begin] -->
+<h2 class="tx_egovapi_block_documentsOther">10. ###BLOCK_DOCUMENTS_OTHER###</h2>
+###SERVICE_DOCUMENTS_OTHER###
+<!-- ###SHOW_DOCUMENTS_OTHER### [end] -->
+
+<!-- ###SHOW_REMARKS### [begin] -->
+<h2 class="tx_egovapi_block_remarks">11. ###BLOCK_REMARKS###</h2>
+###SERVICE_REMARKS###
+<!-- ###SHOW_REMARKS### [end] -->
+
+<!-- ###SHOW_APPROVAL### [begin] -->
+<h2 class="tx_egovapi_block_approval">12. ###BLOCK_APPROVAL###</h2>
+###SERVICE_APPROVAL###
+<!-- ###SHOW_APPROVAL### [end] -->
+
+<!-- ###SHOW_CONTACT### [begin] -->
+<h2 class="tx_egovapi_block_contact">13. ###BLOCK_CONTACT###</h2>
+<div class="tx_egovapi_block_contact">
+	<div class="half left">
+		<img src="###SERVICE_CONTACT_LOGO###" alt="###SERVICE_CONTACT_OFFICE###" /><br />
+
+		###SERVICE_CONTACT_DEPARTMENT###<br />
+		###SERVICE_CONTACT_OFFICE###<br />
+		###SERVICE_CONTACT_ADDRESS###<br />
+		###SERVICE_CONTACT_POSTAL_CODE### ###SERVICE_CONTACT_MUNICIPALITY###<br />
+		<br />
+
+		Tel: ###SERVICE_CONTACT_PHONE1###<br />
+		Fax: ###SERVICE_CONTACT_FAX###<br />
+		<a href="mailto:###SERVICE_CONTACT_EMAIL###">###SERVICE_CONTACT_EMAIL###</a>
+	</div>
+	<div class="half left">
+		###SERVICE_CONTACT_OPENING_HOURS###
+	</div>
+	<div class="clear"></div>
+</div>
+<!-- ###SHOW_CONTACT### [end] -->
+
+<!-- ###SERVICE_SINGLE### [end] -->
+
+</body>
+</html>

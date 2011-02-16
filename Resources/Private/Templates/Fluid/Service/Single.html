@@ -1,0 +1,163 @@
+<f:if condition="{showLevelInformation}">
+	<!-- Level information -->
+	<h1 class="tx_egovapi_service">1. {service.name}</h1>
+
+	<table class="tx_egovapi_block_header">
+		<tr>
+			<td><f:translate key="common_service_id">Service ID</f:translate></td>
+			<td>{service.id}</td>
+		</tr>
+		<tr>
+			<td><f:translate key="common_version">Version</f:translate></td>
+			<td>{service.versionId}</td>
+		</tr>
+		<tr>
+			<td><f:translate key="common_version">Version</f:translate></td>
+			<td>{service.versionName}</td>
+		</tr>
+		<tr>
+			<td><f:translate key="common_last_modification_date">Last modification</f:translate></td>
+			<td><f:format.date format="d.m.Y">{service.localLastModificationDate}</f:format.date></td>
+		</tr>
+		<tr>
+			<td><f:translate key="common_provider">Provider</f:translate></td>
+			<td>{service.provider}</td>
+		</tr>
+		<tr>
+			<td><f:translate key="common_customer">Customer</f:translate></td>
+			<td>{service.customer}</td>
+		</tr>
+	</table>
+</f:if>
+
+<f:if condition="{showGeneralInformation}">
+	<!-- General information -->
+	<h2 class="tx_egovapi_block_generalInformation">2. <f:translate key="block_general_information">General information</f:translate></h2>
+	<f:format.html>{service.generalInformation}</f:format.html>
+</f:if>
+
+<f:if condition="{showPrerequisites}">
+	<!-- Prerequisites -->
+	<h2 class="tx_egovapi_block_prerequisites">3. <f:translate key="block_prerequisites">Prerequisites</f:translate></h2>
+	<ul>
+		<f:for each="{service.prerequisites.items}" as="item">
+			<li>{item.description}</li>
+		</f:for>
+	</ul>
+</f:if>
+
+<f:if condition="{showProcedure}">
+	<!-- Procedure -->
+	<h2 class="tx_egovapi_block_procedure">4. <f:translate key="block_procedure">Procedure</f:translate></h2>
+	<ol>
+		<f:for each="{service.procedure.items}" as="item">
+			<li>{item.description}</li>
+		</f:for>
+	</ol>
+</f:if>
+
+<f:if condition="{showForms}">
+	<!-- Forms -->
+	<h2 class="tx_egovapi_block_forms">5. <f:translate key="block_forms">Form(s)</f:translate></h2>
+	<dl>
+		<f:for each="{service.forms.items}" as="item">
+			<dt>{item.name}</dt>
+			<dd>
+				<f:link.external uri="{item.uri}">{item.description}</f:link.external>
+			</dd>
+		</f:for>
+	</dl>
+	<div class="clear"></div>
+</f:if>
+
+<f:if condition="{showDocumentsRequired}">
+	<!-- Documents required -->
+	<h2 class="tx_egovapi_block_documentsRequired">6. <f:translate key="block_documents_required">Document required</f:translate></h2>
+	<dl>
+		<f:for each="{service.documentsRequired.items}" as="item">
+			<dt>{item.name}</dt>
+			<dd>{item.description}</dd>
+		</f:for>
+	</dl>
+	<div class="clear"></div>
+</f:if>
+
+<f:if condition="{showServiceProvided}">
+	<!-- Service provided -->
+	<h2 class="tx_egovapi_block_serviceProvided">7. <f:translate key="block_service_provided">Service provided</f:translate></h2>
+	<p>{service.serviceProvided}</p>
+</f:if>
+
+<f:if condition="{showFee}">
+	<!-- Fee -->
+	<h2 class="tx_egovapi_block_fee">8. <f:translate key="block_fee">Fee</f:translate></h2>
+	<p>{service.fee}</p>
+</f:if>
+
+<f:if condition="{showLegalRegulation}">
+	<!-- Legal regulation -->
+	<h2 class="tx_egovapi_block_legalRegulation">9. <f:translate key="block_legal_regulation">Legal regulation</f:translate></h2>
+	<dl>
+		<f:for each="{service.legalRegulation.items}" as="item">
+			<dt>{item.name}</dt>
+			<dd>
+				<f:link.external uri="{item.uri}">{item.description}</f:link.external>
+			</dd>
+		</f:for>
+	</dl>
+	<div class="clear"></div>
+</f:if>
+
+<f:if condition="{showDocumentsOther}">
+	<!-- Other documents -->
+	<h2 class="tx_egovapi_block_documentsOther">10. <f:translate key="block_documents_other">Other documents</f:translate></h2>
+	<dl>
+		<f:for each="{service.documentsOther.items}" as="item">
+			<dt>{item.name}</dt>
+			<dd>{item.description}</dd>
+		</f:for>
+	</dl>
+	<div class="clear"></div>
+</f:if>
+
+<f:if condition="{showRemarks}">
+	<!-- Remarks -->
+	<h2 class="tx_egovapi_block_remarks">11. <f:translate key="block_remarks">Remarks</f:translate></h2>
+	<p>{service.remarks}</p>
+</f:if>
+
+<f:if condition="{showApproval}">
+	<!-- Approval -->
+	<h2 class="tx_egovapi_block_approval">12. <f:translate key="block_approval">Approval</f:translate></h2>
+	<p>{service.approval}</p>
+</f:if>
+
+<f:if condition="{showContact}">
+	<!-- Contact -->
+	<h2 class="tx_egovapi_block_contact">13. <f:translate key="block_contact">Contact</f:translate></h2>
+	<div class="tx_egovapi_block_contact">
+		<div class="half left">
+			<img src="{service.contact.logo}" alt="{service.contact.office}" /><br />
+
+			{service.contact.department}<br />
+			{service.contact.office}<br />
+			{service.contact.address}<br />
+			{service.contact.postalCode} {service.contact.municipality}<br />
+			<br />
+
+			Tel: {service.contact.phone1}<br />
+			Fax: {service.contact.fax}<br />
+			<f:link.email email="{service.contact.email}">{service.contact.email}</f:link.email>
+		</div>
+		<div class="half left">
+			<f:format.html>{service.contact.openingHours}</f:format.html>
+		</div>
+		<div class="clear"></div>
+	</div>
+</f:if>
+
+<f:if condition="{hasParent}">
+	<p>
+		<f:link.action action="service" arguments="{topic: service.topic.id, mode: 'list'}" pageUid="{targets.service.listPid}"><f:translate key="action_back_to_list">Back to list</f:translate></f:link.action>
+	</p>
+</f:if>

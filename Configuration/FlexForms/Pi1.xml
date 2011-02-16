@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_general</sheetTitle>
+					<!-- cshFile element only for TYPO3 before v. 4.5 -->
+					<cshFile>LLL:EXT:egovapi/Resources/Private/Language/locallang_csh.xml</cshFile>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<displayLevels>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayLevels</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayLevels.AUDIENCE</numIndex>
+										<numIndex index="1">AUDIENCE</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayLevels.VIEW</numIndex>
+										<numIndex index="1">VIEW</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayLevels.DOMAIN</numIndex>
+										<numIndex index="1">DOMAIN</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayLevels.TOPIC</numIndex>
+										<numIndex index="1">TOPIC</numIndex>
+									</numIndex>
+									<numIndex index="5" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayLevels.SERVICE</numIndex>
+										<numIndex index="1">SERVICE</numIndex>
+									</numIndex>
+								</items>
+								<size>5</size>
+								<maxitems>5</maxitems>
+								<multiple>1</multiple>
+							</config>
+						</TCEforms>
+					</displayLevels>
+					<displayMode>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayMode</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayMode.codeFromTS</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayMode.LIST</numIndex>
+										<numIndex index="1">LIST</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayMode.SINGLE</numIndex>
+										<numIndex index="1">SINGLE</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</displayMode>
+					<myTS>
+						<TCEforms>
+							<displayCond>HIDE_FOR_NON_ADMINS</displayCond>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.tsconfig</label>
+							<config>
+								<type>text</type>
+								<cols>80</cols>
+								<rows>10</rows>
+							</config>
+						</TCEforms>
+					</myTS>
+				</el>
+			</ROOT>
+		</sDEF>
+		<sAUDIENCE>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_audience</sheetTitle>
+					<sheetDescription>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_saveToContinue</sheetDescription>
+					<sheetShortDescr>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_audienceShortDescription</sheetShortDescr>
+					<!-- cshFile element only for TYPO3 before v. 4.5 -->
+					<cshFile>LLL:EXT:egovapi/Resources/Private/Language/locallang_csh.xml</cshFile>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<audiences>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.audiences</label>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>tx_egovapi_helpers_flexform->getAudiences</itemsProcFunc>
+								<size>8</size>
+								<maxitems>999</maxitems>
+								<multiple>1</multiple>
+							</config>
+						</TCEforms>
+					</audiences>
+					<templates_audienceLIST>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.templates.audienceLIST</label>
+							<config type="array">
+								   <type>input</type>
+								   <size>50</size>
+								   <eval>trim</eval>
+								   <wizards type="array">
+										<_PADDING>2</_PADDING>
+										<link type="array">
+											 <type>popup</type>
+											 <title>Link</title>
+											 <icon>link_popup.gif</icon>
+											 <script>browse_links.php?mode=wizard&amp;act=file</script>
+											 <params type="array">
+												  <blindLinkOptions>page,url,mail,spec,folder</blindLinkOptions>
+											 </params>
+											 <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+										</link>
+								   </wizards>
+							  </config>
+						</TCEforms>
+					</templates_audienceLIST>
+					<templates_audienceSINGLE>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.templates.audienceSINGLE</label>
+							<config type="array">
+								   <type>input</type>
+								   <size>50</size>
+								   <eval>trim</eval>
+								   <wizards type="array">
+										<_PADDING>2</_PADDING>
+										<link type="array">
+											 <type>popup</type>
+											 <title>Link</title>
+											 <icon>link_popup.gif</icon>
+											 <script>browse_links.php?mode=wizard&amp;act=file</script>
+											 <params type="array">
+												  <blindLinkOptions>page,url,mail,spec,folder</blindLinkOptions>
+											 </params>
+											 <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+										</link>
+								   </wizards>
+							  </config>
+						</TCEforms>
+					</templates_audienceSINGLE>
+				</el>
+			</ROOT>
+		</sAUDIENCE>
+		<sVIEW>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_view</sheetTitle>
+					<sheetDescription>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_saveToContinue</sheetDescription>
+					<sheetShortDescr>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_viewShortDescription</sheetShortDescr>
+					<!-- cshFile element only for TYPO3 before v. 4.5 -->
+					<cshFile>LLL:EXT:egovapi/Resources/Private/Language/locallang_csh.xml</cshFile>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<views>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.views</label>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>tx_egovapi_helpers_flexform->getViews</itemsProcFunc>
+								<size>10</size>
+								<maxitems>999</maxitems>
+								<multiple>1</multiple>
+							</config>
+						</TCEforms>
+					</views>
+					<templates_viewLIST>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.templates.viewLIST</label>
+							<config type="array">
+								   <type>input</type>
+								   <size>50</size>
+								   <eval>trim</eval>
+								   <wizards type="array">
+										<_PADDING>2</_PADDING>
+										<link type="array">
+											 <type>popup</type>
+											 <title>Link</title>
+											 <icon>link_popup.gif</icon>
+											 <script>browse_links.php?mode=wizard&amp;act=file</script>
+											 <params type="array">
+												  <blindLinkOptions>page,url,mail,spec,folder</blindLinkOptions>
+											 </params>
+											 <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+										</link>
+								   </wizards>
+							  </config>
+						</TCEforms>
+					</templates_viewLIST>
+					<templates_viewSINGLE>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.templates.viewSINGLE</label>
+							<config type="array">
+								   <type>input</type>
+								   <size>50</size>
+								   <eval>trim</eval>
+								   <wizards type="array">
+										<_PADDING>2</_PADDING>
+										<link type="array">
+											 <type>popup</type>
+											 <title>Link</title>
+											 <icon>link_popup.gif</icon>
+											 <script>browse_links.php?mode=wizard&amp;act=file</script>
+											 <params type="array">
+												  <blindLinkOptions>page,url,mail,spec,folder</blindLinkOptions>
+											 </params>
+											 <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+										</link>
+								   </wizards>
+							  </config>
+						</TCEforms>
+					</templates_viewSINGLE>
+				</el>
+			</ROOT>
+		</sVIEW>
+		<sDOMAIN>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_domain</sheetTitle>
+					<sheetDescription>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_saveToContinue</sheetDescription>
+					<sheetShortDescr>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_domainShortDescription</sheetShortDescr>
+					<!-- cshFile element only for TYPO3 before v. 4.5 -->
+					<cshFile>LLL:EXT:egovapi/Resources/Private/Language/locallang_csh.xml</cshFile>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<domains>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.domains</label>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>tx_egovapi_helpers_flexform->getDomains</itemsProcFunc>
+								<size>10</size>
+								<maxitems>999</maxitems>
+								<multiple>1</multiple>
+							</config>
+						</TCEforms>
+					</domains>
+					<blocks_domain>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.LEVEL_INFORMATION</numIndex>
+										<numIndex index="1">LEVEL_INFORMATION</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.GENERAL_INFORMATION</numIndex>
+										<numIndex index="1">GENERAL_INFORMATION</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.NEWS</numIndex>
+										<numIndex index="1">NEWS</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.SUBDOMAINS</numIndex>
+										<numIndex index="1">SUBDOMAINS</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.DESCRIPTOR</numIndex>
+										<numIndex index="1">DESCRIPTOR</numIndex>
+									</numIndex>
+									<numIndex index="5" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.SYNONYM</numIndex>
+										<numIndex index="1">SYNONYM</numIndex>
+									</numIndex>
+								</items>
+								<size>6</size>
+								<maxitems>99</maxitems>
+								<multiple>1</multiple>
+							</config>
+						</TCEforms>
+					</blocks_domain>
+					<templates_domainLIST>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.templates.domainLIST</label>
+							<config type="array">
+								   <type>input</type>
+								   <size>50</size>
+								   <eval>trim</eval>
+								   <wizards type="array">
+										<_PADDING>2</_PADDING>
+										<link type="array">
+											 <type>popup</type>
+											 <title>Link</title>
+											 <icon>link_popup.gif</icon>
+											 <script>browse_links.php?mode=wizard&amp;act=file</script>
+											 <params type="array">
+												  <blindLinkOptions>page,url,mail,spec,folder</blindLinkOptions>
+											 </params>
+											 <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+										</link>
+								   </wizards>
+							  </config>
+						</TCEforms>
+					</templates_domainLIST>
+					<templates_domainSINGLE>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.templates.domainSINGLE</label>
+							<config type="array">
+								   <type>input</type>
+								   <size>50</size>
+								   <eval>trim</eval>
+								   <wizards type="array">
+										<_PADDING>2</_PADDING>
+										<link type="array">
+											 <type>popup</type>
+											 <title>Link</title>
+											 <icon>link_popup.gif</icon>
+											 <script>browse_links.php?mode=wizard&amp;act=file</script>
+											 <params type="array">
+												  <blindLinkOptions>page,url,mail,spec,folder</blindLinkOptions>
+											 </params>
+											 <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+										</link>
+								   </wizards>
+							  </config>
+						</TCEforms>
+					</templates_domainSINGLE>
+				</el>
+			</ROOT>
+		</sDOMAIN>
+		<sTOPIC>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_topic</sheetTitle>
+					<sheetDescription>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_saveToContinue</sheetDescription>
+					<sheetShortDescr>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_topicShortDescription</sheetShortDescr>
+					<!-- cshFile element only for TYPO3 before v. 4.5 -->
+					<cshFile>LLL:EXT:egovapi/Resources/Private/Language/locallang_csh.xml</cshFile>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<topics>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.topics</label>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>tx_egovapi_helpers_flexform->getTopics</itemsProcFunc>
+								<size>15</size>
+								<maxitems>999</maxitems>
+								<multiple>1</multiple>
+								<selectedListStyle>width:300px</selectedListStyle>
+								<itemListStyle>width:300px</itemListStyle>
+							</config>
+						</TCEforms>
+					</topics>
+					<blocks_topic>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.LEVEL_INFORMATION</numIndex>
+										<numIndex index="1">LEVEL_INFORMATION</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.GENERAL_INFORMATION</numIndex>
+										<numIndex index="1">GENERAL_INFORMATION</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.NEWS</numIndex>
+										<numIndex index="1">NEWS</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.SUBTOPICS</numIndex>
+										<numIndex index="1">SUBTOPICS</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.DESCRIPTOR</numIndex>
+										<numIndex index="1">DESCRIPTOR</numIndex>
+									</numIndex>
+									<numIndex index="5" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.SYNONYM</numIndex>
+										<numIndex index="1">SYNONYM</numIndex>
+									</numIndex>
+								</items>
+								<size>6</size>
+								<maxitems>99</maxitems>
+								<multiple>1</multiple>
+							</config>
+						</TCEforms>
+					</blocks_topic>
+					<templates_topicLIST>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.templates.topicLIST</label>
+							<config type="array">
+								   <type>input</type>
+								   <size>50</size>
+								   <eval>trim</eval>
+								   <wizards type="array">
+										<_PADDING>2</_PADDING>
+										<link type="array">
+											 <type>popup</type>
+											 <title>Link</title>
+											 <icon>link_popup.gif</icon>
+											 <script>browse_links.php?mode=wizard&amp;act=file</script>
+											 <params type="array">
+												  <blindLinkOptions>page,url,mail,spec,folder</blindLinkOptions>
+											 </params>
+											 <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+										</link>
+								   </wizards>
+							  </config>
+						</TCEforms>
+					</templates_topicLIST>
+					<templates_topicSINGLE>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.templates.topicSINGLE</label>
+							<config type="array">
+								   <type>input</type>
+								   <size>50</size>
+								   <eval>trim</eval>
+								   <wizards type="array">
+										<_PADDING>2</_PADDING>
+										<link type="array">
+											 <type>popup</type>
+											 <title>Link</title>
+											 <icon>link_popup.gif</icon>
+											 <script>browse_links.php?mode=wizard&amp;act=file</script>
+											 <params type="array">
+												  <blindLinkOptions>page,url,mail,spec,folder</blindLinkOptions>
+											 </params>
+											 <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+										</link>
+								   </wizards>
+							  </config>
+						</TCEforms>
+					</templates_topicSINGLE>
+				</el>
+			</ROOT>
+		</sTOPIC>
+		<sSERVICE>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_service</sheetTitle>
+					<sheetShortDescr>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_serviceShortDescription</sheetShortDescr>
+					<!-- cshFile element only for TYPO3 before v. 4.5 -->
+					<cshFile>LLL:EXT:egovapi/Resources/Private/Language/locallang_csh.xml</cshFile>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<services>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.services</label>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>tx_egovapi_helpers_flexform->getServices</itemsProcFunc>
+								<size>20</size>
+								<maxitems>9999</maxitems>
+								<multiple>1</multiple>
+								<selectedListStyle>width:320px</selectedListStyle>
+								<itemListStyle>width:320px</itemListStyle>
+							</config>
+						</TCEforms>
+					</services>
+					<blocks_service>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.LEVEL_INFORMATION</numIndex>
+										<numIndex index="1">LEVEL_INFORMATION</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.GENERAL_INFORMATION</numIndex>
+										<numIndex index="1">GENERAL_INFORMATION</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.PREREQUISITES</numIndex>
+										<numIndex index="1">PREREQUISITES</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.PROCEDURE</numIndex>
+										<numIndex index="1">PROCEDURE</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.FORMS</numIndex>
+										<numIndex index="1">FORMS</numIndex>
+									</numIndex>
+									<numIndex index="5" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.DOCUMENTS_REQUIRED</numIndex>
+										<numIndex index="1">DOCUMENTS_REQUIRED</numIndex>
+									</numIndex>
+									<numIndex index="6" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.SERVICE_PROVIDED</numIndex>
+										<numIndex index="1">SERVICE_PROVIDED</numIndex>
+									</numIndex>
+									<numIndex index="7" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.FEE</numIndex>
+										<numIndex index="1">FEE</numIndex>
+									</numIndex>
+									<numIndex index="8" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.LEGAL_REGULATION</numIndex>
+										<numIndex index="1">LEGAL_REGULATION</numIndex>
+									</numIndex>
+									<numIndex index="9" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.DOCUMENTS_OTHER</numIndex>
+										<numIndex index="1">DOCUMENTS_OTHER</numIndex>
+									</numIndex>
+									<numIndex index="10" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.REMARKS</numIndex>
+										<numIndex index="1">REMARKS</numIndex>
+									</numIndex>
+									<numIndex index="11" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.APPROVAL</numIndex>
+										<numIndex index="1">APPROVAL</numIndex>
+									</numIndex>
+									<numIndex index="12" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.CONTACT</numIndex>
+										<numIndex index="1">CONTACT</numIndex>
+									</numIndex>
+								</items>
+								<size>13</size>
+								<maxitems>99</maxitems>
+								<multiple>1</multiple>
+							</config>
+						</TCEforms>
+					</blocks_service>
+					<templates_serviceLIST>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.templates.serviceLIST</label>
+							<config type="array">
+								   <type>input</type>
+								   <size>50</size>
+								   <eval>trim</eval>
+								   <wizards type="array">
+										<_PADDING>2</_PADDING>
+										<link type="array">
+											 <type>popup</type>
+											 <title>Link</title>
+											 <icon>link_popup.gif</icon>
+											 <script>browse_links.php?mode=wizard&amp;act=file</script>
+											 <params type="array">
+												  <blindLinkOptions>page,url,mail,spec,folder</blindLinkOptions>
+											 </params>
+											 <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+										</link>
+								   </wizards>
+							  </config>
+						</TCEforms>
+					</templates_serviceLIST>
+					<templates_serviceSINGLE>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.templates.serviceSINGLE</label>
+							<config type="array">
+								   <type>input</type>
+								   <size>50</size>
+								   <eval>trim</eval>
+								   <wizards type="array">
+										<_PADDING>2</_PADDING>
+										<link type="array">
+											 <type>popup</type>
+											 <title>Link</title>
+											 <icon>link_popup.gif</icon>
+											 <script>browse_links.php?mode=wizard&amp;act=file</script>
+											 <params type="array">
+												  <blindLinkOptions>page,url,mail,spec,folder</blindLinkOptions>
+											 </params>
+											 <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+										</link>
+								   </wizards>
+							  </config>
+						</TCEforms>
+					</templates_serviceSINGLE>
+				</el>
+			</ROOT>
+		</sSERVICE>
+		<sVersion>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_version</sheetTitle>
+					<sheetDescription>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_versionDescription</sheetDescription>
+					<sheetShortDescr>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_versionShortDescription</sheetShortDescr>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<versions_flex>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.versions.mapping</label>
+							<config>
+								<type>user</type>
+								<userFunc>tx_egovapi_helpers_flexform->getVersionWizard</userFunc>
+							</config>
+						</TCEforms>
+					</versions_flex>
+				</el>
+			</ROOT>
+		</sVersion>
+		<sMisc>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.sheet_misc</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<targets_audienceLIST>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.targets.list.audience</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</targets_audienceLIST>
+					<targets_audienceSINGLE>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.targets.single.audience</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</targets_audienceSINGLE>
+					<targets_viewLIST>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.targets.list.view</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</targets_viewLIST>
+					<targets_viewSINGLE>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.targets.single.view</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</targets_viewSINGLE>
+					<targets_domainLIST>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.targets.list.domain</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</targets_domainLIST>
+					<targets_domainSINGLE>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.targets.single.domain</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</targets_domainSINGLE>
+					<targets_topicLIST>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.targets.list.topic</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</targets_topicLIST>
+					<targets_topicSINGLE>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.targets.single.topic</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</targets_topicSINGLE>
+					<targets_serviceLIST>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.targets.list.service</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</targets_serviceLIST>
+					<targets_serviceSINGLE>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.targets.single.service</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</targets_serviceSINGLE>
+				</el>
+			</ROOT>
+		</sMisc>
+	</sheets>
+</T3DataStructure>

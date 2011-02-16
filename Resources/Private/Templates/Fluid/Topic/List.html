@@ -1,0 +1,16 @@
+<h1><f:translate key="header_topics">Topics</f:translate></h1>
+
+<ul class="tx_egovapi_topics">
+	<f:for each="{topics}" as="topic">
+		<li>
+			<f:link.action action="service" arguments="{topic: topic.id}" pageUid="{targets.service.listPid}">{topic.name}</f:link.action>
+			(<f:link.action action="topic" arguments="{topic: topic.id, mode: 'single'}" pageUid="{targets.topic.singlePid}">details</f:link.action>)
+		</li>
+	</f:for>
+</ul>
+
+<f:if condition="{hasParent}">
+	<p>
+		<f:link.action action="domain" arguments="{view: domain.view.id, mode: 'list'}" pageUid="{targets.domain.listPid}"><f:translate key="action_back_to_list">Back to list</f:translate></f:link.action>
+	</p>
+</f:if>

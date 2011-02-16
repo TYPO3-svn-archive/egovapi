@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>CSH</type>
+		<description>Context Sensitive Help language labels for plugin &quot;tx_egovapi_pi1&quot;</description>
+	</meta>
+	<data type="array">
+		<!-- ******************************************************************************************************
+		                                                     ENGLISH
+		     ****************************************************************************************************** -->
+
+		<languageKey index="default" type="array">
+			<label index=".alttitle">eGov API</label>
+
+			<!-- CSH for sheet General -->
+			<label index="displayLevels.alttitle">Selected levels</label>
+			<label index="displayLevels.description">Lets you select the display levels that should be available. The first selected level will be used as entry level.</label>
+			<label index="displayLevels.details">
+				Please note that if you restrict the display levels of this plugin, you will have to make sure your template either does not provide a link to some non authorized display level or you properly configured the target page of the related links to lend to another page with a plugin allowing the corresponding display level.
+
+				Default setting (empty) is to let the plugin freely navigate through all display levels.
+			</label>
+			<label index="displayMode.alttitle">Display mode</label>
+			<label index="displayMode.description">Lets you force the mode of the plugin (either LIST or SINGLE) and thus disable automatic switch from one mode to the other.</label>
+			<label index="displayMode.details">
+				Please note that if you restrict the display mode of this plugin, you will have to make sure your template either does not provide a link to some non authorized display mode or you properly configured the target page of the related links to lend to another page with a plugin allowing the corresponding display mode.
+
+				Default setting is to let the plugin automatically switch from LIST mode to SINGLE and from SINGLE to LIST.
+			</label>
+
+			<!-- CSH for sheet Audience -->
+			<label index="audiences.alttitle">Selected audiences</label>
+			<label index="audiences.description">Lets you select the audiences that should be available and in which order they should be shown.</label>
+			<label index="audiences.details">
+				Whenever a list of audiences is shown or information related to a given audience is requested (the list of views for instance), the audiences you selected will be taken into account to restrict access to those that should not be available.
+
+				If no audience is selected, setup value (from TypoScript) will be taken into account and if ultimately no audience is selected, then no restriction will be enabled and all audiences will be available.
+			</label>
+
+			<!-- CSH for sheet View -->
+			<label index="views.alttitle">Selected views</label>
+			<label index="views.description">Lets you select the views that should be available and in which order they should be shown.</label>
+			<label index="views.details">
+				Whenever a list of views is shown or information related to a given view is requested (the list of domains for instance), the views you selected will be taken into account to restrict access to those that should not be available.
+
+				If no view is selected, setup value (from TypoScript) will be taken into account and if ultimately no view is selected, then no restriction will be enabled and all views will be available.
+			</label>
+
+			<!-- CSH for sheet Domain -->
+			<label index="domains.alttitle">Selected domains</label>
+			<label index="domains.description">Lets you select the domains that should be available and in which order they should be shown.</label>
+			<label index="domains.details">
+				Whenever a list of domains is shown or information related to a given domain is requested (the list of topics for instance), the domains you selected will be taken into account to restrict access to those that should not be available.
+
+				If no domain is selected, setup value (from TypoScript) will be taken into account and if ultimately no domain is selected, then no restriction will be enabled and all domains will be available.
+			</label>
+			<label index="blocks_domain.alttitle">Domain blocks</label>
+			<label index="blocks_domain.description">Lets you choose which blocks of information should be visible.</label>
+			<label index="blocks_domain.details">This is a simple list of blocks to be enabled. Ordering will not be taken into account. Please note that this is up to the template to take this restriction into account.</label>
+
+			<!-- CSH for sheet Topic -->
+			<label index="topics.alttitle">Selected topics</label>
+			<label index="topics.description">Lets you select the topics that should be available and in which order they should be shown.</label>
+			<label index="topics.details">
+				Whenever a list of topics is shown or information related to a given topic is requested (the list of services for instance), the topics you selected will be taken into account to restrict access to those that should not be available.
+
+				If no topic is selected, setup value (from TypoScript) will be taken into account and if ultimately no topic is selected, then no restriction will be enabled and all topics will be available.
+			</label>
+			<label index="blocks_topic.alttitle">Topic blocks</label>
+			<label index="blocks_topic.description">Lets you choose which blocks of information should be visible.</label>
+			<label index="blocks_topic.details">This is a simple list of blocks to be enabled. Ordering will not be taken into account. Please note that this is up to the template to take this restriction into account.</label>
+
+			<!-- CSH for sheet Service -->
+			<label index="services.alttitle">Selected services</label>
+			<label index="services.description">Lets you select the services that should be available and in which order they should be shown.</label>
+			<label index="services.details">
+				Whenever a list of services is shown or information related to a given service is requested, the services you selected will be taken into account to restrict access to those that should not be available.
+
+				If no service is selected, setup value (from TypoScript) will be taken into account and if ultimately no service is selected, then no restriction will be enabled and all services will be available.
+			</label>
+			<label index="blocks_service.alttitle">Service blocks</label>
+			<label index="blocks_service.description">Lets you choose which blocks of information should be visible.</label>
+			<label index="blocks_service.details">This is a simple list of blocks to be enabled. Ordering will not be taken into account. Please note that this is up to the template to take this restriction into account.</label>
+		</languageKey>
+
+
+
+
+
+		<!-- ******************************************************************************************************
+		                                                     GERMAN
+		     ****************************************************************************************************** -->
+
+		<languageKey index="default" type="array">
+
+		</languageKey>
+
+
+
+
+
+		<!-- ******************************************************************************************************
+		                                                     FRENCH
+		     ****************************************************************************************************** -->
+
+		<languageKey index="fr" type="array">
+			<label index=".alttitle">API eGov</label>
+
+			<!-- CSH for sheet General -->
+			<label index="displayLevels.alttitle">Niveaux sélectionnés</label>
+			<label index="displayLevels.description">Vous permet de choisir les niveaux d'affichage qui doivent être autorisés. Le premier niveau sélectionné est utilisé comme point d'entrée lorsque la page contenant le module est affichée initialement.</label>
+			<label index="displayLevels.details">
+				Veuillez remarquer que si vous restreignez la liste de niveaux autorisés, vous devez vous assurer que votre gabarit n'affiche pas de lien vers un niveau non autorisé ou que vous avez configuré correctement la page de destination de ces liens afin de rediriger l'utilisateur vers une page contenant ce module configuré de façon telle à autoriser le niveau d'affichage souhaité.
+
+				La valeur par défaut (vide) autorise le module à naviguer librement dans toute la hiérarchie des niveaux d'affichage.
+			</label>
+			<label index="displayMode.alttitle">Mode d'affichage</label>
+			<label index="displayMode.description">Vous permet de forcer le mode du module (soit vue liste / LIST, soit vue détaillée / SINGLE) et ainsi désactiver le changement automatique d'un mode d'affichage à l'autre.</label>
+			<label index="displayMode.details">
+				Veuillez remarquer que si vous forcez le mode d'affichage de ce module, vous devez vous assurer que votre gabarit n'affiche pas de lien vers un mode d'affichage non autorisé ou que vous avez configuré correctement la page de destination de ces liens afin de rediriger l'utilisateur vers une page contenant ce module configuré de façon telle à autoriser le mode d'affichage souhaité.
+
+				Le comportement par défaut est d'autoriser ce module à basculer automatiquement entre vue liste et vue détaillée.
+			</label>
+
+			<!-- CSH for sheet Audience -->
+			<label index="audiences.alttitle">Publics cibles sélectionnés</label>
+			<label index="audiences.description">Vous permet de choisir les publics cibles qui doivent être disponibles et l'ordre dans lequel ils doivent être affichés.</label>
+			<label index="audiences.details">
+				À chaque fois qu'une liste de publics cibles est préparée ou que des informations en relation avec un public cible donné sont demandées (pour la liste des vues par exemple), les publics cibles que vous sélectionnez sont pris en compte pour restreindre l'accès à ceux qui ne doivent pas être disponibles.
+
+				Si aucun public cible n'est sélectionné, la valeur du setup (en TypoScript) sera prise en compte et si au final aucun public cible n'a été défini, aucune restriction ne sera appliquée et tous les publics cibles seront disponibles.
+			</label>
+
+			<!-- CSH for sheet View -->
+			<label index="views.alttitle">Vues sélectionnées</label>
+			<label index="views.description">Vous permet de choisir les vues qui doivent être disponibles et l'ordre dans lequel elles doivent être affichées.</label>
+			<label index="views.details">
+				À chaque fois qu'une liste de vues est préparée ou que des informations en relation avec une vue donnée sont demandées (pour la liste des domaines par exemple), les vues que vous sélectionnez sont pris en compte pour restreindre l'accès à celles qui ne doivent pas être disponibles.
+
+				Si aucune vue n'est sélectionnée, la valeur du setup (en TypoScript) sera prise en compte et si au final aucune vue n'a été définie, aucune restriction ne sera appliquée et toutes les vues seront disponibles.
+			</label>
+
+			<!-- CSH for sheet Domain -->
+			<label index="domains.alttitle">Domaines sélectionnés</label>
+			<label index="domains.description">Vous permet de choisir les domaines qui doivent être disponibles et l'ordre dans lequel ils doivent être affichés.</label>
+			<label index="domains.details">
+				À chaque fois qu'une liste de domaines est préparée ou que des informations en relation avec un domaine donné sont demandées (pour la liste des catégories de services par exemple), les domaines que vous sélectionnez sont pris en compte pour restreindre l'accès à ceux qui ne doivent pas être disponibles.
+
+				Si aucun domaine n'est sélectionné, la valeur du setup (en TypoScript) sera prise en compte et si au final aucun domaine n'a été défini, aucune restriction ne sera appliquée et tous les domaines seront disponibles.
+			</label>
+			<label index="blocks_domain.alttitle">Blocs d'un domaine</label>
+			<label index="blocks_domain.description">Vous permet de choisir les blocs d'information qui doivent être visibles.</label>
+			<label index="blocks_domain.details">C'est une simple liste de blocs à activer ou pas. L'ordre dans lequel ils sont sélectionnés n'est pas pris en compte. Veuillez faire attention au fait que c'est le gabarit que vous utilisez qui doit tenir compte de cette restriction.</label>
+
+			<!-- CSH for sheet Topic -->
+			<label index="topics.alttitle">Catégories de services sélectionnées</label>
+			<label index="topics.description">Vous permet de choisir les catégories de services qui doivent être disponibles et l'ordre dans lequel elles doivent être affichées.</label>
+			<label index="topics.details">
+				À chaque fois qu'une liste de catégories de services est préparée ou que des informations en relation avec une catégorie de services donnée sont demandées (pour la liste des services par exemple), les catégories de services que vous sélectionnez sont pris en compte pour restreindre l'accès à celles qui ne doivent pas être disponibles.
+
+				Si aucune catégorie de services n'est sélectionnée, la valeur du setup (en TypoScript) sera prise en compte et si au final aucune catégorie de service n'a été définie, aucune restriction ne sera appliquée et toutes les catégories de services seront disponibles.
+			</label>
+			<label index="blocks_topic.alttitle">Blocs d'une catégorie de services</label>
+			<label index="blocks_topic.description">Vous permet de choisir les blocs d'information qui doivent être visibles.</label>
+			<label index="blocks_topic.details">C'est une simple liste de blocs à activer ou pas. L'ordre dans lequel ils sont sélectionnés n'est pas pris en compte. Veuillez faire attention au fait que c'est le gabarit que vous utilisez qui doit tenir compte de cette restriction.</label>
+
+			<!-- CSH for sheet Service -->
+			<label index="services.alttitle">Services sélectionnés</label>
+			<label index="services.description">Vous permet de choisir les services qui doivent être disponibles et l'ordre dans lequel ils doivent être affichés.</label>
+			<label index="services.details">
+				À chaque fois qu'une liste de services est préparée ou que des informations en relation avec un service donné sont demandées, les services que vous sélectionnez sont pris en compte pour restreindre l'accès à ceux qui ne doivent pas être disponibles.
+
+				Si aucun service n'est sélectionnée, la valeur du setup (en TypoScript) sera prise en compte et si au final aucun service n'a été défini, aucune restriction ne sera appliquée et tous les services seront disponibles.
+			</label>
+			<label index="blocks_service.alttitle">Blocs d'un service</label>
+			<label index="blocks_service.description">Vous permet de choisir les blocs d'information qui doivent être visibles.</label>
+			<label index="blocks_service.details">C'est une simple liste de blocs à activer ou pas. L'ordre dans lequel ils sont sélectionnés n'est pas pris en compte. Veuillez faire attention au fait que c'est le gabarit que vous utilisez qui doit tenir compte de cette restriction.</label>
+		</languageKey>
+
+
+
+
+
+		<!-- ******************************************************************************************************
+		                                                     ITALIAN
+		     ****************************************************************************************************** -->
+
+		<languageKey index="it" type="array">
+
+		</languageKey>
+	</data>
+</T3locallang>

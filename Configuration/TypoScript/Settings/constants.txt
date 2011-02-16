@@ -1,0 +1,57 @@
+plugin.tx_egovapi {
+		# cat=plugin.tx_egovapi/language; type=options[de,en,fr,it,rm]; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.eCHlanguageID
+	eCHlanguageID = en
+
+		# customsubcategory=service=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.subcategories.service; cat=plugin.tx_egovapi/service/a; type=user[EXT:egovapi/Classes/Helpers/Constants.php:&tx_egovapi_helpers_constants->getCommunities]; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.eCHcommunityID
+	eCHcommunityID =
+
+		#cat=plugin.tx_egovapi/service/b; type=small; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.eCHmunicipalityID
+	eCHmunicipalityID =
+
+		# customsubcategory=api=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.subcategories.api; cat=plugin.tx_egovapi/api; type=string; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdl
+	wsdl =
+
+		# cat=plugin.tx_egovapi/enable; type=boolean; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.useFluid
+	useFluid =
+
+		# cat=plugin.tx_egovapi/enable; type=boolean; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.enableDebug
+	enableDebug =
+
+	targets {
+		list {
+				# cat=plugin.tx_egovapi/links/1; type=int+; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.targets.list.audience
+			audience =
+
+				# cat=plugin.tx_egovapi/links/2; type=int+; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.targets.list.view
+			view =
+
+				# cat=plugin.tx_egovapi/links/3; type=int+; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.targets.list.domain
+			domain =
+
+				# cat=plugin.tx_egovapi/links/4; type=int+; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.targets.list.topic
+			topic =
+
+				# cat=plugin.tx_egovapi/links/5; type=int+; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.targets.list.service
+			service =
+		}
+		single {
+				# cat=plugin.tx_egovapi/links/6; type=int+; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.targets.single.audience
+			audience =
+
+				# cat=plugin.tx_egovapi/links/7; type=int+; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.targets.single.view
+			view =
+
+				# cat=plugin.tx_egovapi/links/8; type=int+; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.targets.single.domain
+			domain =
+
+				# cat=plugin.tx_egovapi/links/9; type=int+; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.targets.single.topic
+			topic =
+
+				# cat=plugin.tx_egovapi/links/a; type=int+; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.targets.single.service
+			service =
+		}
+	}
+}
+
+### SVN id ###
+# $Id$

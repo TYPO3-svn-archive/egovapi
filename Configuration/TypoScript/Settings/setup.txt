@@ -1,0 +1,148 @@
+plugin.tx_egovapi_pi1 {
+	eCHlanguageID     = {$plugin.tx_egovapi.eCHlanguageID}
+	eCHcommunityID    = {$plugin.tx_egovapi.eCHcommunityID}
+	eCHmunicipalityID = {$plugin.tx_egovapi.eCHmunicipalityID}
+
+	wsdl              = {$plugin.tx_egovapi.wsdl}
+	cacheLifetime     =
+	useFluid          = {$plugin.tx_egovapi.useFluid}
+	showRenderTime    = 1
+	enableDebug       = {$plugin.tx_egovapi.enableDebug}
+
+		# Default authorized levels
+	displayLevels = AUDIENCE,VIEW,DOMAIN,TOPIC,SERVICE
+
+		# Display level [AUDIENCE|VIEW|DOMAIN|TOPIC|SERVICE]
+	level =
+
+		# Display mode [LIST|SINGLE]
+	mode =
+
+		# Comma-separated list of audiences to show
+	audiences =
+
+		# Comma-separated list of views to show
+	views =
+
+		# Comma-separated list of domains to show
+	domains =
+
+		# Comma-separated list of topics to show
+	topics =
+
+		# Comma-separated list of services to show
+	services =
+
+	// --------------------------------------------------------
+	// Configuration of display blocks
+	// --------------------------------------------------------
+
+	displayBlocks {
+		domain  = LEVEL_INFORMATION,GENERAL_INFORMATION,NEWS,SUBDOMAINS,DESCRIPTOR,SYNONYM
+		topic   = LEVEL_INFORMATION,GENERAL_INFORMATION,NEWS,SUBTOPICS,DESCRIPTOR,SYNONYM
+		service = LEVEL_INFORMATION,GENERAL_INFORMATION,PREREQUISITES,PROCEDURE,FORMS,DOCUMENTS_REQUIRED,SERVICE_PROVIDED,FEE,LEGAL_REGULATION,DOCUMENTS_OTHER,REMARKS,APPROVAL,CONTACT
+	}
+
+	# ------------------------------------------------------------------------------------------
+	# Important note regarding FLUID templates for advanced usage
+	#
+	# plugin.tx_egovapi_pi1.templates.XX.YY.fluid definitions have full-fledge support of
+	# following FLUIDTEMPLATE content object properties:
+	#
+	#	- file
+	#	- layoutRootPath
+	#	- partialRootPath
+	#	- format
+	#	- variables
+	#
+	# Read more: http://forge.typo3.org/projects/typo3v4-mvc/wiki/FLUIDTEMPLATE_Content_Object
+	# ------------------------------------------------------------------------------------------
+
+	templates {
+		list {
+			audience.fluid.file = EXT:egovapi/Resources/Private/Templates/Fluid/Audience/List.html
+			view.fluid.file     = EXT:egovapi/Resources/Private/Templates/Fluid/View/List.html
+			domain.fluid.file   = EXT:egovapi/Resources/Private/Templates/Fluid/Domain/List.html
+			topic.fluid.file    = EXT:egovapi/Resources/Private/Templates/Fluid/Topic/List.html
+			service.fluid.file  = EXT:egovapi/Resources/Private/Templates/Fluid/Service/List.html
+
+			audience.standard   = EXT:egovapi/Resources/Private/Templates/Standard/Audience.html
+			view.standard       = EXT:egovapi/Resources/Private/Templates/Standard/View.html
+			domain.standard     = EXT:egovapi/Resources/Private/Templates/Standard/Domain.html
+			topic.standard      = EXT:egovapi/Resources/Private/Templates/Standard/Topic.html
+			service.standard    = EXT:egovapi/Resources/Private/Templates/Standard/Service.html
+		}
+		single {
+			audience.fluid.file = EXT:egovapi/Resources/Private/Templates/Fluid/Audience/Single.html
+			view.fluid.file     = EXT:egovapi/Resources/Private/Templates/Fluid/View/Single.html
+			domain.fluid.file   = EXT:egovapi/Resources/Private/Templates/Fluid/Domain/Single.html
+			topic.fluid.file    = EXT:egovapi/Resources/Private/Templates/Fluid/Topic/Single.html
+			service.fluid.file  = EXT:egovapi/Resources/Private/Templates/Fluid/Service/Single.html
+
+			audience.standard   = EXT:egovapi/Resources/Private/Templates/Standard/Audience.html
+			view.standard       = EXT:egovapi/Resources/Private/Templates/Standard/View.html
+			domain.standard     = EXT:egovapi/Resources/Private/Templates/Standard/Domain.html
+			topic.standard      = EXT:egovapi/Resources/Private/Templates/Standard/Topic.html
+			service.standard    = EXT:egovapi/Resources/Private/Templates/Standard/Service.html
+		}
+	}
+
+	// --------------------------------------------------------
+	// Configuration of link target pages
+	// --------------------------------------------------------
+
+	targets {
+		audience {
+				# Page for the LIST view
+			listPid = {$plugin.tx_egovapi.targets.list.audience}
+
+				# Page for the SINGLE view
+			singlePid = {$plugin.tx_egovapi.targets.single.audience}
+		}
+
+		view {
+				# Page for the LIST view
+			listPid = {$plugin.tx_egovapi.targets.list.view}
+
+				# Page for the SINGLE view
+			singlePid = {$plugin.tx_egovapi.targets.single.view}
+		}
+
+	 	domain {
+				# Page for the LIST view
+			listPid = {$plugin.tx_egovapi.targets.list.domain}
+
+				# Page for the SINGLE view
+			singlePid = {$plugin.tx_egovapi.targets.single.domain}
+		}
+
+		topic {
+				# Page for the LIST view
+			listPid = {$plugin.tx_egovapi.targets.list.topic}
+
+				# Page for the SINGLE view
+			singlePid = {$plugin.tx_egovapi.targets.single.topic}
+		}
+
+		service {
+				# Page for the LIST view
+			listPid = {$plugin.tx_egovapi.targets.list.service}
+
+				# Page for the SINGLE view
+			singlePid = {$plugin.tx_egovapi.targets.single.service}
+		}
+	}
+
+	// --------------------------------------------------------
+	// Configuration of link service versions to use
+	// --------------------------------------------------------
+
+	versions {
+
+		# ServiceId = versionId
+		#02042 = 13402
+	}
+}
+
+### SVN id ###
+# $Id$

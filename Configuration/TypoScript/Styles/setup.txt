@@ -1,0 +1,58 @@
+###
+# These are the default CSS Styles for the eGov API extension
+##
+
+plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
+
+.tx-egovapi-pi1 {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 10pt;
+}
+
+.tx-egovapi-pi1 table {
+	border-width: 0;
+	border-style: none;
+}
+
+.tx-egovapi-pi1 table.tx_egovapi_block_header td {
+	width: 200px;
+}
+
+.tx-egovapi-pi1 table.tx_egovapi_block_contact td {
+	width: 270px;
+}
+
+.tx-egovapi-pi1 dt {
+	font-weight: bold;
+	float: left;
+	clear: both;
+	width: 100px;
+	margin-top: 5px;
+}
+
+.tx-egovapi-pi1 dd {
+	margin-left: 110px;
+	margin-top: 5px;
+}
+
+.tx-egovapi-pi1 .half {
+	width: 49%;
+	min-width: 300px;
+}
+
+.tx-egovapi-pi1 .left {
+	float: left;
+}
+
+.tx-egovapi-pi1 .right {
+	float: right;
+}
+
+.tx-egovapi-pi1 .clear {
+	clear: both;
+}
+
+)
+
+### SVN id ###
+# $Id$
