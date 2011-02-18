@@ -528,7 +528,7 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 
 		$blocks = array('LEVEL_INFORMATION', 'GENERAL_INFORMATION', 'PREREQUISITES', 'PROCEDURE', 'FORMS',
 		                'DOCUMENTS_REQUIRED', 'SERVICE_PROVIDED', 'FEE', 'LEGAL_REGULATION', 'DOCUMENTS_OTHER',
-		                'REMARKS', 'APPROVAL', 'CONTACT');
+		                'REMARKS', 'APPROVAL', 'CONTACT', 'BACK_TO_LIST');
 		foreach ($blocks as $block) {
 			if (!t3lib_div::inList($this->settings['displayBlocks.']['service'], $block)) {
 				$this->subparts['SHOW_' . $block] = '';
