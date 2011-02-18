@@ -9,6 +9,10 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 	font-size: 10pt;
 }
 
+.tx-egovapi-pi1 .service_id {
+	display: none;
+}
+
 .tx-egovapi-pi1 table {
 	border-width: 0;
 	border-style: none;
