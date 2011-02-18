@@ -378,10 +378,27 @@ class tx_egovapi_dao_webService {
 	 * @return array
 	 */
 	public function getServices($topicId) {
-		$services = array();
+		if ($this->settings['eCHcommunityID'] !== '00-00') {
+			$servicesCommunity = $this->_getServices($topicId, FALSE);
+			$servicesCH = $this->_getServices($topicId, TRUE);
+			$services = $servicesCommunity;
+			foreach ($servicesCH as $service) {
+				$services[] = $service;
+			}
+		} else {
+			$services = $this->_getServices($topicId, FALSE);
+		}
+
+			// Sort services by (localized) name
+		$this->sort($services, 'name');
+
+		return $services;
+	}
+
+	protected function _getServices($topicId, $forceCHLevel) {
 		$serviceList = $this->callEgovApi('GetServiceList', array(
 			'eCHtopicID' => $topicId,
-		));
+		), $forceCHLevel);
 		if (is_array($serviceList) && is_array($serviceList['eCHserviceList'])) {
 			if (is_array($serviceList['eCHserviceList']['serviceInfo']) && !isset($serviceList['eCHserviceList']['serviceInfo'][0])) {
 				$serviceList['eCHserviceList']['serviceInfo'] = array($serviceList['eCHserviceList']['serviceInfo']);
@@ -417,9 +434,6 @@ class tx_egovapi_dao_webService {
 				t3lib_div::devLog('Could not process services for topic "' . $topicId . '"', 'egovapi', self::DEVLOG_WARNING, $serviceList);
 			}
 		}
-
-			// Sort services by (localized) name
-		$this->sort($services, 'name');
 
 		return $services;
 	}
@@ -527,15 +541,17 @@ class tx_egovapi_dao_webService {
 	 *
 	 * @param string $method
 	 * @param array $additionalParameters
+	 * @param boolean $forceCHLevel if TRUE, then communityId will be forced to be 00-00
 	 * @return mixed
 	 */
-	protected function callEGovApi($method, array $additionalParameters = array()) {
+	protected function callEGovApi($method, array $additionalParameters = array(), $forceCHLevel = FALSE) {
+		$communityId = ($forceCHLevel ? '00-00' : $this->settings['eCHcommunityID']);
 		$parameters = array(
 			'eCHapiFormat' => 'xml',
 			'eCHapiEncode' => 'utf-8',
 			'eCHapiMethod' => $method,
 			'eCHlanguageID' => strtoupper($this->settings['eCHlanguageID']),
-			'eCHcommunityID' => $this->settings['eCHcommunityID'],
+			'eCHcommunityID' => $communityId,
 			'eCHmunicipalityID' => $this->settings['eCHmunicipalityID'],
 		);
 		$parameters = array_merge($parameters, $additionalParameters);
