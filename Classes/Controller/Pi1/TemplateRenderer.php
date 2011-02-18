@@ -759,6 +759,10 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 			$markers['SERVICE_CONTACT_PHONE2']        = $service->getContact()->getPhone2();
 			$markers['SERVICE_CONTACT_FAX']           = $service->getContact()->getFax();
 			$markers['SERVICE_CONTACT_EMAIL']         = $service->getContact()->getEmail();
+			$markers['SERVICE_CONTACT_EMAIL_LINK']    = $this->cObj->typoLink(
+				$service->getContact()->getEmail(),
+				array('parameter' => $service->getContact()->getEmail())
+			);
 			$markers['SERVICE_CONTACT_PUBLIC_KEY']    = $service->getContact()->getPublicKey();
 			$markers['SERVICE_CONTACT_LOGO']          = $service->getContact()->getLogo();
 			$markers['SERVICE_CONTACT_BANNER']        = $service->getContact()->getBanner();

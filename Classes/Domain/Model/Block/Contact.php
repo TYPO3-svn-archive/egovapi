@@ -414,6 +414,10 @@ class tx_egovapi_domain_model_block_contact {
 	 * @return string
 	 */
 	public function __toString() {
+		/** @var tslib_cObj $contentObj */
+		$contentObj = t3lib_div::makeInstance('tslib_cObj');
+		$emailLink = $contentObj->typoLink($this->email, array('parameter' => $this->email));
+
 		return <<<EOT
 			<table>
 				<tr>
@@ -425,7 +429,7 @@ class tx_egovapi_domain_model_block_contact {
 						<br />
 						{$this->phone1}<br />
 						{$this->fax}<br />
-						<a href="mailto:{$this->email}">{$this->email}</a>
+						{$emailLink}
 					</td>
 					<td valign="top">
 						{$this->openingHours}
