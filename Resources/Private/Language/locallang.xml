@@ -78,7 +78,7 @@
 			<label index="pi_flexform.templates.serviceSINGLE">Override template to use for details of a service</label>
 			<label index="pi_flexform.versions.mapping">Force service versions</label>
 			<label index="pi_flexform.versions.serviceId">Service ID</label>
-			<label index="pi_flexform.versions.version">Offical version</label>
+			<label index="pi_flexform.versions.version">Default version</label>
 			<label index="pi_flexform.versions.useVersion">Version to use</label>
 			<label index="pi_flexform.versions.description">Description</label>
 			<label index="pi_flexform.targets.list.audience">Target page for list of audiences</label>
@@ -318,7 +318,7 @@
 			<label index="pi_flexform.templates.serviceSINGLE">Utiliser un gabarit particulier pour les détails d'un service</label>
 			<label index="pi_flexform.versions.mapping">Utilisation de versions spécifiques</label>
 			<label index="pi_flexform.versions.serviceId">ID du service</label>
-			<label index="pi_flexform.versions.version">Version officielle</label>
+			<label index="pi_flexform.versions.version">Version par défaut</label>
 			<label index="pi_flexform.versions.useVersion">Version à utiliser</label>
 			<label index="pi_flexform.versions.description">Description</label>
 			<label index="pi_flexform.targets.list.audience">Page cible pour la liste des publics cibles</label>
