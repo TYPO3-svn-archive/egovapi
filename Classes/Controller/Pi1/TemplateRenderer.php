@@ -748,25 +748,27 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 			$markers['SERVICE_CONTACT'] = (string)$service->getContact();
 
 				// Additional markers to be fair with people running an old version of TYPO3
-			$markers['SERVICE_CONTACT_DEPARTMENT']    = $service->getContact()->getDepartment();
-			$markers['SERVICE_CONTACT_OFFICE']        = $service->getContact()->getOffice();
-			$markers['SERVICE_CONTACT_ADDRESS']       = $service->getContact()->getAddress();
-			$markers['SERVICE_CONTACT_POSTAL_CASE']   = $service->getContact()->getPostalCase();
-			$markers['SERVICE_CONTACT_POSTAL_CODE']   = $service->getContact()->getPostalCode();
-			$markers['SERVICE_CONTACT_MUNICIPALITY']  = $service->getContact()->getMunicipality();
-			$markers['SERVICE_CONTACT_PERSON']        = $service->getContact()->getPerson();
-			$markers['SERVICE_CONTACT_PHONE1']        = $service->getContact()->getPhone1();
-			$markers['SERVICE_CONTACT_PHONE2']        = $service->getContact()->getPhone2();
-			$markers['SERVICE_CONTACT_FAX']           = $service->getContact()->getFax();
-			$markers['SERVICE_CONTACT_EMAIL']         = $service->getContact()->getEmail();
-			$markers['SERVICE_CONTACT_EMAIL_LINK']    = $this->cObj->typoLink(
-				$service->getContact()->getEmail(),
-				array('parameter' => $service->getContact()->getEmail())
-			);
-			$markers['SERVICE_CONTACT_PUBLIC_KEY']    = $service->getContact()->getPublicKey();
-			$markers['SERVICE_CONTACT_LOGO']          = $service->getContact()->getLogo();
-			$markers['SERVICE_CONTACT_BANNER']        = $service->getContact()->getBanner();
-			$markers['SERVICE_CONTACT_OPENING_HOURS'] = $service->getContact()->getOpeningHours();
+			if ($service->getContact()) {
+				$markers['SERVICE_CONTACT_DEPARTMENT']    = $service->getContact()->getDepartment();
+				$markers['SERVICE_CONTACT_OFFICE']        = $service->getContact()->getOffice();
+				$markers['SERVICE_CONTACT_ADDRESS']       = $service->getContact()->getAddress();
+				$markers['SERVICE_CONTACT_POSTAL_CASE']   = $service->getContact()->getPostalCase();
+				$markers['SERVICE_CONTACT_POSTAL_CODE']   = $service->getContact()->getPostalCode();
+				$markers['SERVICE_CONTACT_MUNICIPALITY']  = $service->getContact()->getMunicipality();
+				$markers['SERVICE_CONTACT_PERSON']        = $service->getContact()->getPerson();
+				$markers['SERVICE_CONTACT_PHONE1']        = $service->getContact()->getPhone1();
+				$markers['SERVICE_CONTACT_PHONE2']        = $service->getContact()->getPhone2();
+				$markers['SERVICE_CONTACT_FAX']           = $service->getContact()->getFax();
+				$markers['SERVICE_CONTACT_EMAIL']         = $service->getContact()->getEmail();
+				$markers['SERVICE_CONTACT_EMAIL_LINK']    = $this->cObj->typoLink(
+					$service->getContact()->getEmail(),
+					array('parameter' => $service->getContact()->getEmail())
+				);
+				$markers['SERVICE_CONTACT_PUBLIC_KEY']    = $service->getContact()->getPublicKey();
+				$markers['SERVICE_CONTACT_LOGO']          = $service->getContact()->getLogo();
+				$markers['SERVICE_CONTACT_BANNER']        = $service->getContact()->getBanner();
+				$markers['SERVICE_CONTACT_OPENING_HOURS'] = $service->getContact()->getOpeningHours();
+			}
 		}
 
 		return $markers;

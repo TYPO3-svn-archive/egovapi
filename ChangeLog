@@ -1,5 +1,9 @@
 2011-02-18  Xavier Perseguers  <xavier@causal.ch>
 
+	* Added exception catch for incomplete service (no contact part)
+
+2011-02-18  Xavier Perseguers  <xavier@causal.ch>
+
 	* Raised version to 0.7.1
 	* Added class around service id in h1
 	* Added back to list block for services in SINGLE mode
