@@ -488,7 +488,7 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 
 		$blocks = array('LEVEL_INFORMATION', 'GENERAL_INFORMATION', 'PREREQUISITES', 'PROCEDURE', 'FORMS',
 		                'DOCUMENTS_REQUIRED', 'SERVICE_PROVIDED', 'FEE', 'LEGAL_REGULATION', 'DOCUMENTS_OTHER',
-		                'REMARKS', 'APPROVAL', 'CONTACT');
+		                'REMARKS', 'APPROVAL', 'CONTACT', 'BACK_TO_LIST');
 		foreach ($blocks as $block) {
 			if (!t3lib_div::inList($this->settings['displayBlocks.']['service'], $block)) {
 				$this->subparts['SHOW_' . $block] = '';
@@ -516,6 +516,7 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 		$this->subparts['TOPIC_LINK_DETAIL'] = $this->getLinkSingleParts($topic);
 		$this->subparts['SERVICE_LINK_TOPICS'] = $this->getParentLevelLinkParts('topic', 'domain', $topic->getDomain()->getId());
 		$this->subparts['SERVICE_LINK_TOPIC'] = $this->getParentLevelLinkParts('domain', 'domain', $topic->getDomain()->getId(), 'single');
+		$this->subparts['SERVICE_LINK_SERVICES'] = $this->getParentLevelLinkParts('service', 'topic', $topic->getId());
 
 			// If parent level is not allowed and target for parent list or single mode
 			// is the same as current page, then remove content of HAS_PARENT subpart

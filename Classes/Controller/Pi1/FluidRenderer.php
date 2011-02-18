@@ -261,6 +261,7 @@ class tx_egovapi_controller_pi1_fluidRenderer extends tx_egovapi_controller_pi1_
 		$this->view->assign('showRemarks',            t3lib_div::inList($this->settings['displayBlocks.']['service'], 'REMARKS'));
 		$this->view->assign('showApproval',           t3lib_div::inList($this->settings['displayBlocks.']['service'], 'APPROVAL'));
 		$this->view->assign('showContact',            t3lib_div::inList($this->settings['displayBlocks.']['service'], 'CONTACT'));
+		$this->view->assign('showBackToList',         t3lib_div::inList($this->settings['displayBlocks.']['service'], 'BACK_TO_LIST'));
 	}
 
 	/**

@@ -48,6 +48,7 @@
 			<label index="pi_flexform.tsconfig">Typoscript for this content element (plugin.egovapi_pi1.[your TS])</label>
 			<label index="pi_flexform.displayBlocks">Blocks to show</label>
 			<label index="pi_flexform.displayBlocks.APPROVAL">12. Approval</label>
+			<label index="pi_flexform.displayBlocks.BACK_TO_LIST">Back to list</label>
 			<label index="pi_flexform.displayBlocks.CONTACT">13. Contact</label>
 			<label index="pi_flexform.displayBlocks.DESCRIPTOR">5. Descriptors</label>
 			<label index="pi_flexform.displayBlocks.DOCUMENTS_OTHER">10. Other document(s)</label>
@@ -174,6 +175,7 @@
 			<label index="pi_flexform.tsconfig">Typoscript für dieses Inhaltselement (plugin.egovapi_pi1.[ihr TS])</label>
 			<label index="pi_flexform.displayBlocks">Blöcke zu zeigen</label>
 			<label index="pi_flexform.displayBlocks.APPROVAL">12. Genehmigung</label>
+			<label index="pi_flexform.displayBlocks.BACK_TO_LIST">Zurück zur Liste</label>
 			<label index="pi_flexform.displayBlocks.CONTACT">13. Adressen</label>
 			<label index="pi_flexform.displayBlocks.DESCRIPTOR">5. Deskriptoren</label>
 			<label index="pi_flexform.displayBlocks.DOCUMENTS_OTHER">10. Andere Dokumente</label>
@@ -286,6 +288,7 @@
 			<label index="pi_flexform.tsconfig">Typoscript pour cet élément de contenu (plugin.egovapi_pi1.[votre TS])</label>
 			<label index="pi_flexform.displayBlocks">Blocs à afficher</label>
 			<label index="pi_flexform.displayBlocks.APPROVAL">12. Approbation</label>
+			<label index="pi_flexform.displayBlocks.BACK_TO_LIST">Retour à la liste</label>
 			<label index="pi_flexform.displayBlocks.CONTACT">13. Adresse de(s) office(s) compétent(s)</label>
 			<label index="pi_flexform.displayBlocks.DESCRIPTOR">5. Descripteurs</label>
 			<label index="pi_flexform.displayBlocks.DOCUMENTS_OTHER">10. Autre(s) document(s)</label>

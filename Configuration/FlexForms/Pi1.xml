@@ -547,6 +547,10 @@
 										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.CONTACT</numIndex>
 										<numIndex index="1">CONTACT</numIndex>
 									</numIndex>
+									<numIndex index="13" type="array">
+										<numIndex index="0">LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.displayBlocks.BACK_TO_LIST</numIndex>
+										<numIndex index="1">BACK_TO_LIST</numIndex>
+									</numIndex>
 								</items>
 								<size>13</size>
 								<maxitems>99</maxitems>

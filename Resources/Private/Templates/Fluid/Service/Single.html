@@ -1,6 +1,6 @@
 <f:if condition="{showLevelInformation}">
 	<!-- Level information -->
-	<h1 class="tx_egovapi_service">1. {service.name}</h1>
+	<h1 class="tx_egovapi_service"><span class="block_number">1.</span> {service.name}</h1>
 
 	<table class="tx_egovapi_block_header">
 		<tr>
@@ -32,13 +32,13 @@
 
 <f:if condition="{showGeneralInformation}">
 	<!-- General information -->
-	<h2 class="tx_egovapi_block_generalInformation">2. <f:translate key="block_general_information">General information</f:translate></h2>
+	<h2 class="tx_egovapi_block_generalInformation"><span class="block_number">2.</span> <f:translate key="block_general_information">General information</f:translate></h2>
 	<f:format.html>{service.generalInformation}</f:format.html>
 </f:if>
 
 <f:if condition="{showPrerequisites}">
 	<!-- Prerequisites -->
-	<h2 class="tx_egovapi_block_prerequisites">3. <f:translate key="block_prerequisites">Prerequisites</f:translate></h2>
+	<h2 class="tx_egovapi_block_prerequisites"><span class="block_number">3.</span> <f:translate key="block_prerequisites">Prerequisites</f:translate></h2>
 	<ul>
 		<f:for each="{service.prerequisites.items}" as="item">
 			<li>{item.description}</li>
@@ -48,7 +48,7 @@
 
 <f:if condition="{showProcedure}">
 	<!-- Procedure -->
-	<h2 class="tx_egovapi_block_procedure">4. <f:translate key="block_procedure">Procedure</f:translate></h2>
+	<h2 class="tx_egovapi_block_procedure"><span class="block_number">4.</span> <f:translate key="block_procedure">Procedure</f:translate></h2>
 	<ol>
 		<f:for each="{service.procedure.items}" as="item">
 			<li>{item.description}</li>
@@ -58,7 +58,7 @@
 
 <f:if condition="{showForms}">
 	<!-- Forms -->
-	<h2 class="tx_egovapi_block_forms">5. <f:translate key="block_forms">Form(s)</f:translate></h2>
+	<h2 class="tx_egovapi_block_forms"><span class="block_number">5.</span> <f:translate key="block_forms">Form(s)</f:translate></h2>
 	<dl>
 		<f:for each="{service.forms.items}" as="item">
 			<dt>{item.name}</dt>
@@ -72,7 +72,7 @@
 
 <f:if condition="{showDocumentsRequired}">
 	<!-- Documents required -->
-	<h2 class="tx_egovapi_block_documentsRequired">6. <f:translate key="block_documents_required">Document required</f:translate></h2>
+	<h2 class="tx_egovapi_block_documentsRequired"><span class="block_number">6.</span> <f:translate key="block_documents_required">Document required</f:translate></h2>
 	<dl>
 		<f:for each="{service.documentsRequired.items}" as="item">
 			<dt>{item.name}</dt>
@@ -84,19 +84,19 @@
 
 <f:if condition="{showServiceProvided}">
 	<!-- Service provided -->
-	<h2 class="tx_egovapi_block_serviceProvided">7. <f:translate key="block_service_provided">Service provided</f:translate></h2>
+	<h2 class="tx_egovapi_block_serviceProvided"><span class="block_number">7.</span> <f:translate key="block_service_provided">Service provided</f:translate></h2>
 	<p>{service.serviceProvided}</p>
 </f:if>
 
 <f:if condition="{showFee}">
 	<!-- Fee -->
-	<h2 class="tx_egovapi_block_fee">8. <f:translate key="block_fee">Fee</f:translate></h2>
+	<h2 class="tx_egovapi_block_fee"><span class="block_number">8.</span> <f:translate key="block_fee">Fee</f:translate></h2>
 	<p>{service.fee}</p>
 </f:if>
 
 <f:if condition="{showLegalRegulation}">
 	<!-- Legal regulation -->
-	<h2 class="tx_egovapi_block_legalRegulation">9. <f:translate key="block_legal_regulation">Legal regulation</f:translate></h2>
+	<h2 class="tx_egovapi_block_legalRegulation"><span class="block_number">9.</span> <f:translate key="block_legal_regulation">Legal regulation</f:translate></h2>
 	<dl>
 		<f:for each="{service.legalRegulation.items}" as="item">
 			<dt>{item.name}</dt>
@@ -110,7 +110,7 @@
 
 <f:if condition="{showDocumentsOther}">
 	<!-- Other documents -->
-	<h2 class="tx_egovapi_block_documentsOther">10. <f:translate key="block_documents_other">Other documents</f:translate></h2>
+	<h2 class="tx_egovapi_block_documentsOther"><span class="block_number">10.</span> <f:translate key="block_documents_other">Other documents</f:translate></h2>
 	<dl>
 		<f:for each="{service.documentsOther.items}" as="item">
 			<dt>{item.name}</dt>
@@ -122,19 +122,19 @@
 
 <f:if condition="{showRemarks}">
 	<!-- Remarks -->
-	<h2 class="tx_egovapi_block_remarks">11. <f:translate key="block_remarks">Remarks</f:translate></h2>
+	<h2 class="tx_egovapi_block_remarks"><span class="block_number">11.</span> <f:translate key="block_remarks">Remarks</f:translate></h2>
 	<p>{service.remarks}</p>
 </f:if>
 
 <f:if condition="{showApproval}">
 	<!-- Approval -->
-	<h2 class="tx_egovapi_block_approval">12. <f:translate key="block_approval">Approval</f:translate></h2>
+	<h2 class="tx_egovapi_block_approval"><span class="block_number">12.</span> <f:translate key="block_approval">Approval</f:translate></h2>
 	<p>{service.approval}</p>
 </f:if>
 
 <f:if condition="{showContact}">
 	<!-- Contact -->
-	<h2 class="tx_egovapi_block_contact">13. <f:translate key="block_contact">Contact</f:translate></h2>
+	<h2 class="tx_egovapi_block_contact"><span class="block_number">13.</span> <f:translate key="block_contact">Contact</f:translate></h2>
 	<div class="tx_egovapi_block_contact">
 		<div class="half left">
 			<img src="{service.contact.logo}" alt="{service.contact.office}" /><br />
