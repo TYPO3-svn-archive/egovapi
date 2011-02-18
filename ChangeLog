@@ -1,5 +1,6 @@
 2011-02-18  Xavier Perseguers  <xavier@causal.ch>
 
+	* Added labels for version id and version name
 	* Added exception catch for incomplete service (no contact part)
 
 2011-02-18  Xavier Perseguers  <xavier@causal.ch>

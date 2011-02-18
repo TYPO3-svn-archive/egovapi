@@ -113,7 +113,8 @@
 			<label index="common_remarks">Remarks</label>
 			<label index="common_service_type">Type of service</label>
 			<label index="common_status">Status</label>
-			<label index="common_version">Version</label>
+			<label index="common_version_id">Version</label>
+			<label index="common_version_name">Community</label>
 			<label index="common_service_id">Service ID</label>
 
 			<label index="action_back_to_list">Back to list</label>
@@ -215,7 +216,8 @@
 			<label index="common_remarks">Bemerkungen</label>
 			<label index="common_service_type">Art des Verwaltungsdienstes</label>
 			<label index="common_status">Status</label>
-			<label index="common_version">Version</label>
+			<label index="common_version_id">Version</label>
+			<label index="common_version_name">Gemeinschaft</label>
 			<label index="common_service_id">Service ID</label>
 
 			<label index="action_back_to_list">Zurück zur Liste</label>
@@ -353,7 +355,8 @@
 			<label index="common_remarks">Remarques</label>
 			<label index="common_service_type">Type de prestation administrative</label>
 			<label index="common_status">Statut</label>
-			<label index="common_version">Version</label>
+			<label index="common_version_id">Version</label>
+			<label index="common_version_name">Communauté</label>
 			<label index="common_service_id">Service ID</label>
 
 			<label index="action_back_to_list">Retour à la liste</label>
