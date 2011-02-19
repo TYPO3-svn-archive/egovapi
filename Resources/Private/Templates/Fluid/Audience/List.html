@@ -4,7 +4,6 @@
 	<f:for each="{audiences}" as="audience">
 		<li>
 			<f:link.action action="view" arguments="{audience: audience.id}" pageUid="{targets.view.listPid}">{audience.name}</f:link.action>
-			(<f:link.action action="audience" arguments="{audience: audience.id, mode: 'single'}" pageUid="{targets.audience.singlePid}">details</f:link.action>)
 		</li>
 	</f:for>
 </ul>
