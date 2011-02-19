@@ -93,6 +93,10 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 			self::$servicesByTopic[$id][$service->getId()] = $service;
 		}
 
+		if (!$withKey) {
+			// Take advantage of code at the beginning of this method to remove duplicates
+			return $this->findAll($topic, FALSE);
+		}
 		return self::$servicesByTopic[$id];
 	}
 
