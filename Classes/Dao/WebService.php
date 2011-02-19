@@ -22,15 +22,6 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-if (t3lib_div::int_from_ver(TYPO3_version) < 4005000) {
-	$pathEmMod = PATH_typo3 . 'mod/tools/em/';
-
-	if (!defined('SOAP_1_2')) {
-		require_once($pathEmMod . 'class.nusoap.php');
-	}
-	require_once($pathEmMod . 'class.em_soap.php');
-}
-
 /**
  * Library to connect to the E-Government webservice.
  *
@@ -112,6 +103,12 @@ class tx_egovapi_dao_webService {
 		if (t3lib_div::int_from_ver(TYPO3_version) >= 4005000) {
 			$this->soap = t3lib_div::makeInstance('tx_em_connection_soap');
 		} else {
+			$pathEmMod = PATH_typo3 . 'mod/tools/em/';
+			if (!defined('SOAP_1_2')) {
+				require_once($pathEmMod . 'class.nusoap.php');
+			}
+			require_once($pathEmMod . 'class.em_soap.php');
+
 			$this->soap = t3lib_div::makeInstance('em_soap');
 		}
 
@@ -388,6 +385,8 @@ class tx_egovapi_dao_webService {
 		} else {
 			$services = $this->_getServices($topicId, FALSE);
 		}
+
+		$services = is_array($services) ? $services : array();
 
 			// Sort services by (localized) name
 		$this->sort($services, 'name');
