@@ -276,7 +276,7 @@
 			<label index="pi_flexform.displayLevels.AUDIENCE">Public cible</label>
 			<label index="pi_flexform.displayLevels.VIEW">&#160;&#160;Vue</label>
 			<label index="pi_flexform.displayLevels.DOMAIN">&#160;&#160;&#160;&#160;Domaine</label>
-			<label index="pi_flexform.displayLevels.TOPIC">&#160;&#160;&#160;&#160;&#160;&#160;Sujet</label>
+			<label index="pi_flexform.displayLevels.TOPIC">&#160;&#160;&#160;&#160;&#160;&#160;Catégorie de services</label>
 			<label index="pi_flexform.displayLevels.SERVICE">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Service</label>
 			<label index="pi_flexform.displayMode">Mode d'affichage</label>
 			<label index="pi_flexform.displayMode.codeFromTS">Défini en TypoScript / Automatique</label>
