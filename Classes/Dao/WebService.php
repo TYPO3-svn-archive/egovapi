@@ -39,23 +39,6 @@ class tx_egovapi_dao_webService {
 	const DEVLOG_WARNING = 2;
 	const DEVLOG_FATAL   = 3;
 
-
-	/*
-	const BLOCK_INFORMATION         =  1;
-	const BLOCK_GENERAL_INFORMATION =  2;
-	const BLOCK_PREREQUISITE        =  3;
-	const BLOCK_PROCEDURE           =  4;
-	const BLOCK_FORM                =  5;
-	const BLOCK_DOCUMENT_REQUIRED   =  6;
-	const BLOCK_RESULT              =  7;
-	const BLOCK_FEE                 =  8;
-	const BLOCK_LEGAL_REGULATION    =  9;
-	const BLOCK_OTHER_DOCUMENT      = 10;
-	const BLOCK_REMARKS             = 11;
-	const BLOCK_APPROVAL            = 12;
-	const BLOCK_CONTACT             = 13;
-	*/
-
 	/**
 	 * @var array
 	 */
