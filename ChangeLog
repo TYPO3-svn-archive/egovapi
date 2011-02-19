@@ -1,5 +1,6 @@
 2011-02-19  Xavier Perseguers  <xavier@causal.ch>
 
+	* Implemented hook for RealURL auto-configuration
 	* Services are always alphabetically sorted (by name)
 	* Now sorting views, domains, topics and services in FlexForm
 	* Added enable flag to include services from swiss confederation
