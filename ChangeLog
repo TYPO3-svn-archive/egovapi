@@ -1,5 +1,6 @@
 2011-02-19  Xavier Perseguers  <xavier@causal.ch>
 
+	* Added enable flag to include services from swiss confederation
 	* Removed duplicate services when caching lifetime is extremely low
 	* Reorganized include for TYPO3 < 4.5
 

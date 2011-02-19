@@ -375,7 +375,7 @@ class tx_egovapi_dao_webService {
 	 * @return array
 	 */
 	public function getServices($topicId) {
-		if ($this->settings['eCHcommunityID'] !== '00-00') {
+		if ($this->settings['includeCHServices'] && $this->settings['eCHcommunityID'] !== '00-00') {
 			$servicesCommunity = $this->_getServices($topicId, FALSE);
 			$servicesCH = $this->_getServices($topicId, TRUE);
 			$services = $servicesCommunity;
@@ -394,6 +394,13 @@ class tx_egovapi_dao_webService {
 		return $services;
 	}
 
+	/**
+	 * Returns the list of services for a given topic.
+	 *
+	 * @param  $topicId
+	 * @param  $forceCHLevel
+	 * @return array
+	 */
 	protected function _getServices($topicId, $forceCHLevel) {
 		$serviceList = $this->callEgovApi('GetServiceList', array(
 			'eCHtopicID' => $topicId,

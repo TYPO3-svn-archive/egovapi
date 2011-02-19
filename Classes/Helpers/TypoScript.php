@@ -53,7 +53,7 @@ class tx_egovapi_helpers_ts {
 		$globalParameters = array(
 			'eCHlanguageID', 'eCHcommunityID', 'eCHmunicipalityID',
 			'wsdl', 'cacheLifetime', 'useFluid', 'enableDebug', 'showRenderTime',
-			'displayLevels', 'level', 'mode',
+			'includeCHServices', 'displayLevels', 'level', 'mode',
 			'audiences', 'views', 'domains', 'topics', 'services',
 		);
 

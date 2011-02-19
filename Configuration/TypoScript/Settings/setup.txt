@@ -9,6 +9,8 @@ plugin.tx_egovapi_pi1 {
 	showRenderTime    = 1
 	enableDebug       = {$plugin.tx_egovapi.enableDebug}
 
+	includeCHServices = 1
+
 		# Default authorized levels
 	displayLevels = AUDIENCE,VIEW,DOMAIN,TOPIC,SERVICE
 
