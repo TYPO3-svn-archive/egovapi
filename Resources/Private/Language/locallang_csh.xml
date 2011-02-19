@@ -72,7 +72,7 @@
 
 			<!-- CSH for sheet Service -->
 			<label index="services.alttitle">Selected services</label>
-			<label index="services.description">Lets you select the services that should be available and in which order they should be shown.</label>
+			<label index="services.description">Lets you select the services that should be available. They always will be alphabetically sorted by name.</label>
 			<label index="services.details">
 				Whenever a list of services is shown or information related to a given service is requested, the services you selected will be taken into account to restrict access to those that should not be available.
 
@@ -166,7 +166,7 @@
 
 			<!-- CSH for sheet Service -->
 			<label index="services.alttitle">Services sélectionnés</label>
-			<label index="services.description">Vous permet de choisir les services qui doivent être disponibles et l'ordre dans lequel ils doivent être affichés.</label>
+			<label index="services.description">Vous permet de choisir les services qui doivent être disponibles. Les services seront toujours triés par ordre alphabétique sur le nom.</label>
 			<label index="services.details">
 				À chaque fois qu'une liste de services est préparée ou que des informations en relation avec un service donné sont demandées, les services que vous sélectionnez sont pris en compte pour restreindre l'accès à ceux qui ne doivent pas être disponibles.
 

@@ -48,6 +48,7 @@ return array(
 	'tx_egovapi_domain_repository_topicrepository' => $classPath . 'Domain/Repository/TopicRepository.php',
 	'tx_egovapi_domain_repository_viewrepository' => $classPath . 'Domain/Repository/ViewRepository.php',
 	'tx_egovapi_helpers_flexform' => $classPath . 'Helpers/FlexForm.php',
+	'tx_egovapi_helpers_objects' => $classPath . 'Helpers/Objects.php',
 	'tx_egovapi_helpers_ts' => $classPath . 'Helpers/TypoScript.php',
 	'tx_egovapi_controller_pi1_abstractrenderer' => $classPath . 'Controller/Pi1/AbstractRenderer.php',
 	'tx_egovapi_controller_pi1_fluidrenderer' => $classPath . 'Controller/Pi1/FluidRenderer.php',

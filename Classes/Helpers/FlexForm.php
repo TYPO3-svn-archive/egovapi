@@ -98,7 +98,7 @@ class tx_egovapi_helpers_flexform {
 			/** @var tx_egovapi_domain_repository_viewRepository $viewRepository */
 			$viewRepository = tx_egovapi_domain_repository_factory::getRepository('view');
 
-			$items = array();
+			$allViews = array();
 			$ids = t3lib_div::intExplode(',', $this->settings['audiences'], TRUE);
 			foreach ($ids as $id) {
 				$audience = $audienceRepository->findById($id);
@@ -108,8 +108,16 @@ class tx_egovapi_helpers_flexform {
 
 				$views = $viewRepository->findAll($audience);
 				foreach ($views as $view) {
-					$items[] = array(sprintf('%s - %s', $view->getId(), $view->getName()), $view->getId());
+					$allViews[] = $view;
 				}
+			}
+
+			// Sort by view name
+			tx_egovapi_helpers_objects::sort($allViews, 'name');
+
+			$items = array();
+			foreach ($allViews as $view) {
+				$items[] = array(sprintf('%s - %s', $view->getId(), $view->getName()), $view->getId());
 			}
 			$settings['items'] = array_merge($settings['items'], $items);
 		}
@@ -131,7 +139,7 @@ class tx_egovapi_helpers_flexform {
 			/** @var tx_egovapi_domain_repository_domainRepository $domainRepository */
 			$domainRepository = tx_egovapi_domain_repository_factory::getRepository('domain');
 
-			$items = array();
+			$allDomains = array();
 			$ids = t3lib_div::trimExplode(',', $this->settings['views'], TRUE);
 			foreach ($ids as $id) {
 				$view = $viewRepository->findById($id);
@@ -141,8 +149,16 @@ class tx_egovapi_helpers_flexform {
 
 				$domains = $domainRepository->findAll($view);
 				foreach ($domains as $domain) {
-					$items[] = array(sprintf('%s - %s', $domain->getId(), $domain->getName()), $domain->getId());
+					$allDomains[] = $domain;
 				}
+			}
+
+			// Sort by domain name
+			tx_egovapi_helpers_objects::sort($allDomains, 'name');
+
+			$items = array();
+			foreach ($allDomains as $domain) {
+				$items[] = array(sprintf('%s - %s', $domain->getId(), $domain->getName()), $domain->getId());
 			}
 			$settings['items'] = array_merge($settings['items'], $items);
 		}
@@ -165,7 +181,7 @@ class tx_egovapi_helpers_flexform {
 			/** @var tx_egovapi_domain_repository_topicRepository $topicRepository */
 			$topicRepository = tx_egovapi_domain_repository_factory::getRepository('topic');
 
-			$items = array();
+			$allTopics = array();
 			$ids = t3lib_div::trimExplode(',', $this->settings['domains'], TRUE);
 			foreach ($ids as $id) {
 				$domain = $domainRepository->findById($id);
@@ -175,8 +191,16 @@ class tx_egovapi_helpers_flexform {
 
 				$topics = $topicRepository->findAll($domain);
 				foreach ($topics as $topic) {
-					$items[] = array(sprintf('%s - %s', $topic->getId(), $topic->getName()), $topic->getId());
+					$allTopics[] = $topic;
 				}
+			}
+
+			// Sort by topic name
+			tx_egovapi_helpers_objects::sort($allTopics, 'name');
+
+			$items = array();
+			foreach ($allTopics as $topic) {
+				$items[] = array(sprintf('%s - %s', $topic->getId(), $topic->getName()), $topic->getId());
 			}
 			$settings['items'] = array_merge($settings['items'], $items);
 		}
@@ -199,7 +223,7 @@ class tx_egovapi_helpers_flexform {
 			/** @var tx_egovapi_domain_repository_serviceRepository $serviceRepository */
 			$serviceRepository = tx_egovapi_domain_repository_factory::getRepository('service');
 
-			$items = array();
+			$allServices = array();
 			$ids = t3lib_div::trimExplode(',', $this->settings['topics'], TRUE);
 			foreach ($ids as $id) {
 				$topic = $topicRepository->findById($id);
@@ -209,8 +233,17 @@ class tx_egovapi_helpers_flexform {
 
 				$services = $serviceRepository->findAll($topic);
 				foreach ($services as $service) {
-					$items[] = array(sprintf('%s - %s', $service->getId(), $service->getName()), $service->getId());
+					$allServices[] = $service;
 				}
+
+			}
+
+			// Sort by service name
+			tx_egovapi_helpers_objects::sort($allServices, 'name');
+
+			$items = array();
+			foreach ($allServices as $service) {
+				$items[] = array(sprintf('%s - %s', $service->getId(), $service->getName()), $service->getId());
 			}
 			$settings['items'] = array_merge($settings['items'], $items);
 		}
@@ -275,6 +308,7 @@ class tx_egovapi_helpers_flexform {
 				$mapping = array();
 			}
 
+			$allServices = array();
 			$ids = t3lib_div::trimExplode(',', $this->settings['topics'], TRUE);
 			foreach ($ids as $id) {
 				$topic = $topicRepository->findById($id);
@@ -285,18 +319,24 @@ class tx_egovapi_helpers_flexform {
 				$serviceIds = t3lib_div::trimExplode(',', $this->settings['services'], TRUE);
 				foreach ($serviceIds as $serviceId) {
 					$service = $serviceRepository->getByTopicAndIdAndVersion($topic, $serviceId);
-					$version = isset($mapping[$serviceId]) ? $mapping[$serviceId] : '';
-					if (!$service) {
-						continue;
+					if ($service) {
+						$allServices[] = $service;
 					}
-
-					$output .= '<tr class="db_list_normal">';
-					$output .= '<td>' . $service->getId() . '</td>';
-					$output .= '<td>' . $service->getVersionId() . '</td>';
-					$output .= '<td><input type="text" value="' . $version . '" onchange="egovapi_updateVersionMapping(\'' . $service->getId() . '\', this.value)" size="6" maxlength="6" /></td>';
-					$output .= '<td>' . $service->getName() . '</td>';
-					$output .= '</tr>';
 				}
+			}
+
+			// Sort by service name
+			tx_egovapi_helpers_objects::sort($allServices, 'name');
+
+			foreach ($allServices as $service) {
+				$version = isset($mapping[$service->getId()]) ? $mapping[$service->getId()] : '';
+
+				$output .= '<tr class="db_list_normal">';
+				$output .= '<td>' . $service->getId() . '</td>';
+				$output .= '<td>' . $service->getVersionId() . '</td>';
+				$output .= '<td><input type="text" value="' . $version . '" onchange="egovapi_updateVersionMapping(\'' . $service->getId() . '\', this.value)" size="6" maxlength="6" /></td>';
+				$output .= '<td>' . $service->getName() . '</td>';
+				$output .= '</tr>';
 			}
 
 			$output .= '

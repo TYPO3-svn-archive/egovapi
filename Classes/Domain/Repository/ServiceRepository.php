@@ -66,6 +66,7 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 
 		self::$servicesByTopic[$id] = array();
 		$servicesDao = $this->dao->getServices($id);
+
 		foreach ($servicesDao as $serviceDao) {
 			/** @var tx_egovapi_domain_model_service $service */
 			$service = t3lib_div::makeInstance('tx_egovapi_domain_model_service', $serviceDao['id']);
@@ -88,6 +89,7 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 				->setAction($serviceDao['action'])
 				->setStatus($serviceDao['status'])
 			;
+
 			$serviceKey = $service->getId() . '-' . $service->getVersionId();
 			self::$servicesByTopic[$id][$serviceKey] = $service;
 			self::$servicesByTopic[$id][$service->getId()] = $service;
