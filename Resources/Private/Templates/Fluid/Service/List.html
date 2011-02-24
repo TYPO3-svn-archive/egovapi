@@ -4,8 +4,7 @@
 	<f:for each="{services}" as="service">
 		<li>
 			{service.id}:
-			{service.name} [v.{service.versionId}]
-			(<f:link.action action="service" arguments="{topic: service.topic.id, service: service.id, mode: 'single'}" pageUid="{targets.service.singlePid}">details</f:link.action>)
+			<f:link.action action="service" arguments="{topic: service.topic.id, service: service.id, mode: 'single'}" pageUid="{targets.service.singlePid}">{service.name}</f:link.action> [v.{service.versionId}]
 		</li>
 	</f:for>
 </ul>
