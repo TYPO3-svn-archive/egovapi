@@ -516,7 +516,7 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 		$this->subparts['TOPIC_LINK_DETAIL'] = $this->getLinkSingleParts($topic);
 		$this->subparts['SERVICE_LINK_TOPICS'] = $this->getParentLevelLinkParts('topic', 'domain', $topic->getDomain()->getId());
 		$this->subparts['SERVICE_LINK_TOPIC'] = $this->getParentLevelLinkParts('domain', 'domain', $topic->getDomain()->getId(), 'single');
-		$this->subparts['SERVICE_LINK_SERVICES'] = $this->getParentLevelLinkParts('service', 'topic', $topic->getId());
+		$this->subparts['SERVICE_LINK_SERVICES'] = $this->getParentLevelLinkParts('service', 'domain', $topic->getDomain()->getId());
 
 			// If parent level is not allowed and target for parent list or single mode
 			// is the same as current page, then remove content of HAS_PARENT subpart
