@@ -6,10 +6,21 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 
 .tx-egovapi-pi1 {
 	font-family: Verdana,Arial,Helvetica,sans-serif;
-	font-size: 10pt;
+	font-size: 100%;
+	text-align: justify;
+	width: 100%;
+}
+
+.tx-egovapi-pi1 h2 {
+	margin: 1em 0 0 0;
+}
+
+.tx-egovapi-pi1 .block_number {
+	display:none;
 }
 
 .tx-egovapi-pi1 .service_id {
+	font-size: 50%;
 	display: none;
 }
 
@@ -54,6 +65,10 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 
 .tx-egovapi-pi1 .clear {
 	clear: both;
+}
+
+.tx-egovapi-pi1 .back_to_list {
+	margin: 1em 0 0 0;
 }
 
 )
