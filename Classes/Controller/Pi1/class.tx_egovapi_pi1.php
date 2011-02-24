@@ -67,7 +67,11 @@ class tx_egovapi_pi1 extends tslib_pibase {
 		}
 
 		if ($this->debug) {
-			t3lib_utility_Debug::debug($this->conf, 'Settings of ' . $this->prefixId);
+			if (t3lib_div::int_from_ver(TYPO3_version) < 4005000) {
+				t3lib_div::debug($this->conf, 'Settings of ' . $this->prefixId);
+			} else {
+				t3lib_utility_Debug::debug($this->conf, 'Settings of ' . $this->prefixId);
+			}
 		}
 
 		$start = microtime(TRUE);
