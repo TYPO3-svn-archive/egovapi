@@ -117,7 +117,7 @@ class tx_egovapi_domain_model_block_legalRegulationItem {
 	 */
 	public function __toString() {
 		if ($this->uri) {
-			return sprintf('%s: <a href="%s">%s</a>', $this->name, $this->uri, $this->description);
+			return sprintf('<a href="%s">%s</a>: %s', $this->uri, $this->name, $this->description);
 		} else {
 			return sprintf('%s: %s', $this->name, $this->description);
 		}

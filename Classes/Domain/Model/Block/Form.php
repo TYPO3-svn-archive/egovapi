@@ -116,7 +116,7 @@ class tx_egovapi_domain_model_block_form {
 	 * @return string
 	 */
 	public function __toString() {
-		return sprintf('%s: %s (<a href="%s">%s</a>)', $this->name, $this->description, $this->uri, $this->uri);
+		return sprintf('<a href="%s">%s</a>: %s', $this->uri, $this->name, $this->description);
 	}
 
 }

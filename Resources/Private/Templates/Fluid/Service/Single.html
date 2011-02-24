@@ -61,10 +61,8 @@
 	<h2 class="tx_egovapi_block_forms"><span class="block_number">5.</span> <f:translate key="block_forms">Form(s)</f:translate></h2>
 	<dl>
 		<f:for each="{service.forms.items}" as="item">
-			<dt>{item.name}</dt>
-			<dd>
-				<f:link.external uri="{item.uri}">{item.description}</f:link.external>
-			</dd>
+			<dt><f:link.external uri="{item.uri}">{item.name}</f:link.external></dt>
+			<dd>{item.description}</dd>
 		</f:for>
 	</dl>
 	<div class="clear"></div>
@@ -99,10 +97,8 @@
 	<h2 class="tx_egovapi_block_legalRegulation"><span class="block_number">9.</span> <f:translate key="block_legal_regulation">Legal regulation</f:translate></h2>
 	<dl>
 		<f:for each="{service.legalRegulation.items}" as="item">
-			<dt>{item.name}</dt>
-			<dd>
-				<f:link.external uri="{item.uri}">{item.description}</f:link.external>
-			</dd>
+			<dt><f:link.external uri="{item.uri}">{item.name}</f:link.external></dt>
+			<dd>{item.description}</dd>
 		</f:for>
 	</dl>
 	<div class="clear"></div>
