@@ -1,8 +1,9 @@
 2011-02-24  Xavier Perseguers  <xavier@causal.ch>
 
+	* Raised version to 0.8.0 (first release to TER)
 	* Added class on h1 in list mode
 	* Updated documentation with information about RealURL autoconfiguration
-	* Fixed blank page when activating debug in TYPO3 4.4
+	* Fixed blank page when activating debug in TYPO3 < 4.5
 	* Changed link position for form documents/legal regulation items
 	* Slightly restructured documentation, started Tutorial chapter
 
