@@ -133,20 +133,22 @@
 	<h2 class="tx_egovapi_block_contact"><span class="block_number">13.</span> <f:translate key="block_contact">Contact</f:translate></h2>
 	<div class="tx_egovapi_block_contact">
 		<div class="half left">
-			<img src="{service.contact.logo}" alt="{service.contact.office}" /><br />
+			<div class="tx_egovapi_block_contact_logo"><img src="{service.contact.logo}" alt="{service.contact.office}" /></div>
 
-			{service.contact.department}<br />
-			{service.contact.office}<br />
-			{service.contact.address}<br />
-			{service.contact.postalCode} {service.contact.municipality}<br />
-			<br />
+			<div class="tx_egovapi_block_contact_office">{service.contact.office}</div>
+			<div class="tx_egovapi_block_contact_department">{service.contact.department}</div>
+			<div class="tx_egovapi_block_contact_address">{service.contact.address}</div>
+			<div class="tx_egovapi_block_contact_pcl">
+				<span class="tx_egovapi_block_contact_postalCode">{service.contact.postalCode}</span>
+				<span class="tx_egovapi_block_contact_municipality">{service.contact.municipality}</span>
+			</div>
 
-			Tel: {service.contact.phone1}<br />
-			Fax: {service.contact.fax}<br />
-			<f:link.email email="{service.contact.email}">{service.contact.email}</f:link.email>
+			<div class="tx_egovapi_block_contact_phone1">Tel: {service.contact.phone1}</div>
+			<div class="tx_egovapi_block_contact_fax">Fax: {service.contact.fax}</div>
+			<div class="tx_egovapi_block_contact_email"><f:link.email email="{service.contact.email}">{service.contact.email}</f:link.email></div>
 		</div>
 		<div class="half left">
-			<f:format.html>{service.contact.openingHours}</f:format.html>
+			<div class="tx_egovapi_block_contact_openingHours"><f:format.html>{service.contact.openingHours}</f:format.html></div>
 		</div>
 		<div class="clear"></div>
 	</div>
