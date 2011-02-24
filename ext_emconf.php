@@ -11,7 +11,7 @@
 ########################################################################
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'eGov CH API',
+	'title' => 'eGov API',
 	'description' => 'Official implementation of the swiss eGov Remote API that allows to access the Ref application from SECO which hosts and provides administrative services.',
 	'category' => 'plugin',
 	'author' => 'Xavier Perseguers',
