@@ -471,7 +471,7 @@ class tx_egovapi_helpers_flexform {
 				if (is_array($tempArr)) {
 					$c = 0;
 					foreach ($tempArr as $values) {
-						if ($c == $v)	{
+						if ($c == $v) {
 							$tempArr = $values;
 							break;
 						}
