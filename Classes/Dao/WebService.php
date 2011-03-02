@@ -541,7 +541,7 @@ class tx_egovapi_dao_webService {
 			'eCHapiMethod' => $method,
 			'eCHlanguageID' => strtoupper($this->settings['eCHlanguageID']),
 			'eCHcommunityID' => $communityId,
-			'eCHmunicipalityID' => $this->settings['eCHmunicipalityID'],
+			'organizationID' => $this->settings['organizationID'],
 		);
 		$parameters = array_merge($parameters, $additionalParameters);
 

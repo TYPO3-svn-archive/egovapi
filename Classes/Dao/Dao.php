@@ -82,7 +82,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	public function updateSettings(array $settings) {
 		if ($this->settings['eCHlanguageID'] === $settings['eCHlanguageID']
 			&& $this->settings['eCHcommunityID'] === $settings['eCHcommunityID']
-			&& $this->settings['eCHmunicipalityID'] === $settings['eCHmunicipalityID']) {
+			&& $this->settings['organizationID'] === $settings['organizationID']) {
 
 				return;
 		}
@@ -134,7 +134,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			'method'       => 'audiences',
 			'language'     => strtoupper($this->settings['eCHlanguageID']),
 			'community'    => $this->settings['eCHcommunityID'],
-			'municipality' => $this->settings['eCHmunicipalityID'],
+			'organization' => $this->settings['organizationID'],
 		));
 
 		$audiences = $this->getCacheData($cacheKey);
@@ -163,7 +163,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			'audience'     => $audienceId,
 			'language'     => strtoupper($this->settings['eCHlanguageID']),
 			'community'    => $this->settings['eCHcommunityID'],
-			'municipality' => $this->settings['eCHmunicipalityID'],
+			'organization' => $this->settings['organizationID'],
 		));
 
 		$views = $this->getCacheData($cacheKey);
@@ -192,7 +192,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			'view'         => $viewId,
 			'language'     => strtoupper($this->settings['eCHlanguageID']),
 			'community'    => $this->settings['eCHcommunityID'],
-			'municipality' => $this->settings['eCHmunicipalityID'],
+			'organization' => $this->settings['organizationID'],
 		));
 
 		$domains = $this->getCacheData($cacheKey);
@@ -225,7 +225,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			'isParent'     => $isParent,
 			'language'     => strtoupper($this->settings['eCHlanguageID']),
 			'community'    => $this->settings['eCHcommunityID'],
-			'municipality' => $this->settings['eCHmunicipalityID'],
+			'organization' => $this->settings['organizationID'],
 		));
 
 		$details = $this->getCacheData($cacheKey);
@@ -254,7 +254,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			'domain'       => $domainId,
 			'language'     => strtoupper($this->settings['eCHlanguageID']),
 			'community'    => $this->settings['eCHcommunityID'],
-			'municipality' => $this->settings['eCHmunicipalityID'],
+			'organization' => $this->settings['organizationID'],
 		));
 
 		$topics = $this->getCacheData($cacheKey);
@@ -287,7 +287,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			'isParent'     => $isParent,
 			'language'     => strtoupper($this->settings['eCHlanguageID']),
 			'community'    => $this->settings['eCHcommunityID'],
-			'municipality' => $this->settings['eCHmunicipalityID'],
+			'organization' => $this->settings['organizationID'],
 		));
 
 		$details = $this->getCacheData($cacheKey);
@@ -316,7 +316,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			'topic'        => $topicId,
 			'language'     => strtoupper($this->settings['eCHlanguageID']),
 			'community'    => $this->settings['eCHcommunityID'],
-			'municipality' => $this->settings['eCHmunicipalityID'],
+			'organization' => $this->settings['organizationID'],
 		));
 
 		$services = $this->getCacheData($cacheKey);
@@ -347,7 +347,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			'version'      => $versionId,
 			'language'     => strtoupper($this->settings['eCHlanguageID']),
 			'community'    => $this->settings['eCHcommunityID'],
-			'municipality' => $this->settings['eCHmunicipalityID'],
+			'organization' => $this->settings['organizationID'],
 		));
 
 		$details = $this->getCacheData($cacheKey);

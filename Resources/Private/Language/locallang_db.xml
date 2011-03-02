@@ -17,7 +17,7 @@
 
 			<label index="constants.eCHlanguageID">Language of the web service's data: de = Deutsch, en = English, fr = Français, it = Italiano, rm = Rumantsch</label>
 			<label index="constants.eCHcommunityID">Community</label>
-			<label index="constants.eCHmunicipalityID">Municipality ID: Identifier of the municipality (e.g., 99001=Swiss Confederation, 00619=Oberdiessbach, 02196=Fribourg)</label>
+			<label index="constants.organizationID">Organization ID: Identifier of the oganization (e.g., 99001=Swiss Confederation, 00619=Oberdiessbach, 02196=Fribourg)</label>
 			<label index="constants.useFluid">Use Fluid as rendering engine</label>
 			<label index="constants.enableDebug">Enable debugging information: Provide additional information with error messages. 3rd party devLog extension may be required for full support</label>
 			<label index="constants.wsdl.global">WSDL for the eGov API: URL of the eGov API web service</label>
@@ -70,7 +70,7 @@
 
 			<label index="constants.eCHlanguageID">Langue des données du web service: de = Deutsch, en = English, fr = Français, it = Italiano, rm = Rumantsch</label>
 			<label index="constants.eCHcommunityID">Communauté</label>
-			<label index="constants.eCHmunicipalityID">ID municipalité : Identifiant de la municipalité (p. ex. 99001=Confédération, 00619=Oberdiessbach, 02196=Fribourg)</label>
+			<label index="constants.organizationID">ID organisation : Identifiant de l'organisation (p. ex. 99001=Confédération, 00619=Oberdiessbach, 02196=Fribourg)</label>
 			<label index="constants.useFluid">Utiliser Fluid comme moteur de rendu</label>
 			<label index="constants.enableDebug">Activer les informations de déboguage: Fournit des informations supplémentaires aec les messages d'erreur. Une extension tierce devLog peut être nécessaire pour un support complet</label>
 			<label index="constants.wsdl.global">WSDL de l'API eGov: URL du web service</label>

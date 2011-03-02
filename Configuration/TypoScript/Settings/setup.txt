@@ -1,7 +1,7 @@
 plugin.tx_egovapi_pi1 {
 	eCHlanguageID     = {$plugin.tx_egovapi.eCHlanguageID}
 	eCHcommunityID    = {$plugin.tx_egovapi.eCHcommunityID}
-	eCHmunicipalityID = {$plugin.tx_egovapi.eCHmunicipalityID}
+	organizationID    = {$plugin.tx_egovapi.organizationID}
 
 	wsdl              = {$plugin.tx_egovapi.wsdl}
 	cacheLifetime     =

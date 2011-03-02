@@ -5,8 +5,8 @@ plugin.tx_egovapi {
 		# customsubcategory=service=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.subcategories.service; cat=plugin.tx_egovapi/service/a; type=user[EXT:egovapi/Classes/Helpers/Constants.php:&tx_egovapi_helpers_constants->getCommunities]; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.eCHcommunityID
 	eCHcommunityID =
 
-		#cat=plugin.tx_egovapi/service/b; type=small; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.eCHmunicipalityID
-	eCHmunicipalityID =
+		#cat=plugin.tx_egovapi/service/b; type=small; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.organizationID
+	organizationID =
 
 		# customsubcategory=api=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.subcategories.api; cat=plugin.tx_egovapi/api; type=string; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdl
 	wsdl =

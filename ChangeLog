@@ -1,3 +1,7 @@
+2011-03-02  Xavier Perseguers  <xavier@causal.ch>
+
+	* Renamed eCHmunicipalityID into organizationID
+
 2011-02-25  Xavier Perseguers  <xavier@causal.ch>
 
 	* Updated documentation

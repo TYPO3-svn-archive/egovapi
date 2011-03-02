@@ -51,7 +51,7 @@ class tx_egovapi_helpers_ts {
 
 			// Preprocess the global parameters
 		$globalParameters = array(
-			'eCHlanguageID', 'eCHcommunityID', 'eCHmunicipalityID',
+			'eCHlanguageID', 'eCHcommunityID', 'organizationID',
 			'wsdl', 'cacheLifetime', 'useFluid', 'enableDebug', 'showRenderTime',
 			'includeCHServices', 'displayLevels', 'level', 'mode',
 			'audiences', 'views', 'domains', 'topics', 'services',
@@ -65,6 +65,13 @@ class tx_egovapi_helpers_ts {
 				$settings[$parameter] = $cObj->stdWrap($settings[$parameter], $settings[$parameter . '.']);
 				unset($settings[$parameter . '.']);
 			}
+		}
+
+			// TODO: remove this check with release 1.0.0
+		if (isset($settings['eCHmunicipalityID']) && !isset($settings['communityID'])) {
+			t3lib_div::deprecationLog('This TYPO3 installation uses deprecated parameter eCHmunicipalityID. Please use the official parameter communityID instead.');
+			$settings['communityID'] = $settings['eCHmunicipalityID'];
+			unset($settings['eCHmunicipalityID']);
 		}
 
 			// Preprocess the display blocks
