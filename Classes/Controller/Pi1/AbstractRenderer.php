@@ -455,7 +455,7 @@ abstract class tx_egovapi_controller_pi1_abstractRenderer {
 				}
 
 				// Force services to be always sorted by name
-				tx_egovapi_helpers_objects::sort($services, 'name');
+				tx_egovapi_utility_objects::sort($services, 'name');
 
 				// In most case there should be only one topic selected
 				// Give direct access to first one

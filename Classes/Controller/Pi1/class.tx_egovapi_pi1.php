@@ -154,7 +154,7 @@ class tx_egovapi_pi1 extends tslib_pibase {
 		$this->conf = t3lib_div::array_merge_recursive_overrule($this->conf, $settings, FALSE, FALSE);
 
 			// Basically process stdWrap over all global parameters
-		$this->conf = tx_egovapi_helpers_ts::preprocessConfiguration($this->cObj, $this->conf);
+		$this->conf = tx_egovapi_utility_ts::preprocessConfiguration($this->cObj, $this->conf);
 
 			// Add current language to avoid caching problems
 		$this->conf['language'] = $GLOBALS['TSFE']->lang;
@@ -252,7 +252,7 @@ class tx_egovapi_pi1 extends tslib_pibase {
 		}
 
 			// Merge configuration with business logic and local override TypoScript (myTS)
-		$this->conf = tx_egovapi_helpers_ts::getMergedConfiguration($this->conf, $this->parameters, $GLOBALS['TSFE']->tmpl->setup);
+		$this->conf = tx_egovapi_utility_ts::getMergedConfiguration($this->conf, $this->parameters, $GLOBALS['TSFE']->tmpl->setup);
 
 		if ($this->conf['wsdl']) {
 			$dao = tx_egovapi_domain_repository_factory::getDao();

@@ -2,7 +2,7 @@ plugin.tx_egovapi {
 		# cat=plugin.tx_egovapi/language; type=options[de,en,fr,it,rm]; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.eCHlanguageID
 	eCHlanguageID = en
 
-		# customsubcategory=service=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.subcategories.service; cat=plugin.tx_egovapi/service/a; type=user[EXT:egovapi/Classes/Helpers/Constants.php:&tx_egovapi_helpers_constants->getCommunities]; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.eCHcommunityID
+		# customsubcategory=service=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.subcategories.service; cat=plugin.tx_egovapi/service/a; type=user[EXT:egovapi/Classes/Utility/Constants.php:&tx_egovapi_utility_constants->getCommunities]; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.eCHcommunityID
 	eCHcommunityID =
 
 		#cat=plugin.tx_egovapi/service/b; type=small; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.organizationID

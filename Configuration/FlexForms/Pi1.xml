@@ -102,7 +102,7 @@
 							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.audiences</label>
 							<config>
 								<type>select</type>
-								<itemsProcFunc>tx_egovapi_helpers_flexform->getAudiences</itemsProcFunc>
+								<itemsProcFunc>tx_egovapi_utility_flexform->getAudiences</itemsProcFunc>
 								<size>8</size>
 								<maxitems>999</maxitems>
 								<multiple>1</multiple>
@@ -177,7 +177,7 @@
 							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.views</label>
 							<config>
 								<type>select</type>
-								<itemsProcFunc>tx_egovapi_helpers_flexform->getViews</itemsProcFunc>
+								<itemsProcFunc>tx_egovapi_utility_flexform->getViews</itemsProcFunc>
 								<size>10</size>
 								<maxitems>999</maxitems>
 								<multiple>1</multiple>
@@ -252,7 +252,7 @@
 							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.domains</label>
 							<config>
 								<type>select</type>
-								<itemsProcFunc>tx_egovapi_helpers_flexform->getDomains</itemsProcFunc>
+								<itemsProcFunc>tx_egovapi_utility_flexform->getDomains</itemsProcFunc>
 								<size>10</size>
 								<maxitems>999</maxitems>
 								<multiple>1</multiple>
@@ -365,7 +365,7 @@
 							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.topics</label>
 							<config>
 								<type>select</type>
-								<itemsProcFunc>tx_egovapi_helpers_flexform->getTopics</itemsProcFunc>
+								<itemsProcFunc>tx_egovapi_utility_flexform->getTopics</itemsProcFunc>
 								<size>15</size>
 								<maxitems>999</maxitems>
 								<multiple>1</multiple>
@@ -479,7 +479,7 @@
 							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.services</label>
 							<config>
 								<type>select</type>
-								<itemsProcFunc>tx_egovapi_helpers_flexform->getServices</itemsProcFunc>
+								<itemsProcFunc>tx_egovapi_utility_flexform->getServices</itemsProcFunc>
 								<size>20</size>
 								<maxitems>9999</maxitems>
 								<multiple>1</multiple>
@@ -624,7 +624,7 @@
 							<label>LLL:EXT:egovapi/Resources/Private/Language/locallang.xml:pi_flexform.versions.mapping</label>
 							<config>
 								<type>user</type>
-								<userFunc>tx_egovapi_helpers_flexform->getVersionWizard</userFunc>
+								<userFunc>tx_egovapi_utility_flexform->getVersionWizard</userFunc>
 							</config>
 						</TCEforms>
 					</versions_flex>
