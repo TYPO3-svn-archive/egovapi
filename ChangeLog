@@ -1,5 +1,6 @@
 2011-03-07  Xavier Perseguers  <xavier@causal.ch>
 
+	* Added fallback for web service parameter eCHmunicipalityID
 	* Updated documentation with inclusion of static template
 
 2011-03-02  Xavier Perseguers  <xavier@causal.ch>

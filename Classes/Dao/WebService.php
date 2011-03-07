@@ -360,10 +360,12 @@ class tx_egovapi_dao_webService {
 	public function getServices($topicId) {
 		if ($this->settings['includeCHServices'] && $this->settings['eCHcommunityID'] !== '00-00') {
 			$servicesCommunity = $this->_getServices($topicId, FALSE);
-			$servicesCH = $this->_getServices($topicId, TRUE);
 			$services = $servicesCommunity;
-			foreach ($servicesCH as $service) {
-				$services[] = $service;
+			$servicesCH = $this->_getServices($topicId, TRUE);
+			if (is_array($servicesCH)) {
+				foreach ($servicesCH as $service) {
+					$services[] = $service;
+				}
 			}
 		} else {
 			$services = $this->_getServices($topicId, FALSE);
@@ -542,6 +544,8 @@ class tx_egovapi_dao_webService {
 			'eCHlanguageID' => strtoupper($this->settings['eCHlanguageID']),
 			'eCHcommunityID' => $communityId,
 			'organizationID' => $this->settings['organizationID'],
+			// TODO: remove this when organizationID is really what is used with stable web service
+			'eCHmunicipalityID' => $this->settings['organizationID'],
 		);
 		$parameters = array_merge($parameters, $additionalParameters);
 
