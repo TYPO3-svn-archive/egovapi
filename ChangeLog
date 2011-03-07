@@ -1,5 +1,6 @@
 2011-03-07  Xavier Perseguers  <xavier@causal.ch>
 
+	* Raised version to 0.9.0
 	* Added fallback for web service parameter eCHmunicipalityID
 	* Updated documentation with inclusion of static template
 
