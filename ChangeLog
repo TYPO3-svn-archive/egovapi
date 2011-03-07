@@ -1,3 +1,7 @@
+2011-03-07  Xavier Perseguers  <xavier@causal.ch>
+
+	* Updated documentation with inclusion of static template
+
 2011-03-02  Xavier Perseguers  <xavier@causal.ch>
 
 	* Refactored Helper classes to be part of Utility namespace
