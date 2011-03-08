@@ -33,13 +33,15 @@
 <f:if condition="{showGeneralInformation}">
 	<!-- General information -->
 	<h2 class="tx_egovapi_block_generalInformation"><span class="block_number">2.</span> <f:translate key="block_general_information">General information</f:translate></h2>
-	<f:format.html>{service.generalInformation}</f:format.html>
+	<div class="tx_egovapi_block_generalInformation">
+		<f:format.html>{service.generalInformation}</f:format.html>
+	</div>
 </f:if>
 
 <f:if condition="{showPrerequisites}">
 	<!-- Prerequisites -->
 	<h2 class="tx_egovapi_block_prerequisites"><span class="block_number">3.</span> <f:translate key="block_prerequisites">Prerequisites</f:translate></h2>
-	<ul>
+	<ul class="tx_egovapi_block_prerequisites">
 		<f:for each="{service.prerequisites.items}" as="item">
 			<li>{item.description}</li>
 		</f:for>
@@ -49,7 +51,7 @@
 <f:if condition="{showProcedure}">
 	<!-- Procedure -->
 	<h2 class="tx_egovapi_block_procedure"><span class="block_number">4.</span> <f:translate key="block_procedure">Procedure</f:translate></h2>
-	<ol>
+	<ol class="tx_egovapi_block_procedure">
 		<f:for each="{service.procedure.items}" as="item">
 			<li>{item.description}</li>
 		</f:for>
@@ -59,7 +61,7 @@
 <f:if condition="{showForms}">
 	<!-- Forms -->
 	<h2 class="tx_egovapi_block_forms"><span class="block_number">5.</span> <f:translate key="block_forms">Form(s)</f:translate></h2>
-	<dl>
+	<dl class="tx_egovapi_block_forms">
 		<f:for each="{service.forms.items}" as="item">
 			<dt><f:link.external uri="{item.uri}">{item.name}</f:link.external></dt>
 			<dd>{item.description}</dd>
@@ -71,7 +73,7 @@
 <f:if condition="{showDocumentsRequired}">
 	<!-- Documents required -->
 	<h2 class="tx_egovapi_block_documentsRequired"><span class="block_number">6.</span> <f:translate key="block_documents_required">Document required</f:translate></h2>
-	<dl>
+	<dl class="tx_egovapi_block_documentsRequired">
 		<f:for each="{service.documentsRequired.items}" as="item">
 			<dt>{item.name}</dt>
 			<dd>{item.description}</dd>
@@ -83,7 +85,7 @@
 <f:if condition="{showServiceProvided}">
 	<!-- Service provided -->
 	<h2 class="tx_egovapi_block_serviceProvided"><span class="block_number">7.</span> <f:translate key="block_service_provided">Service provided</f:translate></h2>
-	<p>{service.serviceProvided}</p>
+	<p class="tx_egovapi_block_serviceProvided">{service.serviceProvided}</p>
 </f:if>
 
 <f:if condition="{showFee}">
@@ -95,7 +97,7 @@
 <f:if condition="{showLegalRegulation}">
 	<!-- Legal regulation -->
 	<h2 class="tx_egovapi_block_legalRegulation"><span class="block_number">9.</span> <f:translate key="block_legal_regulation">Legal regulation</f:translate></h2>
-	<dl>
+	<dl class="tx_egovapi_block_legalRegulation">
 		<f:for each="{service.legalRegulation.items}" as="item">
 			<dt><f:link.external uri="{item.uri}">{item.name}</f:link.external></dt>
 			<dd>{item.description}</dd>
@@ -107,7 +109,7 @@
 <f:if condition="{showDocumentsOther}">
 	<!-- Other documents -->
 	<h2 class="tx_egovapi_block_documentsOther"><span class="block_number">10.</span> <f:translate key="block_documents_other">Other documents</f:translate></h2>
-	<dl>
+	<dl class="tx_egovapi_block_documentsOther">
 		<f:for each="{service.documentsOther.items}" as="item">
 			<dt>{item.name}</dt>
 			<dd>{item.description}</dd>
@@ -119,13 +121,13 @@
 <f:if condition="{showRemarks}">
 	<!-- Remarks -->
 	<h2 class="tx_egovapi_block_remarks"><span class="block_number">11.</span> <f:translate key="block_remarks">Remarks</f:translate></h2>
-	<p>{service.remarks}</p>
+	<p class="tx_egovapi_block_remarks">{service.remarks}</p>
 </f:if>
 
 <f:if condition="{showApproval}">
 	<!-- Approval -->
 	<h2 class="tx_egovapi_block_approval"><span class="block_number">12.</span> <f:translate key="block_approval">Approval</f:translate></h2>
-	<p>{service.approval}</p>
+	<p class="tx_egovapi_block_approval">{service.approval}</p>
 </f:if>
 
 <f:if condition="{showContact}">
@@ -155,7 +157,7 @@
 </f:if>
 
 <f:if condition="{hasParent}">
-	<p>
+	<p class="tx_egovapi_backToList">
 		<f:link.action action="service" arguments="{topic: service.topic.id, mode: 'list'}" pageUid="{targets.service.listPid}"><f:translate key="action_back_to_list">Back to list</f:translate></f:link.action>
 	</p>
 </f:if>

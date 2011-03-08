@@ -5,19 +5,23 @@
 <f:if condition="{showGeneralInformation}">
 	<!-- General information -->
 	<h2 class="tx_egovapi_block_generalInformation"><f:translate key="block_general_information">General information</f:translate></h2>
-	<f:format.html>{topic.generalInformation}</f:format.html>
+	<div class="tx_egovapi_block_generalInformation">
+		<f:format.html>{topic.generalInformation}</f:format.html>
+	</div>
 </f:if>
 
 <f:if condition="{showNews}">
 	<!-- News -->
 	<h2 class="tx_egovapi_block_news"><f:translate key="block_news">News</f:translate></h2>
-	<f:format.html>{topic.news}</f:format.html>
+	<div class="tx_egovapi_block_news">
+		<f:format.html>{topic.news}</f:format.html>
+	</div>
 </f:if>
 
 <f:if condition="{showSubtopics}">
 	<!-- Subtopics -->
 	<h2 class="tx_egovapi_block_subtopics"><f:translate key="block_subtopics">Subtopics</f:translate></h2>
-	<ul>
+	<ul class="tx_egovapi_block_subtopics">
 		<f:for each="{topic.subtopics.items}" as="item">
 			<li>{item}</li>
 		</f:for>
@@ -27,17 +31,16 @@
 <f:if condition="{showDescriptor}">
 	<!-- Descriptor -->
 	<h2 class="tx_egovapi_block_descriptors"><f:translate key="block_descriptors">Descriptors</f:translate></h2>
-	<p>{topic.descriptor}</p>
+	<p class="tx_egovapi_block_descriptors">{topic.descriptor}</p>
 </f:if>
 
 <f:if condition="{showSynonym}">
 	<!-- Synonym -->
 	<h2 class="tx_egovapi_block_synonyms"><f:translate key="block_synonyms">Synonyms</f:translate></h2>
-	<p>{topic.synonym}</p>
+	<p class="tx_egovapi_block_synonyms">{topic.synonym}</p>
 </f:if>
 
 <h2 class="tx_egovapi_services"><f:translate key="header_services">Services</f:translate></h2>
-
 <ul class="tx_egovapi_services">
 	<f:for each="{topic.services}" as="service">
 		<li>

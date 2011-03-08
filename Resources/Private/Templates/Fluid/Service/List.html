@@ -3,8 +3,7 @@
 <ul class="tx_egovapi_services">
 	<f:for each="{services}" as="service">
 		<li>
-			{service.id}:
-			<f:link.action action="service" arguments="{topic: service.topic.id, service: service.id, mode: 'single'}" pageUid="{targets.service.singlePid}">{service.name}</f:link.action> [v.{service.versionId}]
+			<f:link.action action="service" arguments="{topic: service.topic.id, service: service.id, mode: 'single'}" pageUid="{targets.service.singlePid}">{service.name}</f:link.action> [{service.id}]
 		</li>
 	</f:for>
 </ul>

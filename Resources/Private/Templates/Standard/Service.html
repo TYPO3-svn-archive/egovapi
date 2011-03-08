@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+$<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>Standard eGov API Template</title>
@@ -14,8 +14,7 @@
 <ul class="tx_egovapi_services">
 	<!-- ###SERVICE### [begin] -->
 	<li>
-		###SERVICE_ID###:
-		<!-- ###SERVICE_LINK_DETAIL### -->###SERVICE_NAME###<!-- ###SERVICE_LINK_DETAIL### --> [v.###SERVICE_VERSION_ID###]
+		<!-- ###SERVICE_LINK_DETAIL### -->###SERVICE_NAME###<!-- ###SERVICE_LINK_DETAIL### --> [###SERVICE_ID###] <!-- ###SERVICE_VERSION_ID### -->
 	</li>
 	<!-- ###SERVICE### [end] -->
 </ul>
@@ -23,7 +22,7 @@
 <!-- ###SERVICES### [end] -->
 
 <!-- ###HAS_PARENT### [begin] -->
-<p>
+<p class="tx_egovapi_backToList">
 	<!-- ###SERVICE_LINK_TOPICS### -->###ACTION_BACK_TO_LIST###<!-- ###SERVICE_LINK_TOPICS### -->
 </p>
 <!-- ###HAS_PARENT### [end] -->
@@ -74,57 +73,79 @@
 
 <!-- ###SHOW_GENERAL_INFORMATION### [begin] -->
 <h2 class="tx_egovapi_block_generalInformation"><span class="block_number">2.</span> ###BLOCK_GENERAL_INFORMATION###</h2>
-###SERVICE_GENERAL_INFORMATION###
+<div class="tx_egovapi_block_generalInformation">
+	###SERVICE_GENERAL_INFORMATION###
+</div>
 <!-- ###SHOW_GENERAL_INFORMATION### [end] -->
 
 <!-- ###SHOW_PREREQUISITES### [begin] -->
 <h2 class="tx_egovapi_block_prerequisites"><span class="block_number">3.</span> ###BLOCK_PREREQUISITES###</h2>
-###SERVICE_PREREQUISITES###
+<div class="tx_egovapi_block_prerequisites">
+	###SERVICE_PREREQUISITES###
+</div>
 <!-- ###SHOW_PREREQUISITES### [end] -->
 
 <!-- ###SHOW_PROCEDURE### [begin] -->
 <h2 class="tx_egovapi_block_procedure"><span class="block_number">4.</span> ###BLOCK_PROCEDURE###</h2>
-###SERVICE_PROCEDURE###
+<div class="tx_egovapi_block_procedure">
+	###SERVICE_PROCEDURE###
+</div>
 <!-- ###SHOW_PROCEDURE### [end] -->
 
 <!-- ###SHOW_FORMS### [begin] -->
 <h2 class="tx_egovapi_block_forms"><span class="block_number">5.</span> ###BLOCK_FORMS###</h2>
-###SERVICE_FORMS###
+<div class="tx_egovapi_block_forms">
+	###SERVICE_FORMS###
+</div>
 <!-- ###SHOW_FORMS### [end] -->
 
 <!-- ###SHOW_DOCUMENTS_REQUIRED### [begin] -->
 <h2 class="tx_egovapi_block_documentsRequired"><span class="block_number">6.</span> ###BLOCK_DOCUMENTS_REQUIRED###</h2>
-###SERVICE_DOCUMENTS_REQUIRED###
+<div class="tx_egovapi_block_documentsRequired">
+	###SERVICE_DOCUMENTS_REQUIRED###
+</div>
 <!-- ###SHOW_DOCUMENTS_REQUIRED### [end] -->
 
 <!-- ###SHOW_SERVICE_PROVIDED### [begin] -->
 <h2 class="tx_egovapi_block_serviceProvided"><span class="block_number">7.</span> ###BLOCK_SERVICE_PROVIDED###</h2>
-###SERVICE_SERVICE_PROVIDED###
+<div class="tx_egovapi_block_serviceProvided">	
+	###SERVICE_SERVICE_PROVIDED###
+</div>
 <!-- ###SHOW_SERVICE_PROVIDED### [end] -->
 
 <!-- ###SHOW_FEE### [begin] -->
 <h2 class="tx_egovapi_block_fee"><span class="block_number">8.</span> ###BLOCK_FEE###</h2>
-###SERVICE_FEE###
+<div class="tx_egovapi_block_fee">
+	###SERVICE_FEE###
+</div>
 <!-- ###SHOW_FEE### [end] -->
 
 <!-- ###SHOW_LEGAL_REGULATION### [begin] -->
 <h2 class="tx_egovapi_block_legalRegulation"><span class="block_number">9.</span> ###BLOCK_LEGAL_REGULATION###</h2>
-###SERVICE_LEGAL_REGULATION###
+<div class="tx_egovapi_block_legalRegulation">
+	###SERVICE_LEGAL_REGULATION###
+</div>
 <!-- ###SHOW_LEGAL_REGULATION### [end] -->
 
 <!-- ###SHOW_DOCUMENTS_OTHER### [begin] -->
 <h2 class="tx_egovapi_block_documentsOther"><span class="block_number">10.</span> ###BLOCK_DOCUMENTS_OTHER###</h2>
-###SERVICE_DOCUMENTS_OTHER###
+<div class="tx_egovapi_block_documentsOther">
+	###SERVICE_DOCUMENTS_OTHER###
+</div>
 <!-- ###SHOW_DOCUMENTS_OTHER### [end] -->
 
 <!-- ###SHOW_REMARKS### [begin] -->
 <h2 class="tx_egovapi_block_remarks"><span class="block_number">11.</span> ###BLOCK_REMARKS###</h2>
-###SERVICE_REMARKS###
+<div class="tx_egovapi_block_remarks">
+	###SERVICE_REMARKS###
+</div>
 <!-- ###SHOW_REMARKS### [end] -->
 
 <!-- ###SHOW_APPROVAL### [begin] -->
 <h2 class="tx_egovapi_block_approval"><span class="block_number">12.</span> ###BLOCK_APPROVAL###</h2>
-###SERVICE_APPROVAL###
+<div class="tx_egovapi_block_approval">
+	###SERVICE_APPROVAL###
+</div>
 <!-- ###SHOW_APPROVAL### [end] -->
 
 <!-- ###SHOW_CONTACT### [begin] -->
@@ -153,7 +174,7 @@
 <!-- ###SHOW_CONTACT### [end] -->
 
 <!-- ###SHOW_BACK_TO_LIST### [begin] -->
-<p>
+<p class="tx_egovapi_backToList">
 	<!-- ###SERVICE_LINK_SERVICES### -->###ACTION_BACK_TO_LIST###<!-- ###SERVICE_LINK_SERVICES### -->
 </p>
 <!-- ###SHOW_BACK_TO_LIST### [end] -->
