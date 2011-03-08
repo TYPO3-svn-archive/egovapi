@@ -1,3 +1,7 @@
+2011-03-08  Xavier Perseguers  <xavier@causal.ch>
+
+	* Fixed minor glitches in the documentation when rendered as HTML on TER
+
 2011-03-07  Xavier Perseguers  <xavier@causal.ch>
 
 	* Raised version to 0.9.0
