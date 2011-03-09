@@ -441,11 +441,12 @@ class tx_egovapi_dao_webService {
 		$serviceDetails = $this->callEgovApi('GetServiceDetail', array(
 			'eCHserviceID' => $serviceId,
 			'eCHserviceVersionID' => $versionId,
-			'eCHserviceBlock' => implode(',', $this->array_range(2, 13)),
+			'eCHserviceBlock' => implode(',', $this->array_range(1, 13)),
 		));
 		if (is_array($serviceDetails['eCHserviceDetail'])) {
 			$serviceDetails = $serviceDetails['eCHserviceDetail'];
 			$blocks = array(
+				'infoBlock'               => 'serviceInfo',
 				'generalInformationBlock' => 'generalInformation',
 				'prerequisiteBlock'       => 'prerequisite',
 				'procedureBlock'          => 'procedure',
@@ -459,11 +460,32 @@ class tx_egovapi_dao_webService {
 				'approbationBlock'        => 'approbation',
 				'contactBlock'            => 'contact',
 			);
+
 			foreach ($blocks as $block => $key) {
 				if (isset($serviceDetails[$block])) {
 					$details[$block] = @$serviceDetails[$block][$key];
 				}
 			}
+
+			$info = array(
+				'id' => $this->getValue($details['infoBlock'], 'eCHserviceID'),
+				'name' => $this->getValue($details['infoBlock'], 'eCHservice'),
+				'description' => $this->getValue($details['infoBlock'], 'description'),
+				'versionId' => $this->getValue($details['infoBlock'], 'eCHserviceVersionID'),
+				'versionName' => $this->getValue($details['infoBlock'], 'eCHserviceVersionName'),
+				'communityId' => $this->getValue($details['infoBlock'], 'eCHcommunityID'),
+				'release' => $this->getValue($details['infoBlock'], 'release'),
+				'remarks' => $this->getValue($details['infoBlock'], 'remark'),
+				'provider' => $this->getValue($details['infoBlock'], 'eCHserviceProvider'),
+				'customer' => $this->getValue($details['infoBlock'], 'eCHcustomer'),
+				'type' => $this->getValue($details['infoBlock'], 'eCHserviceType'),
+				'action' => $this->getValue($details['infoBlock'], 'eCHaction'),
+				'status' => $this->getValue($details['infoBlock'], 'eCHstatus'),
+				'author' => $this->getValue($details['infoBlock'], 'author'),
+				'dateCreation' => $this->getValue($details['infoBlock'], 'createdDate'),
+				'dateLastModification' => $this->getValue($details['infoBlock'], 'lastModificationDate'),
+			);
+			$details['infoBlock'] = $info;
 
 			if (is_array($details['prerequisiteBlock']) && !isset($details['prerequisiteBlock'][0])) {
 				$details['prerequisiteBlock'] = array($details['prerequisiteBlock']);

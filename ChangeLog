@@ -1,5 +1,6 @@
 2011-03-09  Xavier Perseguers  <xavier@causal.ch>
 
+	* Added feature #13710: Allow a service or a list of services to be specified by TypoScript
 	* Updated screenshots in documentation
 
 2011-03-08  Xavier Perseguers  <xavier@causal.ch>

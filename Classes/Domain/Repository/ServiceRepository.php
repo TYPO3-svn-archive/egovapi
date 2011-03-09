@@ -103,6 +103,46 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 	}
 
 	/**
+	 * Finds a service by id and version.
+	 *
+	 * @param string $id
+	 * @param integer $version
+	 * @return tx_egovapi_domain_model_service
+	 */
+	protected function findOneByIdAndVersion($id, $version) {
+		$details = $this->dao->getServiceDetails($id, $version);
+
+		if (!$details) {
+			return NULL;
+		}
+
+		$serviceDao = $details['infoBlock'];
+
+		/** @var tx_egovapi_domain_model_service $service */
+		$service = t3lib_div::makeInstance('tx_egovapi_domain_model_service', $serviceDao['id']);
+
+		$service
+			->setAuthor($serviceDao['author'])
+			->setCreationDate(strtotime($serviceDao['dateCreation']))
+			->setLastModificationDate(strtotime($serviceDao['dateLastModification']))
+			->setName($serviceDao['name'])
+			->setDescription($serviceDao['description'])
+			->setVersionId(intval($serviceDao['versionId']))
+			->setVersionName($serviceDao['versionName'])
+			->setCommunityId($serviceDao['communityId'])
+			->setRelease(intval($serviceDao['release']))
+			->setComments($serviceDao['remarks'])
+			->setProvider($serviceDao['provider'])
+			->setCustomer($serviceDao['customer'])
+			->setType($serviceDao['type'])
+			->setAction($serviceDao['action'])
+			->setStatus($serviceDao['status'])
+		;
+
+		return $service;
+	}
+
+	/**
 	 * Gets a service identified by its id.
 	 *
 	 * @param tx_egovapi_domain_model_topic $topic
@@ -112,6 +152,7 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 	 * @throws Exception
 	 */
 	public function getByTopicAndIdAndVersion(tx_egovapi_domain_model_topic $topic, $id, $version = 0) {
+		// TODO: should $version be taken into account for findAll()?
 		$services = $this->findAll($topic, TRUE);
 		if ($version) {
 			$serviceKey = $id . '-' . $version;
@@ -121,6 +162,18 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 		$service = isset($services[$serviceKey]) ? $services[$serviceKey] : null;
 
 		return $service;
+	}
+
+	/**
+	 * Gets a service identified by its id.
+	 *
+	 * @param string $id Format XXXXX
+	 * @param integer $version Set to 0 to use default version
+	 * @return tx_egovapi_domain_model_service
+	 * @throws Exception
+	 */
+	public function getByIdAndVersion($id, $version = 0) {
+		return $this->findOneByIdAndVersion($id, $version);
 	}
 
 	/**

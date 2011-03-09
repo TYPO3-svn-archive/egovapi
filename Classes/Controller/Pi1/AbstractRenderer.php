@@ -435,12 +435,21 @@ abstract class tx_egovapi_controller_pi1_abstractRenderer {
 					$services = array();
 					$ids = t3lib_div::trimExplode(',', $this->settings['services']);
 					foreach ($ids as $id) {
-						foreach ($topics as $topic) {
+						if (count($topics) > 0) {
+							foreach ($topics as $topic) {
+								$version = isset($this->settings['versions.'][$id]) ? $this->settings['versions.'][$id] : 0;
+								$service = $serviceRepository->getByTopicAndIdAndVersion($topic, $id, $version);
+								if ($service) {
+									$services[] = $service;
+									break;
+								}
+							}
+						} elseif ($id) {
+							// Try to get the service solely using its ID
 							$version = isset($this->settings['versions.'][$id]) ? $this->settings['versions.'][$id] : 0;
-							$service = $serviceRepository->getByTopicAndIdAndVersion($topic, $id, $version);
+							$service = $serviceRepository->getByIdAndVersion($id, $version);
 							if ($service) {
 								$services[] = $service;
-								break;
 							}
 						}
 					}
@@ -486,12 +495,18 @@ abstract class tx_egovapi_controller_pi1_abstractRenderer {
 					$topics[] = $topic;
 				}
 				$service = null;
-				foreach ($topics as $topic) {
-					$version = isset($this->settings['versions.'][$id]) ? $this->settings['versions.'][$id] : 0;
-					$service = $serviceRepository->getByTopicAndIdAndVersion($topic, $id, $version);
-					if ($service) {
-						break;
+				if (count($topics) > 0) {
+					foreach ($topics as $topic) {
+						$version = isset($this->settings['versions.'][$id]) ? $this->settings['versions.'][$id] : 0;
+						$service = $serviceRepository->getByTopicAndIdAndVersion($topic, $id, $version);
+						if ($service) {
+							break;
+						}
 					}
+				} elseif ($id) {
+					// Try to get the service solely using its ID
+					$version = isset($this->settings['versions.'][$id]) ? $this->settings['versions.'][$id] : 0;
+					$service = $serviceRepository->getByIdAndVersion($id, $version);
 				}
 
 				$this->prepareServiceSingle($service);
