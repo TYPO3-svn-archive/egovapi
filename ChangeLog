@@ -1,5 +1,6 @@
 2011-03-10  Xavier Perseguers  <xavier@causal.ch>
 
+	* Added PDF version of the documentation
 	* Allowed HTML in blocks fee and remarks
 	* Fixed exception when using LIST mode (feature #13710)
 	* Integrated suggestion #13731: Documentation corrections
