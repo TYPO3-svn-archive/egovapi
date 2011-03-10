@@ -14,7 +14,8 @@ $<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/
 <ul class="tx_egovapi_services">
 	<!-- ###SERVICE### [begin] -->
 	<li>
-		<!-- ###SERVICE_LINK_DETAIL### -->###SERVICE_NAME###<!-- ###SERVICE_LINK_DETAIL### --> [###SERVICE_ID###] <!-- ###SERVICE_VERSION_ID### -->
+		<span class="tx_egovapi_serviceName"><!-- ###SERVICE_LINK_DETAIL### -->###SERVICE_NAME###<!-- ###SERVICE_LINK_DETAIL### --></span>
+		<span class="tx_egovapi_serviceId">[###SERVICE_ID###]</span> <!-- ###SERVICE_VERSION_ID### -->
 	</li>
 	<!-- ###SERVICE### [end] -->
 </ul>
@@ -44,28 +45,28 @@ $<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/
 <h1 class="tx_egovapi_service"><span class="block_number">1.</span> ###SERVICE_NAME### <span class="service_id">(###SERVICE_ID###)</span></h1>
 
 <table class="tx_egovapi_block_header">
-	<tr>
-		<td>###COMMON_SERVICE_ID###</td>
+	<tr class="tx_egovapi_serviceId">
+		<th>###COMMON_SERVICE_ID###</th>
 		<td>###SERVICE_ID###</td>
 	</tr>
-	<tr>
-		<td>###COMMON_VERSION_ID###</td>
+	<tr class="tx_egovapi_serviceVersionId">
+		<th>###COMMON_VERSION_ID###</th>
 		<td>###SERVICE_VERSION_ID###</td>
 	</tr>
-	<tr>
-		<td>###COMMON_VERSION_NAME###</td>
+	<tr class="tx_egovapi_serviceVersionName">
+		<th>###COMMON_VERSION_NAME###</th>
 		<td>###SERVICE_VERSION_NAME###</td>
 	</tr>
-	<tr>
-		<td>###COMMON_LAST_MODIFICATION_DATE###</td>
+	<tr class="tx_egovapi_serviceLastModificationDate">
+		<th>###COMMON_LAST_MODIFICATION_DATE###</th>
 		<td>###SERVICE_LAST_MODIFICATION_DATE###</td>
 	</tr>
-	<tr>
-		<td>###COMMON_PROVIDER###</td>
+	<tr class="tx_egovapi_serviceProvider">
+		<th>###COMMON_PROVIDER###</th>
 		<td>###SERVICE_PROVIDER###</td>
 	</tr>
-	<tr>
-		<td>###COMMON_CUSTOMER###</td>
+	<tr class="tx_egovapi_serviceCustomer">
+		<th>###COMMON_CUSTOMER###</th>
 		<td>###SERVICE_CUSTOMER###</td>
 	</tr>
 </table>
