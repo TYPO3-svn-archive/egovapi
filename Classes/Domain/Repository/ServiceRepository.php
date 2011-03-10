@@ -49,7 +49,10 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 	 * @param boolean $withKey
 	 * @return tx_egovapi_domain_model_service[]
 	 */
-	public function findAll(tx_egovapi_domain_model_topic $topic, $withKey = FALSE) {
+	public function findAll(tx_egovapi_domain_model_topic $topic = NULL, $withKey = FALSE) {
+		if ($topic === NULL) {
+			throw new InvalidArgumentException('Topic cannot be null. This may be related to the use of an unsupported language for the web service.', 1299746874);
+		}
 		$id = $topic->getId();
 		if (isset(self::$servicesByTopic[$id])) {
 			if (!$withKey) {

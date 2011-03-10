@@ -48,7 +48,10 @@ class tx_egovapi_domain_repository_domainRepository extends tx_egovapi_domain_re
 	 * @param tx_egovapi_domain_model_view $view
 	 * @return tx_egovapi_domain_model_domain[]
 	 */
-	public function findAll(tx_egovapi_domain_model_view $view) {
+	public function findAll(tx_egovapi_domain_model_view $view = NULL) {
+		if ($view === NULL) {
+			throw new InvalidArgumentException('View cannot be null. This may be related to the use of an unsupported language for the web service.', 1299746714);
+		}
 		$id = $view->getId();
 		if (isset(self::$domainsByView[$id])) {
 			return self::$domainsByView[$id];

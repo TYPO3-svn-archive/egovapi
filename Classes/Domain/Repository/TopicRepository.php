@@ -48,7 +48,10 @@ class tx_egovapi_domain_repository_topicRepository extends tx_egovapi_domain_rep
 	 * @param tx_egovapi_domain_model_domain $domain
 	 * @return tx_egovapi_domain_model_topic[]
 	 */
-	public function findAll(tx_egovapi_domain_model_domain $domain) {
+	public function findAll(tx_egovapi_domain_model_domain $domain = NULL) {
+		if ($domain === NULL) {
+			throw new InvalidArgumentException('Domain cannot be null. This may be related to the use of an unsupported language for the web service.', 1299746830);
+		}
 		$id = $domain->getId();
 		if (isset(self::$topicsByDomain[$id])) {
 			return self::$topicsByDomain[$id];

@@ -1,5 +1,6 @@
 2011-03-10  Xavier Perseguers  <xavier@causal.ch>
 
+	* Added exception handling when unsupported language is used
 	* Updated step-by-step tutorial in documentation
 	* Added CSS classes to standard templates
 
