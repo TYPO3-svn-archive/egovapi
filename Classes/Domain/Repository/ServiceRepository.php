@@ -253,7 +253,7 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 		if (isset($detailsDao['feeBlock']) && $detailsDao['feeBlock']) {
 			/** @var tx_egovapi_domain_model_block_fee $fee */
 			$fee = t3lib_div::makeInstance('tx_egovapi_domain_model_block_fee');
-			$fee->setContent(strip_tags($detailsDao['feeBlock']));
+			$fee->setContent($detailsDao['feeBlock']);
 			$service->setFee($fee);
 		}
 		if (isset($detailsDao['legalRegulationBlock']) && is_array($detailsDao['legalRegulationBlock'])) {
@@ -284,7 +284,7 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 		if (isset($detailsDao['remarkBlock']) && $detailsDao['remarkBlock']) {
 			/** @var tx_egovapi_domain_model_block_remarks $remarks */
 			$remarks = t3lib_div::makeInstance('tx_egovapi_domain_model_block_remarks');
-			$remarks->setContent(strip_tags($detailsDao['remarkBlock']));
+			$remarks->setContent($detailsDao['remarkBlock']);
 			$service->setRemarks($remarks);
 		}
 		if (isset($detailsDao['approbationBlock']) && $detailsDao['approbationBlock']) {
