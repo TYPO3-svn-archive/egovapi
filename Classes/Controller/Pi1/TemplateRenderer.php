@@ -814,7 +814,7 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 			'mode' => 'single',
 		);
 
-		if ($level === 'service') {
+		if ($level === 'service' && $entity->getTopic() !== NULL) {
 			$params['topic'] = $entity->getTopic()->getId();
 		}
 
