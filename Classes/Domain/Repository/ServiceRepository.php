@@ -203,7 +203,13 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 			foreach ($detailsDao['prerequisiteBlock'] as $itemDao) {
 				/** @var tx_egovapi_domain_model_block_prerequisite $prerequisite */
 				$prerequisite = t3lib_div::makeInstance('tx_egovapi_domain_model_block_prerequisite');
-				$prerequisite->setDescription(strip_tags($itemDao['description']));
+
+				if ($this->stripTags) {
+					$prerequisite->setDescription(strip_tags($itemDao['description']));
+				} else {
+					$prerequisite->setDescription($itemDao['description']);
+				}
+
 				$prerequisites->addItem($prerequisite);
 			}
 			$service->setPrerequisites($prerequisites);
@@ -214,7 +220,13 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 			foreach ($detailsDao['procedureBlock'] as $itemDao) {
 				/** @var tx_egovapi_domain_model_block_procedureItem $procedureItem */
 				$procedureItem = t3lib_div::makeInstance('tx_egovapi_domain_model_block_procedureItem');
-				$procedureItem->setDescription(strip_tags($itemDao['description']));
+
+				if ($this->stripTags) {
+					$procedureItem->setDescription(strip_tags($itemDao['description']));
+				} else {
+					$procedureItem->setDescription($itemDao['description']);
+				}
+
 				$procedure->addItem($procedureItem);
 			}
 			$service->setProcedure($procedure);
@@ -225,9 +237,17 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 			foreach ($detailsDao['formularBlock'] as $itemDao) {
 				/** @var tx_egovapi_domain_model_block_form $form */
 				$form = t3lib_div::makeInstance('tx_egovapi_domain_model_block_form');
-				$form->setName(strip_tags($itemDao['formularName']));
-				$form->setDescription(strip_tags($itemDao['description']));
-				$form->setUri(strip_tags($itemDao['uri']));
+
+				if ($this->stripTags) {
+					$form->setName(strip_tags($itemDao['formularName']));
+					$form->setUri(strip_tags($itemDao['uri']));
+					$form->setDescription(strip_tags($itemDao['description']));
+				} else {
+					$form->setName($itemDao['formularName']);
+					$form->setUri($itemDao['uri']);
+					$form->setDescription($itemDao['description']);
+				}
+
 				$forms->addItem($form);
 			}
 			$service->setForms($forms);
@@ -238,8 +258,15 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 			foreach ($detailsDao['documentRequiredBlock'] as $itemDao) {
 				/** @var tx_egovapi_domain_model_block_document $document */
 				$document = t3lib_div::makeInstance('tx_egovapi_domain_model_block_document');
-				$document->setName(strip_tags($itemDao['documentName']));
-				$document->setDescription(strip_tags($itemDao['description']));
+
+				if ($this->stripTags) {
+					$document->setName(strip_tags($itemDao['documentName']));
+					$document->setDescription(strip_tags($itemDao['description']));
+				} else {
+					$document->setName($itemDao['documentName']);
+					$document->setDescription($itemDao['description']);
+				}
+
 				$documentsRequired->addItem($document);
 			}
 			$service->setDocumentsRequired($documentsRequired);
@@ -247,13 +274,25 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 		if (isset($detailsDao['resultBlock']) && $detailsDao['resultBlock']) {
 			/** @var tx_egovapi_domain_model_block_serviceProvided $serviceProvided */
 			$serviceProvided = t3lib_div::makeInstance('tx_egovapi_domain_model_block_serviceProvided');
-			$serviceProvided->setContent(strip_tags($detailsDao['resultBlock']));
+
+			if ($this->stripTags) {
+				$serviceProvided->setContent(strip_tags($detailsDao['resultBlock']));
+			} else {
+				$serviceProvided->setContent($detailsDao['resultBlock']);
+			}
+
 			$service->setServiceProvided($serviceProvided);
 		}
 		if (isset($detailsDao['feeBlock']) && $detailsDao['feeBlock']) {
 			/** @var tx_egovapi_domain_model_block_fee $fee */
 			$fee = t3lib_div::makeInstance('tx_egovapi_domain_model_block_fee');
-			$fee->setContent($detailsDao['feeBlock']);
+
+			if ($this->stripTags) {
+				$fee->setContent(strip_tags($detailsDao['feeBlock']));
+			} else {
+				$fee->setContent($detailsDao['feeBlock']);
+			}
+
 			$service->setFee($fee);
 		}
 		if (isset($detailsDao['legalRegulationBlock']) && is_array($detailsDao['legalRegulationBlock'])) {
@@ -262,9 +301,17 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 			foreach ($detailsDao['legalRegulationBlock'] as $itemDao) {
 				/** @var tx_egovapi_domain_model_block_legalRegulationItem $legalRegulationItem */
 				$legalRegulationItem = t3lib_div::makeInstance('tx_egovapi_domain_model_block_legalRegulationItem');
-				$legalRegulationItem->setName(strip_tags($itemDao['legalRegulationName']));
-				$legalRegulationItem->setDescription(strip_tags($itemDao['description']));
-				$legalRegulationItem->setUri(strip_tags($itemDao['uri']));
+
+				if ($this->stripTags) {
+					$legalRegulationItem->setName(strip_tags($itemDao['legalRegulationName']));
+					$legalRegulationItem->setDescription(strip_tags($itemDao['description']));
+					$legalRegulationItem->setUri(strip_tags($itemDao['uri']));
+				} else {
+					$legalRegulationItem->setName($itemDao['legalRegulationName']);
+					$legalRegulationItem->setDescription($itemDao['description']);
+					$legalRegulationItem->setUri($itemDao['uri']);
+				}
+
 				$legalRegulation->addItem($legalRegulationItem);
 			}
 			$service->setLegalRegulation($legalRegulation);
@@ -275,8 +322,15 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 			foreach ($detailsDao['documentOtherBlock'] as $itemDao) {
 				/** @var tx_egovapi_domain_model_block_document $document */
 				$document = t3lib_div::makeInstance('tx_egovapi_domain_model_block_document');
-				$document->setName(strip_tags($itemDao['documentName']));
-				$document->setDescription(strip_tags($itemDao['description']));
+
+				if ($this->stripTags) {
+					$document->setName(strip_tags($itemDao['documentName']));
+					$document->setDescription(strip_tags($itemDao['description']));
+				} else {
+					$document->setName($itemDao['documentName']);
+					$document->setDescription($itemDao['description']);
+				}
+
 				$documentsOther->addItem($document);
 			}
 			$service->setDocumentsOther($documentsOther);
@@ -290,7 +344,13 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 		if (isset($detailsDao['approbationBlock']) && $detailsDao['approbationBlock']) {
 			/** @var tx_egovapi_domain_model_block_approval $approval */
 			$approval = t3lib_div::makeInstance('tx_egovapi_domain_model_block_approval');
-			$approval->setContent(strip_tags($detailsDao['approbationBlock']));
+
+			if ($this->stripTags) {
+				$approval->setContent(strip_tags($detailsDao['approbationBlock']));
+			} else {
+				$approval->setContent($detailsDao['approbationBlock']);
+			}
+
 			$service->setApproval($approval);
 		}
 		if (isset($detailsDao['contactBlock']) && is_array($detailsDao['contactBlock'])) {

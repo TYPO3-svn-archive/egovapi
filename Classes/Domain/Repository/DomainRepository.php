@@ -132,7 +132,13 @@ class tx_egovapi_domain_repository_domainRepository extends tx_egovapi_domain_re
 		if (isset($detailsDao['newsBlock']) && $detailsDao['newsBlock']) {
 			/** @var tx_egovapi_domain_model_block_news $news */
 			$news = t3lib_div::makeInstance('tx_egovapi_domain_model_block_news');
-			$news->setContent(strip_tags($detailsDao['newsBlock']));
+
+			if ($this->stripTags) {
+				$news->setContent(strip_tags($detailsDao['newsBlock']));
+			} else {
+				$news->setContent($detailsDao['newsBlock']);
+			}
+
 			$domain->setNews($news);
 		}
 		if (isset($detailsDao['subdomainBlock']) && is_array($detailsDao['subdomainBlock'])) {
@@ -141,7 +147,13 @@ class tx_egovapi_domain_repository_domainRepository extends tx_egovapi_domain_re
 			foreach ($detailsDao['subdomainBlock'] as $itemDao) {
 				/** @var tx_egovapi_domain_model_block_subdomain $subdomain */
 				$subdomain = t3lib_div::makeInstance('tx_egovapi_domain_model_block_subdomain');
-				$subdomain->setContent(strip_tags($itemDao));
+
+				if ($this->stripTags) {
+					$subdomain->setContent(strip_tags($itemDao));
+				} else {
+					$subdomain->setContent($itemDao);
+				}
+
 				$subdomains->addItem($subdomain);
 			}
 			$domain->setSubdomains($subdomains);
@@ -149,13 +161,25 @@ class tx_egovapi_domain_repository_domainRepository extends tx_egovapi_domain_re
 		if (isset($detailsDao['descriptorBlock']) && $detailsDao['descriptorBlock']) {
 			/** @var tx_egovapi_domain_model_block_descriptor $descriptor */
 			$descriptor = t3lib_div::makeInstance('tx_egovapi_domain_model_block_descriptor');
-			$descriptor->setContent(strip_tags($detailsDao['descriptorBlock']));
+
+			if ($this->stripTags) {
+				$descriptor->setContent(strip_tags($detailsDao['descriptorBlock']));
+			} else {
+				$descriptor->setContent($detailsDao['descriptorBlock']);
+			}
+
 			$domain->setDescriptor($descriptor);
 		}
 		if (isset($detailsDao['synonymBlock']) && $detailsDao['synonymBlock']) {
 			/** @var tx_egovapi_domain_model_block_synonym $synonym */
 			$synonym = t3lib_div::makeInstance('tx_egovapi_domain_model_block_synonym');
-			$synonym->setContent(strip_tags($detailsDao['synonymBlock']));
+
+			if ($this->stripTags) {
+				$synonym->setContent(strip_tags($detailsDao['synonymBlock']));
+			} else {
+				$synonym->setContent($detailsDao['synonymBlock']);
+			}
+
 			$domain->setSynonym($synonym);
 		}
 

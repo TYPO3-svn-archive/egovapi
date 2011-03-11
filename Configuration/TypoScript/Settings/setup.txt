@@ -9,6 +9,9 @@ plugin.tx_egovapi_pi1 {
 	showRenderTime    = 1
 	enableDebug       = {$plugin.tx_egovapi.enableDebug}
 
+		# Deprecated: Strip HTML tags from many web service information block. Beware: Eventually this won't be configurable anymore and will always be active.
+	stripTags         = 1
+
 	includeCHServices = 1
 
 		# Default authorized levels

@@ -52,7 +52,7 @@ class tx_egovapi_utility_ts {
 			// Preprocess the global parameters
 		$globalParameters = array(
 			'eCHlanguageID', 'eCHcommunityID', 'organizationID',
-			'wsdl', 'cacheLifetime', 'useFluid', 'enableDebug', 'showRenderTime',
+			'wsdl', 'cacheLifetime', 'useFluid', 'enableDebug', 'showRenderTime', 'stripTags',
 			'includeCHServices', 'displayLevels', 'level', 'mode',
 			'audiences', 'views', 'domains', 'topics', 'services',
 		);

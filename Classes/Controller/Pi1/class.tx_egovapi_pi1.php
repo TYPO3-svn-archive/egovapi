@@ -259,6 +259,9 @@ class tx_egovapi_pi1 extends tslib_pibase {
 			$dao->updateSettings($this->conf);
 		}
 
+		$stripTags = isset($this->conf['stripTags']) ? $this->conf['stripTags'] : FALSE;
+		tx_egovapi_domain_repository_factory::setStripTags($stripTags);
+
 			// Fluid templates are only available since TYPO3 4.5
 		if (t3lib_div::int_from_ver(TYPO3_version) < 4005000) {
 			$this->conf['useFluid'] = 0;

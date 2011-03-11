@@ -41,6 +41,11 @@ class tx_egovapi_domain_repository_factory {
 	protected static $dao;
 
 	/**
+	 * @var boolean
+	 */
+	protected static $stripTags;
+
+	/**
 	 * Injects DAO.
 	 *
 	 * @param tx_egovapi_dao_dao $dao
@@ -60,6 +65,25 @@ class tx_egovapi_domain_repository_factory {
 	}
 
 	/**
+	 * Sets the stripTags flag.
+	 *
+	 * @param boolean $stripTags
+	 * @return void
+	 */
+	public static function setStripTags($stripTags) {
+		self::$stripTags = ($stripTags ? TRUE : FALSE);
+	}
+
+	/**
+	 * Gets the stripTags flag.
+	 *
+	 * @return boolean
+	 */
+	public static function getStripTags() {
+		return self::$stripTags;
+	}
+
+	/**
 	 * Returns a repository.
 	 *
 	 * @param string $name
@@ -68,8 +92,10 @@ class tx_egovapi_domain_repository_factory {
 	public static function getRepository($name) {
 		$classPattern = 'tx_egovapi_domain_repository_%sRepository';
 
+		/** @var $repository tx_egovapi_domain_repository_abstractRepository */
 		$repository = t3lib_div::makeInstance(sprintf($classPattern, $name));
 		$repository->injectDao(self::$dao);
+		$repository->setStripTags(self::$stripTags);
 
 		return $repository;
 	}

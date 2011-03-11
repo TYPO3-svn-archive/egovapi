@@ -1,3 +1,7 @@
+2011-03-11  Xavier Perseguers  <xavier@causal.ch>
+
+	* Added feature #13769: Many blocks have no more HTML when imported with the module
+
 2011-03-10  Xavier Perseguers  <xavier@causal.ch>
 
 	* Raised version to 1.0.0 (stable)
