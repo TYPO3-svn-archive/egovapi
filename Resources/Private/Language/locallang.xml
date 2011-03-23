@@ -149,6 +149,9 @@
 		     ****************************************************************************************************** -->
 
 		<languageKey index="de" type="array">
+			<label index="pi1_title">eGov API</label>
+			<label index="pi1_plus_wiz_description">Fügt ein Frontend Plugin ein, der Daten aus der eGov Web-Service zeigt.</label>
+
 			<label index="pi_flexform.sheet_general">Allgemein</label>
 			<label index="pi_flexform.sheet_audience">Publikum</label>
 			<label index="pi_flexform.sheet_view">View</label>
@@ -157,6 +160,14 @@
 			<label index="pi_flexform.sheet_service">Dienstleistung</label>
 			<label index="pi_flexform.sheet_version">Version</label>
 			<label index="pi_flexform.sheet_misc">Andere Optionen</label>
+			<label index="pi_flexform.sheet_audienceShortDescription">Konfiguration von der Publikumebene</label>
+			<label index="pi_flexform.sheet_viewShortDescription">Konfiguration von der Viewebene</label>
+			<label index="pi_flexform.sheet_domainShortDescription">Konfiguration von der Domänebene</label>
+			<label index="pi_flexform.sheet_topicShortDescription">Konfiguration von der Themaebene</label>
+			<label index="pi_flexform.sheet_serviceShortDescription">Konfiguration von der Dienstebene</label>
+			<label index="pi_flexform.sheet_versionDescription">Erweiterte Konfiguration von Dienstleistung-Versionen die verwendet werden sollen. Achtung: ungültige Konfiguration wird wahrscheinlich leer Dienste ergeben.</label>
+			<label index="pi_flexform.sheet_versionShortDescription">Konfiguration von den Dienstleistung-Versionen</label>
+			<label index="pi_flexform.sheet_saveToContinue">Änderungen auf diesem Formular werden Auswirkungen auf anderen Konfigurationblätter. Bitte speichern Sie Konfiguration, bevor zum nächsten Blatt.</label>
 
 			<label index="pi_flexform.displayLevels">Erlaubte Ansichtebene</label>
 			<label index="pi_flexform.displayLevels.AUDIENCE">Publikum</label>
@@ -194,6 +205,31 @@
 			<label index="pi_flexform.displayBlocks.SUBDOMAINS">4. Unterseiten</label>
 			<label index="pi_flexform.displayBlocks.SUBTOPICS">4. Unterseiten</label>
 			<label index="pi_flexform.displayBlocks.SYNONYM">6. Synonyme</label>
+			<label index="pi_flexform.templates.audienceLIST">Überschreibt Vorlage für die Liste der Publikum</label>
+			<label index="pi_flexform.templates.audienceSINGLE">Überschreibt Vorlage für Details einem Publikum</label>
+			<label index="pi_flexform.templates.viewLIST">Überschreibt Vorlage für die Liste der Views</label>
+			<label index="pi_flexform.templates.viewSINGLE">Überschreibt Vorlage für Details einer Thema</label>
+			<label index="pi_flexform.templates.domainLIST">Überschreibt Vorlage für die Liste der Domäne</label>
+			<label index="pi_flexform.templates.domainSINGLE">Überschreibt Vorlage für Details einer Domän</label>
+			<label index="pi_flexform.templates.topicLIST">Überschreibt Vorlage für die Liste der Themen</label>
+			<label index="pi_flexform.templates.topicSINGLE">Überschreibt Vorlage für Details einer Thema</label>
+			<label index="pi_flexform.templates.serviceLIST">Überschreibt Vorlage für die Liste der Dienstleistungen</label>
+			<label index="pi_flexform.templates.serviceSINGLE">Überschreibt Vorlage für Details einer Dienstleistung</label>
+			<label index="pi_flexform.versions.mapping">Dienst-Versionen erzwingen</label>
+			<label index="pi_flexform.versions.serviceId">Dienst ID</label>
+			<label index="pi_flexform.versions.version">Standardversion</label>
+			<label index="pi_flexform.versions.useVersion">Version zu verwenden</label>
+			<label index="pi_flexform.versions.description">Beschreibung</label>
+			<label index="pi_flexform.targets.list.audience">Zielseite für die Liste der Publikums</label>
+			<label index="pi_flexform.targets.list.view">Zielseite für die Liste der Views</label>
+			<label index="pi_flexform.targets.list.domain">Zielseite für die Liste der Domäne</label>
+			<label index="pi_flexform.targets.list.topic">Zielseite für die Liste der Themen</label>
+			<label index="pi_flexform.targets.list.service">Zielseite für die Liste der Dienstleistungen</label>
+			<label index="pi_flexform.targets.single.audience">Zielseite für Details einem Publikum</label>
+			<label index="pi_flexform.targets.single.view">Zielseite für Details einer Thema</label>
+			<label index="pi_flexform.targets.single.domain">Zielseite für Details einer Domän</label>
+			<label index="pi_flexform.targets.single.topic">Zielseite für Details einer Thema</label>
+			<label index="pi_flexform.targets.single.service">Zielseite für Details einer Dienstleistung</label>
 
 			<label index="header_audiences">Publikum</label>
 			<label index="header_audience">Publikum</label>
