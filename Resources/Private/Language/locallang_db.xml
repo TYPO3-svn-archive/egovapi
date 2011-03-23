@@ -73,12 +73,12 @@
 
 			<label index="constants.targets.list.audience">Zielseite für die Publikum: ID der Seite für Links zu einer Liste der Publikum zu verwenden</label>
 			<label index="constants.targets.list.view">Zielseite für Views: ID der Seite für Links zu einer Liste der Views zu verwenden</label>
-			<label index="constants.targets.list.domain">Zielseite für Domäne: ID der Seite für Links zu einer Liste der Domäne zu verwenden</label>
+			<label index="constants.targets.list.domain">Zielseite für Domänen: ID der Seite für Links zu einer Liste der Domäne zu verwenden</label>
 			<label index="constants.targets.list.topic">Zielseite für Themen: ID der Seite für Links zu einer Liste der Themen zu verwenden</label>
 			<label index="constants.targets.list.service">Zielseite für Dienstleistungen: ID der Seite für Links zu einer Liste der Dienstleistungen zu verwenden</label>
 			<label index="constants.targets.single.audience">Zielseite für das Publikum: ID der Seite für Links zu Details einer Publikum zu verwenden</label>
 			<label index="constants.targets.single.view">Zielseite für die View: ID der Seite für Links zu Details einer View zu verwenden</label>
-			<label index="constants.targets.single.domain">Zielseite für die Domän: ID der Seite für Links zu Details einer Domän zu verwenden</label>
+			<label index="constants.targets.single.domain">Zielseite für die Domäne: ID der Seite für Links zu Details einer Domäne zu verwenden</label>
 			<label index="constants.targets.single.topic">Zielseite für die Thema: ID der Seite für Links zu Details einer Thema zu verwenden</label>
 			<label index="constants.targets.single.service">Zielseite für die Dienstleistung: ID der Seite für Links zu Details einer Dienstleistung zu verwenden</label>
 		</languageKey>

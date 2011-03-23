@@ -209,8 +209,8 @@
 			<label index="pi_flexform.templates.audienceSINGLE">Überschreibt Vorlage für Details einem Publikum</label>
 			<label index="pi_flexform.templates.viewLIST">Überschreibt Vorlage für die Liste der Views</label>
 			<label index="pi_flexform.templates.viewSINGLE">Überschreibt Vorlage für Details einer Thema</label>
-			<label index="pi_flexform.templates.domainLIST">Überschreibt Vorlage für die Liste der Domäne</label>
-			<label index="pi_flexform.templates.domainSINGLE">Überschreibt Vorlage für Details einer Domän</label>
+			<label index="pi_flexform.templates.domainLIST">Überschreibt Vorlage für die Liste der Domänen</label>
+			<label index="pi_flexform.templates.domainSINGLE">Überschreibt Vorlage für Details einer Domäne</label>
 			<label index="pi_flexform.templates.topicLIST">Überschreibt Vorlage für die Liste der Themen</label>
 			<label index="pi_flexform.templates.topicSINGLE">Überschreibt Vorlage für Details einer Thema</label>
 			<label index="pi_flexform.templates.serviceLIST">Überschreibt Vorlage für die Liste der Dienstleistungen</label>
@@ -227,7 +227,7 @@
 			<label index="pi_flexform.targets.list.service">Zielseite für die Liste der Dienstleistungen</label>
 			<label index="pi_flexform.targets.single.audience">Zielseite für Details einem Publikum</label>
 			<label index="pi_flexform.targets.single.view">Zielseite für Details einer Thema</label>
-			<label index="pi_flexform.targets.single.domain">Zielseite für Details einer Domän</label>
+			<label index="pi_flexform.targets.single.domain">Zielseite für Details einer Domäne</label>
 			<label index="pi_flexform.targets.single.topic">Zielseite für Details einer Thema</label>
 			<label index="pi_flexform.targets.single.service">Zielseite für Details einer Dienstleistung</label>
 
@@ -235,7 +235,7 @@
 			<label index="header_audience">Publikum</label>
 			<label index="header_views">Views</label>
 			<label index="header_view">View</label>
-			<label index="header_domains">Domäne</label>
+			<label index="header_domains">Domänen</label>
 			<label index="header_domain">Domäne</label>
 			<label index="header_topics">Themen</label>
 			<label index="header_topic">Thema</label>

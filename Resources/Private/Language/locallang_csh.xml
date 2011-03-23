@@ -129,7 +129,7 @@
 			</label>
 
 			<!-- CSH for sheet Domain -->
-			<label index="domains.alttitle">Ausgewählte Domäne</label>
+			<label index="domains.alttitle">Ausgewählte Domänen</label>
 			<label index="domains.description">Ermöglicht Ihnen die Auswahl der Domains, die zur Verfügung stehen und in welcher Reihenfolge sie angezeigt werden soll.</label>
 			<label index="domains.details">
 				Immer wenn eine Liste von Domänen wird gezeigt oder Informationen über eine bestimmte Domäne beantragt wird (die Liste der Themen zum Beispiel), die Domains, die Sie ausgewählt haben, wird in Betracht gezogen werden, den Zugang zu denen, die nicht verfügbar sein zu beschränken.
