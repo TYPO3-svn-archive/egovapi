@@ -1,6 +1,8 @@
 2011-04-08  Xavier Perseguers  <xavier@causal.ch>
 
-	* Fixed bug #25846: Version wizard fails to save configuration on TYPO3 4.4
+	* [DOCUMENTATION] Update constant editor screenshot to reflect change of constant name
+	* [DOCUMENTATION] Fixed typo in cache configuration
+	* [BUGFIX] #25846: Version wizard fails to save configuration on TYPO3 4.4
 
 2011-03-23  Xavier Perseguers  <xavier@causal.ch>
 
