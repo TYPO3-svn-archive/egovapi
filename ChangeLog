@@ -1,5 +1,6 @@
 2011-04-08  Xavier Perseguers  <xavier@causal.ch>
 
+	* [BUGFIX] #25848: Service version is not taken into account
 	* [DOCUMENTATION] Update constant editor screenshot to reflect change of constant name
 	* [DOCUMENTATION] Fixed typo in cache configuration
 	* [BUGFIX] #25846: Version wizard fails to save configuration on TYPO3 4.4

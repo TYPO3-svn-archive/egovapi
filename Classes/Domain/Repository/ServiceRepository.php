@@ -146,7 +146,7 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 	}
 
 	/**
-	 * Gets a service identified by its id.
+	 * Gets a service identified by its topic, id and possibly version.
 	 *
 	 * @param tx_egovapi_domain_model_topic $topic
 	 * @param string $id Format XXXXX
@@ -155,7 +155,10 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 	 * @throws Exception
 	 */
 	public function getByTopicAndIdAndVersion(tx_egovapi_domain_model_topic $topic, $id, $version = 0) {
-		// TODO: should $version be taken into account for findAll()?
+		if ($version > 0) {
+			return $this->findOneByIdAndVersion($id, $version);
+		}
+
 		$services = $this->findAll($topic, TRUE);
 		if ($version) {
 			$serviceKey = $id . '-' . $version;
