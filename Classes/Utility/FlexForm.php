@@ -260,8 +260,10 @@ class tx_egovapi_utility_flexform {
 	 */
 	public function getVersionWizard(array $PA, t3lib_TCEforms $pObj) {
 		$this->initialize($PA);
-
 		$output = '';
+
+		// No real ID before TYPO3 4.5
+		$mappingFieldId = isset($PA['itemFormElID']) ? $PA['itemFormElID'] : $PA['itemFormElName'];
 
 		$GLOBALS['LANG']->includeLLFile('EXT:egovapi/Resources/Private/Language/locallang.xml');
 
@@ -269,7 +271,7 @@ class tx_egovapi_utility_flexform {
 			$output .= '
 				<script type="text/javascript">
 				function egovapi_updateVersionMapping(serviceId, versionId) {
-					var mappingField = document.getElementById("' . $PA['itemFormElID'] . '");
+					var mappingField = document.getElementById("' . $mappingFieldId . '");
 					var mapping = {};
 					if (mappingField.value.length > 0) {
 						mapping = JSON.parse(mappingField.value.replace(/\'/g, "\\""));
@@ -346,7 +348,7 @@ class tx_egovapi_utility_flexform {
 
 			// Create the hidden field that holds the actual mapping configuration
 		$attributes = array(
-			'id'       => $PA['itemFormElID'],
+			'id'       => $mappingFieldId,
 			'name'     => $PA['itemFormElName'],
 			'value'    => str_replace('"', '\'', $PA['itemFormElValue']),
 		);
