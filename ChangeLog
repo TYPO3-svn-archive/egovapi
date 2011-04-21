@@ -1,6 +1,10 @@
+2011-05-21  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Integrated Italian translation
+
 2011-04-08  Xavier Perseguers  <xavier@causal.ch>
 
-	* Raised version to 1.1.1
+	* [TASK] Raised version to 1.1.1
 	* [BUGFIX] #25848: Service version is not taken into account
 	* [DOCUMENTATION] Update constant editor screenshot to reflect change of constant name
 	* [DOCUMENTATION] Fixed typo in cache configuration
