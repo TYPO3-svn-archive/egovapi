@@ -36,6 +36,11 @@
 abstract class tx_egovapi_domain_repository_abstractRepository implements t3lib_Singleton {
 
 	/**
+	 * @var string
+	 */
+	protected static $extKey = 'egovapi';
+
+	/**
 	 * @var tx_egovapi_dao_dao
 	 */
 	protected $dao;

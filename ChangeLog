@@ -1,8 +1,12 @@
-2011-05-22  Xavier Perseguers  <xavier@causal.ch>
+2011-05-12  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Retrieving the list of communities using a CSV data file
+
+2011-04-22  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Raised version to 1.1.2
 
-2011-05-21  Xavier Perseguers  <xavier@causal.ch>
+2011-04-21  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Integrated Italian translation
 
