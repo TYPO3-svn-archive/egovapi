@@ -23,7 +23,7 @@
  ***************************************************************/
 
 /**
- * An eGov Community.
+ * An eGov Organization.
  *
  * @category    Domain\Model
  * @package     TYPO3
@@ -33,7 +33,17 @@
  * @license     http://www.gnu.org/copyleft/gpl.html
  * @version     SVN: $Id$
  */
-class tx_egovapi_domain_model_community extends tx_egovapi_domain_model_abstractEntity {
+class tx_egovapi_domain_model_organization extends tx_egovapi_domain_model_abstractEntity {
+
+	/**
+	 * @var string
+	 */
+	protected $canton;
+
+	/**
+	 * @var tx_egovapi_domain_model_community
+	 */
+	protected $community;
 
 	/**
 	 * @var string
@@ -41,18 +51,17 @@ class tx_egovapi_domain_model_community extends tx_egovapi_domain_model_abstract
 	protected $name;
 
 	/**
-	 * @var tx_egovapi_domain_model_organization[]
-	 */
-	protected $organizations = array();
-
-	/**
 	 * Default constructor.
 	 *
 	 * @param string $id
 	 * @param string $name
+	 * @param string $canton
+	 * @param tx_egovapi_domain_model_community $community
 	 */
-	public function __construct($id, $name = '') {
+	public function __construct($id, $name = '', $canton = '', tx_egovapi_domain_model_community $community = NULL) {
 		parent::__construct($id);
+		$this->canton = $canton;
+		$this->community = $community;
 		$this->name = $name;
 	}
 
@@ -69,7 +78,7 @@ class tx_egovapi_domain_model_community extends tx_egovapi_domain_model_abstract
 	 * Sets the name.
 	 *
 	 * @param string $name
-	 * @return tx_egovapi_domain_model_community the current Community to allow method chaining
+	 * @return tx_egovapi_domain_model_organization the current Organization to allow method chaining
 	 */
 	public function setName($name) {
 		$this->name = $name;
@@ -77,24 +86,50 @@ class tx_egovapi_domain_model_community extends tx_egovapi_domain_model_abstract
 	}
 
 	/**
-	 * Returns the organizations.
+	 * Returns the canton.
 	 *
-	 * @return tx_egovapi_domain_model_organization[]
+	 * @return string
 	 */
-	public function getOrganizations() {
-		if (!count($this->organizations)) {
-			/** @var $organizationRepository tx_egovapi_domain_repository_organizationRepository */
-			$organizationRepository = tx_egovapi_domain_repository_factory::getRepository('organization');
-			$this->organizations = $organizationRepository->findByCommunity($this);
-		}
-		return $this->organizations;
+	public function getCanton() {
+		return $this->canton;
+	}
+
+	/**
+	 * Sets the canton.
+	 *
+	 * @param string $canton
+	 * @return tx_egovapi_domain_model_organization the current Organization to allow method chaining
+	 */
+	public function setCanton($canton) {
+		$this->canton = $canton;
+		return $this;
+	}
+
+	/**
+	 * Returns the community.
+	 *
+	 * @return tx_egovapi_domain_model_community
+	 */
+	public function getCommunity() {
+		return $this->community;
+	}
+
+	/**
+	 * Sets the community.
+	 *
+	 * @param tx_egovapi_domain_model_community $community
+	 * @return tx_egovapi_domain_model_organization the current Organization to allow method chaining
+	 */
+	public function setCommunity(tx_egovapi_domain_model_community $community) {
+		$this->community = $community;
+		return $this;
 	}
 
 }
 
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/egovapi/Classes/Domain/Model/Community.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/egovapi/Classes/Domain/Model/Community.php']);
+if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/egovapi/Classes/Domain/Model/Organization.php']) {
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/egovapi/Classes/Domain/Model/Organization.php']);
 }
 
 ?>
