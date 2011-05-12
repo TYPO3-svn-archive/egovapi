@@ -69,6 +69,8 @@ class tx_egovapi_domain_repository_communityRepository extends tx_egovapi_domain
 	}
 
 	/**
+	 * Finds a community given its identifier.
+	 *
 	 * @param string $id
 	 * @return tx_egovapi_domain_model_community
 	 */
