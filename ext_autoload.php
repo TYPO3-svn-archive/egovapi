@@ -5,6 +5,7 @@ $extensionPath = t3lib_extMgm::extPath('egovapi');
 $classPath = $extensionPath . 'Classes/';
 
 return array(
+	'tx\egovapi\Controller\Pi2\demo' => $classPath . 'Controller/Pi2/demo.php',
 	'tx_egovapi_dao_cache' => $classPath . 'Dao/Cache.php',
 	'tx_egovapi_dao_dao' => $classPath . 'Dao/Dao.php',
 	'tx_egovapi_dao_webservice' => $classPath . 'Dao/WebService.php',
@@ -49,6 +50,8 @@ return array(
 	'tx_egovapi_domain_repository_servicerepository' => $classPath . 'Domain/Repository/ServiceRepository.php',
 	'tx_egovapi_domain_repository_topicrepository' => $classPath . 'Domain/Repository/TopicRepository.php',
 	'tx_egovapi_domain_repository_viewrepository' => $classPath . 'Domain/Repository/ViewRepository.php',
+	'tx_egovapi_pibase' => $classPath . 'Controller/class.tx_egovapi_pibase.php',
+	'tx_egovapi_utility_constants' => $classPath . 'Utility/Constants.php',
 	'tx_egovapi_utility_flexform' => $classPath . 'Utility/FlexForm.php',
 	'tx_egovapi_utility_objects' => $classPath . 'Utility/Objects.php',
 	'tx_egovapi_utility_ts' => $classPath . 'Utility/TypoScript.php',

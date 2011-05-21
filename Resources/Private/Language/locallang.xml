@@ -12,6 +12,8 @@
 		<languageKey index="default" type="array">
 			<label index="pi1_title">eGov API</label>
 			<label index="pi1_plus_wiz_description">Adds a frontend plugin showing data from the eGov web service.</label>
+			<label index="pi2_title">eGov API - Selector Form</label>
+			<label index="pi2_plus_wiz_description">Adds a frontend plugin showing a selector form for the eGov web service.</label>
 
 			<label index="pi_flexform.sheet_general">General</label>
 			<label index="pi_flexform.sheet_audience">Audience</label>
@@ -92,6 +94,8 @@
 			<label index="pi_flexform.targets.single.topic">Target page for details of a topic</label>
 			<label index="pi_flexform.targets.single.service">Target page for details of a service</label>
 
+			<label index="header_community">Community</label>
+			<label index="header_organization">Organization</label>
 			<label index="header_audiences">Audiences</label>
 			<label index="header_audience">Audience</label>
 			<label index="header_views">Views</label>
@@ -116,6 +120,7 @@
 			<label index="common_version_id">Version</label>
 			<label index="common_version_name">Community</label>
 			<label index="common_service_id">Service ID</label>
+			<label index="common_language">Language</label>
 
 			<label index="action_back_to_list">Back to list</label>
 
@@ -151,6 +156,8 @@
 		<languageKey index="de" type="array">
 			<label index="pi1_title">eGov API</label>
 			<label index="pi1_plus_wiz_description">Fügt ein Frontend Plugin ein, der Daten aus der eGov Web-Service zeigt.</label>
+			<label index="pi2_title">eGov API - Selektor Form</label>
+			<label index="pi2_plus_wiz_description">Fügt ein Frontend Plugin ein, der eine Selektor Form für die eGov Web-Service zeigt.</label>
 
 			<label index="pi_flexform.sheet_general">Allgemein</label>
 			<label index="pi_flexform.sheet_audience">Publikum</label>
@@ -255,6 +262,7 @@
 			<label index="common_version_id">Version</label>
 			<label index="common_version_name">Gemeinschaft</label>
 			<label index="common_service_id">Service ID</label>
+			<label index="common_language">Sprache</label>
 
 			<label index="action_back_to_list">Zurück zur Liste</label>
 
@@ -290,6 +298,8 @@
 		<languageKey index="fr" type="array">
 			<label index="pi1_title">API eGov</label>
 			<label index="pi1_plus_wiz_description">Ajoute un module d'accès aux données du web service eGov.</label>
+			<label index="pi2_title">eGov API - Formulaire de sélection</label>
+			<label index="pi2_plus_wiz_description">Ajoute un formulaire de sélection pour le web service eGov.</label>
 
 			<label index="pi_flexform.sheet_general">Général</label>
 			<label index="pi_flexform.sheet_audience">Public cible</label>
@@ -394,6 +404,7 @@
 			<label index="common_version_id">Version</label>
 			<label index="common_version_name">Communauté</label>
 			<label index="common_service_id">Service ID</label>
+			<label index="common_language">Langue</label>
 
 			<label index="action_back_to_list">Retour à la liste</label>
 

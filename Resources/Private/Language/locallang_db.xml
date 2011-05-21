@@ -11,6 +11,7 @@
 
 		<languageKey index="default" type="array">
 			<label index="tt_content.list_type_pi1">eGov API</label>
+			<label index="tt_content.list_type_pi2">eGov API - Selector Form</label>
 
 			<label index="constants.subcategories.api">API</label>
 			<label index="constants.subcategories.service">Service</label>
@@ -20,6 +21,7 @@
 			<label index="constants.organizationID">Organization ID: Identifier of the organization (e.g., 99001=Swiss Confederation, 00619=Oberdiessbach, 02196=Fribourg)</label>
 			<label index="constants.useFluid">Use Fluid as rendering engine</label>
 			<label index="constants.enableDebug">Enable debugging information: Provide additional information with error messages. 3rd party devLog extension may be required for full support</label>
+			<label index="constants.enableSelectorPlugins">Enable selector plugins: Provide a selector form plugin and its counterpart to show a service from URL parameters</label>
 			<label index="constants.wsdl.global">WSDL for the eGov API: URL of the eGov API web service</label>
 			<label index="constants.wsdl">WSDL for the eGov API: URL of the eGov API web service (inherits global setting if empty)</label>
 			<label index="constants.cacheLifetime">Lifetime of web service cached data: Make sure to activate caching framework in localconf.php</label>
@@ -52,6 +54,7 @@
 
 		<languageKey index="de" type="array">
 			<label index="tt_content.list_type_pi1">eGov API</label>
+			<label index="tt_content.list_type_pi2">eGov API - Selektor Form</label>
 
 			<label index="constants.subcategories.api">API</label>
 			<label index="constants.subcategories.service">Dienstleistung</label>
@@ -93,6 +96,7 @@
 
 		<languageKey index="fr" type="array">
 			<label index="tt_content.list_type_pi1">API eGov</label>
+			<label index="tt_content.list_type_pi2">eGov API - Formulaire de sélection</label>
 
 			<label index="constants.subcategories.api">API</label>
 			<label index="constants.subcategories.service">Service</label>

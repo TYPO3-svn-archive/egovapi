@@ -3,3 +3,6 @@ wsdl=http://ref.cyberadmin.ch/WS/ServiceContract/WS.wsdl
 
 	# cat=basic/api; type=options[LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime.one_minute=60,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime.five_minutes=300,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime.one_hour=3600,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime.one_day=86400,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime.one_week=604800,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime.unlimited=0]; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime
 cacheLifetime=604800
+
+	# cat=advanced/enable; type=boolean; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.enableSelectorPlugins
+enableSelectorPlugins=0

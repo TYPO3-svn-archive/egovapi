@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Template for the form selector</title>
+</head>
+<body>
+
+<!-- ###TEMPLATE### [begin] -->
+
+<form id="tx_egovapi_selectorForm">
+	<div id="tx_egovapi_selectorForm_community">
+		<label for="tx_egovapi_community">###LABEL_COMMUNITY###</label>
+		<!-- ###COMMUNITIES### [begin] -->
+		<select id="tx_egovapi_community">
+			<optgroup label="Fribourg">
+				<option value="10-00">Canton Fribourg</option>
+				<option value="10-01">District de la Broye</option>
+			</optgroup>
+		</select>
+		<!-- ###COMMUNITIES### [end] -->
+	</div>
+	<div id="tx_egovapi_selectorForm_organization">
+		<label for="tx_egovapi_organization">###LABEL_ORGANIZATION###</label>
+		<!-- ###ORGANIZATIONS### [begin] -->
+		<select id="tx_egovapi_organization">
+			<option value=""></option>
+			<option value="02004">Bussy (FR) - 02004</option>
+			<option value="02005">Châbles - 02005</option>
+			<option value="02008">Châtillon (FR) - 02008</option>
+			<option value="02008">Cheiry - 02008</option>
+		</select>
+		<!-- ###ORGANIZATIONS### [end] -->
+	</div>
+	<div id="tx_egovapi_selectorForm_service">
+		<label for="tx_egovapi_service">###LABEL_SERVICE###</label>
+		<!-- ###SERVICES### [begin] -->
+		<select id="tx_egovapi_service">
+			<option value=""></option>
+			<option value="01170">Attestation de domicile - 01170</option>
+		</select>
+		<!-- ###SERVICES### [end] -->
+	</div>
+	<div id="tx_egovapi_selectorForm_version">
+		<label for="tx_egovapi_version">###LABEL_VERSION###</label>
+		<input type="text" id="tx_egovapi_version" />
+	</div>
+	<div id="tx_egovapi_selectorForm_blocks">
+		<fieldset>
+			<legend>###LABEL_BLOCKS###</legend>
+			<ul>
+				<li><input type="checkbox" name="block[]" id="tx_egovapi_block1" value="1" /><label for="tx_egovapi_block1">###LABEL_BLOCK_1###</label></li>
+				<li><input type="checkbox" name="block[]" id="tx_egovapi_block2" value="2" /><label for="tx_egovapi_block2">###LABEL_BLOCK_2###</label></li>
+				<li><input type="checkbox" name="block[]" id="tx_egovapi_block3" value="3" /><label for="tx_egovapi_block3">###LABEL_BLOCK_3###</label></li>
+				<li><input type="checkbox" name="block[]" id="tx_egovapi_block4" value="4" /><label for="tx_egovapi_block4">###LABEL_BLOCK_4###</label></li>
+				<li><input type="checkbox" name="block[]" id="tx_egovapi_block5" value="5" /><label for="tx_egovapi_block5">###LABEL_BLOCK_5###</label></li>
+				<li><input type="checkbox" name="block[]" id="tx_egovapi_block6" value="6" /><label for="tx_egovapi_block6">###LABEL_BLOCK_6###</label></li>
+				<li><input type="checkbox" name="block[]" id="tx_egovapi_block7" value="7" /><label for="tx_egovapi_block7">###LABEL_BLOCK_7###</label></li>
+				<li><input type="checkbox" name="block[]" id="tx_egovapi_block8" value="8" /><label for="tx_egovapi_block8">###LABEL_BLOCK_8###</label></li>
+				<li><input type="checkbox" name="block[]" id="tx_egovapi_block9" value="9" /><label for="tx_egovapi_block9">###LABEL_BLOCK_9###</label></li>
+				<li><input type="checkbox" name="block[]" id="tx_egovapi_block10" value="10" /><label for="tx_egovapi_block10">###LABEL_BLOCK_10###</label></li>
+				<li><input type="checkbox" name="block[]" id="tx_egovapi_block11" value="11" /><label for="tx_egovapi_block11">###LABEL_BLOCK_11###</label></li>
+				<li><input type="checkbox" name="block[]" id="tx_egovapi_block12" value="12" /><label for="tx_egovapi_block12">###LABEL_BLOCK_12###</label></li>
+				<li><input type="checkbox" name="block[]" id="tx_egovapi_block13" value="13" /><label for="tx_egovapi_block13">###LABEL_BLOCK_13###</label></li>
+			</ul>
+		</fieldset>
+	</div>
+	<div id="tx_egovapi_selectorForm_language">
+		<label for="tx_egovapi_language">###LABEL_LANGUAGE###</label>
+		<!-- ###LANGUAGES### [begin] -->
+		<select id="tx_egovapi_language">
+			<option value="DE">DE - Deutsch</option>
+			<option value="EN">EN - English</option>
+			<option value="FR">FR - Français</option>
+			<option value="RM">RM - Rumantsch</option>
+		</select>
+		<!-- ###LANGUAGES### [end] -->
+	</div>
+	<input type="submit" value="OK" />
+</form>
+
+<!-- ###TEMPLATE### [end] -->
+
+</body>
+</html>
