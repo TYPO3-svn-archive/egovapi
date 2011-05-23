@@ -257,7 +257,7 @@ class tx_egovapi_controller_pi2_Ajax extends tslib_pibase {
 
 			// Define additional parameters for the webservice
 		$language = t3lib_div::_GET('language');
-		if (!t3lib_div::inList('DE,EN,FR,IT,RM', $language)) {
+		if (!t3lib_div::inList('de,en,fr,it,rm', $language)) {
 			throw new Exception('Invalid or missing parameter "language"', 1306143038);
 		}
 		$this->conf['eCHlanguageID'] = $language;

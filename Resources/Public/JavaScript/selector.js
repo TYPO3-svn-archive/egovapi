@@ -70,6 +70,7 @@ $(function() {
     // Update fields when language is changed
     $("select#tx_egovapi_language").change(function() {
         $("select#tx_egovapi_organization").trigger("change");
+        $("input#tx_egovapi_version").val("");
     });
 
     // Generation of the links
@@ -91,6 +92,10 @@ $(function() {
             && selectedBlocks.length > 0;
         if (!ok) return;
 
+        if (service) {
+            var info = service.split("-");
+            service = info[0];
+        }
         $.getJSON(
             ajaxUrl,
             {
@@ -109,7 +114,7 @@ $(function() {
 
                     var items = '';
                     for (var i = 0; i < data.length; i++) {
-                        items += '<li><a href="' + data[i].url + '">' + data[i].url + '</a></li>';
+                        items += '<li><a href="' + data[i].url + '" target="_blank">' + data[i].url + '</a></li>';
                     }
                     $("#tx_egovapi_result").html("<ul>" + items + "</ul>");
                 }

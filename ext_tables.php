@@ -35,7 +35,7 @@ t3lib_extMgm::addLLrefForTCAdescr('tt_content.pi_flexform.' . $_EXTKEY . '_pi1.l
 t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Settings/', 'eGov API settings');
 t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Styles/', 'eGov API CSS-styles');
 if ($enableSelectorPlugins) {
-	t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Selector/', 'eGov API Selector JS');
+	t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Selector/', 'eGov API Selector settings');
 }
 
 if (TYPO3_MODE === 'BE') {

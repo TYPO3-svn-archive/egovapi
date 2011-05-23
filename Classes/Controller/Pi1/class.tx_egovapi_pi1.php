@@ -58,7 +58,14 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 	public function main($content, array $conf) {
 		$this->init($conf);
 		$this->pi_setPiVarDefaults();
-		$this->pi_USER_INT_obj = 0;	// Configuring so caching is expected.
+		$useCaching = !$this->conf['dynamicCOnfig'];
+		$this->pi_USER_INT_obj = $useCaching ? 0 : 1;
+
+		if (!$useCaching && $this->cObj->getUserObjectType() == tslib_cObj::OBJECTTYPE_USER) {
+			$this->cObj->convertToUserIntObject();
+			return '';
+		}
+
 		$this->pi_loadLL();
 
 		if (!$this->conf['wsdl']) {
@@ -229,6 +236,9 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 		if (t3lib_div::int_from_ver(TYPO3_version) < 4005000) {
 			$this->conf['useFluid'] = 0;
 		}
+
+		$dynamicConfig = isset($this->conf['dynamicConfig']) ? (bool) $this->conf['dynamicConfig'] : FALSE;
+		$this->conf['dynamicConfig'] = $dynamicConfig;
 
 		$this->debug = $this->conf['enableDebug'];
 	}

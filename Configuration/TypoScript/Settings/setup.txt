@@ -149,58 +149,5 @@ plugin.tx_egovapi_pi1 {
 	}
 }
 
-plugin.tx_egovapi_pi2 {
-	wsdl              = {$plugin.tx_egovapi.wsdl}
-	cacheLifetime     =
-	enableDebug       = {$plugin.tx_egovapi.enableDebug}
-	includeCHServices = 1
-
-	template          = EXT:egovapi/Resources/Private/Templates/Pi2/form.html
-
-		# Configuration for generated URI's (properties of typolink)
-	parametrizedUrl {
-		parameters.serviceId = service
-		parameters.version = version
-
-		typolink {
-			parameter = {$plugin.tx_egovapi.targets.single.service}
-			additionalParams.cObject = COA
-			additionalParams.cObject {
-				1 = TEXT
-				1.data = GP:language
-				1.wrap = &language=|
-
-				2 = TEXT
-				2.data = GP:community
-				2.wrap = &community=|
-
-				3 = TEXT
-				3.data = GP:organization
-				3.wrap = &organization=|
-
-				4 = TEXT
-				4.data = GP:service
-				4.ifEmpty = __SERVICE_ID__
-				4.wrap = &service=|
-
-				5 = TEXT
-				5 {
-					data = GP:version
-					ifEmpty = __VERSION__
-					override < .ifEmpty
-					override.if.isFalse.data = GP:service
-					wrap = &version=|
-				}
-
-				6 = TEXT
-				6.data = GP:blocks
-				6.wrap = &blocks=|
-			}
-			forceAbsoluteUrl = 1
-			returnLast = url
-		}
-	}
-}
-
 ### SVN id ###
 # $Id$

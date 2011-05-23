@@ -54,9 +54,11 @@ class tx_egovapi_utility_ts {
 			'eCHlanguageID', 'eCHcommunityID', 'organizationID',
 			'wsdl', 'cacheLifetime', 'useFluid', 'enableDebug', 'showRenderTime', 'stripTags',
 			'includeCHServices', 'displayLevels', 'level', 'mode',
-			'audiences', 'views', 'domains', 'topics', 'services',
+			'audiences', 'views', 'domains', 'topics', 'services', 'version',
 			// Pi2
 			'template',
+			// Pi1 used by Pi2
+			'dynamicConfig',
 		);
 
 		foreach ($globalParameters as $parameter) {
