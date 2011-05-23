@@ -97,8 +97,6 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 
 .tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks ul li {
 	padding: 5px 0 0 10px;
-	float: left;
-	width: 190px;
 }
 
 .tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks label {
@@ -113,6 +111,14 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 
 .tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks legend {
 	padding: 0;
+}
+
+.tx-egovapi-pi2 .tx_egovapi_selectorForm_blocksLeft {
+	float: left;
+}
+
+.tx-egovapi-pi2 .tx_egovapi_selectorForm_blocksRight {
+	float: right;
 }
 
 #tx_egovapi_selectorForm_submit {
