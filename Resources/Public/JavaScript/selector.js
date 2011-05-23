@@ -2,9 +2,10 @@ $(function(){
     var ajaxUrl = $("input#tx_egovapi_ajaxUrl").val();
     var eID = "egovapi_pi2";
 
-    // Reset drop down fields
+    // Reset form fields
     $("select#tx_egovapi_organization").html("");
     $("select#tx_egovapi_service").html("");
+    $("input#tx_egovapi_version").html("");
 
     // Update the list of organizations
     $("select#tx_egovapi_community").change(function() {
@@ -56,5 +57,12 @@ $(function(){
                 }
             }
         )
+    });
+
+    // Update the select service's version
+    $("select#tx_egovapi_service").change(function() {
+        var info = $(this).val().split("-");
+        var version = info[1];
+        $("input#tx_egovapi_version").val(version);
     })
 });
