@@ -71,6 +71,55 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 	margin: 1em 0 0 0;
 }
 
+.tx-egovapi-pi2 form label {
+	float: left;
+	width: 150px;
+}
+
+.tx-egovapi-pi2 form div {
+	clear: left;
+	margin: 2px 0;
+}
+
+.tx-egovapi-pi2 form select {
+	width: 250px;
+}
+
+.tx-egovapi-pi2 #tx_egovapi_version {
+	width: 80px;
+}
+
+.tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks ul li {
+	padding: 5px 0 0 10px;
+	float: left;
+	width: 190px;
+}
+
+.tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks label {
+	float: none;
+}
+
+.tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks fieldset {
+	border: none;
+	padding: 0;
+	width: 400px;
+}
+
+.tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks legend {
+	padding: 0;
+}
+
+#tx_egovapi_selectorForm_submit {
+	margin: 15px 0 0 150px;
+	width: 250px;
+}
+
 )
 
 ### SVN id ###

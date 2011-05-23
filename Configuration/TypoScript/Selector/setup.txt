@@ -1,0 +1,9 @@
+	# Include jQuery library
+page.includeJSlibs {
+	jquery = http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js
+	jquery.external = 1
+}
+
+
+### SVN id ###
+# $Id$

@@ -1,3 +1,7 @@
+2011-05-23  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Added TypoScript for including jQuery
+
 2011-05-21  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Added skeleton for the form selector plugin

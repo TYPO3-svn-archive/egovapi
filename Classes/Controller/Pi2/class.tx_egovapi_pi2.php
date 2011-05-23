@@ -69,8 +69,6 @@ class tx_egovapi_pi2 extends tx_egovapi_pibase {
 		$templateFile = 'EXT:egovapi/Resources/Private/Templates/Pi2/form.html';
 		$template = $this->cObj->fileResource($templateFile);
 
-new \tx\egovapi\Controller\Pi2\demo();
-t3lib_div::makeInstance('\tx\egovapi\Controller\Pi2\demo');
 		$this->template = $this->cObj->getSubpart($template, '###TEMPLATE###');
 
 		/** @var $utilityConstants tx_egovapi_utility_constants */

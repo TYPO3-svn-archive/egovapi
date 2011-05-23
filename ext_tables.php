@@ -34,6 +34,9 @@ t3lib_extMgm::addLLrefForTCAdescr('tt_content.pi_flexform.' . $_EXTKEY . '_pi1.l
 // Initialize static extension templates
 t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Settings/', 'eGov API settings');
 t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Styles/', 'eGov API CSS-styles');
+if ($enableSelectorPlugins) {
+	t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Selector/', 'eGov API Selector JS');
+}
 
 if (TYPO3_MODE === 'BE') {
 	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['tx_egovapi_pi1_wizicon'] = t3lib_extMgm::extPath($_EXTKEY) . 'Classes/Controller/Pi1/class.tx_egovapi_pi1_wizicon.php';
