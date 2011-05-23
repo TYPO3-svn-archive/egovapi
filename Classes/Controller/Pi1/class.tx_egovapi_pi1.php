@@ -216,7 +216,7 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 			}
 		}
 
-			// Blocks
+			// Blocks to show
 		foreach ($this->conf['displayBlocks.'] as $type => &$blocks) {
 			if (preg_match('/^[0-9 ]+/', $blocks)) {
 					// Blocks as number, update configuration to use corresponding names
@@ -252,6 +252,14 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 
 		$dynamicConfig = isset($this->conf['dynamicConfig']) ? (bool) $this->conf['dynamicConfig'] : FALSE;
 		$this->conf['dynamicConfig'] = $dynamicConfig;
+
+		if ($dynamicConfig && $this->conf['version']) {
+			if (!is_array($this->conf['versions.'])) {
+				$this->conf['versions.'] = array();
+			}
+			$this->conf['versions.'][$this->conf['services']] = $this->conf['version'];
+			unset($this->conf['version']);
+		}
 
 		$this->debug = $this->conf['enableDebug'];
 	}
