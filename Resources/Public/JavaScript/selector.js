@@ -54,6 +54,7 @@ $(function(){
                         options += '<option value="' + data[i].id + '-' + data[i].version + '">' + data[i].name + '</option>';
                     }
                     $("select#tx_egovapi_service").html(options);
+                    $("input#tx_egovapi_version").html("");
                 }
             }
         )
@@ -64,5 +65,10 @@ $(function(){
         var info = $(this).val().split("-");
         var version = info[1];
         $("input#tx_egovapi_version").val(version);
+    });
+
+    // Update fields when language is changed
+    $("select#tx_egovapi_language").change(function() {
+        $("select#tx_egovapi_organization").trigger("change");
     })
 });
