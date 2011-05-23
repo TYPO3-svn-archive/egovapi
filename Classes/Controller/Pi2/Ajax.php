@@ -95,6 +95,10 @@ class tx_egovapi_controller_pi2_Ajax extends tslib_pibase {
 		$organizationRepository = tx_egovapi_domain_repository_factory::getRepository('organization');
 
 		$organizations = $organizationRepository->findByCommunity($community);
+
+			// Sort organizations by name
+		tx_egovapi_utility_objects::sort($organizations, 'name');
+
 		foreach ($organizations as $organization) {
 			$data[] = array(
 				'id' => $organization->getId(),
@@ -148,6 +152,9 @@ class tx_egovapi_controller_pi2_Ajax extends tslib_pibase {
 				}
 			}
 		}
+
+			// Sort services by name
+		tx_egovapi_utility_objects::sort($services, 'name');
 
 		return $services;
 	}
