@@ -48,7 +48,6 @@ class tx_egovapi_controller_pi2_Ajax extends tslib_pibase {
 	 */
 	public $conf;
 
-
 	/**
 	 * Default action.
 	 *
@@ -66,43 +65,146 @@ class tx_egovapi_controller_pi2_Ajax extends tslib_pibase {
 		}
 
 		$data = array();
-
 		switch (t3lib_div::_GET('action')) {
 			case 'organizations':
-				/** @var tx_egovapi_domain_repository_organizationRepository $organizationRepository */
-				$organizationRepository = tx_egovapi_domain_repository_factory::getRepository('organization');
-
-				$organizations = $organizationRepository->findByCommunity($community);
-				foreach ($organizations as $organization) {
-					$data[] = array(
-						'id' => $organization->getId(),
-						'name' => $organization->getName(),
-					);
-				}
+				$data = $this->getOrganizations($community);
 				break;
 			case 'services':
-				/** @var tx_egovapi_domain_repository_audienceRepository $audienceRepository */
-				$audienceRepository = tx_egovapi_domain_repository_factory::getRepository('audience');
-
-				$audiences = $audienceRepository->findAll();
-				foreach ($audiences as $audience) {
-					foreach ($audience->getViews() as $view) {
-						foreach ($view->getDomains() as $domain) {
-							foreach ($domain->getTopics() as $topic) {
-								foreach ($topic->getServices() as $service) {
-									$data[] = array(
-										'id' => $service->getId(),
-										'version' => $service->getVersionId(),
-										'name' => $service->getName(),
-									);
-								}
-							}
-						}
-					}
-				}
+				$data = $this->getServices();
+				break;
+			case 'url':
+				$data = $this->getParametrizedUri();
 				break;
 			default:
 				throw new Exception('Invalid action ' . t3lib_div::_GET('action'), 1306143638);
+		}
+
+		return $data;
+	}
+
+	/**
+	 * Gets the organizations for a given community.
+	 *
+	 * @param tx_egovapi_domain_model_community $community
+	 * @return array
+	 */
+	protected function getOrganizations(tx_egovapi_domain_model_community $community) {
+		$data = array();
+
+		/** @var tx_egovapi_domain_repository_organizationRepository $organizationRepository */
+		$organizationRepository = tx_egovapi_domain_repository_factory::getRepository('organization');
+
+		$organizations = $organizationRepository->findByCommunity($community);
+		foreach ($organizations as $organization) {
+			$data[] = array(
+				'id' => $organization->getId(),
+				'name' => $organization->getName(),
+			);
+		}
+
+		return $data;
+	}
+
+	/**
+	 * Gets the available services.
+	 *
+	 * @return array
+	 */
+	protected function getServices() {
+		$data = array();
+		$services = $this->getDomainServices();
+
+		foreach ($services as $service) {
+			$data[] = array(
+				'id' => $service->getId(),
+				'version' => $service->getVersionId(),
+				'name' => $service->getName(),
+			);
+		}
+
+		return $data;
+	}
+
+	/**
+	 * Returns available services as domain model objects.
+	 *
+	 * @return tx_egovapi_domain_model_service[]
+	 */
+	protected function getDomainServices() {
+		$services = array();
+
+		/** @var tx_egovapi_domain_repository_audienceRepository $audienceRepository */
+		$audienceRepository = tx_egovapi_domain_repository_factory::getRepository('audience');
+
+		$audiences = $audienceRepository->findAll();
+		foreach ($audiences as $audience) {
+			foreach ($audience->getViews() as $view) {
+				foreach ($view->getDomains() as $domain) {
+					foreach ($domain->getTopics() as $topic) {
+						foreach ($topic->getServices() as $service) {
+							$services[] = $service;
+						}
+					}
+				}
+			}
+		}
+
+		return $services;
+	}
+
+	/**
+	 * Gets the parametrized URI's.
+	 *
+	 * @return array
+	 */
+	protected function getParametrizedUri() {
+		$conf = $this->conf['parametrizedUrl.'];
+
+		$baseUrl = $this->cObj->typoLink('|', $conf['typolink.']);
+		$baseUrl = str_replace('%20', '+', $baseUrl);
+
+		$serviceIdKey = $conf['parameters.']['serviceId'];
+		$versionKey = $conf['parameters.']['version'];
+
+		$serviceId = t3lib_div::_GP($serviceIdKey);
+		$version = t3lib_div::_GP($versionKey);
+
+		$servicesVersions = array();
+
+		if ($serviceId) {
+			if (!$version) {
+				// Version is not given, search it!
+				$services = $this->getDomainServices();
+				foreach ($services as $service) {
+					if ($service->getId() == $serviceId) {
+						$version = $service->getVersionId();
+						break;
+					}
+				}
+			}
+			$servicesVersions[] = array(
+				'serviceId' => $serviceId,
+				'version' => $version,
+			);
+		} else {
+			$services = $this->getDomainServices();
+			foreach ($services as $service) {
+				$servicesVersions[] = array(
+					'serviceId' => $service->getId(),
+					'version' => $service->getVersionId(),
+				);
+			}
+		}
+
+		$data = array();
+		foreach ($servicesVersions as $serviceVersion) {
+			$data[] = array(
+				'url' => str_replace(
+					array('__SERVICE_ID__', '__VERSION__'),
+					array($serviceVersion['serviceId'], $serviceVersion['version']),
+					$baseUrl
+				),
+			);
 		}
 
 		return $data;
@@ -122,8 +224,17 @@ class tx_egovapi_controller_pi2_Ajax extends tslib_pibase {
 		if (!$pid) {
 			$pid = 0;
 		}
-		$settings = $this->loadTS($pid);
-		$settings = $settings['plugin.'][$this->prefixId . '.'];
+
+			// Initialize TSFE (mandatory for $cObj->typolink() calls)
+		$GLOBALS['TSFE'] = t3lib_div::makeInstance('tslib_fe', $GLOBALS['TYPO3_CONF_VARS'], $pid, 0, TRUE);
+		$GLOBALS['TSFE']->connectToDB();
+		$GLOBALS['TSFE']->initFEuser();
+		$GLOBALS['TSFE']->determineId();
+		$GLOBALS['TSFE']->getCompressedTCarray();
+		$GLOBALS['TSFE']->initTemplate();
+		$GLOBALS['TSFE']->getConfigArray();
+
+		$settings = $GLOBALS['TSFE']->tmpl->setup['plugin.'][$this->prefixId . '.'];
 
 			// Initialize default values based on extension TS
 		$this->conf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this->extKey]);
@@ -160,25 +271,6 @@ class tx_egovapi_controller_pi2_Ajax extends tslib_pibase {
 		/** @var $dao tx_egovapi_dao_dao */
 		$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $this->conf);
 		tx_egovapi_domain_repository_factory::injectDao($dao);
-	}
-
-	/**
-	 * Loads the TypoScript configuration for a given page.
-	 *
-	 * @param integer $pageUid
-	 * @return array
-	 */
-	protected function loadTS($pageUid) {
-		/** @var $sysPageObj t3lib_pageSelect */
-		$sysPageObj = t3lib_div::makeInstance('t3lib_pageSelect');
-		$rootLine = $sysPageObj->getRootLine($pageUid);
-		/** @var $TSObj t3lib_tsparser_ext */
-		$TSObj = t3lib_div::makeInstance('t3lib_tsparser_ext');
-		$TSObj->tt_track = 0;
-		$TSObj->init();
-		$TSObj->runThroughTemplates($rootLine);
-		$TSObj->generateConfig();
-		return $TSObj->setup;
 	}
 
 }

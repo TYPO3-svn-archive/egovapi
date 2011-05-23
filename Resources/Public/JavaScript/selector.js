@@ -1,4 +1,4 @@
-$(function(){
+$(function() {
     var ajaxUrl = $("input#tx_egovapi_ajaxUrl").val();
     var eID = "egovapi_pi2";
 
@@ -19,7 +19,7 @@ $(function(){
                 language: language,
                 community: $(this).val()
             },
-            function(response) {
+            function (response) {
                 if (response.success) {
                     var data = response.data;
                     var options = '<option value=""></option>';
@@ -34,8 +34,8 @@ $(function(){
 
     // Update the list of services
     $("select#tx_egovapi_organization").change(function() {
-        var language = $("select#tx_egovapi_language").val();
         var community = $("select#tx_egovapi_community").val();
+        var language = $("select#tx_egovapi_language").val();
 
         $.getJSON(
             ajaxUrl,
@@ -46,7 +46,7 @@ $(function(){
                 community: community,
                 organization: $(this).val()
             },
-            function(response) {
+            function (response) {
                 if (response.success) {
                     var data = response.data;
                     var options = '<option value=""></option>';
@@ -70,5 +70,50 @@ $(function(){
     // Update fields when language is changed
     $("select#tx_egovapi_language").change(function() {
         $("select#tx_egovapi_organization").trigger("change");
+    });
+
+    // Generation of the links
+    $("input#tx_egovapi_selectorForm_submit").click(function() {
+        var community = $("select#tx_egovapi_community").val();
+        var organization = $("select#tx_egovapi_organization").val();
+        var service = $("select#tx_egovapi_service").val();
+        var version = $("input#tx_egovapi_version").val();
+        var language = $("select#tx_egovapi_language").val();
+
+        var selectedBlocks = new Array();
+        $.each($("input[name='tx_egovapi_selectorForm_block[]']:checked"), function() {
+            selectedBlocks.push($(this).val());
+        });
+
+        var ok = (community ? true : false)
+            && (organization ? true : false)
+            && (language ? true : false)
+            && selectedBlocks.length > 0;
+        if (!ok) return;
+
+        $.getJSON(
+            ajaxUrl,
+            {
+                eID: eID,
+                action: "url",
+                language: language,
+                community: community,
+                organization: organization,
+                service: service,
+                version: version,
+                blocks: selectedBlocks.join(" ")
+            },
+            function (response) {
+                if (response.success) {
+                    var data = response.data;
+
+                    var items = '';
+                    for (var i = 0; i < data.length; i++) {
+                        items += '<li><a href="' + data[i].url + '">' + data[i].url + '</a></li>';
+                    }
+                    $("#tx_egovapi_result").html("<ul>" + items + "</ul>");
+                }
+            }
+        );
     })
 });
