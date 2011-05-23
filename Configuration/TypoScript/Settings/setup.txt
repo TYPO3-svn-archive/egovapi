@@ -149,5 +149,14 @@ plugin.tx_egovapi_pi1 {
 	}
 }
 
+plugin.tx_egovapi_pi2 {
+	wsdl              = {$plugin.tx_egovapi.wsdl}
+	cacheLifetime     =
+	enableDebug       = {$plugin.tx_egovapi.enableDebug}
+	includeCHServices = 1
+
+	template          = EXT:egovapi/Resources/Private/Templates/Pi2/form.html
+}
+
 ### SVN id ###
 # $Id$

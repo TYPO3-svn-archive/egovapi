@@ -55,6 +55,8 @@ class tx_egovapi_utility_ts {
 			'wsdl', 'cacheLifetime', 'useFluid', 'enableDebug', 'showRenderTime', 'stripTags',
 			'includeCHServices', 'displayLevels', 'level', 'mode',
 			'audiences', 'views', 'domains', 'topics', 'services',
+			// Pi2
+			'template',
 		);
 
 		foreach ($globalParameters as $parameter) {

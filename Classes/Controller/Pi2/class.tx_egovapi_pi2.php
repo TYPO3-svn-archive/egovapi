@@ -61,12 +61,12 @@ class tx_egovapi_pi2 extends tx_egovapi_pibase {
 	 * @return string Content which appears on the website
 	 */
 	public function main($content, array $conf) {
-		//$this->init($conf);
+		$this->init($conf);
 		$this->pi_setPiVarDefaults();
 		$this->pi_USER_INT_obj = 1;	// Configuring so caching is not expected.
 		$this->pi_loadLL();
 
-		$templateFile = 'EXT:egovapi/Resources/Private/Templates/Pi2/form.html';
+		$templateFile = $this->conf['template'];
 		$template = $this->cObj->fileResource($templateFile);
 
 		$this->template = $this->cObj->getSubpart($template, '###TEMPLATE###');
@@ -104,6 +104,29 @@ class tx_egovapi_pi2 extends tx_egovapi_pibase {
 
 		$output = $this->pi_wrapInBaseClass($output);
 		return $output;
+	}
+
+	/**
+	 * This method performs various initializations.
+	 *
+	 * @param array $settings: Plugin configuration, as received by the main() method
+	 * @return void
+	 */
+	protected function init(array $settings) {
+			// Initialize default values based on extension TS
+		$this->conf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this->extKey]);
+		if (!is_array($this->conf)) {
+			$this->conf = array();
+		}
+
+			// Base configuration is equal to the plugin's TS setup
+		$this->conf = t3lib_div::array_merge_recursive_overrule($this->conf, $settings, FALSE, FALSE);
+
+			// Basically process stdWrap over all global parameters
+		$this->conf = tx_egovapi_utility_ts::preprocessConfiguration($this->cObj, $this->conf);
+
+			// Add current language to avoid caching problems
+		$this->conf['language'] = $GLOBALS['TSFE']->lang;
 	}
 
 }
