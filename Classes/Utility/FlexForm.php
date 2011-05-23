@@ -494,8 +494,10 @@ class tx_egovapi_utility_flexform {
 	 * @return array
 	 */
 	protected static function loadTS($pageUid) {
+		/** @var $sysPageObj t3lib_pageSelect */
 		$sysPageObj = t3lib_div::makeInstance('t3lib_pageSelect');
 		$rootLine = $sysPageObj->getRootLine($pageUid);
+		/** @var $TSObj t3lib_tsparser_ext */
 		$TSObj = t3lib_div::makeInstance('t3lib_tsparser_ext');
 		$TSObj->tt_track = 0;
 		$TSObj->init();
@@ -506,8 +508,8 @@ class tx_egovapi_utility_flexform {
 }
 
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/egovapi/Classes/Utility/FlexForm.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/egovapi/Classes/Utility/FlexForm.php']);
+if (defined('TYPO3_MODE') && isset($GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/egovapi/Classes/Utility/FlexForm.php'])) {
+	include_once($GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/egovapi/Classes/Utility/FlexForm.php']);
 }
 
 ?>
