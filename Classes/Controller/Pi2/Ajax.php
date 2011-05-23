@@ -80,6 +80,27 @@ class tx_egovapi_controller_pi2_Ajax extends tslib_pibase {
 					);
 				}
 				break;
+			case 'services':
+				/** @var tx_egovapi_domain_repository_audienceRepository $audienceRepository */
+				$audienceRepository = tx_egovapi_domain_repository_factory::getRepository('audience');
+
+				$audiences = $audienceRepository->findAll();
+				foreach ($audiences as $audience) {
+					foreach ($audience->getViews() as $view) {
+						foreach ($view->getDomains() as $domain) {
+							foreach ($domain->getTopics() as $topic) {
+								foreach ($topic->getServices() as $service) {
+									$data[] = array(
+										'id' => $service->getId(),
+										'version' => $service->getVersionId(),
+										'name' => $service->getName(),
+									);
+								}
+							}
+						}
+					}
+				}
+				break;
 			default:
 				throw new Exception('Invalid action ' . t3lib_div::_GET('action'), 1306143638);
 		}
