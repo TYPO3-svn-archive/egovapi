@@ -66,6 +66,10 @@ class tx_egovapi_pi2 extends tx_egovapi_pibase {
 		$this->pi_USER_INT_obj = 1;	// Configuring so caching is not expected.
 		$this->pi_loadLL();
 
+		if (!$this->conf['wsdl']) {
+			die('Plugin ' . $this->prefixId . ' is not configured properly!');
+		}
+
 		$templateFile = $this->conf['template'];
 		$template = $this->cObj->fileResource($templateFile);
 
@@ -127,6 +131,11 @@ class tx_egovapi_pi2 extends tx_egovapi_pibase {
 
 			// Add current language to avoid caching problems
 		$this->conf['language'] = $GLOBALS['TSFE']->lang;
+
+		if ($this->conf['wsdl']) {
+			$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $this->conf);
+			tx_egovapi_domain_repository_factory::injectDao($dao);
+		}
 	}
 
 }

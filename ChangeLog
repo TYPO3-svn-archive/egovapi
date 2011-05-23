@@ -1,5 +1,6 @@
 2011-05-23  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Added dynamic retrieval of organizations
 	* [TASK] Removed global declaration with XCLASS definition
 	* [TASK] Added TypoScript for including jQuery
 

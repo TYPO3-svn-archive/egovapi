@@ -10,6 +10,9 @@ t3lib_extMgm::addPItoST43($_EXTKEY, 'Classes/Controller/Pi1/class.tx_egovapi_pi1
 
 if ($enableSelectorPlugins) {
 	t3lib_extMgm::addPItoST43($_EXTKEY, 'Classes/Controller/Pi2/class.tx_egovapi_pi2.php', '_pi2', 'list_type', 0);
+
+	// Ajax configuration (through eID)
+	$TYPO3_CONF_VARS['FE']['eID_include'][$_EXTKEY . '_pi2'] = 'EXT:' . $_EXTKEY . '/Classes/Controller/Pi2/Ajax.php';
 }
 
 // RealURL auto-configuration

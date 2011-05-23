@@ -2,8 +2,9 @@
 page.includeJSlibs {
 	jquery = http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js
 	jquery.external = 1
-}
 
+	egovapi_selector = EXT:egovapi/Resources/Public/JavaScript/selector.js
+}
 
 ### SVN id ###
 # $Id$
