@@ -216,6 +216,19 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 			}
 		}
 
+			// Blocks
+		foreach ($this->conf['displayBlocks.'] as $type => &$blocks) {
+			if (preg_match('/^[0-9 ]+/', $blocks)) {
+					// Blocks as number, update configuration to use corresponding names
+				$blockNumbers = t3lib_div::intExplode(' ', $blocks);
+				$temp = array();
+				foreach ($blockNumbers as $blockNumber) {
+					$temp[] = tx_egovapi_utility_constants::getBlockName($blockNumber);
+				}
+				$blocks = implode(',', $temp);
+			}
+		}
+
 		if ($this->conf['wsdl']) {
 			$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $this->conf);
 			tx_egovapi_domain_repository_factory::injectDao($dao);

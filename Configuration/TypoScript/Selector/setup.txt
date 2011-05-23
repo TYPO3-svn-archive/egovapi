@@ -36,10 +36,8 @@ plugin.tx_egovapi_pi1 {
 	services.cObject = TEXT
 	services.cObject.data = GP:service
 
-	#displayBlocks.service.cObject = TEXT
-	#displayBlocks.service.cObject.data = GP:blocks
-
-	displayBlocks.service = LEVEL_INFORMATION,GENERAL_INFORMATION,PREREQUISITES,PROCEDURE,FORMS,DOCUMENTS_REQUIRED,SERVICE_PROVIDED,FEE,LEGAL_REGULATION,DOCUMENTS_OTHER,REMARKS,APPROVAL,CONTACT
+	displayBlocks.service.cObject = TEXT
+	displayBlocks.service.cObject.data = GP:blocks
 
 	templates {
 		single {

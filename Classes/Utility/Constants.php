@@ -111,6 +111,36 @@ class tx_egovapi_utility_constants {
 		return $html;
 	}
 
+	/**
+	 * Returns a block name given its number.
+	 *
+	 * @param integer $blockNumber
+	 * @return string
+	 */
+	public static function getBlockName($blockNumber) {
+		$blocks = array(
+			1 => 'LEVEL_INFORMATION',
+			2 => 'GENERAL_INFORMATION',
+			3 => 'PREREQUISITES',
+			4 => 'PROCEDURE',
+			5 => 'FORMS',
+			6 => 'DOCUMENTS_REQUIRED',
+			7 => 'SERVICE_PROVIDED',
+			8 => 'FEE',
+			9 => 'LEGAL_REGULATION',
+			10 => 'DOCUMENTS_OTHER',
+			11 => 'REMARKS',
+			12 => 'APPROVAL',
+			13 => 'CONTACT',
+		);
+
+		if (isset($blocks[$blockNumber])) {
+			return $blocks[$blockNumber];
+		} else {
+			return NULL;
+		}
+	}
+
 }
 
 
