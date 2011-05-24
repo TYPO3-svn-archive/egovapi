@@ -63,7 +63,6 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 			throw new Exception('Invalid community "' . $this->conf['eCHcommunityID'] . '"', 1306143897);
 		}
 
-		$data = array();
 		switch (t3lib_div::_GET('action')) {
 			case 'organizations':
 				$data = $this->getOrganizations($community);
@@ -164,9 +163,6 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	 * @return array
 	 */
 	protected function getParametrizedUri() {
-		//$baseUrl = $this->cObj->typoLink('|', $conf['typolink.']);
-		//$baseUrl = str_replace('%20', '+', $baseUrl);
-
 		$dataServices = array();
 		$services = $this->getDomainServices();
 		foreach ($services as $service) {
