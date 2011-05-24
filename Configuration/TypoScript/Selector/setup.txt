@@ -107,7 +107,7 @@ plugin.tx_egovapi_pi2 {
 
 		20 = TEXT
 		20.field = versionId
-		20.noTrimWrap = | (|)<br />
+		20.noTrimWrap = | (|)<br />|
 
 		30 = TEXT
 		30.typolink.parameter.cObject < temp.parametrizedUrl
