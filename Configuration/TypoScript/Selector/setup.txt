@@ -7,7 +7,7 @@ page.includeJSlibs {
 }
 
 	# RealURL is not compatible with eID link generation
-config.tx_realurl_enable = 1
+config.tx_realurl_enable = 0
 
 plugin.tx_egovapi_pi1 {
 	eCHlanguageID.cObject = TEXT
