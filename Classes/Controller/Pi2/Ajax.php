@@ -38,9 +38,8 @@ if (!defined('PATH_typo3conf')) {
  * @license     http://www.gnu.org/copyleft/gpl.html
  * @version     SVN: $Id$
  */
-class tx_egovapi_controller_pi2_Ajax extends tslib_pibase {
+class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 
-	public $extKey   = 'egovapi';
 	public $prefixId = 'tx_egovapi_pi2';
 
 	/**
