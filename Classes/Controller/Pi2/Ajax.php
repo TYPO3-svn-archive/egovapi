@@ -53,6 +53,8 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	 * @return array
 	 */
 	public function main() {
+		$this->initTSFE();
+		$this->cObj = t3lib_div::makeInstance('tslib_cObj');
 		$this->init();
 
 		/** @var tx_egovapi_domain_repository_communityRepository $communityRepository */
@@ -225,24 +227,6 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	 * @return void
 	 */
 	protected function init() {
-		$this->cObj = t3lib_div::makeInstance('tslib_cObj');
-		tslib_eidtools::connectDB();
-
-			// Initialize plugin configuration
-		$pid = t3lib_div::_GET('id');
-		if (!$pid) {
-			$pid = 0;
-		}
-
-			// Initialize TSFE (mandatory for $cObj->typolink() calls)
-		$GLOBALS['TSFE'] = t3lib_div::makeInstance('tslib_fe', $GLOBALS['TYPO3_CONF_VARS'], $pid, 0, TRUE);
-		$GLOBALS['TSFE']->connectToDB();
-		$GLOBALS['TSFE']->initFEuser();
-		$GLOBALS['TSFE']->determineId();
-		$GLOBALS['TSFE']->getCompressedTCarray();
-		$GLOBALS['TSFE']->initTemplate();
-		$GLOBALS['TSFE']->getConfigArray();
-
 		$settings = $GLOBALS['TSFE']->tmpl->setup['plugin.'][$this->prefixId . '.'];
 
 			// Initialize default values based on extension TS
@@ -280,6 +264,25 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 		/** @var $dao tx_egovapi_dao_dao */
 		$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $this->conf);
 		tx_egovapi_domain_repository_factory::injectDao($dao);
+	}
+
+	/**
+	 * Initializes TSFE and sets $GLOBALS['TSFE'].
+	 *
+	 * @return void
+	 */
+	protected function initTSFE() {
+		$GLOBALS['TSFE'] = t3lib_div::makeInstance('tslib_fe', $GLOBALS['TYPO3_CONF_VARS'], t3lib_div::_GP('id'), '');
+		$GLOBALS['TSFE']->connectToDB();
+		$GLOBALS['TSFE']->initFEuser();
+		$GLOBALS['TSFE']->checkAlternativeIdMethods();
+		$GLOBALS['TSFE']->determineId();
+		$GLOBALS['TSFE']->getCompressedTCarray();
+		$GLOBALS['TSFE']->initTemplate();
+		$GLOBALS['TSFE']->getConfigArray();
+
+			// Get linkVars, absRefPrefix, etc
+		TSpagegen::pagegenInit();
 	}
 
 }

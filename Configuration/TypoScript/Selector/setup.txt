@@ -6,9 +6,6 @@ page.includeJSlibs {
 	egovapi_selector = EXT:egovapi/Resources/Public/JavaScript/selector.js
 }
 
-	# RealURL is not compatible with eID link generation
-config.tx_realurl_enable = 0
-
 plugin.tx_egovapi_pi1 {
 	eCHlanguageID.cObject = TEXT
 	eCHlanguageID.cObject.data = GP:language
@@ -114,7 +111,9 @@ plugin.tx_egovapi_pi2 {
 
 		30 = TEXT
 		30.typolink.parameter.cObject < temp.parametrizedUrl
-		30.typolink.target = _blank
+
+			# Link is considered to be external as it is constructed in temp.parametrizedUrl
+		30.typolink.extTarget = _blank
 	}
 }
 
