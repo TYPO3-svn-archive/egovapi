@@ -68,25 +68,25 @@ plugin.tx_egovapi_pi2 {
 			parameter = {$plugin.tx_egovapi.targets.single.service}
 			additionalParams.cObject = COA
 			additionalParams.cObject {
-				1 = TEXT
-				1.data = GP:language
-				1.wrap = &language=|
+				10 = TEXT
+				10.data = GP:language
+				10.wrap = &language=|
 
-				2 = TEXT
-				2.data = GP:community
-				2.wrap = &community=|
+				20 = TEXT
+				20.data = GP:community
+				20.wrap = &community=|
 
-				3 = TEXT
-				3.data = GP:organization
-				3.wrap = &organization=|
+				30 = TEXT
+				30.data = GP:organization
+				30.wrap = &organization=|
 
-				4 = TEXT
-				4.data = GP:service
-				4.ifEmpty = __SERVICE_ID__
-				4.wrap = &service=|
+				40 = TEXT
+				40.data = GP:service
+				40.ifEmpty = __SERVICE_ID__
+				40.wrap = &service=|
 
-				5 = TEXT
-				5 {
+				50 = TEXT
+				50 {
 					data = GP:version
 					ifEmpty = __VERSION__
 					override < .ifEmpty
@@ -94,9 +94,9 @@ plugin.tx_egovapi_pi2 {
 					wrap = &version=|
 				}
 
-				6 = TEXT
-				6.data = GP:blocks
-				6.wrap = &blocks=|
+				60 = TEXT
+				60.data = GP:blocks
+				60.wrap = &blocks=|
 			}
 			forceAbsoluteUrl = 1
 			returnLast = url
