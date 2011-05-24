@@ -164,54 +164,61 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	 * @return array
 	 */
 	protected function getParametrizedUri() {
-		$conf = $this->conf['parametrizedUrl.'];
+		//$baseUrl = $this->cObj->typoLink('|', $conf['typolink.']);
+		//$baseUrl = str_replace('%20', '+', $baseUrl);
 
-		$baseUrl = $this->cObj->typoLink('|', $conf['typolink.']);
-		$baseUrl = str_replace('%20', '+', $baseUrl);
-
-		$serviceIdKey = $conf['parameters.']['serviceId'];
-		$versionKey = $conf['parameters.']['version'];
-
-		$serviceId = t3lib_div::_GP($serviceIdKey);
-		$version = t3lib_div::_GP($versionKey);
-
-		$servicesVersions = array();
-
-		if ($serviceId) {
-			if (!$version) {
-				// Version is not given, search it!
-				$services = $this->getDomainServices();
-				foreach ($services as $service) {
-					if ($service->getId() == $serviceId) {
-						$version = $service->getVersionId();
-						break;
-					}
+		$dataServices = array();
+		$services = $this->getDomainServices();
+		foreach ($services as $service) {
+			if ($this->conf['service']) {
+				if ($service->getId() === $this->conf['service']) {
+					$dataService = $this->extractData($service);
+						// Override version with the one given as parameter
+					$dataService['version'] = $this->conf['version'];
+					$dataServices[] = $dataService;
 				}
-			}
-			$servicesVersions[] = array(
-				'serviceId' => $serviceId,
-				'version' => $version,
-			);
-		} else {
-			$services = $this->getDomainServices();
-			foreach ($services as $service) {
-				$servicesVersions[] = array(
-					'serviceId' => $service->getId(),
-					'version' => $service->getVersionId(),
-				);
+			} else {
+				$dataServices[] = $this->extractData($service);
 			}
 		}
 
 		$data = array();
-		foreach ($servicesVersions as $serviceVersion) {
-			$data[] = array(
-				'url' => str_replace(
-					array('__SERVICE_ID__', '__VERSION__'),
-					array($serviceVersion['serviceId'], $serviceVersion['version']),
-					$baseUrl
-				),
-			);
+		foreach ($dataServices as $dataService) {
+			$this->cObj->start($dataService);
+			$url = $this->cObj->cObjGetSingle($this->conf['parametrizedUrl'], $this->conf['parametrizedUrl.']);
+				// "+" looks better than "%20" in generated URL
+			$url = str_replace('%20', '+', $url);
+			$data[] = array('url' => $url);
 		}
+
+		return $data;
+	}
+
+	/**
+	 * Extracts data from a service to be used with cObjects.
+	 *
+	 * @param tx_egovapi_domain_model_service $service
+	 * @return array
+	 */
+	protected function extractData(tx_egovapi_domain_model_service $service) {
+		$data = array(
+			'id'               => $service->getId(),
+			'name'             => $service->getName(),
+			'description'      => $service->getDescription(),
+			'versionId'        => $service->getVersionId(),
+			'versionName'      => $service->getVersionName(),
+			'communityId'      => $service->getCommunityId(),
+			'release'          => $service->getRelease(),
+			'comments'         => $service->getComments(),
+			'provider'         => $service->getProvider(),
+			'customer'         => $service->getCustomer(),
+			'type'             => $service->getType(),
+			'action'           => $service->getAction(),
+			'status'           => $service->getStatus(),
+			'author'           => $service->getAuthor(),
+			'creationDate'     => $service->getCreationDate(),
+			'lastModification' => $service->getLastModificationDate(),
+		);
 
 		return $data;
 	}

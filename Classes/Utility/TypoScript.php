@@ -54,9 +54,9 @@ class tx_egovapi_utility_ts {
 			'eCHlanguageID', 'eCHcommunityID', 'organizationID',
 			'wsdl', 'cacheLifetime', 'useFluid', 'enableDebug', 'showRenderTime', 'stripTags',
 			'includeCHServices', 'displayLevels', 'level', 'mode',
-			'audiences', 'views', 'domains', 'topics', 'services', 'version',
+			'audiences', 'views', 'domains', 'topics', 'services', /* 'version', */
 			// Pi2
-			'template',
+			'template', 'service', 'version',
 			// Pi1 used by Pi2
 			'dynamicConfig',
 		);

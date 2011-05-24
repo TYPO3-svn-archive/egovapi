@@ -109,15 +109,17 @@ $(function() {
                 blocks: selectedBlocks.join(" ")
             },
             function (response) {
+                var result = "";
                 if (response.success) {
                     var data = response.data;
 
                     var items = '';
                     for (var i = 0; i < data.length; i++) {
-                        items += '<li><a href="' + data[i].url + '" target="_blank">' + data[i].url + '</a></li>';
+                        items += "<li>" + data[i].url + "</li>";
                     }
-                    $("#tx_egovapi_result").html("<ul>" + items + "</ul>");
+                    result = "<ul>" + items + "</ul>";
                 }
+                $("#tx_egovapi_result").html(result);
             }
         );
     })

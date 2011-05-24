@@ -51,6 +51,41 @@ plugin.tx_egovapi_pi1 {
 	version.cObject.data = GP:version
 }
 
+temp.parametrizedUrl = TEXT
+temp.parametrizedUrl {
+	typolink {
+		parameter = {$plugin.tx_egovapi.targets.single.service}
+		additionalParams.cObject = COA
+		additionalParams.cObject {
+			10 = TEXT
+			10.data = GP:language
+			10.wrap = &language=|
+
+			20 = TEXT
+			20.data = GP:community
+			20.wrap = &community=|
+
+			30 = TEXT
+			30.data = GP:organization
+			30.wrap = &organization=|
+
+			40 = TEXT
+			40.field = id
+			40.wrap = &service=|
+
+			50 = TEXT
+			50.field = versionId
+			50.wrap = &version=|
+
+			60 = TEXT
+			60.data = GP:blocks
+			60.wrap = &blocks=|
+		}
+		returnLast = url
+		forceAbsoluteUrl = 1
+	}
+}
+
 plugin.tx_egovapi_pi2 {
 	wsdl              = {$plugin.tx_egovapi.wsdl}
 	cacheLifetime     =
@@ -59,48 +94,24 @@ plugin.tx_egovapi_pi2 {
 
 	template          = EXT:egovapi/Resources/Private/Templates/Pi2/form.html
 
+	service = TEXT
+	service.data = GP:service
+	version = TEXT
+	version.data = GP:version
+
 		# Configuration for generated URI's (properties of typolink)
+	parametrizedUrl = COA
 	parametrizedUrl {
-		parameters.serviceId = service
-		parameters.version = version
+		10 = TEXT
+		10.field = name
 
-		typolink {
-			parameter = {$plugin.tx_egovapi.targets.single.service}
-			additionalParams.cObject = COA
-			additionalParams.cObject {
-				10 = TEXT
-				10.data = GP:language
-				10.wrap = &language=|
+		20 = TEXT
+		20.field = versionId
+		20.noTrimWrap = | (|)<br />
 
-				20 = TEXT
-				20.data = GP:community
-				20.wrap = &community=|
-
-				30 = TEXT
-				30.data = GP:organization
-				30.wrap = &organization=|
-
-				40 = TEXT
-				40.data = GP:service
-				40.ifEmpty = __SERVICE_ID__
-				40.wrap = &service=|
-
-				50 = TEXT
-				50 {
-					data = GP:version
-					ifEmpty = __VERSION__
-					override < .ifEmpty
-					override.if.isFalse.data = GP:service
-					wrap = &version=|
-				}
-
-				60 = TEXT
-				60.data = GP:blocks
-				60.wrap = &blocks=|
-			}
-			forceAbsoluteUrl = 1
-			returnLast = url
-		}
+		30 = TEXT
+		30.typolink.parameter.cObject < temp.parametrizedUrl
+		30.typolink.target = _blank
 	}
 }
 
