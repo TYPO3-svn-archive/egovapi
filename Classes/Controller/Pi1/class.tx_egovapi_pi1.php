@@ -58,7 +58,7 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 	public function main($content, array $conf) {
 		$this->init($conf);
 		$this->pi_setPiVarDefaults();
-		$useCaching = !$this->conf['dynamicCOnfig'];
+		$useCaching = !$this->conf['dynamicConfig'];
 		$this->pi_USER_INT_obj = $useCaching ? 0 : 1;
 
 		if (!$useCaching && $this->cObj->getUserObjectType() == tslib_cObj::OBJECTTYPE_USER) {
