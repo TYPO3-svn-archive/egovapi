@@ -70,13 +70,14 @@ class tx_egovapi_domain_model_audience extends tx_egovapi_domain_model_abstractE
 	/**
 	 * Gets the views.
 	 *
+	 * @param boolean $cache
 	 * @return tx_egovapi_domain_model_view[]
 	 */
-	public function getViews() {
+	public function getViews($cache = TRUE) {
 		if ($this->views == null) {
 			/** @var tx_egovapi_domain_repository_viewRepository $viewRepository */
 			$viewRepository = tx_egovapi_domain_repository_factory::getRepository('view');
-			$this->views = $viewRepository->findAll($this);
+			$this->views = $viewRepository->findAll($this, $cache);
 		}
 		return $this->views;
 	}

@@ -46,14 +46,15 @@ class tx_egovapi_domain_repository_topicRepository extends tx_egovapi_domain_rep
 	 * Finds all topics associated to a given domain.
 	 *
 	 * @param tx_egovapi_domain_model_domain $domain
+	 * @param boolean $cache
 	 * @return tx_egovapi_domain_model_topic[]
 	 */
-	public function findAll(tx_egovapi_domain_model_domain $domain = NULL) {
+	public function findAll(tx_egovapi_domain_model_domain $domain = NULL, $cache = TRUE) {
 		if ($domain === NULL) {
 			throw new InvalidArgumentException('Domain cannot be null. This may be related to the use of an unsupported language for the web service.', 1299746830);
 		}
 		$id = $domain->getId();
-		if (isset(self::$topicsByDomain[$id])) {
+		if (isset(self::$topicsByDomain[$id]) && $cache) {
 			return self::$topicsByDomain[$id];
 		}
 

@@ -451,13 +451,14 @@ class tx_egovapi_domain_model_domain extends tx_egovapi_domain_model_abstractEnt
 	/**
 	 * Gets the topics.
 	 *
+	 * @param boolean $cache
 	 * @return tx_egovapi_domain_model_topic[]
 	 */
-	public function getTopics() {
+	public function getTopics($cache = TRUE) {
 		if ($this->topics == null) {
 			/** @var tx_egovapi_domain_repository_topicRepository $topicRepository */
 			$topicRepository = tx_egovapi_domain_repository_factory::getRepository('topic');
-			$this->topics = $topicRepository->findAll($this);
+			$this->topics = $topicRepository->findAll($this, $cache);
 		}
 		return $this->topics;
 	}

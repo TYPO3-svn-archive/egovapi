@@ -45,10 +45,11 @@ class tx_egovapi_domain_repository_audienceRepository extends tx_egovapi_domain_
 	/**
 	 * Finds all audiences.
 	 *
+	 * @param boolean $cache
 	 * @return tx_egovapi_domain_model_audience[]
 	 */
-	public function findAll() {
-		if (self::$audiences) {
+	public function findAll($cache = TRUE) {
+		if (self::$audiences && $cache) {
 			return self::$audiences;
 		}
 

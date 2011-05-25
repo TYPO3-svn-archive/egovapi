@@ -132,25 +132,34 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	/**
 	 * Returns available services as domain model objects.
 	 *
+	 * @param boolean $cache
 	 * @return tx_egovapi_domain_model_service[]
 	 */
-	protected function getDomainServices() {
+	protected function getDomainServices($cache = TRUE) {
 		$services = array();
 
 		/** @var tx_egovapi_domain_repository_audienceRepository $audienceRepository */
 		$audienceRepository = tx_egovapi_domain_repository_factory::getRepository('audience');
 
-		$audiences = $audienceRepository->findAll();
+		$audiences = $audienceRepository->findAll($cache);
 		foreach ($audiences as $audience) {
-			foreach ($audience->getViews() as $view) {
-				foreach ($view->getDomains() as $domain) {
-					foreach ($domain->getTopics() as $topic) {
+			foreach ($audience->getViews($cache) as $view) {
+				foreach ($view->getDomains($cache) as $domain) {
+					foreach ($domain->getTopics($cache) as $topic) {
 						foreach ($topic->getServices() as $service) {
 							$services[] = $service;
 						}
 					}
 				}
 			}
+		}
+
+		if (!count($services) && $this->conf['eCHcommunityID'] !== '00-00' && $this->conf['includeCHServices']) {
+				// Community is not yet configured, retry with Confederation itself as community
+			$this->conf['eCHcommunityID'] = '00-00';
+			tx_egovapi_domain_repository_factory::getDao()->updateSettings($this->conf);
+
+			return $this->getDomainServices(FALSE);
 		}
 
 			// Sort services by name

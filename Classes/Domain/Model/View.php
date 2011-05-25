@@ -97,13 +97,14 @@ class tx_egovapi_domain_model_view extends tx_egovapi_domain_model_abstractEntit
 	/**
 	 * Gets the domains.
 	 *
+	 * @param boolean $cache
 	 * @return tx_egovapi_domain_model_domain[]
 	 */
-	public function getDomains() {
+	public function getDomains($cache = TRUE) {
 		if ($this->domains == null) {
 			/** @var tx_egovapi_domain_repository_domainRepository $domainRepository */
 			$domainRepository = tx_egovapi_domain_repository_factory::getRepository('domain');
-			$this->domains = $domainRepository->findAll($this);
+			$this->domains = $domainRepository->findAll($this, $cache);
 		}
 		return $this->domains;
 	}

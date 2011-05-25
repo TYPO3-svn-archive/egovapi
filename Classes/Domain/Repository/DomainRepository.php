@@ -46,14 +46,15 @@ class tx_egovapi_domain_repository_domainRepository extends tx_egovapi_domain_re
 	 * Finds all domains associated to a given view.
 	 *
 	 * @param tx_egovapi_domain_model_view $view
+	 * @param boolean $cache
 	 * @return tx_egovapi_domain_model_domain[]
 	 */
-	public function findAll(tx_egovapi_domain_model_view $view = NULL) {
+	public function findAll(tx_egovapi_domain_model_view $view = NULL, $cache = TRUE) {
 		if ($view === NULL) {
 			throw new InvalidArgumentException('View cannot be null. This may be related to the use of an unsupported language for the web service.', 1299746714);
 		}
 		$id = $view->getId();
-		if (isset(self::$domainsByView[$id])) {
+		if (isset(self::$domainsByView[$id]) && $cache) {
 			return self::$domainsByView[$id];
 		}
 

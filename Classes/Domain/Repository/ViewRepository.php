@@ -46,14 +46,15 @@ class tx_egovapi_domain_repository_viewRepository extends tx_egovapi_domain_repo
 	 * Finds all views associated to a given audience.
 	 *
 	 * @param tx_egovapi_domain_model_audience $audience
+	 * @param boolean $cache
 	 * @return tx_egovapi_domain_model_view[]
 	 */
-	public function findAll(tx_egovapi_domain_model_audience $audience = NULL) {
+	public function findAll(tx_egovapi_domain_model_audience $audience = NULL, $cache = TRUE) {
 		if ($audience === NULL) {
 			throw new InvalidArgumentException('Audience cannot be null. This may be related to the use of an unsupported language for the web service.', 1299746801);
 		}
 		$id = $audience->getId();
-		if (isset(self::$viewsByAudience[$id])) {
+		if (isset(self::$viewsByAudience[$id]) && $cache) {
 			return self::$viewsByAudience[$id];
 		}
 
