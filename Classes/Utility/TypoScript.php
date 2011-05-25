@@ -91,13 +91,15 @@ class tx_egovapi_utility_ts {
 		}
 
 			// Preprocess the service versions
-		foreach ($settings['versions.'] as $serviceId => $value) {
-			if (substr($serviceId, -1) === '.') {
-				$serviceId = substr($serviceId, 0, strlen($serviceId) - 1);
-			}
-			if (isset($settings['versions.'][$serviceId . '.'])) {
-				$settings['versions.'][$serviceId] = $cObj->stdWrap($settings['versions.'][$serviceId], $settings['versions.'][$serviceId . '.']);
-				unset($settings['versions.'][$serviceId . '.']);
+		if (isset($settings['versions.'])) {
+			foreach ($settings['versions.'] as $serviceId => $value) {
+				if (substr($serviceId, -1) === '.') {
+					$serviceId = substr($serviceId, 0, strlen($serviceId) - 1);
+				}
+				if (isset($settings['versions.'][$serviceId . '.'])) {
+					$settings['versions.'][$serviceId] = $cObj->stdWrap($settings['versions.'][$serviceId], $settings['versions.'][$serviceId . '.']);
+					unset($settings['versions.'][$serviceId . '.']);
+				}
 			}
 		}
 
