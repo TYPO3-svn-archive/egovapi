@@ -172,7 +172,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 				if ($service->getId() === $this->conf['service']) {
 					$dataService = $this->extractData($service);
 						// Override version with the one given as parameter
-					$dataService['version'] = $this->conf['version'];
+					$dataService['versionId'] = $this->conf['version'];
 					$dataServices[] = $dataService;
 				}
 			} else {
