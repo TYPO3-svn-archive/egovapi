@@ -137,6 +137,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	 */
 	protected function getDomainServices($cache = TRUE) {
 		$services = array();
+		$serviceIds = array();
 
 		/** @var tx_egovapi_domain_repository_audienceRepository $audienceRepository */
 		$audienceRepository = tx_egovapi_domain_repository_factory::getRepository('audience');
@@ -147,7 +148,11 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 				foreach ($view->getDomains($cache) as $domain) {
 					foreach ($domain->getTopics($cache) as $topic) {
 						foreach ($topic->getServices() as $service) {
-							$services[] = $service;
+							$serviceId = $service->getId();
+							if (!in_array($serviceId, $serviceIds)) {
+								$services[] = $service;
+								$serviceIds[] = $serviceId;
+							}
 						}
 					}
 				}

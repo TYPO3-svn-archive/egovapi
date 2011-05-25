@@ -1,5 +1,6 @@
 2011-05-25  Xavier Perseguers  <xavier@causal.ch>
 
+	* [BUGFIX] Removed duplicated Confederation services
 	* [TASK] Fall back to Confederation services when an organization is not yet configured
 	* [BUGFIX] Version was not taken into account
 
