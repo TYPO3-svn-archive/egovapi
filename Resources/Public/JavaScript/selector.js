@@ -5,7 +5,7 @@ $(function() {
     // Reset form fields
     $("select#tx_egovapi_organization").html("");
     $("select#tx_egovapi_service").html("");
-    $("input#tx_egovapi_version").html("");
+    $("input#tx_egovapi_version").val("");
 
     // Update the list of organizations
     $("select#tx_egovapi_community").change(function() {
@@ -27,6 +27,8 @@ $(function() {
                         options += '<option value="' + data[i].id + '">' + data[i].name + '</option>';
                     }
                     $("select#tx_egovapi_organization").html(options);
+                    $("select#tx_egovapi_service").html('');
+                    $("input#tx_egovapi_version").val("");
                 }
             }
         )
@@ -54,7 +56,7 @@ $(function() {
                         options += '<option value="' + data[i].id + '-' + data[i].version + '">' + data[i].name + '</option>';
                     }
                     $("select#tx_egovapi_service").html(options);
-                    $("input#tx_egovapi_version").html("");
+                    $("input#tx_egovapi_version").val("");
                 }
             }
         )
