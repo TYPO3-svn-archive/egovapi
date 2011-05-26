@@ -97,14 +97,14 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	 * @return void
 	 */
 	protected function initializeCache() {
-		tx_egovapi_dao_cache::initializeCachingFramework();
+		tx_egovapi_utility_cache::initializeCachingFramework();
 
 		try {
 			$this->webServiceCache = $GLOBALS['typo3CacheManager']->getCache(
 				'egovapi'
 			);
 		} catch (t3lib_cache_exception_NoSuchCache $e) {
-			tx_egovapi_dao_cache::initWebServiceCache();
+			tx_egovapi_utility_cache::initWebServiceCache();
 
 			$this->webServiceCache = $GLOBALS['typo3CacheManager']->getCache(
 				'egovapi'
@@ -130,7 +130,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	 * @return tx_egovapi_domain_model_audience[]
 	 */
 	public function getAudiences() {
-		$cacheKey = tx_egovapi_dao_cache::getCacheKey(array(
+		$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
 			'method'       => 'audiences',
 			'language'     => strtoupper($this->settings['eCHlanguageID']),
 			'community'    => $this->settings['eCHcommunityID'],
@@ -158,7 +158,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	 * @return array
 	 */
 	public function getViews($audienceId) {
-		$cacheKey = tx_egovapi_dao_cache::getCacheKey(array(
+		$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
 			'method'       => 'views',
 			'audience'     => $audienceId,
 			'language'     => strtoupper($this->settings['eCHlanguageID']),
@@ -187,7 +187,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	 * @return array
 	 */
 	public function getDomains($viewId) {
-		$cacheKey = tx_egovapi_dao_cache::getCacheKey(array(
+		$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
 			'method'       => 'domains',
 			'view'         => $viewId,
 			'language'     => strtoupper($this->settings['eCHlanguageID']),
@@ -218,7 +218,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	 * @return array
 	 */
 	public function getDomainDetails($domainId, $versionId, $isParent) {
-		$cacheKey = tx_egovapi_dao_cache::getCacheKey(array(
+		$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
 			'method'       => 'domainDetails',
 			'domain'       => $domainId,
 			'version'      => $versionId,
@@ -249,7 +249,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	 * @return array
 	 */
 	public function getTopics($domainId) {
-		$cacheKey = tx_egovapi_dao_cache::getCacheKey(array(
+		$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
 			'method'       => 'topics',
 			'domain'       => $domainId,
 			'language'     => strtoupper($this->settings['eCHlanguageID']),
@@ -280,7 +280,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	 * @return array
 	 */
 	public function getTopicDetails($topicId, $versionId, $isParent) {
-		$cacheKey = tx_egovapi_dao_cache::getCacheKey(array(
+		$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
 			'method'       => 'topicDetails',
 			'topic'        => $topicId,
 			'version'      => $versionId,
@@ -311,7 +311,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	 * @return array
 	 */
 	public function getServices($topicId) {
-		$cacheKey = tx_egovapi_dao_cache::getCacheKey(array(
+		$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
 			'method'       => 'services',
 			'topic'        => $topicId,
 			'language'     => strtoupper($this->settings['eCHlanguageID']),
@@ -341,7 +341,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	 * @return array
 	 */
 	public function getServiceDetails($serviceId, $versionId) {
-		$cacheKey = tx_egovapi_dao_cache::getCacheKey(array(
+		$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
 			'method'       => 'serviceDetails',
 			'service'      => $serviceId,
 			'version'      => $versionId,

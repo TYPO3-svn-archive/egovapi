@@ -29,7 +29,7 @@
 /**
  * Cache engine helper for web service result sets.
  *
- * @category    DAO
+ * @category    Utility
  * @package     TYPO3
  * @subpackage  tx_egovapi
  * @author      Xavier Perseguers <xavier@causal.ch>
@@ -37,7 +37,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html
  * @version     SVN: $Id$
  */
-class tx_egovapi_dao_cache {
+class tx_egovapi_utility_cache {
 
 	/**
 	 * Initializes the caching framework by loading the cache manager and factory
