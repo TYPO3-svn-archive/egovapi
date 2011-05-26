@@ -1,5 +1,6 @@
 2011-05-26  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Set default WS language based on config.language
 	* [TASK] Updated PDF documentation and optmized it to reduce file size
 	* [TASK] Added TypoScript configuration sample for generating legacy parametrized URL
 2011-05-25  Xavier Perseguers  <xavier@causal.ch>

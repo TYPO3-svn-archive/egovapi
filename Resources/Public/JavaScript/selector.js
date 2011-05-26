@@ -1,11 +1,13 @@
 $(function() {
     var ajaxUrl = $("input#tx_egovapi_ajaxUrl").val();
+    var defaultLanguage = $("input#tx_egovapi_defaultLanguage").val();
     var eID = "egovapi_pi2";
 
     // Reset form fields
     $("select#tx_egovapi_organization").html("");
     $("select#tx_egovapi_service").html("");
     $("input#tx_egovapi_version").val("");
+    $("select#tx_egovapi_language").val(defaultLanguage);
 
     // Update the list of organizations
     $("select#tx_egovapi_community").change(function() {

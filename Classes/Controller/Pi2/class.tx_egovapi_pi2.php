@@ -98,7 +98,9 @@ class tx_egovapi_pi2 extends tx_egovapi_pibase {
 			'LABEL_BLOCK_12'     => $this->pi_getLL('pi_flexform.displayBlocks.APPROVAL'),
 			'LABEL_BLOCK_13'     => $this->pi_getLL('pi_flexform.displayBlocks.CONTACT'),
 			'LABEL_LANGUAGE'     => $this->pi_getLL('common_language'),
+			'LABEL_OK'           => $this->pi_getLL('common_ok'),
 			'AJAX_URL'           => $this->pi_getPageLink($GLOBALS['TSFE']->id),
+			'LANGUAGE'           => t3lib_div::inList('de,en,fr,it,rm', $GLOBALS['TSFE']->lang) ? $GLOBALS['TSFE']->lang : 'de',
 		);
 		$subparts = array(
 			'COMMUNITIES' => $utilityConstants->getCommunities(array('fieldName' => 'tx_egovapi_community')),
@@ -129,9 +131,6 @@ class tx_egovapi_pi2 extends tx_egovapi_pibase {
 
 			// Basically process stdWrap over all global parameters
 		$this->conf = tx_egovapi_utility_ts::preprocessConfiguration($this->cObj, $this->conf);
-
-			// Add current language to avoid caching problems
-		$this->conf['language'] = $GLOBALS['TSFE']->lang;
 
 		if ($this->conf['wsdl']) {
 			$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $this->conf);

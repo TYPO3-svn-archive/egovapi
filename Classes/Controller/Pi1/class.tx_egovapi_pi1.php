@@ -126,9 +126,6 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 			// Basically process stdWrap over all global parameters
 		$this->conf = tx_egovapi_utility_ts::preprocessConfiguration($this->cObj, $this->conf);
 
-			// Add current language to avoid caching problems
-		$this->conf['language'] = $GLOBALS['TSFE']->lang;
-
 			// Load the flexform and loop on all its values to override TS setup values
 			// Some properties use a different test (more strict than not empty) and yet some others no test at all
 			// see http://wiki.typo3.org/index.php/Extension_Development,_using_Flexforms
