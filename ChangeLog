@@ -1,3 +1,6 @@
+2011-05-26  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Added TypoScript configuration sample for generating legacy parametrized URL
 2011-05-25  Xavier Perseguers  <xavier@causal.ch>
 
 	* [BUGFIX] Removed duplicated Confederation services
