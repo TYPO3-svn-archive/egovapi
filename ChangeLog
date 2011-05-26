@@ -1,5 +1,6 @@
 2011-05-26  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Dramatically improved AJAX response time
 	* [TASK] Refactored cache class to allow it to be used by pi2 to speed up AJAX calls
 	* [TASK] Set default WS language based on config.language
 	* [TASK] Updated PDF documentation and optmized it to reduce file size

@@ -40,12 +40,25 @@ if (!defined('PATH_typo3conf')) {
  */
 class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 
+	const DEVLOG_OK     = -1;
+	const DEVLOG_NOTICE = 1;
+
 	public $prefixId = 'tx_egovapi_pi2';
+
+	/**
+	 * @var t3lib_cache_frontend_VariableFrontend
+	 */
+	protected $ajaxCache;
 
 	/**
 	 * @var array
 	 */
 	public $conf;
+
+	/**
+	 * @var boolean
+	 */
+	protected $debug;
 
 	/**
 	 * Default action.
@@ -56,6 +69,10 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 		$this->initTSFE();
 		$this->cObj = t3lib_div::makeInstance('tslib_cObj');
 		$this->init();
+
+		if (TYPO3_UseCachingFramework) {
+			$this->initializeCache();
+		}
 
 		/** @var tx_egovapi_domain_repository_communityRepository $communityRepository */
 		$communityRepository = tx_egovapi_domain_repository_factory::getRepository('community');
@@ -136,6 +153,20 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	 * @return tx_egovapi_domain_model_service[]
 	 */
 	protected function getDomainServices($cache = TRUE) {
+		if ($cache) {
+			$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
+				'method'            => 'getDomainServices',
+				'includeCHServices' => $this->conf['includeCHServices'],
+				'language'          => $this->conf['eCHlanguageID'],
+				'community'         => $this->conf['eCHcommunityID'],
+				'organization'      => $this->conf['organizationID'],
+			));
+			$services = $this->getCacheData($cacheKey);
+			if ($services) {
+				return $services;
+			}
+		}
+
 		$services = array();
 		$serviceIds = array();
 
@@ -169,6 +200,15 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 
 			// Sort services by name
 		tx_egovapi_utility_objects::sort($services, 'name');
+
+		if ($cache) {
+				// Cache the list of services
+			$tags = array(
+				'ajax',
+				strtoupper($this->conf['eCHlanguageID']),
+			);
+			$this->storeCacheData($cacheKey, $services, $tags);
+		}
 
 		return $services;
 	}
@@ -236,6 +276,67 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	}
 
 	/**
+	 * Gets data from cache (if available).
+	 *
+	 * @param string $cacheKey
+	 * @return array
+	 */
+	protected function getCacheData($cacheKey) {
+		$data = array();
+		if ($this->ajaxCache) {
+			if ($this->ajaxCache->has($cacheKey)) {
+				$data = $this->ajaxCache->get($cacheKey);
+
+				if ($this->debug) {
+					t3lib_div::devLog('Cache hit for key "' . $cacheKey . '"', 'egovapi', self::DEVLOG_OK, $data);
+				}
+			}
+		}
+		return $data;
+	}
+
+	/**
+	 * Stores data in cache (if available).
+	 *
+	 * @param string $cacheKey
+	 * @param array $data
+	 * @param array $tags
+	 * @return void
+	 */
+	protected function storeCacheData($cacheKey, array $data, array $tags = array()) {
+		if ($this->ajaxCache && $data) {
+			try {
+				$this->ajaxCache->set($cacheKey, $data, $tags, intval($this->conf['cacheLifetime']));
+			} catch (t3lib_cache_Exception $e) {
+				if ($this->debug) {
+					t3lib_div::devLog($e->getMessage(), 'egovapi', self::DEVLOG_NOTICE);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Initializes the AJAX cache.
+	 *
+	 * @return void
+	 */
+	protected function initializeCache() {
+		tx_egovapi_utility_cache::initializeCachingFramework();
+
+		try {
+			$this->ajaxCache = $GLOBALS['typo3CacheManager']->getCache(
+				'egovapi'
+			);
+		} catch (t3lib_cache_exception_NoSuchCache $e) {
+			tx_egovapi_utility_cache::initWebServiceCache();
+
+			$this->ajaxCache = $GLOBALS['typo3CacheManager']->getCache(
+				'egovapi'
+			);
+		}
+	}
+
+	/**
 	 * Initializes this eID class.
 	 *
 	 * @return void
@@ -278,6 +379,8 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 		/** @var $dao tx_egovapi_dao_dao */
 		$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $this->conf);
 		tx_egovapi_domain_repository_factory::injectDao($dao);
+
+		$this->debug = $this->conf['enableDebug'];
 	}
 
 	/**
