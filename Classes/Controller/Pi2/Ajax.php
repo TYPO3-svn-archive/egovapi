@@ -139,6 +139,17 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	 * @return array
 	 */
 	protected function getServices() {
+		$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
+			'method'            => 'getServices',
+			'includeCHServices' => $this->conf['includeCHServices'],
+			'language'          => $this->conf['eCHlanguageID'],
+			'community'         => $this->conf['eCHcommunityID'],
+			'organization'      => $this->conf['organizationID'],
+		));
+		$data = $this->getCacheData($cacheKey);
+		if ($data) {
+			return $data;
+		}
 		$data = array();
 		$services = $this->getDomainServices();
 
@@ -149,6 +160,12 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 				'name' => $service->getName(),
 			);
 		}
+
+		$tags = array(
+			'ajax',
+			strtoupper($this->conf['eCHlanguageID']),
+		);
+		$this->storeCacheData($cacheKey, $data, $tags);
 
 		return $data;
 	}
@@ -226,6 +243,21 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	 * @return array
 	 */
 	protected function getParametrizedUri() {
+		$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
+			'method'            => 'getServices',
+			'includeCHServices' => $this->conf['includeCHServices'],
+			'language'          => $this->conf['eCHlanguageID'],
+			'community'         => $this->conf['eCHcommunityID'],
+			'organization'      => $this->conf['organizationID'],
+			'GET'               => t3lib_div::_GET(),
+			'parametrizedUrl'   => $this->conf['parametrizedUrl'],
+			'parametrizedUrl.'  => $this->conf['parametrizedUrl.'],
+		));
+		$data = $this->getCacheData($cacheKey);
+		if ($data) {
+			return $data;
+		}
+
 		$dataServices = array();
 		$services = $this->getDomainServices();
 		foreach ($services as $service) {
@@ -249,6 +281,8 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 			$url = str_replace('%20', '+', $url);
 			$data[] = array('url' => $url);
 		}
+
+		$this->storeCacheData($cacheKey, $data, array('ajax'));
 
 		return $data;
 	}
@@ -501,10 +535,6 @@ try {
 
 $ajaxData = json_encode($ret);
 
-header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-header('Last-Modified: ' . gmdate( "D, d M Y H:i:s" ) . 'GMT');
-header('Cache-Control: no-cache, must-revalidate');
-header('Pragma: no-cache');
 header('Content-Length: ' . strlen($ajaxData));
 header('Content-Type: application/json');
 
