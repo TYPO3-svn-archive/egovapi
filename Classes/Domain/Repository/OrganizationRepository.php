@@ -55,7 +55,10 @@ class tx_egovapi_domain_repository_organizationRepository extends tx_egovapi_dom
 			/** @var $communityRepository tx_egovapi_domain_repository_communityRepository */
 			$communityRepository = tx_egovapi_domain_repository_factory::getRepository('community');
 
-			$data = file_get_contents(t3lib_extMgm::extPath(self::$extKey) . 'Resources/Private/Data/organizations.csv');
+			/** @var $contentObj tslib_cObj */
+			$contentObj = t3lib_div::makeInstance('tslib_cObj');
+			$data = $contentObj->fileResource($this->settings['data.']['organizations']);
+
 			$lines = explode("\n", $data);
 			// Remove header line
 			array_shift($lines);
@@ -72,7 +75,14 @@ class tx_egovapi_domain_repository_organizationRepository extends tx_egovapi_dom
 				$id = $fields[2];
 				$name = $fields[3];
 
-				self::$organizations[] = t3lib_div::makeInstance('tx_egovapi_domain_model_organization', $id, $name, $canton, $community);
+				/** @var $organization tx_egovapi_domain_model_organization */
+				$organization = t3lib_div::makeInstance('tx_egovapi_domain_model_organization', $id, $name, $canton, $community);
+				if (isset($fields[4]) && isset($fields[5])) {
+					$organization
+						->setLatitude((float) $fields[4])
+						->setLongitude((float) $fields[5]);
+				}
+				self::$organizations[] = $organization;
 			}
 		}
 		return self::$organizations;

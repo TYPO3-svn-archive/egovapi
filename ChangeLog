@@ -1,3 +1,7 @@
+2011-05-27  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Added support for latitude/longitude coordinates of organizations
+
 2011-05-26  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Dramatically improved AJAX response time

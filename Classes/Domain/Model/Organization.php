@@ -51,6 +51,16 @@ class tx_egovapi_domain_model_organization extends tx_egovapi_domain_model_abstr
 	protected $name;
 
 	/**
+	 * @var float
+	 */
+	protected $latitude;
+
+	/**
+	 * @var float
+	 */
+	protected $longitude;
+
+	/**
 	 * Default constructor.
 	 *
 	 * @param string $id
@@ -122,6 +132,46 @@ class tx_egovapi_domain_model_organization extends tx_egovapi_domain_model_abstr
 	 */
 	public function setCommunity(tx_egovapi_domain_model_community $community) {
 		$this->community = $community;
+		return $this;
+	}
+
+	/**
+	 * Returns the latitude.
+	 *
+	 * @return float
+	 */
+	public function getLatitude() {
+		return $this->latitude;
+	}
+
+	/**
+	 * Sets the latitude.
+	 *
+	 * @param float $latitude
+	 * @return tx_egovapi_domain_model_organization the current Organization to allow method chaining
+	 */
+	public function setLatitude($latitude) {
+		$this->latitude = $latitude;
+		return $this;
+	}
+
+	/**
+	 * Returns the longitude.
+	 *
+	 * @return float
+	 */
+	public function getLongitude() {
+		return $this->longitude;
+	}
+
+	/**
+	 * Sets the longitude.
+	 *
+	 * @param float $longitude
+	 * @return tx_egovapi_domain_model_organization the current Organization to allow method chaining
+	 */
+	public function setLongitude($longitude) {
+		$this->longitude = $longitude;
 		return $this;
 	}
 

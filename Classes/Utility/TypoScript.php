@@ -56,7 +56,7 @@ class tx_egovapi_utility_ts {
 			'includeCHServices', 'displayLevels', 'level', 'mode',
 			'audiences', 'views', 'domains', 'topics', 'services', /* 'version', */
 			// Pi2
-			'template', 'service', 'version',
+			'template', 'service', 'version', 'latitude', 'longitude',
 			// Pi1 used by Pi2
 			'dynamicConfig',
 		);

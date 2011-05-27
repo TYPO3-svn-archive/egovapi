@@ -74,12 +74,16 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 			$this->initializeCache();
 		}
 
-		/** @var tx_egovapi_domain_repository_communityRepository $communityRepository */
-		$communityRepository = tx_egovapi_domain_repository_factory::getRepository('community');
-		$community = $communityRepository->findById($this->conf['eCHcommunityID']);
-
-		if (!$community) {
-			throw new Exception('Invalid community "' . $this->conf['eCHcommunityID'] . '"', 1306143897);
+		$community = NULL;
+		if (t3lib_div::_GET('action') !== 'nearest') {
+			if ($this->conf['eCHcommunityID']) {
+				/** @var tx_egovapi_domain_repository_communityRepository $communityRepository */
+				$communityRepository = tx_egovapi_domain_repository_factory::getRepository('community');
+				$community = $communityRepository->findById($this->conf['eCHcommunityID']);
+			}
+			if (!$community) {
+				throw new Exception('Invalid community "' . $this->conf['eCHcommunityID'] . '"', 1306143897);
+			}
 		}
 
 		switch (t3lib_div::_GET('action')) {
@@ -91,6 +95,9 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 				break;
 			case 'url':
 				$data = $this->getParametrizedUri();
+				break;
+			case 'nearest':
+				$data = $this->getNearestOrganization();
 				break;
 			default:
 				throw new Exception('Invalid action ' . t3lib_div::_GET('action'), 1306143638);
@@ -247,6 +254,77 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	}
 
 	/**
+	 * Get the nearest organization.
+	 *
+	 * @return array
+	 */
+	protected function getNearestOrganization() {
+		$data = array();
+		$shortestDistance = 9999;
+		$nearestOrganization = NULL;
+
+		if ($this->conf['latitude'] && $this->conf['longitude']) {
+			/** @var tx_egovapi_domain_repository_organizationRepository $organizationRepository */
+			$organizationRepository = tx_egovapi_domain_repository_factory::getRepository('organization');
+
+			foreach ($organizationRepository->findAll() as $organization) {
+				$lat = $organization->getLatitude();
+				$lng = $organization->getLongitude();
+
+				if ($lat && $lng) {
+					$distance = $this->getSphericalDistance($this->conf['latitude'], $this->conf['longitude'], $lat, $lng);
+					if ($distance < $shortestDistance) {
+						$shortestDistance = $distance;
+						$nearestOrganization = $organization;
+					}
+				}
+			}
+		}
+
+		if ($nearestOrganization) {
+			$community = $nearestOrganization->getCommunity();
+			$data = array(
+				'community' => array(
+					'id' => $community->getId(),
+					'name' => $community->getName(),
+				),
+				'organization' => array(
+					'id' => $nearestOrganization->getId(),
+					'name' => $nearestOrganization->getName(),
+				),
+			);
+		}
+
+		return $data;
+	}
+
+	/**
+	 * Gets the distance between two points using the spherical law of cosines.
+	 *
+	 * @param float $lat1
+	 * @param float $long1
+	 * @param float $lat2
+	 * @param float $long2
+	 * @return float
+	 * @see http://www.movable-type.co.uk/scripts/latlong.html
+	 */
+	protected function getSphericalDistance($lat1, $long1, $lat2, $long2) {
+		$lat1  = deg2rad($lat1);
+		$long1 = deg2rad($long1);
+		$lat2  = deg2rad($lat2);
+		$long2 = deg2rad($long2);
+
+		$R = 6371; // km
+		$d = acos(
+			sin($lat1) * sin($lat2) +
+			cos($lat1) * cos($lat2) *
+			cos($long2 - $long1)
+		) * $R;
+
+		return $d;
+	}
+
+	/**
 	 * Extracts data from a service to be used with cObjects.
 	 *
 	 * @param tx_egovapi_domain_model_service $service
@@ -364,9 +442,6 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 		$this->conf['eCHlanguageID'] = $language;
 
 		$community = t3lib_div::_GET('community');
-		if (!$community) {
-			throw new Exception('Missing parameter "community"', 1306143047);
-		}
 		$this->conf['eCHcommunityID'] = $community;
 
 			// $organization may be empty when retrieving the list of them

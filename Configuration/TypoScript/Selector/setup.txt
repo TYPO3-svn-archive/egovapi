@@ -87,17 +87,23 @@ temp.parametrizedUrl {
 }
 
 plugin.tx_egovapi_pi2 {
-	wsdl              = {$plugin.tx_egovapi.wsdl}
-	cacheLifetime     =
-	enableDebug       = {$plugin.tx_egovapi.enableDebug}
-	includeCHServices = 1
+	wsdl               = {$plugin.tx_egovapi.wsdl}
+	cacheLifetime      =
+	enableDebug        = {$plugin.tx_egovapi.enableDebug}
+	includeCHServices  = 1
 
-	template          = EXT:egovapi/Resources/Private/Templates/Pi2/form.html
+	template           = EXT:egovapi/Resources/Private/Templates/Pi2/form.html
+	data.communities   = EXT:egovapi/Resources/Private/Data/communities.csv
+	data.organizations = EXT:egovapi/Resources/Private/Data/organizations.csv
 
 	service = TEXT
 	service.data = GP:service
 	version = TEXT
 	version.data = GP:version
+	latitude = TEXT
+	latitude.data = GP:lat
+	longitude = TEXT
+	longitude.data = GP:lng
 
 		# Configuration for generated URI's (properties of typolink)
 	parametrizedUrl = COA

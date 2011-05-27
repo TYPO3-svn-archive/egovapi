@@ -92,6 +92,15 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	}
 
 	/**
+	 * Returns the settings.
+	 *
+	 * @return array
+	 */
+	public function getSettings() {
+		return $this->settings;
+	}
+
+	/**
 	 * Initializes the web service cache.
 	 *
 	 * @return void

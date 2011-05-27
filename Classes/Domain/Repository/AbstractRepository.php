@@ -51,6 +51,11 @@ abstract class tx_egovapi_domain_repository_abstractRepository implements t3lib_
 	protected $stripTags;
 
 	/**
+	 * @var array
+	 */
+	protected $settings;
+
+	/**
 	 * Injects the DAO.
 	 *
 	 * @param tx_egovapi_dao_dao $dao
@@ -58,6 +63,7 @@ abstract class tx_egovapi_domain_repository_abstractRepository implements t3lib_
 	 */
 	public function injectDao(tx_egovapi_dao_dao $dao = NULL) {
 		$this->dao = $dao;
+		$this->settings = $dao->getSettings();
 	}
 
 	/**
