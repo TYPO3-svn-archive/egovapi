@@ -100,10 +100,6 @@ plugin.tx_egovapi_pi2 {
 	service.data = GP:service
 	version = TEXT
 	version.data = GP:version
-	latitude = TEXT
-	latitude.data = GP:lat
-	longitude = TEXT
-	longitude.data = GP:lng
 
 		# Configuration for generated URI's (properties of typolink)
 	parametrizedUrl = COA

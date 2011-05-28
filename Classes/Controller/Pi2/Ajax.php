@@ -124,10 +124,15 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 		tx_egovapi_utility_objects::sort($organizations, 'name');
 
 		foreach ($organizations as $organization) {
-			$data[] = array(
+			$item = array(
 				'id' => $organization->getId(),
 				'name' => $organization->getName(),
 			);
+			if (isset($this->conf['coordinates']) && (bool)$this->conf['coordinates']) {
+				$item['latitude'] = $organization->getLatitude();
+				$item['longitude'] = $organization->getLongitude();
+			}
+			$data[] = $item;
 		}
 
 		return $data;
@@ -295,6 +300,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	protected function getNearestOrganization() {
 		$data = array();
 		$shortestDistance = 9999;
+		/** @var $nearestOrganization tx_egovapi_domain_model_organization */
 		$nearestOrganization = NULL;
 
 		if ($this->conf['latitude'] && $this->conf['longitude']) {

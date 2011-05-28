@@ -1,3 +1,8 @@
+2011-05-28  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Updated documentation with latest configuration options
+	* [TASK] Added TS option to return organization coordinates
+
 2011-05-27  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Dramatically improved AJAX response time
