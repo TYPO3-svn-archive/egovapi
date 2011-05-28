@@ -239,6 +239,8 @@
 			<label index="pi_flexform.targets.single.topic">Zielseite für Details einer Thema</label>
 			<label index="pi_flexform.targets.single.service">Zielseite für Details einer Dienstleistung</label>
 
+			<label index="header_community">Gemeinschaft</label>
+			<label index="header_organization">Gemeinde</label>
 			<label index="header_audiences">Publikum</label>
 			<label index="header_audience">Publikum</label>
 			<label index="header_views">Views</label>
@@ -382,6 +384,8 @@
 			<label index="pi_flexform.targets.single.topic">Page cible pour les détails d'une catégorie de services</label>
 			<label index="pi_flexform.targets.single.service">Page cible pour les détails d'un service</label>
 
+			<label index="header_community">Communauté</label>
+			<label index="header_organization">Municipalité</label>
 			<label index="header_audiences">Publics cibles</label>
 			<label index="header_audience">Public cible</label>
 			<label index="header_views">Vues</label>
@@ -523,6 +527,8 @@
 			<label index="pi_flexform.targets.single.topic">Pagina di arrivo per i dettagli di un tema</label>
 			<label index="pi_flexform.targets.single.service">Pagina di arrivo per i dettagli di un servizio</label>
 
+			<label index="header_community">Comunità</label>
+			<label index="header_organization">Comune</label>
 			<label index="header_audiences">Gruppi di utenti</label>
 			<label index="header_audience">Gruppo di utenti</label>
 			<label index="header_views">Visualizzazioni</label>
