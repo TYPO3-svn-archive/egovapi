@@ -8,9 +8,7 @@
 
 <!-- ###TEMPLATE### [begin] -->
 
-<form id="tx_egovapi_selectorForm">
-	<input type="hidden" id="tx_egovapi_ajaxUrl" value="###AJAX_URL###" />
-	<input type="hidden" id="tx_egovapi_defaultLanguage" value="###LANGUAGE###" />
+<form id="tx_egovapi_selectorForm" action="">
 	<div id="tx_egovapi_selectorForm_community">
 		<label for="tx_egovapi_community">###LABEL_COMMUNITY###</label>
 		<!-- ###COMMUNITIES### [begin] -->
@@ -81,7 +79,11 @@
 		</select>
 		<!-- ###LANGUAGES### [end] -->
 	</div>
-	<input type="button" id="tx_egovapi_selectorForm_submit" value="###LABEL_OK###" />
+	<div>
+		<input type="hidden" id="tx_egovapi_ajaxUrl" value="###AJAX_URL###" />
+		<input type="hidden" id="tx_egovapi_defaultLanguage" value="###LANGUAGE###" />
+		<input type="button" id="tx_egovapi_selectorForm_submit" value="###LABEL_OK###" />
+	</div>
 
 	<div id="tx_egovapi_result"></div>
 </form>
