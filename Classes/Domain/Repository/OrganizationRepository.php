@@ -72,6 +72,17 @@ class tx_egovapi_domain_repository_organizationRepository extends tx_egovapi_dom
 				$canton = $fields[0];
 				$communityId = substr($fields[1], 0, 2) . '-' . substr($fields[1], 2, 2);
 				$community = $communityRepository->findById($communityId);
+				if (!$community) {
+					throw new Exception(
+						sprintf(
+							'Cannot find community "%s". This typically means you have an inconsistency '
+							. 'between community file (%s) and organization file (%s).',
+							$communityId,
+							$this->settings['data.']['communities'],
+							$this->settings['data.']['organizations']
+						), 1307389302
+					);
+				}
 				$id = $fields[2];
 				$name = $fields[3];
 

@@ -1,5 +1,6 @@
 2011-06-06  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Thrown error when inconsistency between organization and community files is detected
 	* [BUGFIX] #27237: Constant Editor crashes when egovapi DAO is NULL
 
 2011-05-30  Xavier Perseguers  <xavier@causal.ch>
