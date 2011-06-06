@@ -63,7 +63,7 @@ abstract class tx_egovapi_domain_repository_abstractRepository implements t3lib_
 	 */
 	public function injectDao(tx_egovapi_dao_dao $dao = NULL) {
 		$this->dao = $dao;
-		$this->settings = $dao->getSettings();
+		$this->settings = $dao ? $dao->getSettings() : array();
 	}
 
 	/**

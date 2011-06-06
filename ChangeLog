@@ -1,3 +1,7 @@
+2011-06-06  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] #27237: Constant Editor crashes when egovapi DAO is NULL
+
 2011-05-30  Xavier Perseguers  <xavier@causal.ch>
 
 	* [BUGFIX] Made the default form template w3-compliant
