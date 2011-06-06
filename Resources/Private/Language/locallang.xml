@@ -124,6 +124,7 @@
 			<label index="common_ok">OK</label>
 
 			<label index="action_back_to_list">Back to list</label>
+			<label index="action_toggle_marks">Mark All/Mark none</label>
 
 			<label index="block_approval">Approval</label>
 			<label index="block_categories">Topics</label>
@@ -269,6 +270,7 @@
 			<label index="common_ok">OK</label>
 
 			<label index="action_back_to_list">Zurück zur Liste</label>
+			<label index="action_toggle_marks">Alles/nichts markieren</label>
 
 			<label index="block_approval">Genehmigung</label>
 			<label index="block_categories">Kategorien</label>
@@ -414,6 +416,7 @@
 			<label index="common_ok">OK</label>
 
 			<label index="action_back_to_list">Retour à la liste</label>
+			<label index="action_toggle_marks">Sélectionner tout/rien</label>
 
 			<label index="block_approval">Approbation</label>
 			<label index="block_categories">Catégories</label>
@@ -557,6 +560,7 @@
 			<label index="common_ok">OK</label>
 
 			<label index="action_back_to_list">Ritorna alla lista</label>
+			<label index="action_toggle_marks">Seleziona tutti/nessuno</label>
 
 			<label index="block_approval">Approvazione</label>
 			<label index="block_categories">Categorie</label>

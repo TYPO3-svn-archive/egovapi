@@ -97,6 +97,7 @@ class tx_egovapi_pi2 extends tx_egovapi_pibase {
 			'LABEL_BLOCK_11'     => $this->pi_getLL('pi_flexform.displayBlocks.REMARKS'),
 			'LABEL_BLOCK_12'     => $this->pi_getLL('pi_flexform.displayBlocks.APPROVAL'),
 			'LABEL_BLOCK_13'     => $this->pi_getLL('pi_flexform.displayBlocks.CONTACT'),
+			'LABEL_TOGGLE_MARKS' => $this->pi_getLL('action_toggle_marks'),
 			'LABEL_LANGUAGE'     => $this->pi_getLL('common_language'),
 			'LABEL_OK'           => $this->pi_getLL('common_ok'),
 			'AJAX_URL'           => $this->pi_getPageLink($GLOBALS['TSFE']->id),

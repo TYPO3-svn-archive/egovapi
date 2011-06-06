@@ -71,6 +71,19 @@ $(function() {
         $("input#tx_egovapi_version").val(version);
     });
 
+    // Toggle select blocks
+    var toggleState = "ALL";
+    $.each($(".toggleBlocks a"), function() {
+        $(this).click(function() {
+            var newState = toggleState == "ALL" ? "NONE" : "ALL";
+            $.each($("input[name='tx_egovapi_selectorForm_block[]']"), function() {
+                $(this).attr("checked", newState == "ALL");
+            });
+            toggleState = newState;
+            return false;
+        });
+    });
+
     // Update fields when language is changed
     $("select#tx_egovapi_language").change(function() {
         $("select#tx_egovapi_organization").trigger("change");

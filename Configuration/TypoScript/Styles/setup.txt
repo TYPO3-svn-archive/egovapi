@@ -124,6 +124,10 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 	float: right;
 }
 
+.tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks .toggleBlocks {
+	clear: both;
+}
+
 #tx_egovapi_selectorForm_submit {
 	margin: 15px 0 0 150px;
 	width: 300px;
