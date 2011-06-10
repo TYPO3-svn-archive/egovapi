@@ -282,8 +282,8 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 		foreach ($dataServices as $dataService) {
 			$this->cObj->start($dataService);
 			$url = $this->cObj->cObjGetSingle($this->conf['parametrizedUrl'], $this->conf['parametrizedUrl.']);
-				// "+" looks better than "%20" in generated URL
-			$url = str_replace('%20', '+', $url);
+				// "," looks better than "%2C" in generated URL
+			$url = str_replace('%2C', ',', $url);
 			$data[] = array('url' => $url);
 		}
 

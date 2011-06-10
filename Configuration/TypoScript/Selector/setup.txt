@@ -80,6 +80,7 @@ temp.parametrizedUrl {
 			60 = TEXT
 			60.data = GP:blocks
 			60.wrap = &blocks=|
+			60.preUserFunc = tx_egovapi_utility_ts->contractList
 		}
 		returnLast = url
 		forceAbsoluteUrl = 1

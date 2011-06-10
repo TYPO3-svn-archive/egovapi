@@ -123,7 +123,7 @@ $(function() {
                 organization: organization,
                 service: service,
                 version: version,
-                blocks: selectedBlocks.join(" ")
+                blocks: selectedBlocks.join(",")
             },
             function (response) {
                 var result = "";

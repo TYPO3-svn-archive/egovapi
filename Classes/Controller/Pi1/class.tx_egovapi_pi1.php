@@ -215,9 +215,13 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 
 			// Blocks to show
 		foreach ($this->conf['displayBlocks.'] as $type => &$blocks) {
-			if (preg_match('/^[0-9 ]+/', $blocks)) {
+				// Legacy support for spaces instead of commas
+			$blocks = str_replace(' ', ',', $blocks);
+
+			if (preg_match('/^[0-9,-]+/', $blocks)) {
 					// Blocks as number, update configuration to use corresponding names
-				$blockNumbers = t3lib_div::intExplode(' ', $blocks);
+				$blocks = t3lib_div::expandList($blocks);
+				$blockNumbers = t3lib_div::intExplode(',', $blocks);
 				$temp = array();
 				foreach ($blockNumbers as $blockNumber) {
 					$temp[] = tx_egovapi_utility_constants::getBlockName($blockNumber);

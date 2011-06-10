@@ -41,6 +41,33 @@ class tx_egovapi_utility_ts {
 	protected static $prefixId = 'tx_egovapi_pi1';
 
 	/**
+	 * Converts a list of integer into a block of ranges.
+	 *
+	 * @param string $content
+	 * @param array $params
+	 * @return string
+	 * @see t3lib_div::expandList()
+	 */
+	public function contractList($list, array $params = NULL) {
+		$items = t3lib_div::intExplode(',', $list);
+		$ranges = array();
+		$lower = $items[0];
+		$upper = $lower;
+		for ($i = 1; $i < count($items); $i++) {
+			if ($upper == $items[$i] - 1) {
+				$upper++;
+			} else {
+				$ranges[] = $lower < $upper ? sprintf('%s-%s', $lower, $upper) : $lower;
+				$lower = $items[$i];
+				$upper = $lower;
+			}
+		}
+		$ranges[] = $lower < $upper ? sprintf('%s-%s', $lower, $upper) : $lower;
+
+		return implode(',', $ranges);
+	}
+
+	/**
 	 * Processes the global parameters by applying stdWrap if needed.
 	 *
 	 * @param tslib_cObj $cObj
