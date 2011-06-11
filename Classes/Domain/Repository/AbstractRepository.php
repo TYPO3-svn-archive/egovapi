@@ -100,9 +100,9 @@ abstract class tx_egovapi_domain_repository_abstractRepository implements t3lib_
 				$newFile = substr($extPath, strlen(PATH_site)) . $script;
 			}
 			$fileName = $newFile;
-			if (@is_file(PATH_site . $newFile)) {
-				$fileName = PATH_site . $newFile;
-			}
+		}
+		if (@is_file(PATH_site . $fileName)) {
+			$fileName = PATH_site . $fileName;
 		}
 
 		return $fileName;
