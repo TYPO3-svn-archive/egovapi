@@ -51,6 +51,14 @@ plugin.tx_egovapi {
 			service =
 		}
 	}
+
+	data {
+			# cat=plugin.tx_egovapi/file; type=string; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.data.communities
+		communities = EXT:egovapi/Resources/Private/Data/communities.csv
+
+			# cat=plugin.tx_egovapi/file; type=string; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.data.organizations
+		organizations = EXT:egovapi/Resources/Private/Data/organizations.csv
+	}
 }
 
 ### SVN id ###

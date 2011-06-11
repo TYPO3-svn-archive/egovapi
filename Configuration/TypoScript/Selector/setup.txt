@@ -94,8 +94,8 @@ plugin.tx_egovapi_pi2 {
 	includeCHServices  = 1
 
 	template           = EXT:egovapi/Resources/Private/Templates/Pi2/form.html
-	data.communities   = EXT:egovapi/Resources/Private/Data/communities.csv
-	data.organizations = EXT:egovapi/Resources/Private/Data/organizations.csv
+	data.communities   = {$plugin.tx_egovapi.data.communities}
+	data.organizations = {$plugin.tx_egovapi.data.organizations}
 
 	service = TEXT
 	service.data = GP:service

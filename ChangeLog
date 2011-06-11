@@ -1,3 +1,7 @@
+2011-06-11  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] #27374: Constant Editor crashes with NULL pointer exception
+
 2011-06-10  Xavier Perseguers  <xavier@causal.ch>
 
 	* [FEATURE] #27344: Add support for block ranges

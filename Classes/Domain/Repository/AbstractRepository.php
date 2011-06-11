@@ -85,6 +85,29 @@ abstract class tx_egovapi_domain_repository_abstractRepository implements t3lib_
 		return $this->stripTags;
 	}
 
+	/**
+	 * Returns the absolute file name of a given TYPO3 file reference.
+	 *
+	 * @param string $fileName
+	 * @return string
+	 */
+	protected function getFileName($fileName) {
+		if (substr($fileName, 0, 4) === 'EXT:') {
+			$newFile = '';
+			list($extKey, $script) = explode('/', substr($fileName, 4), 2);
+			if ($extKey && t3lib_extMgm::isLoaded($extKey)) {
+				$extPath = t3lib_extMgm::extPath($extKey);
+				$newFile = substr($extPath, strlen(PATH_site)) . $script;
+			}
+			$fileName = $newFile;
+			if (@is_file(PATH_site . $newFile)) {
+				$fileName = PATH_site . $newFile;
+			}
+		}
+
+		return $fileName;
+	}
+
 }
 
 ?>

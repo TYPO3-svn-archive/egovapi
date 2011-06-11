@@ -55,9 +55,11 @@ class tx_egovapi_domain_repository_organizationRepository extends tx_egovapi_dom
 			/** @var $communityRepository tx_egovapi_domain_repository_communityRepository */
 			$communityRepository = tx_egovapi_domain_repository_factory::getRepository('community');
 
-			/** @var $contentObj tslib_cObj */
-			$contentObj = t3lib_div::makeInstance('tslib_cObj');
-			$data = $contentObj->fileResource($this->settings['data.']['organizations']);
+			$fileName = $this->getFileName($this->settings['data.']['organizations']);
+			if (!$fileName) {
+				return array();
+			}
+			$data = t3lib_div::getURL($fileName);
 
 			$lines = explode("\n", $data);
 			// Remove header line

@@ -63,18 +63,20 @@ class tx_egovapi_utility_constants {
 	 * @return string
 	 */
 	public function getCommunities(array $params, t3lib_tsparser_ext $pObj = NULL) {
-		//$constants = t3lib_div::array_merge_recursive_overrule(
-		//	$this->constants,
-		//	$pObj->setup['constants']['plugin.']['tx_' . $this->extKey . '.'],
-		//	FALSE, FALSE
-		//);
+		if (isset($pObj->setup['constants']['plugin.']['tx_' . $this->extKey . '.'])) {
+			$constants = t3lib_div::array_merge_recursive_overrule(
+				$this->constants,
+				$pObj->setup['constants']['plugin.']['tx_' . $this->extKey . '.'],
+				FALSE, FALSE
+			);
 
-		//if (!$constants['wsdl']) {
-		//	return 'WSDL is not defined.';
-		//}
+			//if (!$constants['wsdl']) {
+			//	return 'WSDL is not defined.';
+			//}
 
-		//$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $constants);
-		//tx_egovapi_domain_repository_factory::injectDao($dao);
+			$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $constants);
+			tx_egovapi_domain_repository_factory::injectDao($dao);
+		}
 
 		/** @var tx_egovapi_domain_repository_communityRepository $communityRepository */
 		$communityRepository = tx_egovapi_domain_repository_factory::getRepository('community');

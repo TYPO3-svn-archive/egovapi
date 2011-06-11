@@ -47,9 +47,11 @@ class tx_egovapi_domain_repository_communityRepository extends tx_egovapi_domain
 	 */
 	public function findAll() {
 		if (!count(self::$communities)) {
-			/** @var $contentObj tslib_cObj */
-			$contentObj = t3lib_div::makeInstance('tslib_cObj');
-			$data = $contentObj->fileResource($this->settings['data.']['communities']);
+			$fileName = $this->getFileName($this->settings['data.']['communities']);
+			if (!$fileName) {
+				return array();
+			}
+			$data = t3lib_div::getURL($fileName);
 
 			$lines = explode("\n", $data);
 			// Remove header line

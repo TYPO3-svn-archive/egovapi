@@ -32,6 +32,9 @@
 			<label index="constants.cacheLifetime.one_week">1 week</label>
 			<label index="constants.cacheLifetime.unlimited">Unlimited</label>
 
+			<label index="constants.data.communities">Community data file: CSV file containing the list of communities</label>
+			<label index="constants.data.organizations">Organization data file: CSV file containing the list of organizations</label>
+
 			<label index="constants.targets.list.audience">Target page for audiences: ID of the page to use for links showing a list of audiences</label>
 			<label index="constants.targets.list.view">Target page for views: ID of the page to use for links showing a list of views</label>
 			<label index="constants.targets.list.domain">Target page for domains: ID of the page to use for links showing a list of domains</label>
@@ -115,6 +118,9 @@
 			<label index="constants.cacheLifetime.one_day">1 jour</label>
 			<label index="constants.cacheLifetime.one_week">1 semaine</label>
 			<label index="constants.cacheLifetime.unlimited">Illimité</label>
+
+			<label index="constants.data.communities">Fichier de données des communautés: Fichier CSV contenant la liste des communautés</label>
+			<label index="constants.data.organizations">Fichier de données des organisations: Fichier CSV contenant la liste des organisations</label>
 
 			<label index="constants.targets.list.audience">Page cible pour les publics cibles: ID de la page à utiliser pour les liens vers une liste de publics cibles</label>
 			<label index="constants.targets.list.view">Page cible pour les vues: ID de la page à utiliser pour les liens vers une liste de vues</label>
