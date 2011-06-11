@@ -77,6 +77,9 @@
 			<label index="constants.cacheLifetime.one_week">1 Woche</label>
 			<label index="constants.cacheLifetime.unlimited">Unbegrenzt</label>
 
+			<label index="constants.data.communities">Gemeinden Datei: CSV-Datei mit der Liste der Gemeinden</label>
+			<label index="constants.data.organizations">Organisationen Datei: CSV-Datei mit der Liste der Organisationen</label>
+
 			<label index="constants.targets.list.audience">Zielseite für die Publikum: ID der Seite für Links zu einer Liste der Publikum zu verwenden</label>
 			<label index="constants.targets.list.view">Zielseite für Views: ID der Seite für Links zu einer Liste der Views zu verwenden</label>
 			<label index="constants.targets.list.domain">Zielseite für Domänen: ID der Seite für Links zu einer Liste der Domäne zu verwenden</label>
@@ -162,6 +165,9 @@
 			<label index="constants.cacheLifetime.one_day">1 giorno</label>
 			<label index="constants.cacheLifetime.one_week">1 settimana</label>
 			<label index="constants.cacheLifetime.unlimited">Illimitato</label>
+
+			<label index="constants.data.communities">Comunità: CSV file contenente l'elenco delle comunità</label>
+			<label index="constants.data.organizations">Organizzazioni: CSV file contenente l'elenco delle organizzazioni</label>
 
 			<label index="constants.targets.list.audience">Pagina di arrivo per i gruppi di utenti: ID della pagina da utilizzare per i link di una lista di gruppi di utenti</label>
 			<label index="constants.targets.list.view">Pagina di arrivo per le visualizzazioni: ID della pagina da utilizzare per i link di una lista di visualizzazioni</label>
