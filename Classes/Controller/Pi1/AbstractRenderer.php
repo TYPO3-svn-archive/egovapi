@@ -440,7 +440,8 @@ abstract class tx_egovapi_controller_pi1_abstractRenderer {
 								$version = isset($this->settings['versions.'][$id]) ? $this->settings['versions.'][$id] : 0;
 								$service = $serviceRepository->getByTopicAndIdAndVersion($topic, $id, $version);
 								if ($service) {
-									$services[] = $service;
+									// Using id as key to avoid duplicates
+									$services[$service->getId()] = $service;
 									break;
 								}
 							}
@@ -449,7 +450,8 @@ abstract class tx_egovapi_controller_pi1_abstractRenderer {
 							$version = isset($this->settings['versions.'][$id]) ? $this->settings['versions.'][$id] : 0;
 							$service = $serviceRepository->getByIdAndVersion($id, $version);
 							if ($service) {
-								$services[] = $service;
+								// Using id as key to avoid duplicates
+								$services[$service->getId()] = $service;
 							}
 						}
 					}
@@ -458,7 +460,8 @@ abstract class tx_egovapi_controller_pi1_abstractRenderer {
 					foreach ($topics as $topic) {
 						$topicServices = $serviceRepository->findAll($topic);
 						foreach ($topicServices as $service) {
-							$services[] = $service;
+							// Using id as key to avoid duplicates
+							$services[$service->getId()] = $service;
 						}
 					}
 				}
