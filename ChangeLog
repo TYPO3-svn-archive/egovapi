@@ -1,3 +1,7 @@
+2011-06-12  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] #27380: Do not include community parameter in generated URL
+
 2011-06-11  Xavier Perseguers  <xavier@causal.ch>
 
 	* [BUGFIX] #27373: Remove duplicate services

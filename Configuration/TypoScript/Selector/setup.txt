@@ -62,25 +62,21 @@ temp.parametrizedUrl {
 			10.wrap = &language=|
 
 			20 = TEXT
-			20.data = GP:community
-			20.wrap = &community=|
+			20.data = GP:organization
+			20.wrap = &organization=|
 
 			30 = TEXT
-			30.data = GP:organization
-			30.wrap = &organization=|
+			30.field = id
+			30.wrap = &service=|
 
 			40 = TEXT
-			40.field = id
-			40.wrap = &service=|
+			40.field = versionId
+			40.wrap = &version=|
 
 			50 = TEXT
-			50.field = versionId
-			50.wrap = &version=|
-
-			60 = TEXT
-			60.data = GP:blocks
-			60.wrap = &blocks=|
-			60.preUserFunc = tx_egovapi_utility_ts->contractList
+			50.data = GP:blocks
+			50.wrap = &blocks=|
+			50.preUserFunc = tx_egovapi_utility_ts->contractList
 		}
 		returnLast = url
 		forceAbsoluteUrl = 1
