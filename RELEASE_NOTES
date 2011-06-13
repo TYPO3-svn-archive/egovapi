@@ -3,8 +3,7 @@ CHANGES & IMPROVEMENTS between egovapi 1.2 and 1.3
 (for technical details see ChangeLog)
 ************************************************************************
 
-Templates
---------------------------
+=== Templates ===
 
 	In order to have microformat-enabled office address block (block #13),
 	following templates have been updated with changes in the HTML markup
@@ -31,8 +30,7 @@ Templates
 	- http://microformats.org/
 
 
-Services
---------------------------
+=== Services ===
 
 	Format of the list of blocks in the URL changed. In versions prior to
 	1.3.0, block numbers were separated by spaces ("+" when URL-encoded):
