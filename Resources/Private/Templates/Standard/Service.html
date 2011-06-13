@@ -109,7 +109,7 @@ $<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/
 
 <!-- ###SHOW_SERVICE_PROVIDED### [begin] -->
 <h2 class="tx_egovapi_block_serviceProvided"><span class="block_number">7.</span> ###BLOCK_SERVICE_PROVIDED###</h2>
-<div class="tx_egovapi_block_serviceProvided">	
+<div class="tx_egovapi_block_serviceProvided">
 	###SERVICE_SERVICE_PROVIDED###
 </div>
 <!-- ###SHOW_SERVICE_PROVIDED### [end] -->
@@ -153,19 +153,34 @@ $<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/
 <h2 class="tx_egovapi_block_contact"><span class="block_number">13.</span> ###BLOCK_CONTACT###</h2>
 <div class="tx_egovapi_block_contact">
 	<div class="half left">
-		<div class="tx_egovapi_block_contact_logo"><img src="###SERVICE_CONTACT_LOGO###" alt="###SERVICE_CONTACT_OFFICE###" /></div>
-
-		<div class="tx_egovapi_block_contact_office">###SERVICE_CONTACT_OFFICE###</div>
-		<div class="tx_egovapi_block_contact_department">###SERVICE_CONTACT_DEPARTMENT###</div>
-		<div class="tx_egovapi_block_contact_address">###SERVICE_CONTACT_ADDRESS###</div>
-		<div class="tx_egovapi_block_contact_pcl">
-				<span class="tx_egovapi_block_contact_postalCode">###SERVICE_CONTACT_POSTAL_CODE###</span>
-				<span class="tx_egovapi_block_contact_municipality">###SERVICE_CONTACT_MUNICIPALITY###</span>
+		<div class="vcard"><!-- hCard-enabled: http://microformats.org/ -->
+			<div class="tx_egovapi_block_contact_logo"><img src="###SERVICE_CONTACT_LOGO###" alt="###SERVICE_CONTACT_OFFICE###" class="photo" /></div>
+			<div class="org fn">
+				<div class="organization-name">###SERVICE_CONTACT_OFFICE###</div>
+				<div class="organization-unit">###SERVICE_CONTACT_DEPARTMENT###</div>
+			</div>
+			<div class="adr">
+				<span class="type" style="display:none">Work</span>
+				<div class="street-address">###SERVICE_CONTACT_ADDRESS###</div>
+				<span style="display:none"><span class="country-name">Switzerland</span> -</span>
+				<span class="postal-code">###SERVICE_CONTACT_POSTAL_CODE###</span>
+				<span class="locality">###SERVICE_CONTACT_MUNICIPALITY###</span>
+			</div>
+			<div class="tx_egovapi_block_contact_phone1">Tel:
+				<span class="tel">
+					<span class="type" style="display:none">Work</span> ###SERVICE_CONTACT_PHONE1###
+				</span>
+			</div>
+			<div class="tx_egovapi_block_contact_fax">Fax:
+				<span class="tel">
+					<span class="type" style="display:none">Fax</span> ###SERVICE_CONTACT_FAX###
+				</span>
+			</div>
+			<div class="tx_egovapi_block_contact_email">
+				<span class="email" style="display:none">###SERVICE_CONTACT_EMAIL###</span>
+				###SERVICE_CONTACT_EMAIL_LINK###
+			</div>
 		</div>
-
-		<div class="tx_egovapi_block_contact_phone1">Tel: ###SERVICE_CONTACT_PHONE1###</div>
-		<div class="tx_egovapi_block_contact_fax">Fax: ###SERVICE_CONTACT_FAX###</div>
-		<div class="tx_egovapi_block_contact_email">###SERVICE_CONTACT_EMAIL_LINK###</div>
 	</div>
 	<div class="half left">
 		<div class="tx_egovapi_block_contact_openingHours">###SERVICE_CONTACT_OPENING_HOURS###</div>

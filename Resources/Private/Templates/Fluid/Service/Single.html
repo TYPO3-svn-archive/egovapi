@@ -135,19 +135,34 @@
 	<h2 class="tx_egovapi_block_contact"><span class="block_number">13.</span> <f:translate key="block_contact">Contact</f:translate></h2>
 	<div class="tx_egovapi_block_contact">
 		<div class="half left">
-			<div class="tx_egovapi_block_contact_logo"><img src="{service.contact.logo}" alt="{service.contact.office}" /></div>
-
-			<div class="tx_egovapi_block_contact_office">{service.contact.office}</div>
-			<div class="tx_egovapi_block_contact_department">{service.contact.department}</div>
-			<div class="tx_egovapi_block_contact_address">{service.contact.address}</div>
-			<div class="tx_egovapi_block_contact_pcl">
-				<span class="tx_egovapi_block_contact_postalCode">{service.contact.postalCode}</span>
-				<span class="tx_egovapi_block_contact_municipality">{service.contact.municipality}</span>
+			<div class="vcard"><!-- hCard-enabled: http://microformats.org/ -->
+				<div class="tx_egovapi_block_contact_logo"><img src="{service.contact.logo}" alt="{service.contact.office}" class="photo" /></div>
+				<div class="org fn">
+					<div class="organization-name">{service.contact.office}</div>
+					<div class="organization-unit">{service.contact.department}</div>
+				</div>
+				<div class="adr">
+					<span class="type" style="display:none">Work</span>
+					<div class="street-address">{service.contact.address}</div>
+					<span style="display:none"><span class="country-name">Switzerland</span> -</span>
+					<span class="postal-code">{service.contact.postalCode}</span>
+					<span class="locality">{service.contact.municipality}</span>
+				</div>
+				<div class="tx_egovapi_block_contact_phone1">Tel:
+					<span class="tel">
+						<span class="type" style="display:none">Work</span> {service.contact.phone1}
+					</span>
+				</div>
+				<div class="tx_egovapi_block_contact_fax">Fax:
+					<span class="tel">
+						<span class="type" style="display:none">Fax</span> {service.contact.fax}
+					</span>
+				</div>
+				<div class="tx_egovapi_block_contact_email">
+					<span class="email" style="display:none">{service.contact.email}</span>
+					<f:link.email email="{service.contact.email}">{service.contact.email}</f:link.email>
+				</div>
 			</div>
-
-			<div class="tx_egovapi_block_contact_phone1">Tel: {service.contact.phone1}</div>
-			<div class="tx_egovapi_block_contact_fax">Fax: {service.contact.fax}</div>
-			<div class="tx_egovapi_block_contact_email"><f:link.email email="{service.contact.email}">{service.contact.email}</f:link.email></div>
 		</div>
 		<div class="half left">
 			<div class="tx_egovapi_block_contact_openingHours"><f:format.html>{service.contact.openingHours}</f:format.html></div>
