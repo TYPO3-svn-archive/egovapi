@@ -1,5 +1,6 @@
 2011-06-13  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Add RELEASE_NOTES to upgrade from egovapi 1.2 to 1.3
 	* [TASK][!!!] Add markup for microformat in office address
 
 2011-06-12  Xavier Perseguers  <xavier@causal.ch>
@@ -20,6 +21,10 @@
 	* [FEATURE] #27263: Add "Select all/none" for blocks
 	* [TASK] Thrown error when inconsistency between organization and community files is detected
 	* [BUGFIX] #27237: Constant Editor crashes when egovapi DAO is NULL
+
+2011-05-31  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Raise version to 1.2.0
 
 2011-05-30  Xavier Perseguers  <xavier@causal.ch>
 
