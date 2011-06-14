@@ -19,7 +19,7 @@
 2011-06-06  Xavier Perseguers  <xavier@causal.ch>
 
 	* [FEATURE] #27263: Add "Select all/none" for blocks
-	* [TASK] Thrown error when inconsistency between organization and community files is detected
+	* [TASK] Throw error when inconsistency between organization and community files is detected
 	* [BUGFIX] #27237: Constant Editor crashes when egovapi DAO is NULL
 
 2011-05-31  Xavier Perseguers  <xavier@causal.ch>
@@ -28,151 +28,152 @@
 
 2011-05-30  Xavier Perseguers  <xavier@causal.ch>
 
-	* [BUGFIX] Made the default form template w3-compliant
+	* [BUGFIX] Make the default form template w3-compliant
 
 2011-05-28  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] Updated documentation with latest configuration options
-	* [TASK] Added TS option to return organization coordinates
+	* [TASK][DOC] Update documentation with latest configuration options
+	* [TASK][CONF] Add TS option to return organization coordinates
 
 2011-05-27  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] Dramatically improved AJAX response time
-	* [TASK] Added support for latitude/longitude coordinates of organizations
+	* [TASK] Dramatically improve AJAX response time
+	* [FEATURE] Add support for latitude/longitude coordinates of organizations
 
 2011-05-26  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] Refactored cache class to allow it to be used by pi2 to speed up AJAX calls
+	* [TASK] Refactor cache class to allow it to be used by pi2 to speed up AJAX calls
 	* [TASK] Set default WS language based on config.language
-	* [TASK] Updated PDF documentation and optmized it to reduce file size
-	* [TASK] Added TypoScript configuration sample for generating legacy parametrized URL
+	* [TASK][DOC] Update PDF documentation and optmized it to reduce file size
+	* [TASK][DOC] Add TypoScript configuration sample for generating legacy parametrized URL
+
 2011-05-25  Xavier Perseguers  <xavier@causal.ch>
 
-	* [BUGFIX] Removed duplicated Confederation services
+	* [BUGFIX] Remove duplicated Confederation services
 	* [TASK] Fall back to Confederation services when an organization is not yet configured
-	* [BUGFIX] Version was not taken into account
+	* [BUGFIX] Version is not taken into account
 
 2011-05-24  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] Updated documentation for selector form
-	* [TASK] Enhanced URL generation with TypoScript
+	* [TASK][DOC] Update documentation for selector form
+	* [TASK][CONF] Enhanced URL generation with TypoScript
 
 2011-05-23  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] Generated parametrized URI's
-	* [TASK] Added dynamic retrieval of services
-	* [TASK] Added dynamic retrieval of organizations
-	* [TASK] Removed global declaration with XCLASS definition
-	* [TASK] Added TypoScript for including jQuery
+	* [TASK] Generate parametrized URI's
+	* [TASK] Add dynamic retrieval of services
+	* [TASK] Add dynamic retrieval of organizations
+	* [TASK] Remove global declaration with XCLASS definition
+	* [TASK] Add TypoScript for including jQuery
 
 2011-05-21  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] Added skeleton for the form selector plugin
+	* [TASK] Add skeleton for the form selector plugin
 
 2011-05-12  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] Added support of organizations
+	* [TASK] Add support of organizations
 	* [TASK] Retrieving the list of communities using a CSV data file
 
 2011-04-22  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] Raised version to 1.1.2
+	* [TASK] Raise version to 1.1.2
 
 2011-04-21  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] Integrated Italian translation
+	* [TASK] Integrate Italian translation
 
 2011-04-08  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] Raised version to 1.1.1
+	* [TASK] Raise version to 1.1.1
 	* [BUGFIX] #25848: Service version is not taken into account
-	* [DOCUMENTATION] Update constant editor screenshot to reflect change of constant name
-	* [DOCUMENTATION] Fixed typo in cache configuration
+	* [TASK][DOC] Update constant editor screenshot to reflect change of constant name
+	* [TASK][DOC] Fix typo in cache configuration
 	* [BUGFIX] #25846: Version wizard fails to save configuration on TYPO3 4.4
 
 2011-03-23  Xavier Perseguers  <xavier@causal.ch>
 
-	* Raised version to 1.1.0
-	* Task #13767: Complete German translation
+	* [TASK] Raise version to 1.1.0
+	* [TASK] #13767: Complete German translation
 
 2011-03-11  Xavier Perseguers  <xavier@causal.ch>
 
-	* Added feature #13769: Many blocks have no more HTML when imported with the module
+	* [FEATURE] #13769: Many blocks have no more HTML when imported with the module
 
 2011-03-10  Xavier Perseguers  <xavier@causal.ch>
 
-	* Raised version to 1.0.0 (stable)
-	* Added PDF version of the documentation
-	* Allowed HTML in blocks fee and remarks
-	* Fixed exception when using LIST mode (feature #13710)
-	* Integrated suggestion #13731: Documentation corrections
-	* Added exception handling when unsupported language is used
-	* Updated step-by-step tutorial in documentation
-	* Added CSS classes to standard templates
+	* [TASK] Raise version to 1.0.0 (stable)
+	* [TASK][DOC] Add PDF version of the documentation
+	* [TASK] Allow HTML in blocks fee and remarks
+	* [BUGFIX] Fix exception when using LIST mode (feature #13710)
+	* [TASK][DOC] #13731: Documentation corrections
+	* [BUGFIX] Add exception handling when unsupported language is used
+	* [TASK][DOC] Update step-by-step tutorial in documentation
+	* [TASK] Add CSS classes to standard templates
 
 2011-03-09  Xavier Perseguers  <xavier@causal.ch>
 
-	* Added feature #13710: Allow a service or a list of services to be specified by TypoScript
-	* Updated screenshots in documentation
+	* [FEATURE][CONF] #13710: Allow a service or a list of services to be specified by TypoScript
+	* [TASK][DOC] Update screenshots in documentation
 
 2011-03-08  Xavier Perseguers  <xavier@causal.ch>
 
-	* Added DIVs and classes to templates
-	* Fixed minor glitches in the documentation when rendered as HTML on TER
+	* [TASK] Add DIVs and classes to templates
+	* [TASK][DOC] Fix minor glitches in the documentation when rendered as HTML on TER
 
 2011-03-07  Xavier Perseguers  <xavier@causal.ch>
 
-	* Raised version to 0.9.0
-	* Added fallback for web service parameter eCHmunicipalityID
-	* Updated documentation with inclusion of static template
+	* [TASK] Raise version to 0.9.0
+	* [BUGFIX] Add fallback for web service parameter eCHmunicipalityID
+	* [TASK][DOC] Update documentation with inclusion of static template
 
 2011-03-02  Xavier Perseguers  <xavier@causal.ch>
 
-	* Refactored Helper classes to be part of Utility namespace
-	* Renamed eCHmunicipalityID into organizationID
+	* [TASK] Refactor Helper classes to be part of Utility namespace
+	* [TASK][!!!] Rename eCHmunicipalityID into organizationID
 
 2011-02-25  Xavier Perseguers  <xavier@causal.ch>
 
-	* Updated documentation
+	* [TASK][DOC] Update documentation
 
 2011-02-24  Xavier Perseguers  <xavier@causal.ch>
 
-	* Raised version to 0.8.0 (first release to TER)
-	* Added class on h1 in list mode
-	* Updated documentation with information about RealURL autoconfiguration
-	* Fixed blank page when activating debug in TYPO3 < 4.5
-	* Changed link position for form documents/legal regulation items
-	* Slightly restructured documentation, started Tutorial chapter
+	* [TASK] Raise version to 0.8.0 (first release to TER)
+	* [TASK] Add class on h1 in list mode
+	* [TASK][DOC] Update documentation with information about RealURL autoconfiguration
+	* [BUGFIX] Fix blank page when activating debug in TYPO3 < 4.5
+	* [TASK] Change link position for form documents/legal regulation items
+	* [TASK][DOC] Slightly restructure documentation, start Tutorial chapter
 
 2011-02-19  Xavier Perseguers  <xavier@causal.ch>
 
-	* Removed link to useless single view for audiences and views in list view
-	* Implemented hook for RealURL auto-configuration
-	* Services are always alphabetically sorted (by name)
-	* Now sorting views, domains, topics and services in FlexForm
-	* Added enable flag to include services from swiss confederation
-	* Removed duplicate services when caching lifetime is extremely low
-	* Reorganized include for TYPO3 < 4.5
+	* [TASK] Remove link to useless single view for audiences and views in list view
+	* [FEATURE] Implement hook for RealURL auto-configuration
+	* [TASK] Services are always alphabetically sorted (by name)
+	* [BUGFIX] Now sorting views, domains, topics and services in FlexForm
+	* [FEATURE][CONF] Add enable flag to include services from swiss confederation
+	* [BUGFIX] Remov duplicate services when caching lifetime is extremely low
+	* [TASK] Reorganize include for TYPO3 < 4.5
 
 2011-02-18  Xavier Perseguers  <xavier@causal.ch>
 
-	* Added labels for version id and version name
-	* Added exception catch for incomplete service (no contact part)
+	* [TASK] Add labels for version id and version name
+	* [TASK] Add exception catch for incomplete service (no contact part)
 
 2011-02-18  Xavier Perseguers  <xavier@causal.ch>
 
-	* Raised version to 0.7.1
-	* Added class around service id in h1
-	* Added back to list block for services in SINGLE mode
-	* Added css span around service block number
-	* Included confederation-level services
+	* [TASK] Raise version to 0.7.1
+	* [TASK] Add class around service id in h1
+	* [TASK] Add back to list block for services in SINGLE mode
+	* [TASK] Add css span around service block number
+	* [FEATURE] Include confederation-level services
 
 2011-02-15  Xavier Perseguers  <xavier@causal.ch>
 
-	* Raised version to 0.7.0
-	* Enhanced service template
-	* Updated FlexForm configuration to override service version to be used
-	* Added TS option to override service version to be used
+	* [TASK] Raise version to 0.7.0
+	* [TASK] Enhance service template
+	* [TASK][CONF] Update FlexForm configuration to override service version to be used
+	* [TASK][CONF] Add TS option to override service version to be used
 
 2011-02-13  Xavier Perseguers  <xavier@causal.ch>
 
