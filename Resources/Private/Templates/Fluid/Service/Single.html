@@ -135,18 +135,20 @@
 	<h2 class="tx_egovapi_block_contact"><span class="block_number">13.</span> <f:translate key="block_contact">Contact</f:translate></h2>
 	<div class="tx_egovapi_block_contact">
 		<div class="half left">
+			<div class="tx_egovapi_block_contact_logo"><img src="{service.contact.logo}" alt="{service.contact.office}" /></div>
 			<div class="vcard"><!-- hCard-enabled: http://microformats.org/ -->
-				<div class="tx_egovapi_block_contact_logo"><img src="{service.contact.logo}" alt="{service.contact.office}" class="photo" /></div>
 				<div class="org fn">
-					<div class="organization-name">{service.contact.office}</div>
-					<div class="organization-unit">{service.contact.department}</div>
+					<div class="tx_egovapi_block_contact_office organization-name">{service.contact.office}</div>
+					<div class="tx_egovapi_block_contact_department organization-unit">{service.contact.department}</div>
 				</div>
 				<div class="adr">
 					<span class="type" style="display:none">Work</span>
-					<div class="street-address">{service.contact.address}</div>
-					<span style="display:none"><span class="country-name">Switzerland</span> -</span>
-					<span class="postal-code">{service.contact.postalCode}</span>
-					<span class="locality">{service.contact.municipality}</span>
+					<div class="tx_egovapi_block_contact_address street-address">{service.contact.address}</div>
+					<span style="display:none">
+						<abbr title="Switzerland" class="country-name">CH</abbr> -
+					</span>
+					<span class="tx_egovapi_block_contact_postalCode postal-code">{service.contact.postalCode}</span>
+					<span class="tx_egovapi_block_contact_municipality locality">{service.contact.municipality}</span>
 				</div>
 				<div class="tx_egovapi_block_contact_phone1">Tel:
 					<span class="tel">
