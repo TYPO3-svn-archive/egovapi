@@ -1,5 +1,6 @@
 2011-06-15  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] #27465: Remove hardcoded texts
 	* [TASK] #27351: Change default order of parameters for the parameterized URL
 	* [TASK] #27467: Invert office and department
 	* [TASK] #27396: Follow-up to keep most of the old DIV/SPAN classes

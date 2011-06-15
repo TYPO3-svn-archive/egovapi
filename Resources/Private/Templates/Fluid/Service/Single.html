@@ -150,12 +150,18 @@
 					<span class="tx_egovapi_block_contact_postalCode postal-code">{service.contact.postalCode}</span>
 					<span class="tx_egovapi_block_contact_municipality locality">{service.contact.municipality}</span>
 				</div>
-				<div class="tx_egovapi_block_contact_phone1">Tel:
+				<div class="tx_egovapi_block_contact_phone1">
+					<span class="label">
+						<f:translate key="common_phone">Phone:</f:translate>
+					</span>
 					<span class="tel">
 						<span class="type" style="display:none">Work</span> {service.contact.phone1}
 					</span>
 				</div>
-				<div class="tx_egovapi_block_contact_fax">Fax:
+				<div class="tx_egovapi_block_contact_fax">
+					<span class="label">
+						<f:translate key="common_fax">Fax:</f:translate>
+					</span>
 					<span class="tel">
 						<span class="type" style="display:none">Fax</span> {service.contact.fax}
 					</span>
