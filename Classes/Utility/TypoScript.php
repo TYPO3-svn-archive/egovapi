@@ -452,6 +452,7 @@ class tx_egovapi_utility_ts {
 				$template = isset($settings[$key]) ? $settings[$key] : '';
 				if ($template) {
 					$settings['templates.'][$mode . '.'][$level . '.']['fluid.']['file'] = $template;
+					$settings['templates.'][$mode . '.'][$level . '.']['standard'] = $template;
 					unset($settings['templates.'][$mode . '.'][$level . '.']['fluid.']['file.']);
 				}
 				unset($settings[$key]);
