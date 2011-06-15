@@ -1,3 +1,7 @@
+2011-06-15  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Update l10n API calls for TYPO3 4.6.0
+
 2011-06-13  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Add RELEASE_NOTES to upgrade from egovapi 1.2 to 1.3

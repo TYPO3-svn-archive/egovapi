@@ -61,7 +61,13 @@ class tx_egovapi_pi1_wizicon {
 	 */
 	function includeLocalLang()	{
 		$llFile = t3lib_extMgm::extPath('egovapi') . 'Resources/Private/Language/locallang.xml';
-		$LOCAL_LANG = t3lib_div::readLLXMLfile($llFile, $GLOBALS['LANG']->lang);
+		if (t3lib_div::int_from_ver(TYPO3_version) < 4006000) {
+			$LOCAL_LANG = t3lib_div::readLLXMLfile($llFile, $GLOBALS['LANG']->lang);
+		} else {
+			/** @var $llxmlParser tx_lang_parser_Llxml */
+			$llxmlParser = t3lib_div::makeInstance('tx_lang_parser_Llxml');
+			$LOCAL_LANG = $llxmlParser->getParsedData($llFile, $GLOBALS['LANG']->lang);
+		}
 
 		return $LOCAL_LANG;
 	}
