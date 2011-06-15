@@ -25,6 +25,10 @@ CHANGES & IMPROVEMENTS between egovapi 1.2 and 1.3
 	tx_egovapi_block_contact_municipality   | locality
 	----------------------------------------+-------------------------------
 
+	This update is of course only needed if you used the default templates.
+	If you created your own templates, the markers and subparts did not
+	change and you will not have to update anything.
+
 	More information on microformat:
 
 	- http://microformats.org/
