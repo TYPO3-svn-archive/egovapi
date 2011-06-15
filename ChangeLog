@@ -1,5 +1,6 @@
 2011-06-15  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] #27467: Invert office and department
 	* [TASK] #27396: Follow-up to keep most of the old DIV/SPAN classes
 	* [TASK] Update l10n API calls for TYPO3 4.6.0
 
