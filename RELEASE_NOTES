@@ -12,7 +12,12 @@ CHANGES & IMPROVEMENTS between egovapi 1.2 and 1.3
 	- Resources/Private/Templates/Fluid/Service/Single.html
 	- Resources/Private/Templates/Standard/Service.html
 
-	How to update your custom CSS:
+	Disclaimer: In an attempt to stay backward-compatible, all but the
+	tx_egovapi_block_contact_pcl have been kept as additional classes to
+	the HTML structure.
+
+	How to update your custom CSS if you want to get rid of useless classes
+	while adding microformat support to your address block:
 
 	----------------------------------------+-------------------------------
 	Old class                               | New class

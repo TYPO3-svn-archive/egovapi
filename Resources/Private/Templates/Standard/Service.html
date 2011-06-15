@@ -153,18 +153,20 @@ $<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/
 <h2 class="tx_egovapi_block_contact"><span class="block_number">13.</span> ###BLOCK_CONTACT###</h2>
 <div class="tx_egovapi_block_contact">
 	<div class="half left">
+		<div class="tx_egovapi_block_contact_logo"><img src="###SERVICE_CONTACT_LOGO###" alt="###SERVICE_CONTACT_OFFICE###" /></div>
 		<div class="vcard"><!-- hCard-enabled: http://microformats.org/ -->
-			<div class="tx_egovapi_block_contact_logo"><img src="###SERVICE_CONTACT_LOGO###" alt="###SERVICE_CONTACT_OFFICE###" class="photo" /></div>
 			<div class="org fn">
-				<div class="organization-name">###SERVICE_CONTACT_OFFICE###</div>
-				<div class="organization-unit">###SERVICE_CONTACT_DEPARTMENT###</div>
+				<div class="tx_egovapi_block_contact_office organization-name">###SERVICE_CONTACT_OFFICE###</div>
+				<div class="tx_egovapi_block_contact_department organization-unit">###SERVICE_CONTACT_DEPARTMENT###</div>
 			</div>
 			<div class="adr">
 				<span class="type" style="display:none">Work</span>
-				<div class="street-address">###SERVICE_CONTACT_ADDRESS###</div>
-				<span style="display:none"><span class="country-name">Switzerland</span> -</span>
-				<span class="postal-code">###SERVICE_CONTACT_POSTAL_CODE###</span>
-				<span class="locality">###SERVICE_CONTACT_MUNICIPALITY###</span>
+				<div class="tx_egovapi_block_contact_address street-address">###SERVICE_CONTACT_ADDRESS###</div>
+				<span style="display:none">
+					<abbr title="Switzerland" class="country-name">CH</abbr> -
+				</span>
+				<span class="tx_egovapi_block_contact_postalCode postal-code">###SERVICE_CONTACT_POSTAL_CODE###</span>
+				<span class="tx_egovapi_block_contact_municipality locality">###SERVICE_CONTACT_MUNICIPALITY###</span>
 			</div>
 			<div class="tx_egovapi_block_contact_phone1">Tel:
 				<span class="tel">
