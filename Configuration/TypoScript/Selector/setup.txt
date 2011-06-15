@@ -58,25 +58,25 @@ temp.parametrizedUrl {
 		additionalParams.cObject = COA
 		additionalParams.cObject {
 			10 = TEXT
-			10.data = GP:language
-			10.wrap = &language=|
+			10.data = GP:organization
+			10.wrap = &organization=|
 
 			20 = TEXT
-			20.data = GP:organization
-			20.wrap = &organization=|
+			20.field = id
+			20.wrap = &service=|
 
 			30 = TEXT
-			30.field = id
-			30.wrap = &service=|
+			30.field = versionId
+			30.wrap = &version=|
 
 			40 = TEXT
-			40.field = versionId
-			40.wrap = &version=|
+			40.data = GP:blocks
+			40.wrap = &blocks=|
+			40.preUserFunc = tx_egovapi_utility_ts->contractList
 
 			50 = TEXT
-			50.data = GP:blocks
-			50.wrap = &blocks=|
-			50.preUserFunc = tx_egovapi_utility_ts->contractList
+			50.data = GP:language
+			50.wrap = &language=|
 		}
 		returnLast = url
 		forceAbsoluteUrl = 1
