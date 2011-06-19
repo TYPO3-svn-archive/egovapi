@@ -508,6 +508,20 @@ class tx_egovapi_dao_webService {
 	}
 
 	/**
+	 * Returns the versions available for given service.
+	 *
+	 * @param string $serviceId
+	 * @return array
+	 */
+	public function getVersions($serviceId) {
+		$versions = array();
+		$versionList = $this->callEgovApi('GetServiceVersions', array(
+			'eCHserviceID' => $serviceId,
+		));
+		t3lib_utility_Debug::debug($versionList, 'versions');
+	}
+
+	/**
 	 * Returns an array with values from $lbound to $ubound.
 	 *
 	 * @param integer $lbound

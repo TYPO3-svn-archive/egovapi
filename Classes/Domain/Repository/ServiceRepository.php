@@ -390,6 +390,18 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 		$service->setHasDetails();
 	}
 
+	/**
+	 * Injects the versions available for a given service.
+	 *
+	 * @param tx_egovapi_domain_model_service $service
+	 * @return void
+	 */
+	public function injectVersions(tx_egovapi_domain_model_service $service) {
+		$versionsDao = $this->dao->getVersions(
+			$service->getId()
+		);
+	}
+
 }
 
 

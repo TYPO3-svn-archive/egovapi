@@ -374,6 +374,16 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	}
 
 	/**
+	 * Returns the versions available for a given service.
+	 *
+	 * @param string $serviceId
+	 * @return array
+	 */
+	public function getVersions($serviceId) {
+		return $this->getWebService()->getVersions($serviceId);
+	}
+
+	/**
 	 * Gets data from cache (if available).
 	 *
 	 * @param string $cacheKey

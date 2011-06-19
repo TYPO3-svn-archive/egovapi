@@ -163,6 +163,11 @@ class tx_egovapi_domain_model_service extends tx_egovapi_domain_model_abstractEn
 	protected $contact;
 
 	/**
+	 * @var array
+	 */
+	protected $availableVersions;
+
+	/**
 	 * Gets the parent topic.
 	 *
 	 * @return tx_egovapi_domain_model_topic
@@ -719,6 +724,20 @@ class tx_egovapi_domain_model_service extends tx_egovapi_domain_model_abstractEn
 		/** @var tx_egovapi_domain_repository_serviceRepository $serviceRepository */
 		$serviceRepository = tx_egovapi_domain_repository_factory::getRepository('service');
 		$serviceRepository->injectDetails($this);
+	}
+
+	/**
+	 * Returns the available versions for this service.
+	 *
+	 * @return array
+	 */
+	public function getAvailableVersions() {
+		if (!$this->availableVersions) {
+			/** @var tx_egovapi_domain_repository_serviceRepository $serviceRepository */
+			$serviceRepository = tx_egovapi_domain_repository_factory::getRepository('service');
+			$serviceRepository->injectVersions($this);
+		}
+		return $this->availableVersions;
 	}
 
 }
