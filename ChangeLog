@@ -1,5 +1,6 @@
 2011-06-19  Xavier Perseguers  <xavier@causal.ch>
 
+	* [FEATURE] #27469: Pi2: Group links by level
 	* [BUGFIX] #27542: Single legal regulation block breaks the output
 
 2011-06-15  Xavier Perseguers  <xavier@causal.ch>

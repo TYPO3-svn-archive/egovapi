@@ -133,6 +133,26 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 	width: 300px;
 }
 
+#tx_egovapi_result > ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+}
+
+#tx_egovapi_result > ul li {
+	margin-top: 1em;
+}
+
+#tx_egovapi_result > ul ul {
+	list-style-type: square;
+	font-weight: normal;
+}
+
+#tx_egovapi_result > ul ul li {
+	margin-top: 0;
+}
+
 )
 
 ### SVN id ###
