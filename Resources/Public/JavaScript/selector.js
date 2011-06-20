@@ -98,8 +98,13 @@ $(function() {
         $("input#tx_egovapi_version").val("");
     });
 
-    // Generation of the links
+    // Update the links
     $("input#tx_egovapi_selectorForm_submit").click(function() {
+        generateLinks();
+    });
+
+    // Generation of the links
+    function generateLinks() {
         var community = $("select#tx_egovapi_community").val();
         var organization = $("select#tx_egovapi_organization").val();
         var service = $("select#tx_egovapi_service").val();
@@ -153,5 +158,5 @@ $(function() {
                 $("#tx_egovapi_result").html(result);
             }
         );
-    })
+    }
 });
