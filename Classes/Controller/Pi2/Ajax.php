@@ -161,6 +161,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 		foreach ($services as $service) {
 			$data[] = array(
 				'id' => $service->getId(),
+				'provider' => $service->getProvider(),
 				'version' => $service->getVersionId(),
 				'name' => $service->getName(),
 			);
@@ -227,8 +228,22 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 			return $this->getDomainServices(FALSE);
 		}
 
-			// Sort services by name
-		tx_egovapi_utility_objects::sort($services, 'name');
+			// Sort services by provider and then by name
+		tx_egovapi_utility_objects::sort($services, 'provider');
+		$providersServices = array();
+		foreach ($services as $service) {
+			$provider = $service->getProvider();
+			if (!isset($providersServices[$provider])) {
+				$providersServices[$provider] = array();
+			}
+			$providersServices[$provider][] = $service;
+		}
+		$buffer = array();
+		foreach ($providersServices as $provider => &$services) {
+			tx_egovapi_utility_objects::sort($services, 'name');
+			$buffer = array_merge($buffer, $services);
+		}
+		$services = $buffer;
 
 		if ($cache) {
 				// Cache the list of services
@@ -263,28 +278,40 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 			return $data;
 		}
 
-		$dataServices = array();
+		$providersDataServices = array();
 		$services = $this->getDomainServices();
 		foreach ($services as $service) {
+			$dataService = NULL;
+			$provider = $service->getProvider();
 			if ($this->conf['service']) {
 				if ($service->getId() === $this->conf['service']) {
 					$dataService = $this->extractData($service);
 						// Override version with the one given as parameter
 					$dataService['versionId'] = $this->conf['version'];
-					$dataServices[] = $dataService;
 				}
 			} else {
-				$dataServices[] = $this->extractData($service);
+				$dataService = $this->extractData($service);
+			}
+			if ($dataService) {
+				if (!isset($providersDataServices[$provider])) {
+					$providersDataServices[$provider] = array();
+				}
+				$providersDataServices[$provider][] = $dataService;
 			}
 		}
 
 		$data = array();
-		foreach ($dataServices as $dataService) {
-			$this->cObj->start($dataService);
-			$url = $this->cObj->cObjGetSingle($this->conf['parametrizedUrl'], $this->conf['parametrizedUrl.']);
-				// "," looks better than "%2C" in generated URL
-			$url = str_replace('%2C', ',', $url);
-			$data[] = array('url' => $url);
+		foreach ($providersDataServices as $provider => $dataServices) {
+			foreach ($dataServices as $dataService) {
+				$this->cObj->start($dataService);
+				$url = $this->cObj->cObjGetSingle($this->conf['parametrizedUrl'], $this->conf['parametrizedUrl.']);
+					// "," looks better than "%2C" in generated URL
+				$url = str_replace('%2C', ',', $url);
+				$data[] = array(
+					'provider' => $provider,
+					'url' => $url,
+				);
+			}
 		}
 
 		$this->storeCacheData($cacheKey, $data, array('ajax'));

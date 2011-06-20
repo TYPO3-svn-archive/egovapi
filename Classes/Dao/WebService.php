@@ -499,6 +499,9 @@ class tx_egovapi_dao_webService {
 			if (is_array($details['documentRequiredBlock']) && !isset($details['documentRequiredBlock'][0])) {
 				$details['documentRequiredBlock'] = array($details['documentRequiredBlock']);
 			}
+			if (is_array($details['legalRegulationBlock']) && !isset($details['legalRegulationBlock'][0])) {
+				$details['legalRegulationBlock'] = array($details['legalRegulationBlock']);
+			}
 			if (is_array($details['documentOtherBlock']) && !isset($details['documentOtherBlock'][0])) {
 				$details['documentOtherBlock'] = array($details['documentOtherBlock']);
 			}

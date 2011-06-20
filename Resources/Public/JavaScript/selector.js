@@ -54,9 +54,17 @@ $(function() {
                 if (response.success) {
                     var data = response.data;
                     var options = '<option value=""></option>';
+                    var provider = '';
                     for (var i = 0; i < data.length; i++) {
+                        if (provider != data[i].provider) {
+                            if (provider != '') options += '</optgroup>';
+                            options += '<optgroup label="' + data[i].provider + '">';
+                        }
                         options += '<option value="' + data[i].id + '-' + data[i].version + '">' + data[i].name + '</option>';
+                        provider = data[i].provider;
                     }
+                    options += '</optgroup>';
+
                     $("select#tx_egovapi_service").html(options);
                     $("input#tx_egovapi_version").val("");
                 }
@@ -90,8 +98,13 @@ $(function() {
         $("input#tx_egovapi_version").val("");
     });
 
-    // Generation of the links
+    // Update the links
     $("input#tx_egovapi_selectorForm_submit").click(function() {
+        generateLinks();
+    });
+
+    // Generation of the links
+    function generateLinks() {
         var community = $("select#tx_egovapi_community").val();
         var organization = $("select#tx_egovapi_organization").val();
         var service = $("select#tx_egovapi_service").val();
@@ -131,13 +144,19 @@ $(function() {
                     var data = response.data;
 
                     var items = '';
+                    var provider = '';
                     for (var i = 0; i < data.length; i++) {
+                        if (provider != data[i].provider) {
+                            if (provider != '') items += '</ul>';
+                            items += '<li>' + data[i].provider + '<ul>';
+                        }
                         items += "<li>" + data[i].url + "</li>";
+                        provider = data[i].provider;
                     }
-                    result = "<ul>" + items + "</ul>";
+                    result = "<ul>" + items + "</ul></ul>";
                 }
                 $("#tx_egovapi_result").html(result);
             }
         );
-    })
+    }
 });

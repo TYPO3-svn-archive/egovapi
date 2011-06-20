@@ -125,12 +125,33 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 }
 
 .tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks .toggleBlocks {
+	float: right;
 	clear: both;
 }
 
 #tx_egovapi_selectorForm_submit {
 	margin: 15px 0 0 150px;
 	width: 300px;
+}
+
+#tx_egovapi_result > ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+}
+
+#tx_egovapi_result > ul li {
+	margin-top: 1em;
+}
+
+#tx_egovapi_result > ul ul {
+	list-style-type: square;
+	font-weight: normal;
+}
+
+#tx_egovapi_result > ul ul li {
+	margin-top: 0;
 }
 
 )
