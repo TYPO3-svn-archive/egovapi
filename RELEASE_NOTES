@@ -3,6 +3,12 @@ CHANGES & IMPROVEMENTS between egovapi 1.2 and 1.3
 (for technical details see ChangeLog)
 ************************************************************************
 
+=== Requirements ===
+
+	TYPO3 4.3 is not supported anymore (officially deprecated on
+	http://typo3.org/download/packages/ since 2011/01/26 with the release
+	of TYPO3 4.5 LTS). Supported versions of TYPO3 now starts with 4.4.0.
+
 === Templates ===
 
 	In order to have microformat-enabled office address block (block #13),
