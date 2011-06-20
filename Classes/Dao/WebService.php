@@ -521,7 +521,29 @@ class tx_egovapi_dao_webService {
 		$versionList = $this->callEgovApi('GetServiceVersions', array(
 			'eCHserviceID' => $serviceId,
 		));
-		t3lib_utility_Debug::debug($versionList, 'versions');
+
+		if (is_array($versionList) && is_array($versionList['serviceVersionList'])) {
+			if (is_array($versionList['serviceVersionList']['serviceVersion']) && !isset($versionList['serviceVersionList']['serviceVersion'][0])) {
+				$versionList['serviceVersionList']['serviceVersion'] = array($versionList['serviceVersionList']['serviceVersion']);
+			}
+			if (isset($versionList['serviceVersionList']['serviceVersion'])) {
+				foreach ($versionList['serviceVersionList']['serviceVersion'] as $version) {
+					$id = $this->getValue($version, 'eCHserviceVersionID');
+					if (!$id) {
+						continue;
+					}
+					$versions[] = array(
+						'id' => $id,
+						'name' => $this->getValue($version, 'eCHserviceVersionName'),
+						'status' => $this->getValue($version, 'statusID'),
+						'communityId' => $this->getValue($version, 'eCHcommunityID'),
+						'isDefault' => $this->getValue($version, 'isDefault'),
+					);
+				}
+			}
+		}
+
+		return $versions;
 	}
 
 	/**
@@ -563,7 +585,14 @@ class tx_egovapi_dao_webService {
 	 * @return string
 	 */
 	protected function getValue(array $arr, $key) {
-		return $arr[$key]['content'];
+		if (!isset($arr[$key])) {
+			$value = NULL;
+		} elseif (is_array($arr[$key])) {
+			$value = isset($arr[$key]['content']) ? $arr[$key]['content'] : NULL;
+		} else {
+			$value = $arr[$key];
+		}
+		return $value;
 	}
 
 	/**

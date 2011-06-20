@@ -380,7 +380,25 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	 * @return array
 	 */
 	public function getVersions($serviceId) {
-		return $this->getWebService()->getVersions($serviceId);
+		$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
+			'method'       => 'versions',
+			'service'      => $serviceId,
+			'language'     => strtoupper($this->settings['eCHlanguageID']),
+			'community'    => $this->settings['eCHcommunityID'],
+		));
+
+		$versions = $this->getCacheData($cacheKey);
+		if (!$versions) {
+			$versions = $this->getWebService()->getVersions($serviceId);
+
+			$tags = array(
+				'versions',
+				strtoupper($this->settings['eCHlanguageID']),
+			);
+			$this->storeCacheData($cacheKey, $versions, $tags);
+		}
+
+		return $versions;
 	}
 
 	/**
