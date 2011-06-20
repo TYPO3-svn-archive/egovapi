@@ -125,6 +125,7 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 }
 
 .tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks .toggleBlocks {
+	float: right;
 	clear: both;
 }
 
