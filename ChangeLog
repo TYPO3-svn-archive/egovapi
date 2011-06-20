@@ -1,5 +1,6 @@
 2011-06-20  Xavier Perseguers  <xavier@causal.ch>
 
+	* [FEATURE] #27577: Add hook to allow manual ordering of the providers
 	* [TASK] Set minimum TYPO3 requirement to 4.4.0
 	* [TASK] #27580: Update translations
 	* [BUGFIX][DOC] #27565: Link to Forge is broken
