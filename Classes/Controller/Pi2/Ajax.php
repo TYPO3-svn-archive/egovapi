@@ -86,7 +86,8 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 			}
 		}
 
-		switch (t3lib_div::_GET('action')) {
+		$action = t3lib_div::_GET('action');
+		switch ($action) {
 			case 'organizations':
 				$data = $this->getOrganizations($community);
 				break;
@@ -101,6 +102,20 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 				break;
 			default:
 				throw new Exception('Invalid action ' . t3lib_div::_GET('action'), 1306143638);
+		}
+
+			// Hook for post-processing the data
+		if (is_array($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['ajaxHook'])) {
+			foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['ajaxHook'] as $classRef) {
+				/** @var tx_egovapi_interfaces_ajaxHook $hookObject */
+				$hookObject = t3lib_div::getUserObj($classRef);
+
+				if (!($hookObject instanceof tx_egovapi_interfaces_ajaxHook)) {
+					throw new UnexpectedValueException('$hookObject must implement interface tx_egovapi_interfaces_ajaxHook', 1308590835);
+				}
+
+				$hookObject->postProcessData($action, $data, $this);
+			}
 		}
 
 		return $data;

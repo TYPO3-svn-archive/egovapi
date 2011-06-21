@@ -242,7 +242,7 @@
 			<label index="pi_flexform.targets.single.topic">Zielseite für Details einer Thema</label>
 			<label index="pi_flexform.targets.single.service">Zielseite für Details einer Dienstleistung</label>
 
-			<label index="header_community">Gemeinschaft</label>
+			<label index="header_community">Kanton</label>
 			<label index="header_organization">Gemeinde</label>
 			<label index="header_audiences">Publikum</label>
 			<label index="header_audience">Publikum</label>
@@ -351,7 +351,7 @@
 			<label index="pi_flexform.displayBlocks.DESCRIPTOR">5. Descripteurs</label>
 			<label index="pi_flexform.displayBlocks.DOCUMENTS_OTHER">10. Autre(s) document(s)</label>
 			<label index="pi_flexform.displayBlocks.DOCUMENTS_REQUIRED">6. Document(s) à fournir</label>
-			<label index="pi_flexform.displayBlocks.FEE">8. Coût de la prestation</label>
+			<label index="pi_flexform.displayBlocks.FEE">8. Coût(s) de la prestation</label>
 			<label index="pi_flexform.displayBlocks.FORMS">5. Formulaire(s)</label>
 			<label index="pi_flexform.displayBlocks.GENERAL_INFORMATION">2. Informations générales</label>
 			<label index="pi_flexform.displayBlocks.LEGAL_REGULATION">9. Références juridiques</label>
@@ -360,7 +360,7 @@
 			<label index="pi_flexform.displayBlocks.PREREQUISITES">3. Conditions préalables</label>
 			<label index="pi_flexform.displayBlocks.PROCEDURE">4. Démarche</label>
 			<label index="pi_flexform.displayBlocks.REMARKS">11. Remarques</label>
-			<label index="pi_flexform.displayBlocks.SERVICE_PROVIDED">7. Service fourni</label>
+			<label index="pi_flexform.displayBlocks.SERVICE_PROVIDED">7. Prestation fournie</label>
 			<label index="pi_flexform.displayBlocks.SUBDOMAINS">4. Sous-pages</label>
 			<label index="pi_flexform.displayBlocks.SUBTOPICS">4. Sous-pages</label>
 			<label index="pi_flexform.displayBlocks.SYNONYM">6. Synonymes</label>
@@ -390,8 +390,8 @@
 			<label index="pi_flexform.targets.single.topic">Page cible pour les détails d'une catégorie de services</label>
 			<label index="pi_flexform.targets.single.service">Page cible pour les détails d'un service</label>
 
-			<label index="header_community">Communauté</label>
-			<label index="header_organization">Municipalité</label>
+			<label index="header_community">Canton</label>
+			<label index="header_organization">Commune</label>
 			<label index="header_audiences">Publics cibles</label>
 			<label index="header_audience">Public cible</label>
 			<label index="header_views">Vues</label>
@@ -430,7 +430,7 @@
 			<label index="block_descriptors">Descripteurs</label>
 			<label index="block_documents_other">Autre(s) document(s)</label>
 			<label index="block_documents_required">Document(s) à fournir</label>
-			<label index="block_fee">Coûts de la prestation</label>
+			<label index="block_fee">Coût(s) de la prestation</label>
 			<label index="block_forms">Formulaire(s)</label>
 			<label index="block_general_information">Informations générales</label>
 			<label index="block_legal_regulation">Références juridiques</label>
@@ -438,7 +438,7 @@
 			<label index="block_prerequisites">Conditions préalables</label>
 			<label index="block_procedure">Démarche</label>
 			<label index="block_remarks">Remarques</label>
-			<label index="block_service_provided">Service fourni</label>
+			<label index="block_service_provided">Prestation fournie</label>
 			<label index="block_services">Prestations administratives</label>
 			<label index="block_subdomains">Sous-pages</label>
 			<label index="block_subtopics">Sous-pages</label>

@@ -64,7 +64,7 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 				/** @var tx_egovapi_interfaces_template_renderHook $hookObject */
 				$hookObject = t3lib_div::getUserObj($classRef);
 
-				if(!($hookObject instanceof tx_egovapi_interfaces_template_renderHook)) {
+				if (!($hookObject instanceof tx_egovapi_interfaces_template_renderHook)) {
 					throw new UnexpectedValueException('$hookObject must implement interface tx_egovapi_interfaces_template_renderHook', 1296950396);
 				}
 

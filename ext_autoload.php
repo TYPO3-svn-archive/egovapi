@@ -59,6 +59,7 @@ return array(
 	'tx_egovapi_controller_pi1_abstractrenderer' => $classPath . 'Controller/Pi1/AbstractRenderer.php',
 	'tx_egovapi_controller_pi1_fluidrenderer' => $classPath . 'Controller/Pi1/FluidRenderer.php',
 	'tx_egovapi_controller_pi1_templaterenderer' => $classPath . 'Controller/Pi1/TemplateRenderer.php',
+	'tx_egovapi_interfaces_ajaxhook' => $extensionPath . 'Interfaces/AjaxHook.php',
 	'tx_egovapi_interfaces_template_audiencehook' => $extensionPath . 'Interfaces/Template/AudienceHook.php',
 	'tx_egovapi_interfaces_template_domainhook' => $extensionPath . 'Interfaces/Template/DomainHook.php',
 	'tx_egovapi_interfaces_template_renderhook' => $extensionPath . 'Interfaces/Template/RenderHook.php',
