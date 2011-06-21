@@ -41,6 +41,7 @@ return array(
 	'tx_egovapi_domain_model_block_subtopic' => $classPath . 'Domain/Model/Block/Subtopic.php',
 	'tx_egovapi_domain_model_block_subtopics' => $classPath . 'Domain/Model/Block/Subtopics.php',
 	'tx_egovapi_domain_model_block_synonym' => $classPath . 'Domain/Model/Block/Synonym.php',
+	'tx_egovapi_domain_model_constants' => $classPath . 'Domain/Model/Constants.php',
 	'tx_egovapi_domain_repository_abstractrepository' => $classPath . 'Domain/Repository/AbstractRepository.php',
 	'tx_egovapi_domain_repository_audiencerepository' => $classPath . 'Domain/Repository/AudienceRepository.php',
 	'tx_egovapi_domain_repository_communityrepository' => $classPath . 'Domain/Repository/CommunityRepository.php',
