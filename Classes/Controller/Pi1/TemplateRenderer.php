@@ -541,7 +541,6 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 				$this->subparts['SHOW_' . $block] = '';
 			}
 		}
-		$service->getAvailableVersions();
 	}
 
 	/**
