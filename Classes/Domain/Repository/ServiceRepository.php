@@ -413,6 +413,18 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 			$service->getId()
 		);
 
+		if (!count($versionsDao)) {
+				// A few services don't have any version (!?!) => create one out
+				// service's information
+			$versionsDao[] = array(
+				'id' => $service->getVersionId(),
+				'name' => $service->getVersionName(),
+				'status' => tx_egovapi_domain_model_constants::VERSION_STATUS_PUBLISHED,
+				'communityId' => $service->getCommunityId(),
+				'isDefault' => TRUE,
+			);
+		}
+
 		foreach ($versionsDao as $versionDao) {
 			/** @var $version tx_egovapi_domain_model_version */
 			$version = t3lib_div::makeInstance('tx_egovapi_domain_model_version', $versionDao['id']);

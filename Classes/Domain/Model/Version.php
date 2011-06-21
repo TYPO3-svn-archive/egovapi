@@ -158,7 +158,7 @@ class tx_egovapi_domain_model_version extends tx_egovapi_domain_model_abstractEn
 	 * @return boolean
 	 */
 	public function isDefault() {
-		return $this->isDefault();
+		return $this->getIsDefault();
 	}
 
 	/**

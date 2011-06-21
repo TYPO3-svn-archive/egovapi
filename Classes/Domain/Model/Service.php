@@ -281,7 +281,7 @@ class tx_egovapi_domain_model_service extends tx_egovapi_domain_model_abstractEn
 	/**
 	 * Returns the available versions for this service.
 	 *
-	 * @return array
+	 * @return tx_egovapi_domain_model_version[]
 	 */
 	public function getVersions() {
 		if (!$this->versions) {
