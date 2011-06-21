@@ -262,6 +262,10 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 			unset($this->conf['version']);
 		}
 
+		if ($this->conf['wsdl'] === 'http://ref.cyberadmin.ch/WS/ServiceContract/WS.wsdl') {
+			throw new RuntimeException('Deprecated web service end-point detected: ' . $this->conf['wsdl'], 1308646147);
+		}
+
 		$this->debug = $this->conf['enableDebug'];
 	}
 

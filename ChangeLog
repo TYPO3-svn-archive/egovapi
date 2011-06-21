@@ -1,3 +1,7 @@
+2011-06-21  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK][!!!] #27570: Update web service end-point
+
 2011-06-20  Xavier Perseguers  <xavier@causal.ch>
 
 	* [FEATURE] #27577: Add hook to allow manual ordering of the providers
