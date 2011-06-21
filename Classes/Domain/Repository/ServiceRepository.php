@@ -292,9 +292,21 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 			$fee = t3lib_div::makeInstance('tx_egovapi_domain_model_block_fee');
 
 			if ($this->stripTags) {
-				$fee->setContent(strip_tags($detailsDao['feeBlock']));
+				$fee->setDescription(strip_tags($detailsDao['feeBlock']['description']));
 			} else {
-				$fee->setContent($detailsDao['feeBlock']);
+				$fee->setDescription($detailsDao['feeBlock']['description']);
+			}
+
+			foreach ($detailsDao['feeBlock']['pricingList'] as $itemDao) {
+				/** @var $pricing tx_egovapi_domain_model_block_pricing */
+				$pricing = t3lib_div::makeInstance('tx_egovapi_domain_model_block_pricing');
+
+				$pricing->setPrice($itemDao['price']);
+				$pricing->setFee($itemDao['fee']);
+				$pricing->setHasEPayment((bool) $itemDao['epaymentEnabled']);
+				$pricing->setVatCode($itemDao['vatCode']);
+
+				$fee->addPricing($pricing);
 			}
 
 			$service->setFee($fee);

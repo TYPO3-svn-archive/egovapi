@@ -12,6 +12,15 @@ CHANGES & IMPROVEMENTS between egovapi 1.3 and 1.4
 	OLD: http://ref.cyberadmin.ch/WS/ServiceContract/WS.wsdl
 	NEW: http://ref.cyberadmin.ch/WS20/ServiceContract/WS.wsdl
 
+=== Domain Model ===
+
+	To accomodate changes in the web service, the domain model has
+	been updated.
+
+	tx_egovapi_domain_model_block_fee fields were changed:
+	- DELETED: content
+	- ADDED: description, pricings
+
 
 
 ************************************************************************

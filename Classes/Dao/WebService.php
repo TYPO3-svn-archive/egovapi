@@ -453,7 +453,7 @@ class tx_egovapi_dao_webService {
 				'formularBlock'           => 'formular',
 				'documentRequiredBlock'   => 'document',
 				'resultBlock'             => 'result',
-				'feeBlock'                => 'fee',
+				'feeBlock'                => 'feeInfo',
 				'legalRegulationBlock'    => 'legalRegulation',
 				'documentOtherBlock'      => 'document',
 				'remarkBlock'             => 'remark',
@@ -611,9 +611,7 @@ class tx_egovapi_dao_webService {
 			'eCHapiMethod' => $method,
 			'eCHlanguageID' => strtoupper($this->settings['eCHlanguageID']),
 			'eCHcommunityID' => $communityId,
-			'organizationID' => $this->settings['organizationID'],
-			// TODO: remove this when organizationID is really what is used with stable web service
-			'eCHmunicipalityID' => $this->settings['organizationID'],
+			'organisationID' => $this->settings['organizationID'],
 		);
 		$parameters = array_merge($parameters, $additionalParameters);
 

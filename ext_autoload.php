@@ -31,6 +31,7 @@ return array(
 	'tx_egovapi_domain_model_block_news' => $classPath . 'Domain/Model/Block/News.php',
 	'tx_egovapi_domain_model_block_prerequisite' => $classPath . 'Domain/Model/Block/Prerequisite.php',
 	'tx_egovapi_domain_model_block_prerequisites' => $classPath . 'Domain/Model/Block/Prerequisites.php',
+	'tx_egovapi_domain_model_block_pricing' => $classPath . 'Domain/Model/Block/Pricing.php',
 	'tx_egovapi_domain_model_block_procedure' => $classPath . 'Domain/Model/Block/Procedure.php',
 	'tx_egovapi_domain_model_block_procedureitem' => $classPath . 'Domain/Model/Block/ProcedureItem.php',
 	'tx_egovapi_domain_model_block_remarks' => $classPath . 'Domain/Model/Block/Remarks.php',
