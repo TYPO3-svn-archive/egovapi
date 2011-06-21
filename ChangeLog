@@ -1,5 +1,6 @@
 2011-06-21  Xavier Perseguers  <xavier@causal.ch>
 
+	* [FEATURE][!!!] #27496: Take advantage of WS method GetServiceVersions
 	* [TASK][!!!] #27570: Breaking change in web service 2.0
 	* [TASK][!!!] #27570: Update web service end-point
 

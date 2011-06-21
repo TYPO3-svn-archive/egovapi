@@ -85,8 +85,20 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 	width: 300px;
 }
 
-.tx-egovapi-pi2 #tx_egovapi_version {
-	width: 80px;
+.tx-egovapi-pi2 #tx_egovapi_version option.status_draft {
+	background-color: #f63;
+}
+
+.tx-egovapi-pi2 #tx_egovapi_version option.status_published {
+	background-color: #fff;
+}
+
+.tx-egovapi-pi2 #tx_egovapi_version option.status_archived {
+	background-color: #fc0;
+}
+
+.tx-egovapi-pi2 #tx_egovapi_version option.status_default {
+	background-color: #690;
 }
 
 .tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks ul {

@@ -12,6 +12,13 @@ CHANGES & IMPROVEMENTS between egovapi 1.3 and 1.4
 	OLD: http://ref.cyberadmin.ch/WS/ServiceContract/WS.wsdl
 	NEW: http://ref.cyberadmin.ch/WS20/ServiceContract/WS.wsdl
 
+=== Templates ===
+
+	Selector form template has been updated to show a drop-down menu
+	to select the version instead of a simple textbox. Associated
+	behavior script (Resources/Public/JavaScript/selector.js) changed
+	as well to accomodate this modification.
+
 === Domain Model ===
 
 	To accomodate changes in the web service, the domain model has

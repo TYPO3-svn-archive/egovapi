@@ -94,6 +94,9 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 			case 'services':
 				$data = $this->getServices();
 				break;
+			case 'versions':
+				$data = $this->getVersions();
+				break;
 			case 'url':
 				$data = $this->getParametrizedUri();
 				break;
@@ -180,6 +183,51 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 				'version' => $service->getVersionId(),
 				'name' => $service->getName(),
 			);
+		}
+
+		$tags = array(
+			'ajax',
+			strtoupper($this->conf['eCHlanguageID']),
+		);
+		$this->storeCacheData($cacheKey, $data, $tags);
+
+		return $data;
+	}
+
+	/**
+	 * Gets the available versions of a given service.
+	 *
+	 * @return array
+	 */
+	protected function getVersions() {
+		$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
+			'method'            => 'getVersions',
+			'includeCHServices' => $this->conf['includeCHServices'],
+			'language'          => $this->conf['eCHlanguageID'],
+			'community'         => $this->conf['eCHcommunityID'],
+			'organization'      => $this->conf['organizationID'],
+			'service'           => $this->conf['service'],
+		));
+		$data = $this->getCacheData($cacheKey);
+		if ($data) {
+			return $data;
+		}
+		$data = array();
+		$services = $this->getDomainServices();
+
+		foreach ($services as $service) {
+			if ($service->getId() === $this->conf['service']) {
+				$versions = $service->getVersions();
+				foreach ($versions as $version) {
+					$data[] = array(
+						'id' => $version->getId(),
+						'name' => $version->getName(),
+						'status' => $version->getStatus(),
+						'is_default' => $version->isDefault() ? '1' : '0',
+					);
+				}
+				break;
+			}
 		}
 
 		$tags = array(
