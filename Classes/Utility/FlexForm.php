@@ -331,12 +331,41 @@ class tx_egovapi_utility_flexform {
 			tx_egovapi_utility_objects::sort($allServices, 'name');
 
 			foreach ($allServices as $service) {
-				$version = isset($mapping[$service->getId()]) ? $mapping[$service->getId()] : '';
+				$versionId = isset($mapping[$service->getId()]) ? $mapping[$service->getId()] : '';
 
 				$output .= '<tr class="db_list_normal">';
 				$output .= '<td>' . $service->getId() . '</td>';
 				$output .= '<td>' . $service->getVersionId() . '</td>';
-				$output .= '<td><input type="text" value="' . $version . '" onchange="egovapi_updateVersionMapping(\'' . $service->getId() . '\', this.value)" size="6" maxlength="6" /></td>';
+
+				$output .= '<td><select onchange="egovapi_updateVersionMapping(\'' . $service->getId() . '\', this.value)">';
+					// Always use default version
+				$output .= '<option value="">&lt;--</option>';
+				$versions = $service->getVersions();
+				foreach ($versions as $version) {
+					if ($version->isDefault()) {
+							// We don't care about actual status
+						$status = '•';
+					} else {
+						switch ($version->getStatus()) {
+							case tx_egovapi_domain_model_constants::VERSION_STATUS_DRAFT:
+								$status = 'D';
+								break;
+							case tx_egovapi_domain_model_constants::VERSION_STATUS_PUBLISHED:
+								$status = 'P';
+								break;
+							case tx_egovapi_domain_model_constants::VERSION_STATUS_ARCHIVED:
+								$status = 'A';
+								break;
+							default:
+								$status = '-';
+								break;
+						}
+					}
+					$label = $version->getId() . ' (' . $status . ')';
+					$output .= '<option value="' . $version->getId() . '"' . ($version->getId() == $versionId ? ' selected="selected"' : '') . '>' . $label . '</option>';
+				}
+				$output .= '</select></td>';
+
 				$output .= '<td>' . $service->getName() . '</td>';
 				$output .= '</tr>';
 			}
