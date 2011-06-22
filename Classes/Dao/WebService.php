@@ -188,10 +188,41 @@ class tx_egovapi_dao_webService {
 	 * @return array
 	 */
 	public function getDomains($viewId) {
+		if ($this->settings['includeCHServices'] && $this->settings['eCHcommunityID'] !== '00-00') {
+			$domainsCommunity = $this->_getDomains($viewId, FALSE);
+			$domains = $domainsCommunity;
+			$domainsCH = $this->_getDomains($viewId, TRUE);
+
+			if (is_array($domainsCH)) {
+				foreach ($domainsCH as $domain) {
+						// Key used to remove duplicates
+					$domains[$domain['id']] = $domain;
+				}
+			}
+		} else {
+			$domains = $this->_getDomains($viewId, FALSE);
+		}
+
+		$domains = is_array($domains) ? $domains : array();
+
+			// Sort topics by (localized) name
+		$this->sort($domains, 'name');
+
+		return $domains;
+	}
+
+	/**
+	 * Returns the list of domains for a given view.
+	 *
+	 * @param string $viewId
+	 * @param boolean $forceCHLevel
+	 * @return array
+	 */
+	protected function _getDomains($viewId, $forceCHLevel) {
 		$domains = array();
 		$domainList = $this->callEgovApi('GetDomainList', array(
 			'eCHviewID' => $viewId,
-		));
+		), $forceCHLevel);
 		if (is_array($domainList) && is_array($domainList['eCHdomainList'])) {
 			if (is_array($domainList['eCHdomainList']['domainInfo']) && !isset($domainList['eCHdomainList']['domainInfo'][0])) {
 				$domainList['eCHdomainList']['domainInfo'] = array($domainList['eCHdomainList']['domainInfo']);
@@ -224,9 +255,6 @@ class tx_egovapi_dao_webService {
 				t3lib_div::devLog('Could not process domains for view "' . $viewId . '"', 'egovapi', self::DEVLOG_WARNING, $domainList);
 			}
 		}
-
-			// Sort domains by (localized) name
-		$this->sort($domains, 'name');
 
 		return $domains;
 	}
@@ -273,10 +301,41 @@ class tx_egovapi_dao_webService {
 	 * @return array
 	 */
 	public function getTopics($domainId) {
+		if ($this->settings['includeCHServices'] && $this->settings['eCHcommunityID'] !== '00-00') {
+			$topicsCommunity = $this->_getTopics($domainId, FALSE);
+			$topics = $topicsCommunity;
+			$topicsCH = $this->_getTopics($domainId, TRUE);
+
+			if (is_array($topicsCH)) {
+				foreach ($topicsCH as $topic) {
+						// Key used to remove duplicates
+					$topics[$topic['id']] = $topic;
+				}
+			}
+		} else {
+			$topics = $this->_getTopics($domainId, FALSE);
+		}
+
+		$topics = is_array($topics) ? $topics : array();
+
+			// Sort topics by (localized) name
+		$this->sort($topics, 'name');
+
+		return $topics;
+	}
+
+	/**
+	 * Returns the list of topics for a given domain.
+	 *
+	 * @param string $domainId
+	 * @param boolean $forceCHLevel
+	 * @return array
+	 */
+	protected function _getTopics($domainId, $forceCHLevel) {
 		$topics = array();
 		$topicList = $this->callEgovApi('GetTopicList', array(
 			'eCHdomainID' => $domainId,
-		));
+		), $forceCHLevel);
 		if (is_array($topicList) && is_array($topicList['eCHtopicList'])) {
 			if (is_array($topicList['eCHtopicList']['topicInfo']) && !isset($topicList['eCHtopicList']['topicInfo'][0])) {
 				$topicList['eCHtopicList']['topicInfo'] = array($topicList['eCHtopicList']['topicInfo']);
@@ -309,9 +368,6 @@ class tx_egovapi_dao_webService {
 				t3lib_div::devLog('Could not process topics for domain "' . $domainId . '"', 'egovapi', self::DEVLOG_WARNING, $topicList);
 			}
 		}
-
-			// Sort topics by (localized) name
-		$this->sort($topics, 'name');
 
 		return $topics;
 	}
@@ -364,7 +420,8 @@ class tx_egovapi_dao_webService {
 			$servicesCH = $this->_getServices($topicId, TRUE);
 			if (is_array($servicesCH)) {
 				foreach ($servicesCH as $service) {
-					$services[] = $service;
+						// Key used to removed duplicates
+					$services[$service['id']] = $service;
 				}
 			}
 		} else {
@@ -387,6 +444,7 @@ class tx_egovapi_dao_webService {
 	 * @return array
 	 */
 	protected function _getServices($topicId, $forceCHLevel) {
+		$services = array();
 		$serviceList = $this->callEgovApi('GetServiceList', array(
 			'eCHtopicID' => $topicId,
 		), $forceCHLevel);
