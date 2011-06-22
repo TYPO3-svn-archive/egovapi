@@ -292,9 +292,21 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 			$fee = t3lib_div::makeInstance('tx_egovapi_domain_model_block_fee');
 
 			if ($this->stripTags) {
-				$fee->setContent(strip_tags($detailsDao['feeBlock']));
+				$fee->setDescription(strip_tags($detailsDao['feeBlock']['description']));
 			} else {
-				$fee->setContent($detailsDao['feeBlock']);
+				$fee->setDescription($detailsDao['feeBlock']['description']);
+			}
+
+			foreach ($detailsDao['feeBlock']['pricingList'] as $itemDao) {
+				/** @var $pricing tx_egovapi_domain_model_block_pricing */
+				$pricing = t3lib_div::makeInstance('tx_egovapi_domain_model_block_pricing');
+
+				$pricing->setPrice($itemDao['price']);
+				$pricing->setFee($itemDao['fee']);
+				$pricing->setHasEPayment((bool) $itemDao['epaymentEnabled']);
+				$pricing->setVatCode($itemDao['vatCode']);
+
+				$fee->addPricing($pricing);
 			}
 
 			$service->setFee($fee);
@@ -388,6 +400,43 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 		}
 
 		$service->setHasDetails();
+	}
+
+	/**
+	 * Injects the versions available for a given service.
+	 *
+	 * @param tx_egovapi_domain_model_service $service
+	 * @return void
+	 */
+	public function injectVersions(tx_egovapi_domain_model_service $service) {
+		$versionsDao = $this->dao->getVersions(
+			$service->getId()
+		);
+
+		if (!count($versionsDao)) {
+				// A few services don't have any version (!?!) => create one out
+				// service's information
+			$versionsDao[] = array(
+				'id' => $service->getVersionId(),
+				'name' => $service->getVersionName(),
+				'status' => tx_egovapi_domain_model_constants::VERSION_STATUS_PUBLISHED,
+				'communityId' => $service->getCommunityId(),
+				'isDefault' => TRUE,
+			);
+		}
+
+		foreach ($versionsDao as $versionDao) {
+			/** @var $version tx_egovapi_domain_model_version */
+			$version = t3lib_div::makeInstance('tx_egovapi_domain_model_version', $versionDao['id']);
+
+			$version->setService($service);
+			$version->setName($versionDao['name']);
+			$version->setStatus($versionDao['status']);
+			$version->setCommunityId($versionDao['communityId']);
+			$version->setIsDefault($versionDao['isDefault']);
+
+			$service->addVersion($version);
+		}
 	}
 
 }

@@ -112,7 +112,12 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			$this->webServiceCache = $GLOBALS['typo3CacheManager']->getCache(
 				'egovapi'
 			);
-		} catch (t3lib_cache_exception_NoSuchCache $e) {
+		// BEWARE: Cannot limit to t3lib_cache_exception_NoSuchCache as when instantiating
+		//         the caching framework from a scheduler task, the object name of the
+		//         cache frontend (t3lib_cache_frontend_VariableFrontend) is empty and
+		//         crashes t3lib_div::makeInstance() called from t3lib_cache_Factory::cache()
+		//         with an empty class name.
+		} catch (Exception $e) {
 			tx_egovapi_utility_cache::initWebServiceCache();
 
 			$this->webServiceCache = $GLOBALS['typo3CacheManager']->getCache(
@@ -371,6 +376,34 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 		}
 
 		return $details;
+	}
+
+	/**
+	 * Returns the versions available for a given service.
+	 *
+	 * @param string $serviceId
+	 * @return array
+	 */
+	public function getVersions($serviceId) {
+		$cacheKey = tx_egovapi_utility_cache::getCacheKey(array(
+			'method'       => 'versions',
+			'service'      => $serviceId,
+			'language'     => strtoupper($this->settings['eCHlanguageID']),
+			'community'    => $this->settings['eCHcommunityID'],
+		));
+
+		$versions = $this->getCacheData($cacheKey);
+		if (!$versions) {
+			$versions = $this->getWebService()->getVersions($serviceId);
+
+			$tags = array(
+				'versions',
+				strtoupper($this->settings['eCHlanguageID']),
+			);
+			$this->storeCacheData($cacheKey, $versions, $tags);
+		}
+
+		return $versions;
 	}
 
 	/**

@@ -38,25 +38,68 @@ class tx_egovapi_domain_model_block_fee {
 	/**
 	 * @var string
 	 */
-	protected $content;
+	protected $description;
 
 	/**
-	 * Gets the content.
-	 *
-	 * @return string
+	 * @var tx_egovapi_domain_model_block_pricing[]
 	 */
-	public function getContent() {
-		return $this->content;
+	protected $pricings;
+
+	/**
+	 * Default constructor.
+	 */
+	public function __construct() {
+		$this->pricings = array();
 	}
 
 	/**
-	 * Sets the content.
+	 * Gets the description.
 	 *
-	 * @param string $content
+	 * @return string
+	 */
+	public function getDescription() {
+		return $this->description;
+	}
+
+	/**
+	 * Sets the description.
+	 *
+	 * @param string $description
 	 * @return tx_egovapi_domain_model_block_fee
 	 */
-	public function setContent($content) {
-		$this->content = $content;
+	public function setDescription($description) {
+		$this->description = $description;
+		return $this;
+	}
+
+	/**
+	 * Gets the prices.
+	 *
+	 * @return tx_egovapi_domain_model_block_pricing[]
+	 */
+	public function getPricings() {
+		return $this->pricings;
+	}
+
+	/**
+	 * Sets the pricings.
+	 *
+	 * @param tx_egovapi_domain_model_block_pricing[] $pricings
+	 * @return tx_egovapi_domain_model_block_fee
+	 */
+	public function setPricings(array $pricings) {
+		$this->pricings = $pricings;
+		return $this;
+	}
+
+	/**
+	 * Adds a pricing.
+	 *
+	 * @param tx_egovapi_domain_model_block_pricing $pricing
+	 * @return tx_egovapi_domain_model_block_fee
+	 */
+	public function addPricing(tx_egovapi_domain_model_block_pricing $pricing) {
+		$this->pricings[] = $pricing;
 		return $this;
 	}
 
@@ -66,7 +109,11 @@ class tx_egovapi_domain_model_block_fee {
 	 * @return string
 	 */
 	public function __toString() {
-		return $this->content;
+		$output = $this->description;
+		if (count($this->pricings)) {
+			$output .= sprintf(' <ul><li>%s</li></ul>', implode('</li><li>', $this->pricings));
+		};
+		return $output;
 	}
 
 }

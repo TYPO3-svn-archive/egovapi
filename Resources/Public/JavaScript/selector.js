@@ -6,7 +6,7 @@ $(function() {
     // Reset form fields
     $("select#tx_egovapi_organization").html("");
     $("select#tx_egovapi_service").html("");
-    $("input#tx_egovapi_version").val("");
+    $("select#tx_egovapi_version").html("");
     $("select#tx_egovapi_language").val(defaultLanguage);
 
     // Update the list of organizations
@@ -30,7 +30,7 @@ $(function() {
                     }
                     $("select#tx_egovapi_organization").html(options);
                     $("select#tx_egovapi_service").html('');
-                    $("input#tx_egovapi_version").val("");
+                    $("select#tx_egovapi_version").html("");
                 }
             }
         )
@@ -66,7 +66,7 @@ $(function() {
                     options += '</optgroup>';
 
                     $("select#tx_egovapi_service").html(options);
-                    $("input#tx_egovapi_version").val("");
+                    $("select#tx_egovapi_version").html("");
                 }
             }
         )
@@ -74,9 +74,53 @@ $(function() {
 
     // Update the select service's version
     $("select#tx_egovapi_service").change(function() {
+        var community = $("select#tx_egovapi_community").val();
+        var organization = $("select#tx_egovapi_organization").val();
+        var language = $("select#tx_egovapi_language").val();
         var info = $(this).val().split("-");
+        var service = info[0];
         var version = info[1];
-        $("input#tx_egovapi_version").val(version);
+
+        $.getJSON(
+            ajaxUrl,
+            {
+                eID: eID,
+                action: "versions",
+                language: language,
+                community: community,
+                organization: organization,
+                service: service
+            },
+            function (response) {
+                if (response.success) {
+                    var data = response.data;
+                    var options = '<option value="' + version + '"></option>';
+                    for (var i = 0; i < data.length; i++) {
+                        var cls = data[i].is_default == "1" ? "status_default" : "";
+                        var status;
+                        switch (data[i].status) {
+                            case 1:
+                                cls += " status_draft";
+                                status = "D";
+                                break;
+                            case 2:
+                                cls += " status_published";
+                                status = "P";
+                                break;
+                            case 3:
+                                cls += " status_archived";
+                                status = "A";
+                                break;
+                        }
+                        status = data[i].is_default == "1" ? "•" : status;
+                        var label = data[i].id + ' - ' + data[i].name + " (" + status + ")";
+                        options += '<option value="' + data[i].id + '" class="' + cls + '">' + label + '</option>';
+                    }
+
+                    $("select#tx_egovapi_version").html(options);
+                }
+            }
+        );
     });
 
     // Toggle select blocks
@@ -95,7 +139,7 @@ $(function() {
     // Update fields when language is changed
     $("select#tx_egovapi_language").change(function() {
         $("select#tx_egovapi_organization").trigger("change");
-        $("input#tx_egovapi_version").val("");
+        $("select#tx_egovapi_version").html("");
     });
 
     // Update the links
@@ -108,7 +152,7 @@ $(function() {
         var community = $("select#tx_egovapi_community").val();
         var organization = $("select#tx_egovapi_organization").val();
         var service = $("select#tx_egovapi_service").val();
-        var version = $("input#tx_egovapi_version").val();
+        var version = $("select#tx_egovapi_version").val();
         var language = $("select#tx_egovapi_language").val();
 
         var selectedBlocks = new Array();

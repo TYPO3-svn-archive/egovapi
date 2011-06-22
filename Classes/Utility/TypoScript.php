@@ -98,13 +98,6 @@ class tx_egovapi_utility_ts {
 			}
 		}
 
-			// TODO: remove this check with release 1.0.0
-		if (isset($settings['eCHmunicipalityID']) && !isset($settings['communityID'])) {
-			t3lib_div::deprecationLog('This TYPO3 installation uses deprecated parameter eCHmunicipalityID. Please use the official parameter communityID instead. Support will be dropped with egovapi 1.4.0.');
-			$settings['communityID'] = $settings['eCHmunicipalityID'];
-			unset($settings['eCHmunicipalityID']);
-		}
-
 			// Preprocess the display blocks
 		$levelsDisplayBlocks = array('domain', 'topic', 'service');
 		foreach ($levelsDisplayBlocks as $level) {

@@ -511,7 +511,7 @@ class tx_egovapi_dao_webService {
 				'formularBlock'           => 'formular',
 				'documentRequiredBlock'   => 'document',
 				'resultBlock'             => 'result',
-				'feeBlock'                => 'fee',
+				'feeBlock'                => 'feeInfo',
 				'legalRegulationBlock'    => 'legalRegulation',
 				'documentOtherBlock'      => 'document',
 				'remarkBlock'             => 'remark',
@@ -569,6 +569,42 @@ class tx_egovapi_dao_webService {
 	}
 
 	/**
+	 * Returns the versions available for given service.
+	 *
+	 * @param string $serviceId
+	 * @return array
+	 */
+	public function getVersions($serviceId) {
+		$versions = array();
+		$versionList = $this->callEgovApi('GetServiceVersions', array(
+			'eCHserviceID' => $serviceId,
+		));
+
+		if (is_array($versionList) && is_array($versionList['serviceVersionList'])) {
+			if (is_array($versionList['serviceVersionList']['serviceVersion']) && !isset($versionList['serviceVersionList']['serviceVersion'][0])) {
+				$versionList['serviceVersionList']['serviceVersion'] = array($versionList['serviceVersionList']['serviceVersion']);
+			}
+			if (isset($versionList['serviceVersionList']['serviceVersion'])) {
+				foreach ($versionList['serviceVersionList']['serviceVersion'] as $version) {
+					$id = $this->getValue($version, 'eCHserviceVersionID');
+					if (!$id) {
+						continue;
+					}
+					$versions[] = array(
+						'id' => $id,
+						'name' => $this->getValue($version, 'eCHserviceVersionName'),
+						'status' => $this->getValue($version, 'statusID'),
+						'communityId' => $this->getValue($version, 'eCHcommunityID'),
+						'isDefault' => $this->getValue($version, 'isDefault'),
+					);
+				}
+			}
+		}
+
+		return $versions;
+	}
+
+	/**
 	 * Returns an array with values from $lbound to $ubound.
 	 *
 	 * @param integer $lbound
@@ -607,7 +643,14 @@ class tx_egovapi_dao_webService {
 	 * @return string
 	 */
 	protected function getValue(array $arr, $key) {
-		return $arr[$key]['content'];
+		if (!isset($arr[$key])) {
+			$value = NULL;
+		} elseif (is_array($arr[$key])) {
+			$value = isset($arr[$key]['content']) ? $arr[$key]['content'] : NULL;
+		} else {
+			$value = $arr[$key];
+		}
+		return $value;
 	}
 
 	/**
@@ -626,9 +669,7 @@ class tx_egovapi_dao_webService {
 			'eCHapiMethod' => $method,
 			'eCHlanguageID' => strtoupper($this->settings['eCHlanguageID']),
 			'eCHcommunityID' => $communityId,
-			'organizationID' => $this->settings['organizationID'],
-			// TODO: remove this when organizationID is really what is used with stable web service
-			'eCHmunicipalityID' => $this->settings['organizationID'],
+			'organisationID' => $this->settings['organizationID'],
 		);
 		$parameters = array_merge($parameters, $additionalParameters);
 

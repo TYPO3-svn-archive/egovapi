@@ -270,6 +270,10 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 			unset($this->conf['version']);
 		}
 
+		if ($this->conf['wsdl'] === 'http://ref.cyberadmin.ch/WS/ServiceContract/WS.wsdl') {
+			throw new RuntimeException('Deprecated web service end-point detected: ' . $this->conf['wsdl'], 1308646147);
+		}
+
 		$requestUrl = t3lib_div::getIndpEnv('TYPO3_REQUEST_URL');
 		$requestUrl .= (strpos($requestUrl, '?') !== FALSE) ? '&' : '?';
 		$this->conf['vcardUrl'] = $requestUrl . 'vcard=1';

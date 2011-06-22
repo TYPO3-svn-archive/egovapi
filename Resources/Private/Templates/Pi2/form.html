@@ -22,7 +22,6 @@
 	</div>
 	<div id="tx_egovapi_selectorForm_organization">
 		<label for="tx_egovapi_organization">###LABEL_ORGANIZATION###</label>
-		<!-- ###ORGANIZATIONS### [begin] -->
 		<select id="tx_egovapi_organization">
 			<option value=""></option>
 			<option value="02004">Bussy (FR) - 02004</option>
@@ -30,20 +29,23 @@
 			<option value="02008">Châtillon (FR) - 02008</option>
 			<option value="02008">Cheiry - 02008</option>
 		</select>
-		<!-- ###ORGANIZATIONS### [end] -->
 	</div>
 	<div id="tx_egovapi_selectorForm_service">
 		<label for="tx_egovapi_service">###LABEL_SERVICE###</label>
-		<!-- ###SERVICES### [begin] -->
 		<select id="tx_egovapi_service">
 			<option value=""></option>
 			<option value="01170">Attestation de domicile - 01170</option>
 		</select>
-		<!-- ###SERVICES### [end] -->
 	</div>
 	<div id="tx_egovapi_selectorForm_version">
 		<label for="tx_egovapi_version">###LABEL_VERSION###</label>
-		<input type="text" id="tx_egovapi_version" />
+		<select id="tx_egovapi_version">
+			<option value="13479" class="status_archived">13479 (A)</option>
+			<option value="13514" class="status_default status_published" selected="selected">13514 (•)</option>
+			<option value="13228" class="status_published">13228 (P)</option>
+			<option value="13437" class="status_published">13437 (P)</option>
+			<option value="13483" class="status_draft">13483 (D)</option>
+		</select>
 	</div>
 	<div id="tx_egovapi_selectorForm_blocks">
 		<fieldset>
@@ -70,7 +72,6 @@
 	</div>
 	<div id="tx_egovapi_selectorForm_language">
 		<label for="tx_egovapi_language">###LABEL_LANGUAGE###</label>
-		<!-- ###LANGUAGES### [begin] -->
 		<select id="tx_egovapi_language">
 			<option value="de">Deutsch</option>
 			<option value="en">English</option>
@@ -78,7 +79,6 @@
 			<option value="it">Italiano</option>
 			<option value="rm">Rumantsch</option>
 		</select>
-		<!-- ###LANGUAGES### [end] -->
 	</div>
 	<div>
 		<input type="hidden" id="tx_egovapi_ajaxUrl" value="###AJAX_URL###" />

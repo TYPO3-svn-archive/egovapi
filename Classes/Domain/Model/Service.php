@@ -163,6 +163,22 @@ class tx_egovapi_domain_model_service extends tx_egovapi_domain_model_abstractEn
 	protected $contact;
 
 	/**
+	 * @var tx_egovapi_domain_model_version[]
+	 */
+	protected $versions;
+
+	/**
+	 * Default constructor.
+	 *
+	 * @param string $id
+	 */
+	public function __construct($id) {
+		parent::__construct($id);
+
+		$this->versions = array();
+	}
+
+	/**
 	 * Gets the parent topic.
 	 *
 	 * @return tx_egovapi_domain_model_topic
@@ -259,6 +275,42 @@ class tx_egovapi_domain_model_service extends tx_egovapi_domain_model_abstractEn
 	 */
 	public function setVersionName($versionName) {
 		$this->versionName = $versionName;
+		return $this;
+	}
+
+	/**
+	 * Returns the available versions for this service.
+	 *
+	 * @return tx_egovapi_domain_model_version[]
+	 */
+	public function getVersions() {
+		if (!$this->versions) {
+			/** @var tx_egovapi_domain_repository_serviceRepository $serviceRepository */
+			$serviceRepository = tx_egovapi_domain_repository_factory::getRepository('service');
+			$serviceRepository->injectVersions($this);
+		}
+		return $this->versions;
+	}
+
+	/**
+	 * Sets the versions.
+	 *
+	 * @param tx_egovapi_domain_model_version[] $versions
+	 * @return tx_egovapi_domain_model_service
+	 */
+	public function setVersions(array $versions) {
+		$this->versions = $versions;
+		return $this;
+	}
+
+	/**
+	 * Adds a version.
+	 *
+	 * @param tx_egovapi_domain_model_version $version
+	 * @return tx_egovapi_domain_model_service the current Service to allow method chaining
+	 */
+	public function addVersion(tx_egovapi_domain_model_version $version) {
+		$this->versions[] = $version;
 		return $this;
 	}
 

@@ -91,7 +91,15 @@
 <f:if condition="{showFee}">
 	<!-- Fee -->
 	<h2 class="tx_egovapi_block_fee"><span class="block_number">8.</span> <f:translate key="block_fee">Fee</f:translate></h2>
-	<p>{service.fee}</p>
+	<p class="tx_egovapi_block_fee">{service.fee.description}</p>
+	<f:if condition="{service.fee.pricings}">
+		<ul class="tx_egovapi_block_fee_pricing">
+			<li>
+				<f:format.currency currencySign="CHF">{service.fee.pricing.price}</f:format.currency> /
+				<f:format.currency currencySign="CHF">{service.fee.pricing.fee}</f:format.currency>
+			</li>
+		</ul>
+	</f:if>
 </f:if>
 
 <f:if condition="{showLegalRegulation}">
