@@ -59,7 +59,13 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 		$this->init($conf);
 		$this->pi_setPiVarDefaults();
 		$useCaching = !$this->conf['dynamicConfig'];
+		$vcard = FALSE;
 		$this->pi_USER_INT_obj = $useCaching ? 0 : 1;
+
+		if (t3lib_div::_GET('vcard') === '1') {
+			$useCaching = FALSE;
+			$vcard = TRUE;
+		}
 
 		if (!$useCaching && $this->cObj->getUserObjectType() == tslib_cObj::OBJECTTYPE_USER) {
 			$this->cObj->convertToUserIntObject();
@@ -81,7 +87,9 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 		}
 
 		$start = microtime(TRUE);
-		if ($this->conf['useFluid']) {
+		if ($vcard) {
+			$renderer = t3lib_div::makeInstance('tx_egovapi_controller_pi1_vcardRenderer');
+		} elseif ($this->conf['useFluid']) {
 			$renderer = t3lib_div::makeInstance('tx_egovapi_controller_pi1_fluidRenderer');
 		} else {
 			$renderer = t3lib_div::makeInstance('tx_egovapi_controller_pi1_templateRenderer');
@@ -265,6 +273,10 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 		if ($this->conf['wsdl'] === 'http://ref.cyberadmin.ch/WS/ServiceContract/WS.wsdl') {
 			throw new RuntimeException('Deprecated web service end-point detected: ' . $this->conf['wsdl'], 1308646147);
 		}
+
+		$requestUrl = t3lib_div::getIndpEnv('TYPO3_REQUEST_URL');
+		$requestUrl .= (strpos($requestUrl, '?') !== FALSE) ? '&' : '?';
+		$this->conf['vcardUrl'] = $requestUrl . 'vcard=1';
 
 		$this->debug = $this->conf['enableDebug'];
 	}
