@@ -1,3 +1,7 @@
+2011-06-22  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] #27616: Kanton Bern - Confederation services don't show
+
 2011-06-21  Xavier Perseguers  <xavier@causal.ch>
 
 	* [FEATURE][!!!] #27496: Take advantage of WS method GetServiceVersions
