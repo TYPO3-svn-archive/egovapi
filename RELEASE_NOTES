@@ -12,6 +12,11 @@ CHANGES & IMPROVEMENTS between egovapi 1.3 and 1.4
 	OLD: http://ref.cyberadmin.ch/WS/ServiceContract/WS.wsdl
 	NEW: http://ref.cyberadmin.ch/WS20/ServiceContract/WS.wsdl
 
+=== Configuration ===
+
+	Support for eCHmunicipalityID has finally been dropped. Please
+	use communityID instead, as stated in the deprecation log.
+
 === Templates ===
 
 	Selector form template has been updated to show a drop-down menu

@@ -1,5 +1,6 @@
 2011-06-22  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Remove deprecated methods and configuration options
 	* [FEATURE] #27466: Add a link to download the vCard of the office
 	* [BUGFIX] #27616: Kanton Bern - Confederation services don't show
 
