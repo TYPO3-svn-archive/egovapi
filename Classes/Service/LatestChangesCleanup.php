@@ -37,13 +37,34 @@
 class tx_egovapi_service_latestChangesCleanup {
 
 	/**
+	 * @var string
+	 */
+	protected $extKey = 'egovapi';
+
+	/**
+	 * Default constructor.
+	 */
+	public function __construct() {
+		$config = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this->extKey]);
+		$config['data.']['communities'] = 'EXT:egovapi/Resources/Private/Data/communities.csv';
+
+		$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $config);
+		tx_egovapi_domain_repository_factory::injectDao($dao);
+	}
+
+	/**
 	 * Cleans up deprecated cache entries according to the list
 	 * of latest changes in eGov API.
 	 *
 	 * @return boolean TRUE if cleanup succeeded, otherwise FALSE
 	 */
 	public function cleanup() {
-		t3lib_utility_Debug::debug('cleanup', 'exec');
+		/** @var tx_egovapi_domain_repository_communityRepository $communityRepository */
+		$communityRepository = tx_egovapi_domain_repository_factory::getRepository('community');
+		/** @var tx_egovapi_domain_model_community[] $communities */
+		$communities = $communityRepository->findAll();
+
+		t3lib_utility_Debug::debug($communities, 'communities');
 
 		return TRUE;
 	}
