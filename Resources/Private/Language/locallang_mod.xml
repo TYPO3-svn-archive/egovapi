@@ -12,6 +12,11 @@
 		<languageKey index="default" type="array">
 			<label index="latestChangesCleanupTask.name">Latest changes in eGov API</label>
 			<label index="latestChangesCleanupTask.description">This task retrieves the list of latest changes to the services and the associated hierarchy structure and clears corresponding deprecated cache entries.</label>
+
+			<label index="label.latestChangesCleanup.allCommunities">Retrieve changes for all communities</label>
+			<label index="label.latestChangesCleanup.community">Community to retrieve changes for</label>
+
+			<label index="msg.invalidCommunity">Please selected a community.</label>
 		</languageKey>
 
 

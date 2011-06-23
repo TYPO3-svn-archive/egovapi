@@ -22,7 +22,8 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconf
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['tx_' . $_EXTKEY . '_service_latestChangesCleanupTask'] = array(
 	'extension'        => $_EXTKEY,
 	'title'            => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_mod.xml:latestChangesCleanupTask.name',
-	'description'      => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_mod.xml:latestChangesCleanupTask.description'
+	'description'      => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_mod.xml:latestChangesCleanupTask.description',
+	'additionalFields' => 'tx_egovapi_service_latestChangesCleanupAdditionalFieldProvider',
 );
 
 ?>

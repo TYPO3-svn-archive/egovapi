@@ -54,6 +54,7 @@ return array(
 	'tx_egovapi_domain_repository_viewrepository' => $classPath . 'Domain/Repository/ViewRepository.php',
 	'tx_egovapi_pibase' => $classPath . 'Controller/class.tx_egovapi_pibase.php',
 	'tx_egovapi_service_latestchangescleanup' => $classPath . 'Service/LatestChangesCleanup.php',
+	'tx_egovapi_service_latestchangescleanupadditionalfieldprovider' => $classPath . 'Service/LatestChangesCleanupAdditionalFieldProvider.php',
 	'tx_egovapi_service_latestchangescleanuptask' => $classPath . 'Service/LatestChangesCleanupTask.php',
 	'tx_egovapi_utility_cache' => $classPath . 'Utility/Cache.php',
 	'tx_egovapi_utility_constants' => $classPath . 'Utility/Constants.php',

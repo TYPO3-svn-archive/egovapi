@@ -1,3 +1,7 @@
+2011-06-24  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Added additional fields for the scheduler task
+
 2011-06-22  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Reintegrate branch service_versions onto trunk
