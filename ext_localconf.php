@@ -21,8 +21,8 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconf
 // Register the cache garbage collector task
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['tx_' . $_EXTKEY . '_service_latestChangesCleanupTask'] = array(
 	'extension'        => $_EXTKEY,
-	'title'            => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_db.xml:latestChangesCleanupTask.name',
-	'description'      => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_db.xml:latestChangesCleanupTask.description'
+	'title'            => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_mod.xml:latestChangesCleanupTask.name',
+	'description'      => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_mod.xml:latestChangesCleanupTask.description'
 );
 
 ?>

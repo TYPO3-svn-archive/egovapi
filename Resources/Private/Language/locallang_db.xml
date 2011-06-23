@@ -45,9 +45,6 @@
 			<label index="constants.targets.single.domain">Target page for domain: ID of the page to use for links showing details of a domain</label>
 			<label index="constants.targets.single.topic">Target page for topic: ID of the page to use for links showing details of a topic</label>
 			<label index="constants.targets.single.service">Target page for service: ID of the page to use for links showing details of a service</label>
-
-			<label index="latestChangesCleanupTask.name">Latest changes in eGov API</label>
-			<label index="latestChangesCleanupTask.description">This task retrieves the list of latest changes to the services and the associated hierarchy structure and clears corresponding deprecated cache entries.</label>
 		</languageKey>
 
 
@@ -93,9 +90,6 @@
 			<label index="constants.targets.single.domain">Zielseite für die Domäne: ID der Seite für Links zu Details einer Domäne zu verwenden</label>
 			<label index="constants.targets.single.topic">Zielseite für die Thema: ID der Seite für Links zu Details einer Thema zu verwenden</label>
 			<label index="constants.targets.single.service">Zielseite für die Dienstleistung: ID der Seite für Links zu Details einer Dienstleistung zu verwenden</label>
-
-			<label index="latestChangesCleanupTask.name">Letzte Änderungen in eGov API</label>
-			<label index="latestChangesCleanupTask.description">Diese Aufgabe sucht nach letzten Änderungen in der Dienstleistungen und die damit verbundenen hierarchischen Struktur und löscht entsprechende veraltet Cache-Einträge.</label>
 		</languageKey>
 
 
@@ -141,9 +135,6 @@
 			<label index="constants.targets.single.domain">Page cible pour un domaine: ID de la page à utiliser pour les liens vers les détails d'un domaine</label>
 			<label index="constants.targets.single.topic">Page cible pour une catégorie de services: ID de la page à utiliser pour les liens vers les détails d'une catégorie de services</label>
 			<label index="constants.targets.single.service">Page cible pour un service: ID de la page à utiliser pour les liens vers les détails d'un service</label>
-
-			<label index="latestChangesCleanupTask.name">Dernières modifications de l'API eGov</label>
-			<label index="latestChangesCleanupTask.description">Cette tâche récupère la liste des derniers changements effectués sur les services et la structure hiérarchique correspondante et efface les entrées correspondantes de mise en cache.</label>
 		</languageKey>
 
 
