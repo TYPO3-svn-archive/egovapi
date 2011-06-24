@@ -214,6 +214,9 @@ class tx_egovapi_service_latestChangesCleanupAdditionalFieldProvider implements 
 		if (!$task->allCommunities) {
 			$task->community = $submittedData['egovapi_latestChangesCleanup_community'];
 		}
+
+			// Reset last run which will implicitly flush cache next time the task is run
+		$task->lastRun = 0;
 	}
 
 }

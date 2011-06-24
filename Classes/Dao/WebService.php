@@ -605,6 +605,89 @@ class tx_egovapi_dao_webService {
 	}
 
 	/**
+	 * Returns the list of changes for a given community since a given timestamp.
+	 *
+	 * @param string $communityId
+	 * @param integer $since
+	 * @param string $language
+	 * @return null|array
+	 */
+	public function getLatestChanges($communityId, $since, $language) {
+			// Backup settings
+		$backupSettings = $this->settings;
+
+			// Override some settings
+		$this->settings['eCHcommunityID'] = $communityId;
+		$this->settings['eCHlanguageID'] = $language;
+
+		$changes = array();
+		$changeList = $this->callEGovApi('GetLatestChanges', array(
+			'since' => date('Y-m-d', $since),
+			'includeDomain' => '1',
+			'includeTopic' => '1',
+			'includeService' => '1',
+		));
+
+		if (!(
+			isset($changeList['changedDomainList']) &&
+			isset($changeList['changedTopicList']) &&
+			isset($changeList['changedServiceList'])
+		)) {
+			$changes = NULL;
+		} else {
+				// Prepare list of domain changes
+			$changes['domains'] = array();
+			if (isset($changeList['changedDomainList']['changedDomain']) && is_array($changeList['changedDomainList']['changedDomain'])) {
+				if (!isset($changeList['changedDomainList']['changedDomain'][0])) {
+					$changeList['changedDomainList']['changedDomain'] = array($changeList['changedDomainList']['changedDomain']);
+				}
+				foreach ($changeList['changedDomainList']['changedDomain'] as $changedDomain) {
+					$changes['domains'][] = array(
+						'id' => $changedDomain['eCHdomainID'],
+						'version' => $changedDomain['eCHdomainVersionID'],
+						'archived' => $changedDomain['archived'],
+					);
+				}
+			}
+
+				// Prepare list of topic changes
+			$changes['topics'] = array();
+			if (isset($changeList['changedTopicList']['changedTopic']) && is_array($changeList['changedTopicList']['changedTopic'])) {
+				if (!isset($changeList['changedTopicList']['changedTopic'][0])) {
+					$changeList['changedTopicList']['changedTopic'] = array($changeList['changedTopicList']['changedTopic']);
+				}
+				foreach ($changeList['changedTopicList']['changedTopic'] as $changedTopic) {
+					$changes['topics'][] = array(
+						'id' => $changedTopic['eCHtopicID'],
+						'version' => $changedTopic['eCHtopicVersionID'],
+						'archived' => $changedTopic['archived'],
+					);
+				}
+			}
+
+				// Prepare list of service changes
+			$changes['services'] = array();
+			if (isset($changeList['changedServiceList']['changedService']) && is_array($changeList['changedServiceList']['changedService'])) {
+				if (!isset($changeList['changedServiceList']['changedService'][0])) {
+					$changeList['changedServiceList']['changedService'] = array($changeList['changedServiceList']['changedService']);
+				}
+				foreach ($changeList['changedServiceList']['changedService'] as $changedService) {
+					$changes['services'][] = array(
+						'id' => $changedService['eCHserviceID'],
+						'version' => $changedService['eCHserviceVersionID'],
+						'archived' => $changedService['archived'],
+					);
+				}
+			}
+		}
+
+			// Restore settings
+		$this->settings = $backupSettings;
+
+		return $changes;
+	}
+
+	/**
 	 * Returns an array with values from $lbound to $ubound.
 	 *
 	 * @param integer $lbound

@@ -47,6 +47,11 @@ class tx_egovapi_service_latestChangesCleanup {
 	protected $task;
 
 	/**
+	 * @var t3lib_cache_frontend_VariableFrontend
+	 */
+	protected $webServiceCache;
+
+	/**
 	 * Default constructor.
 	 *
 	 * @param tx_egovapi_service_latestChangesCleanupTask $task
@@ -68,6 +73,13 @@ class tx_egovapi_service_latestChangesCleanup {
 	 * @return boolean TRUE if cleanup succeeded, otherwise FALSE
 	 */
 	public function cleanup() {
+		if (!TYPO3_UseCachingFramework) {
+			return TRUE;
+		}
+
+			// Initialize the cache
+		$this->initializeCache();
+
 		/** @var tx_egovapi_domain_repository_communityRepository $communityRepository */
 		$communityRepository = tx_egovapi_domain_repository_factory::getRepository('community');
 		/** @var tx_egovapi_domain_model_community[] $communities */
@@ -79,9 +91,103 @@ class tx_egovapi_service_latestChangesCleanup {
 			$communities[] = $communityRepository->findById($this->task->community);
 		}
 
-		t3lib_utility_Debug::debug($communities, 'communities');
+		try {
+			foreach ($communities as $community) {
+				$latestChanges = $communityRepository->getLatestChanges($community, $this->task->lastRun);
+
+				foreach ($latestChanges['domains'] as $domain) {
+					$this->cleanupDomain($domain);
+				}
+				foreach ($latestChanges['topics'] as $topic) {
+					$this->cleanupTopic($topic);
+				}
+				foreach ($latestChanges['services'] as $service) {
+					$this->cleanupService($service);
+				}
+			}
+		} catch (RuntimeException $exception) {
+			return FALSE;
+		}
 
 		return TRUE;
+	}
+
+	/**
+	 * Cleans up deprecated cache entries related to a given domain.
+	 *
+	 * @param array $domain
+	 * @return void
+	 */
+	protected function cleanupDomain(array $domain) {
+		$tags = array(
+			sprintf('domain-%s', $domain['id']),
+			sprintf('domain-%s-%s', $domain['id'], $domain['version']),
+		);
+
+		$this->flushByTags($tags);
+	}
+
+	/**
+	 * Cleans up deprecated cache entries related to a given topic.
+	 *
+	 * @param array $topic
+	 * @return void
+	 */
+	protected function cleanupTopic(array $topic) {
+		$tags = array(
+			sprintf('topic-%s', $topic['id']),
+			sprintf('topic-%s-%s', $topic['id'], $topic['version']),
+		);
+
+		$this->flushByTags($tags);
+	}
+
+	/**
+	 * Cleans up deprecated cache entries related to a given service.
+	 *
+	 * @param array $service
+	 * @return void
+	 */
+	protected function cleanupService(array $service) {
+		$tags = array(
+			sprintf('service-%s', $service['id']),
+			sprintf('service-%s-%s', $service['id'], $service['version']),
+		);
+
+		$this->flushByTags($tags);
+	}
+
+	/**
+	 * Flushes cache entries by a set of tags.
+	 *
+	 * @param array $tags
+	 * @return void
+	 */
+	protected function flushByTags(array $tags) {
+		foreach ($tags as $tag) {
+			$this->webServiceCache->flushByTag($tag);
+		}
+	}
+
+	/**
+	 * Initializes the web service cache.
+	 *
+	 * @return void
+	 */
+	protected function initializeCache() {
+		tx_egovapi_utility_cache::initializeCachingFramework();
+
+		try {
+			$this->webServiceCache = $GLOBALS['typo3CacheManager']->getCache(
+				'egovapi'
+			);
+		} catch (t3lib_cache_exception_NoSuchCache $e) {
+			tx_egovapi_utility_cache::initWebServiceCache();
+
+			$this->webServiceCache = $GLOBALS['typo3CacheManager']->getCache(
+				'egovapi'
+			);
+		}
 	}
 
 }

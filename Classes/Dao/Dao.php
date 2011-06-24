@@ -151,7 +151,6 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			$audiences = $this->getWebService()->getAudiences();
 
 			$tags = array(
-				'audiences',
 				strtoupper($this->settings['eCHlanguageID']),
 			);
 			$this->storeCacheData($cacheKey, $audiences, $tags);
@@ -180,7 +179,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			$views = $this->getWebService()->getViews($audienceId);
 
 			$tags = array(
-				'views',
+				sprintf('audience-%s', $audienceId),
 				strtoupper($this->settings['eCHlanguageID']),
 			);
 			$this->storeCacheData($cacheKey, $views, $tags);
@@ -209,7 +208,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			$domains = $this->getWebService()->getDomains($viewId);
 
 			$tags = array(
-				'domains',
+				sprintf('view-%s', $viewId),
 				strtoupper($this->settings['eCHlanguageID']),
 			);
 			$this->storeCacheData($cacheKey, $domains, $tags);
@@ -242,7 +241,8 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			$details = $this->getWebService()->getDomainDetails($domainId, $versionId, $isParent);
 
 			$tags = array(
-				'domainDetails',
+				sprintf('domain-%s', $domainId),
+				sprintf('domain-%s-%s', $domainId, $versionId),
 				strtoupper($this->settings['eCHlanguageID']),
 			);
 			$this->storeCacheData($cacheKey, $details, $tags);
@@ -271,7 +271,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			$topics = $this->getWebService()->getTopics($domainId);
 
 			$tags = array(
-				'topics',
+				sprintf('domain-%s', $domainId),
 				strtoupper($this->settings['eCHlanguageID']),
 			);
 			$this->storeCacheData($cacheKey, $topics, $tags);
@@ -304,7 +304,8 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			$details = $this->getWebService()->getTopicDetails($topicId, $versionId, $isParent);
 
 			$tags = array(
-				'topicDetails',
+				sprintf('topic-' . $topicId),
+				sprintf('topic-%s-%s', $topicId, $versionId),
 				strtoupper($this->settings['eCHlanguageID']),
 			);
 			$this->storeCacheData($cacheKey, $details, $tags);
@@ -333,7 +334,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			$services = $this->getWebService()->getServices($topicId);
 
 			$tags = array(
-				'services',
+				sprintf('topic-' . $topicId),
 				strtoupper($this->settings['eCHlanguageID']),
 			);
 			$this->storeCacheData($cacheKey, $services, $tags);
@@ -364,7 +365,8 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			$details = $this->getWebService()->getServiceDetails($serviceId, $versionId);
 
 			$tags = array(
-				'serviceDetails',
+				sprintf('service-%s', $serviceId),
+				sprintf('service-%s-%s', $serviceId, $versionId),
 				strtoupper($this->settings['eCHlanguageID']),
 			);
 			$this->storeCacheData($cacheKey, $details, $tags);
@@ -392,13 +394,25 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			$versions = $this->getWebService()->getVersions($serviceId);
 
 			$tags = array(
-				'versions',
+				sprintf('service-%s', $serviceId),
 				strtoupper($this->settings['eCHlanguageID']),
 			);
 			$this->storeCacheData($cacheKey, $versions, $tags);
 		}
 
 		return $versions;
+	}
+
+	/**
+	 * Returns the list of changes for a given community since a given timestamp.
+	 *
+	 * @param string $communityId
+	 * @param integer $since
+	 * @param string $language
+	 * @return array
+	 */
+	public function getLatestChanges($communityId, $since, $language) {
+		return $this->getWebService()->getLatestChanges($communityId, $since, $language);
 	}
 
 	/**

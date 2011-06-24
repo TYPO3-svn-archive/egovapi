@@ -84,6 +84,27 @@ class tx_egovapi_domain_repository_communityRepository extends tx_egovapi_domain
 		return isset($communities[$id]) ? $communities[$id] : NULL;
 	}
 
+	/**
+	 * Returns the list of changes for a given community since a given timestamp.
+	 *
+	 * @param tx_egovapi_domain_model_community $community
+	 * @param integer $since Timestamp
+	 * @return boolean
+	 * @throws RuntimeException
+	 */
+	public function getLatestChanges(tx_egovapi_domain_model_community $community, $since) {
+		$latestChanges = array();
+		foreach (t3lib_div::trimExplode(',', 'DE,EN,FR,IT,RM') as $language) {
+			$changes = $this->dao->getLatestChanges($community->getId(), $since, $language);
+			if (!is_array($changes)) {
+				throw new RuntimeException('Method getLatestChanges failed.', 1308921853);
+			}
+			$latestChanges = array_merge($latestChanges, $changes);
+		}
+
+		return $latestChanges;
+	}
+
 }
 
 

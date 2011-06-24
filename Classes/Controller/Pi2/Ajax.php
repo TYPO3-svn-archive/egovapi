@@ -232,6 +232,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 
 		$tags = array(
 			'ajax',
+			sprintf('service-%s', $this->conf['service']),
 			strtoupper($this->conf['eCHlanguageID']),
 		);
 		$this->storeCacheData($cacheKey, $data, $tags);

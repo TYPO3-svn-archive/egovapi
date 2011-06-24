@@ -1,6 +1,7 @@
 2011-06-24  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] Added additional fields for the scheduler task
+	* [TASK] Basic implementation of the WS method GetLatestChanges
+	* [TASK] Add additional fields for the scheduler task
 
 2011-06-22  Xavier Perseguers  <xavier@causal.ch>
 
