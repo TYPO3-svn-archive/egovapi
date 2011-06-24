@@ -382,7 +382,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 		$backupConfig = $this->conf;
 
 			// Change cache lifetime
-		$this->conf['cacheLifetime'] = 86400 * 7;	// 7 days
+		$this->conf['cacheLifetime'] = 86400;	// 1 day
 
 		$this->storeCacheData($cacheKey, $data, array('ajax-url'));
 
