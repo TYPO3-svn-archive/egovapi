@@ -46,11 +46,11 @@ class tx_egovapi_service_latestChangesCleanupAdditionalFieldProvider implements 
 	 * Adds a select field of available communities.
 	 *
 	 * @param array $taskInfo
-	 * @param null|tx_scheduler_Task $task
+	 * @param null|tx_egovapi_service_latestChangesCleanupTask $task
 	 * @param tx_scheduler_Module $parentObject
 	 * @return array
 	 */
-	protected function getAllCommunitiesAdditionalField(array &$taskInfo, tx_scheduler_Task $task = NULL, tx_scheduler_Module $parentObject) {
+	protected function getAllCommunitiesAdditionalField(array &$taskInfo, tx_egovapi_service_latestChangesCleanupTask $task = NULL, tx_scheduler_Module $parentObject) {
 		if ($parentObject->CMD === 'edit') {
 			$checked = $task->allCommunities === TRUE ? 'checked="checked" ' : '';
 		} else {
@@ -89,11 +89,11 @@ class tx_egovapi_service_latestChangesCleanupAdditionalFieldProvider implements 
 	 * Adds a select field of available communities.
 	 *
 	 * @param array $taskInfo
-	 * @param null|tx_scheduler_Task $task
+	 * @param null|tx_egovapi_service_latestChangesCleanupTask $task
 	 * @param tx_scheduler_Module $parentObject
 	 * @return array
 	 */
-	protected function getCommunityAdditionalField(array &$taskInfo, tx_scheduler_Task $task = NULL, tx_scheduler_Module $parentObject) {
+	protected function getCommunityAdditionalField(array &$taskInfo, tx_egovapi_service_latestChangesCleanupTask $task = NULL, tx_scheduler_Module $parentObject) {
 		/** @var tx_egovapi_domain_repository_communityRepository $communityRepository */
 		$communityRepository = tx_egovapi_domain_repository_factory::getRepository('community');
 		/** @var tx_egovapi_domain_model_community[] $communities */
@@ -204,10 +204,12 @@ class tx_egovapi_service_latestChangesCleanupAdditionalFieldProvider implements 
 	 * Takes care of saving the additional fields' values in the task's object
 	 *
 	 * @param array An array containing the data submitted by the add/edit task form
-	 * @param tx_scheduler_Task Reference to the scheduler backend module
+	 * @param tx_egovapi_service_latestChangesCleanupTask Reference to the scheduler backend module
 	 * @return void
 	 */
 	public function saveAdditionalFields(array $submittedData, tx_scheduler_Task $task) {
+		/** @var $task tx_egovapi_service_latestChangesCleanupTask */
+
 		$task->allCommunities = $submittedData['egovapi_latestChangesCleanup_allCommunities'] === 'on' ? TRUE : FALSE;
 		if (!$task->allCommunities) {
 			$task->community = $submittedData['egovapi_latestChangesCleanup_community'];

@@ -42,14 +42,23 @@ class tx_egovapi_service_latestChangesCleanup {
 	protected $extKey = 'egovapi';
 
 	/**
-	 * Default constructor.
+	 * @var tx_egovapi_service_latestChangesCleanupTask
 	 */
-	public function __construct() {
+	protected $task;
+
+	/**
+	 * Default constructor.
+	 *
+	 * @param tx_egovapi_service_latestChangesCleanupTask $task
+	 */
+	public function __construct(tx_egovapi_service_latestChangesCleanupTask $task) {
 		$config = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this->extKey]);
 		$config['data.']['communities'] = 'EXT:egovapi/Resources/Private/Data/communities.csv';
 
 		$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $config);
 		tx_egovapi_domain_repository_factory::injectDao($dao);
+
+		$this->task = $task;
 	}
 
 	/**
@@ -62,7 +71,13 @@ class tx_egovapi_service_latestChangesCleanup {
 		/** @var tx_egovapi_domain_repository_communityRepository $communityRepository */
 		$communityRepository = tx_egovapi_domain_repository_factory::getRepository('community');
 		/** @var tx_egovapi_domain_model_community[] $communities */
-		$communities = $communityRepository->findAll();
+
+		if ($this->task->allCommunities) {
+			$communities = $communityRepository->findAll();
+		} else {
+			$communities = array();
+			$communities[] = $communityRepository->findById($this->task->community);
+		}
 
 		t3lib_utility_Debug::debug($communities, 'communities');
 

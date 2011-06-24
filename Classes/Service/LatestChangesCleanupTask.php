@@ -37,6 +37,16 @@
 class tx_egovapi_service_latestChangesCleanupTask extends tx_scheduler_Task {
 
 	/**
+	 * @var boolean
+	 */
+	public $allCommunities;
+
+	/**
+	 * @var string
+	 */
+	public $community;
+
+	/**
 	 * Method executed from the Scheduler.
 	 * Call on the egovapi logic to clean up web service cache
 	 * for updated services.
@@ -45,7 +55,7 @@ class tx_egovapi_service_latestChangesCleanupTask extends tx_scheduler_Task {
 	 */
 	public function execute() {
 		/** @var $latestChangesCleanup tx_egovapi_service_latestChangesCleanup */
-		$latestChangesCleanup = t3lib_div::makeInstance('tx_egovapi_service_latestChangesCleanup');
+		$latestChangesCleanup = t3lib_div::makeInstance('tx_egovapi_service_latestChangesCleanup', $this);
 
 		$success = $latestChangesCleanup->cleanup();
 		return $success;
