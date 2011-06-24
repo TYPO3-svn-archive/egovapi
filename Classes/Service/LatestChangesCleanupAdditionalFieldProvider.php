@@ -101,6 +101,7 @@ class tx_egovapi_service_latestChangesCleanupAdditionalFieldProvider implements 
 
 		$options = array();
 		$options[] = '<option value=""></option>';
+		$options[] = '<option value="00-00">CH</option>';
 		$previousCanton = '';
 		foreach ($communities as $community) {
 			if ($previousCanton !== substr($community->getId(), 0, 2)) {

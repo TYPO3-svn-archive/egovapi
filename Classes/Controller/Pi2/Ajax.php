@@ -186,7 +186,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 		}
 
 		$tags = array(
-			'ajax',
+			sprintf('ajax-community-%s', $this->conf['eCHcommunityID']),
 			strtoupper($this->conf['eCHlanguageID']),
 		);
 		$this->storeCacheData($cacheKey, $data, $tags);
@@ -312,7 +312,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 		if ($cache) {
 				// Cache the list of services
 			$tags = array(
-				'ajax',
+				sprintf('ajax-community-%s', $this->conf['eCHcommunityID']),
 				strtoupper($this->conf['eCHlanguageID']),
 			);
 			$this->storeCacheData($cacheKey, $services, $tags);
@@ -378,7 +378,16 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 			}
 		}
 
-		$this->storeCacheData($cacheKey, $data, array('ajax'));
+			// Backup configuration
+		$backupConfig = $this->conf;
+
+			// Change cache lifetime
+		$this->conf['cacheLifetime'] = 86400 * 7;	// 7 days
+
+		$this->storeCacheData($cacheKey, $data, array('ajax-url'));
+
+			// Restore configuration
+		$this->conf = $backupConfig;
 
 		return $data;
 	}

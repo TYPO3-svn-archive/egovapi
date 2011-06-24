@@ -102,7 +102,7 @@ class tx_egovapi_service_latestChangesCleanup {
 					$this->cleanupTopic($topic);
 				}
 				foreach ($latestChanges['services'] as $service) {
-					$this->cleanupService($service);
+					$this->cleanupService($service, $community);
 				}
 			}
 		} catch (RuntimeException $exception) {
@@ -146,12 +146,14 @@ class tx_egovapi_service_latestChangesCleanup {
 	 * Cleans up deprecated cache entries related to a given service.
 	 *
 	 * @param array $service
+	 * @param tx_egovapi_domain_model_community $community
 	 * @return void
 	 */
-	protected function cleanupService(array $service) {
+	protected function cleanupService(array $service, tx_egovapi_domain_model_community $community) {
 		$tags = array(
 			sprintf('service-%s', $service['id']),
 			sprintf('service-%s-%s', $service['id'], $service['version']),
+			sprintf('ajax-community-%s', $community->getId()),
 		);
 
 		$this->flushByTags($tags);
