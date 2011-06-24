@@ -46,6 +46,15 @@ class tx_egovapi_utility_cache {
 	 * @return void
 	 */
 	public static function initializeCachingFramework() {
+			// Fix a missing feature in TYPO3 < 4.6 where 'frontend' must be defined
+		if (t3lib_div::int_from_ver(TYPO3_version) < 4006000) {
+			if (is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['egovapi'])) {
+				if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['egovapi']['frontend'])) {
+					$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['egovapi']['frontend'] = 't3lib_cache_frontend_VariableFrontend';
+				}
+			}
+		}
+
 		t3lib_cache::initializeCachingFramework();
 	}
 

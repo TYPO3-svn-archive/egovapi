@@ -112,12 +112,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 			$this->webServiceCache = $GLOBALS['typo3CacheManager']->getCache(
 				'egovapi'
 			);
-		// BEWARE: Cannot limit to t3lib_cache_exception_NoSuchCache as when instantiating
-		//         the caching framework from a scheduler task, the object name of the
-		//         cache frontend (t3lib_cache_frontend_VariableFrontend) is empty and
-		//         crashes t3lib_div::makeInstance() called from t3lib_cache_Factory::cache()
-		//         with an empty class name.
-		} catch (Exception $e) {
+		} catch (t3lib_cache_exception_NoSuchCache $e) {
 			tx_egovapi_utility_cache::initWebServiceCache();
 
 			$this->webServiceCache = $GLOBALS['typo3CacheManager']->getCache(
