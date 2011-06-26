@@ -1,5 +1,6 @@
 2011-06-26  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK][DOC] #27610: Update documentation for advanced caching with GetLatestChanges
 	* [TASK] Update maximal TYPO3 requirement to 4.6
 	* [TASK][DOC] Rework the eGov API cache configuration
 
