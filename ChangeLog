@@ -1,3 +1,7 @@
+2011-06-26  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK][DOC] Rework the eGov API cache configuration
+
 2011-06-24  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Basic implementation of the WS method GetLatestChanges
