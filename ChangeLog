@@ -1,5 +1,6 @@
 2011-06-26  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Update maximal TYPO3 requirement to 4.6
 	* [TASK][DOC] Rework the eGov API cache configuration
 
 2011-06-24  Xavier Perseguers  <xavier@causal.ch>
