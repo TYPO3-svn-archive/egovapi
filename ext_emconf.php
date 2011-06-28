@@ -10,6 +10,26 @@
 # writing. "version" and "dependencies" must not be touched!
 ########################################################################
 
+$egovapiHeadUrl = '$HeadURL: https://svn.typo3.org/TYPO3v4/Extensions/egovapi/trunk/ext_emconf.php$';
+
+	// Remove beginning up to start of the project
+$url = substr($egovapiHeadUrl, strpos(strtolower($egovapiHeadUrl), strtolower($_EXTKEY)) + strlen($_EXTKEY) + 1);
+$parts = explode('/', $url, 3);
+switch ($parts[0]) {
+	case 'trunk':
+		$egovapiVersion = 'TRUNK';
+		break;
+	case 'branches':
+		$egovapiVersion = $parts[1] . ' (dev)';
+		break;
+	case 'tags':
+		$egovapiVersion = $parts[1];
+		break;
+	default:
+		$egovapiVersion = 'unknown';
+		break;
+}
+
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'eGov API (Swiss Federal Administration)',
 	'description' => 'Official implementation of the swiss eGov Remote API (eGovernment) that allows to access the Reference eGov CH application from SECO which hosts and provides administrative services (cyberadministration).',
@@ -30,7 +50,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'modify_tables' => '',
 	'clearCacheOnLoad' => 1,
 	'lockType' => '',
-	'version' => '1.3.0-dev',
+	'version' => $egovapiVersion,
 	'constraints' => array(
 		'depends' => array(
 			'php' => '5.2.0-0.0.0',
