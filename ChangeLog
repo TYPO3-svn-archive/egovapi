@@ -1,3 +1,7 @@
+2011-06-28  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Use mediumblob instead of mediumtext for the caching table
+
 2011-06-26  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK][DOC] #27610: Update documentation for advanced caching with GetLatestChanges
@@ -9,6 +13,7 @@
 	* [TASK] Basic implementation of the WS method GetLatestChanges
 	* [TASK] Add additional fields for the scheduler task
 
+>>>>>>> .r49172
 2011-06-22  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Reintegrate branch service_versions onto trunk
