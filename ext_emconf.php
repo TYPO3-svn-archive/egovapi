@@ -10,7 +10,7 @@
 # writing. "version" and "dependencies" must not be touched!
 ########################################################################
 
-$egovapiHeadUrl = '$HeadURL: https://svn.typo3.org/TYPO3v4/Extensions/egovapi/trunk/ext_emconf.php$';
+$egovapiHeadUrl = '$HeadURL: https://svn.typo3.org/TYPO3v4/Extensions/egovapi/branches/EGOVAPI_1-3/ext_emconf.php$';
 
 	// Remove beginning up to start of the project
 $url = substr($egovapiHeadUrl, strpos(strtolower($egovapiHeadUrl), strtolower($_EXTKEY)) + strlen($_EXTKEY) + 1);
