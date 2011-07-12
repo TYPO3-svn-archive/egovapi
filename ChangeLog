@@ -1,3 +1,7 @@
+2011-07-12  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] CE wizards for pi1 and pi2 are using deprecated methods in TYPO3 4.6
+
 2011-06-28  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Use mediumblob instead of mediumtext for the caching table
