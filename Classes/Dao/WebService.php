@@ -55,7 +55,7 @@ class tx_egovapi_dao_webService {
 	protected $password;
 
 	/**
-	 * @var tx_em_connection_soap
+	 * @var tx_em_Connection_Soap
 	 */
 	protected $soap;
 
@@ -83,7 +83,10 @@ class tx_egovapi_dao_webService {
         $this->username = FALSE;
         $this->password = FALSE;
 
-		if (t3lib_div::int_from_ver(TYPO3_version) >= 4005000) {
+		$version = class_exists('t3lib_utility_VersionNumber')
+				? t3lib_utility_VersionNumber::convertVersionNumberToInteger(TYPO3_version)
+				: t3lib_div::int_from_ver(TYPO3_version);
+		if ($version >= 4005000) {
 			$this->soap = t3lib_div::makeInstance('tx_em_connection_soap');
 		} else {
 			$pathEmMod = PATH_typo3 . 'mod/tools/em/';
