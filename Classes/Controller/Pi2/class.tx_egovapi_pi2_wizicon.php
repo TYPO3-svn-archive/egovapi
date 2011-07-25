@@ -38,8 +38,8 @@ class tx_egovapi_pi2_wizicon {
 	/**
 	 * Processing the wizard items array
 	 *
-	 * @param array $wizardItems: The wizard items
-	 * @return Modified array with wizard items
+	 * @param array $wizardItems The wizard items
+	 * @return array Modified array with wizard items
 	 */
 	public function proc(array $wizardItems) {
 		$LL = $this->includeLocalLang();
@@ -57,9 +57,9 @@ class tx_egovapi_pi2_wizicon {
 	/**
 	 * Reads the extension locallang.xml and returns the $LOCAL_LANG array found in that file.
 	 *
-	 * @return The array with language labels
+	 * @return array The array with language labels
 	 */
-	function includeLocalLang() {
+	protected function includeLocalLang() {
 		$llFile = t3lib_extMgm::extPath('egovapi') . 'Resources/Private/Language/locallang.xml';
 		$version = class_exists('t3lib_utility_VersionNumber')
 				? t3lib_utility_VersionNumber::convertVersionNumberToInteger(TYPO3_version)

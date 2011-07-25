@@ -469,7 +469,11 @@ class tx_egovapi_utility_flexform {
 	protected function getFFvalueFromSheetArray(array $sheetArray, array $fieldNameArr, $value) {
 		$tempArr = $sheetArray;
 		foreach ($fieldNameArr as $k => $v) {
-			if (t3lib_div::testInt($v)) {
+			$version = class_exists('t3lib_utility_VersionNumber')
+				? t3lib_utility_VersionNumber::convertVersionNumberToInteger(TYPO3_version)
+				: t3lib_div::int_from_ver(TYPO3_version);
+			$vIsInt = ($version < 4006000) ? t3lib_div::testInt($v) : t3lib_utility_Math::canBeInterpretedAsInteger($v);
+			if ($vIsInt) {
 				if (is_array($tempArr)) {
 					$c = 0;
 					foreach ($tempArr as $values) {
