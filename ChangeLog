@@ -1,3 +1,7 @@
+2011-07-25  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Remove calls to deprecated methods in TYPO3 4.6
+
 2011-07-15  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Remove calls to deprecated methods in TYPO3 4.6
