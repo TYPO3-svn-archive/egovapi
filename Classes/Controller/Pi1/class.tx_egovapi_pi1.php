@@ -248,11 +248,6 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 			// Merge configuration with business logic and local override TypoScript (myTS)
 		$this->conf = tx_egovapi_utility_ts::getMergedConfiguration($this->conf, $this->parameters, $GLOBALS['TSFE']->tmpl->setup);
 
-		if ($this->conf['wsdl']) {
-			$dao = tx_egovapi_domain_repository_factory::getDao();
-			$dao->updateSettings($this->conf);
-		}
-
 		$stripTags = isset($this->conf['stripTags']) ? $this->conf['stripTags'] : FALSE;
 		tx_egovapi_domain_repository_factory::setStripTags($stripTags);
 
@@ -273,6 +268,28 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 			}
 			$this->conf['versions.'][$this->conf['services']] = $this->conf['version'];
 			unset($this->conf['version']);
+		}
+
+			// NEW in WS 2.0: web service requires a eCHcommunityID, if not present, fall back
+			// to the one corresponding to the canton of the supplied organization
+		if (!$this->conf['eCHcommunityID'] && $this->conf['organizationID']) {
+			/** @var $organizationRepository tx_egovapi_domain_repository_organizationRepository */
+			$organizationRepository = tx_egovapi_domain_repository_factory::getRepository('organization');
+			$organization = $organizationRepository->findByUid($this->conf['organizationID']);
+			if ($organization) {
+				$community = $organization->getCommunity();
+				if ($community) {
+					$communityId = $community->getId();
+						// Force -00 at the end to get the corresponding canton
+					$communityId = substr($communityId, 0, 2) . '-00';
+					$this->conf['eCHcommunityID'] = $communityId;
+				}
+			}
+		}
+
+		if ($this->conf['wsdl']) {
+			$dao = tx_egovapi_domain_repository_factory::getDao();
+			$dao->updateSettings($this->conf);
 		}
 
 		if ($this->conf['wsdl'] === 'http://ref.cyberadmin.ch/WS/ServiceContract/WS.wsdl') {

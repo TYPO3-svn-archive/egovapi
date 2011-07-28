@@ -102,6 +102,26 @@ class tx_egovapi_domain_repository_organizationRepository extends tx_egovapi_dom
 	}
 
 	/**
+	 * Finds an organization given its identifier.
+	 *
+	 * @param string $id
+	 * @return tx_egovapi_domain_model_organization
+	 */
+	public function findByUid($uid) {
+		if (!count(self::$organizations)) {
+			$this->findAll();
+		}
+
+		foreach (self::$organizations as $organization) {
+			if ($organization->getId() === $uid) {
+				return $organization;
+			}
+		}
+
+		return NULL;
+	}
+
+	/**
 	 * Finds all organizations of a given community.
 	 *
 	 * @param tx_egovapi_domain_model_community $community

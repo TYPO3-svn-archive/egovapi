@@ -24,6 +24,9 @@ plugin.tx_egovapi_pi1 {
 	enableDebug       = {$plugin.tx_egovapi.enableDebug}
 	dynamicConfig     = 1
 
+	data.communities   = {$plugin.tx_egovapi.data.communities}
+	data.organizations = {$plugin.tx_egovapi.data.organizations}
+
 		# Deprecated: Strip HTML tags from many web service information block. Beware: Eventually this won't be configurable anymore and will always be active.
 	stripTags         = 1
 
