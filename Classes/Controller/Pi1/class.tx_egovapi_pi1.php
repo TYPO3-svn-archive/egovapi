@@ -107,11 +107,10 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 			$content .= '<!-- ' . $this->prefixId . ' rendered in ' . $end . ' sec -->';
 		}
 
-		// Wrap the whole result, with baseWrap if defined, else with standard pi_wrapInBaseClass() call
+			// Wrap the whole result, with baseWrap if defined, else with standard pi_wrapInBaseClass() call
 		if (isset($this->conf['baseWrap.'])) {
 			$output = $this->cObj->stdWrap($content, $this->conf['baseWrap.']);
-		}
-		else {
+		} else {
 			$output = $this->pi_wrapInBaseClass($content);
 		}
 

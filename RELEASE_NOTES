@@ -15,7 +15,7 @@ CHANGES & IMPROVEMENTS between egovapi 1.3 and 1.4
 === Configuration ===
 
 	Support for eCHmunicipalityID has finally been dropped. Please
-	use communityID instead, as stated in the deprecation log.
+	use eCHcommunityID instead, as stated in the deprecation log.
 
 === Templates ===
 
@@ -124,7 +124,7 @@ CHANGES & IMPROVEMENTS between egovapi 1.2 and 1.3
 
 	Services are now grouped by provider ("Commune", "Confédération", ...)
 	and the providers are alphabetically sorted. If this does not fit your
-	needs, you may implement hook 
+	needs, you may implement hook
 	$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['ajaxHook']
 	to post-process the list of services and reorder them as you want. See
 	http://forge.typo3.org/issues/27577 for sample hook implementation.
