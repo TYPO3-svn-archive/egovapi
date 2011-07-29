@@ -259,6 +259,10 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 			$this->conf['useFluid'] = 0;
 		}
 
+		if ($this->conf['fluid'] && !t3lib_extMgm::isLoaded('fluid')) {
+			throw new RuntimeException('You activated Fluid templates (plugin.tx_egovapi_pi1.useFluid=1) without loading extension "fluid".', 1311953003);
+		}
+
 		$dynamicConfig = isset($this->conf['dynamicConfig']) ? (bool) $this->conf['dynamicConfig'] : FALSE;
 		$this->conf['dynamicConfig'] = $dynamicConfig;
 
