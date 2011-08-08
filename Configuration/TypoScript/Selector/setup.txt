@@ -17,7 +17,8 @@ plugin.tx_egovapi_pi1 {
 	organizationID.cObject = TEXT
 	organizationID.cObject.data = GP:organization
 
-	wsdl              = {$plugin.tx_egovapi.wsdl}
+	wsdlVersion       = {$plugin.tx_egovapi.wsdlVersion}
+	wsdl              =
 	cacheLifetime     =
 	useFluid          = {$plugin.tx_egovapi.useFluid}
 	showRenderTime    = 1
@@ -88,7 +89,8 @@ temp.parametrizedUrl {
 }
 
 plugin.tx_egovapi_pi2 {
-	wsdl               = {$plugin.tx_egovapi.wsdl}
+	wsdlVersion        = {$plugin.tx_egovapi.wsdlVersion}
+	wsdl               =
 	cacheLifetime      =
 	enableDebug        = {$plugin.tx_egovapi.enableDebug}
 	includeCHServices  = 1

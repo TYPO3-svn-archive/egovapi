@@ -291,22 +291,34 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 			/** @var tx_egovapi_domain_model_block_fee $fee */
 			$fee = t3lib_div::makeInstance('tx_egovapi_domain_model_block_fee');
 
-			if ($this->stripTags) {
-				$fee->setDescription(strip_tags($detailsDao['feeBlock']['description']));
-			} else {
-				$fee->setDescription($detailsDao['feeBlock']['description']);
-			}
+			switch ($this->getWsdlVersion()) {
+				case tx_egovapi_dao_webService::VERSION_10:
+					if ($this->stripTags) {
+						$fee->setContent(strip_tags($detailsDao['feeBlock']));
+					} else {
+						$fee->setContent($detailsDao['feeBlock']);
+					}
+					break;
 
-			foreach ($detailsDao['feeBlock']['pricingList'] as $itemDao) {
-				/** @var $pricing tx_egovapi_domain_model_block_pricing */
-				$pricing = t3lib_div::makeInstance('tx_egovapi_domain_model_block_pricing');
+				default:
+					if ($this->stripTags) {
+						$fee->setDescription(strip_tags($detailsDao['feeBlock']['description']));
+					} else {
+						$fee->setDescription($detailsDao['feeBlock']['description']);
+					}
 
-				$pricing->setPrice($itemDao['price']);
-				$pricing->setFee($itemDao['fee']);
-				$pricing->setHasEPayment((bool) $itemDao['epaymentEnabled']);
-				$pricing->setVatCode($itemDao['vatCode']);
+					foreach ($detailsDao['feeBlock']['pricingList'] as $itemDao) {
+						/** @var $pricing tx_egovapi_domain_model_block_pricing */
+						$pricing = t3lib_div::makeInstance('tx_egovapi_domain_model_block_pricing');
 
-				$fee->addPricing($pricing);
+						$pricing->setPrice($itemDao['price']);
+						$pricing->setFee($itemDao['fee']);
+						$pricing->setHasEPayment((bool) $itemDao['epaymentEnabled']);
+						$pricing->setVatCode($itemDao['vatCode']);
+
+						$fee->addPricing($pricing);
+					}
+					break;
 			}
 
 			$service->setFee($fee);

@@ -3,7 +3,8 @@ plugin.tx_egovapi_pi1 {
 	eCHcommunityID    = {$plugin.tx_egovapi.eCHcommunityID}
 	organizationID    = {$plugin.tx_egovapi.organizationID}
 
-	wsdl              = {$plugin.tx_egovapi.wsdl}
+	wsdlVersion       = {$plugin.tx_egovapi.wsdlVersion}
+	wsdl              =
 	cacheLifetime     =
 	useFluid          = {$plugin.tx_egovapi.useFluid}
 	showRenderTime    = 1

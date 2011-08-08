@@ -5,12 +5,13 @@ CHANGES & IMPROVEMENTS between egovapi 1.3 and 1.4
 
 === Web Service ===
 
-	The web service end-point changed. Make sure to update it in
-	Extension Manager (EM) and in any template/local plugin config
-	where you may have overidden it.
-
-	OLD: http://ref.cyberadmin.ch/WS/ServiceContract/WS.wsdl
-	NEW: http://ref.cyberadmin.ch/WS20/ServiceContract/WS.wsdl
+	Support for different versions of the web service has been
+	added. This influences the web service end-point.
+	Search for line
+	$TYPO3_CONF_VARS['EXT']['extConf']['egovapi']
+	within typo3conf/localconf.php and remove it. Then enter
+	Extension Manager (EM) and reconfigure default settings of this
+	extension. This will ensure you have a clean global configuration.
 
 === Configuration ===
 

@@ -22,8 +22,10 @@
 			<label index="constants.useFluid">Use Fluid as rendering engine</label>
 			<label index="constants.enableDebug">Enable debugging information: Provide additional information with error messages. 3rd party devLog extension may be required for full support</label>
 			<label index="constants.enableSelectorPlugins">Enable selector plugins: Provide a selector form plugin and its counterpart to show a service from URL parameters</label>
-			<label index="constants.wsdl.global">WSDL for the eGov API: URL of the eGov API web service</label>
-			<label index="constants.wsdl">WSDL for the eGov API: URL of the eGov API web service (inherits global setting if empty)</label>
+			<label index="constants.wsdlVersion">Version of the Web Service to use</label>
+			<label index="constants.wsdlVersion.inherit">Inherit from global configuration</label>
+			<label index="constants.wsdlVersion.oneZero">Version 1.0</label>
+			<label index="constants.wsdlVersion.twoZero">Version 2.0</label>
 			<label index="constants.cacheLifetime">Lifetime of web service cached data: Make sure to activate caching framework in localconf.php</label>
 			<label index="constants.cacheLifetime.one_minute">1 minute</label>
 			<label index="constants.cacheLifetime.five_minutes">5 minutes</label>
@@ -67,8 +69,6 @@
 			<label index="constants.organizationID">Organisation ID: Erkennung der Organisation (z.B. 99001=Schweizerische Eidgenossenschaft, 00619=Oberdiessbach, 02196=Fribourg)</label>
 			<label index="constants.useFluid">Fluid als Rendering-Engine verwenden</label>
 			<label index="constants.enableDebug">Debugging-Informationen aktivieren: Für weitere Informationen mit Fehlermeldungen. 3rd-Party-Devlog Extension kann für die volle Unterstützung erforderlich sein</label>
-			<label index="constants.wsdl.global">WSDL für die eGov API: URL von der eGov API Web-Service</label>
-			<label index="constants.wsdl">WSDL für die eGov API: URL für die eGov API Web-Service (erbt global Einstellung wenn leer)</label>
 			<label index="constants.cacheLifetime">Lebensdauer der Web-Service zwischengespeicherten Daten: Stellen Sie sicher, das Caching-Framework in localconf.php zu aktivieren</label>
 			<label index="constants.cacheLifetime.one_minute">1 Minute</label>
 			<label index="constants.cacheLifetime.five_minutes">5 Minuten</label>
@@ -112,8 +112,6 @@
 			<label index="constants.organizationID">ID organisation : Identifiant de l'organisation (p. ex. 99001=Confédération, 00619=Oberdiessbach, 02196=Fribourg)</label>
 			<label index="constants.useFluid">Utiliser Fluid comme moteur de rendu</label>
 			<label index="constants.enableDebug">Activer les informations de déboguage: Fournit des informations supplémentaires aec les messages d'erreur. Une extension tierce devLog peut être nécessaire pour un support complet</label>
-			<label index="constants.wsdl.global">WSDL de l'API eGov: URL du web service</label>
-			<label index="constants.wsdl">WSDL de l'API eGov: URL du web service (hérite des paramètres globaux si non défini)</label>
 			<label index="constants.cacheLifetime">Durée de vie des données du web service mises en cache: Assurez-vous d'activer le framework de mise en cache dans localconf.php</label>
 			<label index="constants.cacheLifetime.one_minute">1 minute</label>
 			<label index="constants.cacheLifetime.five_minutes">5 minutes</label>
@@ -156,8 +154,6 @@
 			<label index="constants.organizationID">ID organizzazione: codice identificativo dell'organizzazione (p. es. 99001=Confederazione, 00619=Oberdiessbach, 02196=Friburgo)</label>
 			<label index="constants.useFluid">Utilizzare Fluid come motore di resa</label>
 			<label index="constants.enableDebug">Attivare le informazioni di debugging per fornire delle informazioni aggiuntive, inclusi i messaggi di errore. Per un supporto completo è forse necessaria un'estensione 3rd-Party-devLog</label>
-			<label index="constants.wsdl.global">WSDL per l'API eGov: URL del web service</label>
-			<label index="constants.wsdl">WSDL per l'API eGov: URL del web service (riprende dei parametri globali, se vuoto)</label>
 			<label index="constants.cacheLifetime">La durata di vita dei dati del web service salvati nella memoria cache: assicurarsi di attivare il frame work della memoria cache in localconf.php</label>
 			<label index="constants.cacheLifetime.one_minute">1 minuto</label>
 			<label index="constants.cacheLifetime.five_minutes">5 minuti</label>

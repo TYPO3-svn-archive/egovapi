@@ -66,7 +66,7 @@ class tx_egovapi_pi2 extends tx_egovapi_pibase {
 		$this->pi_USER_INT_obj = 1;	// Configuring so caching is not expected.
 		$this->pi_loadLL();
 
-		if (!$this->conf['wsdl']) {
+		if (!$this->conf['wsdlVersion']) {
 			die('Plugin ' . $this->prefixId . ' is not configured properly!');
 		}
 
@@ -133,7 +133,7 @@ class tx_egovapi_pi2 extends tx_egovapi_pibase {
 			// Basically process stdWrap over all global parameters
 		$this->conf = tx_egovapi_utility_ts::preprocessConfiguration($this->cObj, $this->conf);
 
-		if ($this->conf['wsdl']) {
+		if ($this->conf['wsdlVersion']) {
 			$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $this->conf);
 			tx_egovapi_domain_repository_factory::injectDao($dao);
 		}

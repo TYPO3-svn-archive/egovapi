@@ -39,10 +39,18 @@ class tx_egovapi_dao_webService {
 	const DEVLOG_WARNING = 2;
 	const DEVLOG_FATAL   = 3;
 
+	const VERSION_10     = 1;
+	const VERSION_20     = 2;
+
 	/**
 	 * @var array
 	 */
 	protected $settings;
+
+	/**
+	 * @var integer
+	 */
+	protected $version;
 
 	/**
 	 * @var mixed (string/boolean)
@@ -72,6 +80,20 @@ class tx_egovapi_dao_webService {
 	public function __construct(array $settings) {
 		$this->settings = $settings;
 		$this->debug = $settings['enableDebug'];
+
+		switch ($this->settings['wsdlVersion']) {
+			case '1.0':
+				$this->version = self::VERSION_10;
+				break;
+			case '2.0':
+				$this->version = self::VERSION_20;
+				break;
+			default:
+				throw new RuntimeException('Invalid WSDL version "' . $this->settings['wsdlVersion'] . '"', 1312794194);
+		}
+		if (!$this->settings['wsdl']) {
+			$this->settings['wsdl'] = $this->getWsdl();
+		}
 
 		$options = array(
         	'wsdl' => $this->settings['wsdl'],
@@ -103,6 +125,25 @@ class tx_egovapi_dao_webService {
         } catch (Exception $e) {
         	die('Could not initialize SOAP.');
         }
+	}
+
+	/**
+	 * Return the WSDL URL to use.
+	 *
+	 * @return string
+	 */
+	protected function getWsdl() {
+		$wsdl = 'http://localhost/WS.wsdl';
+		switch ($this->version) {
+			case self::VERSION_10:
+				$wsdl = 'http://ref.cyberadmin.ch/WS/ServiceContract/WS.wsdl';
+				break;
+			case self::VERSION_20:
+				$wsdl = 'http://ref.cyberadmin.ch/WS20/ServiceContract/WS.wsdl';
+				break;
+		}
+
+		return $wsdl;
 	}
 
 	/**
@@ -522,6 +563,10 @@ class tx_egovapi_dao_webService {
 				'contactBlock'            => 'contact',
 			);
 
+			if ($this->version == self::VERSION_10) {
+				$blocks['feeBlock'] = 'fee';
+			}
+
 			foreach ($blocks as $block => $key) {
 				if (isset($serviceDetails[$block])) {
 					$details[$block] = @$serviceDetails[$block][$key];
@@ -755,8 +800,15 @@ class tx_egovapi_dao_webService {
 			'eCHapiMethod' => $method,
 			'eCHlanguageID' => strtoupper($this->settings['eCHlanguageID']),
 			'eCHcommunityID' => $communityId,
-			'organisationID' => $this->settings['organizationID'],
 		);
+		switch ($this->version) {
+			case self::VERSION_10:
+				$parameters['eCHmunicipalityID'] = $this->settings['organizationID'];
+				break;
+			default:
+				$parameters['organisationID'] = $this->settings['organizationID'];
+				break;
+		}
 		$parameters = array_merge($parameters, $additionalParameters);
 
 		if ($this->debug) {

@@ -108,6 +108,15 @@ abstract class tx_egovapi_domain_repository_abstractRepository implements t3lib_
 		return $fileName;
 	}
 
+	/**
+	 * Returns the WSDL version.
+	 *
+	 * @return integer
+	 */
+	protected function getWsdlVersion() {
+		return $this->settings['wsdlVersion'];
+	}
+
 }
 
 ?>

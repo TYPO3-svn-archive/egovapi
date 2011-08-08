@@ -35,6 +35,17 @@
  */
 class tx_egovapi_domain_model_block_fee {
 
+	// ---- VERSION 1.0 [begin]----
+
+	/**
+	 * @var string
+	 */
+	protected $content;
+
+	// ---- VERSION 1.0 [end]----
+
+	// ---- VERSION 2.0 [begin]----
+
 	/**
 	 * @var string
 	 */
@@ -45,11 +56,34 @@ class tx_egovapi_domain_model_block_fee {
 	 */
 	protected $pricings;
 
+	// ---- VERSION 2.0 [end]----
+
 	/**
 	 * Default constructor.
 	 */
 	public function __construct() {
+		$this->content = '';
 		$this->pricings = array();
+	}
+
+	/**
+	 * Gets the content.
+	 *
+	 * @return string
+	 */
+	public function getContent() {
+		return $this->content;
+	}
+
+	/**
+	 * Sets the content.
+	 *
+	 * @param string $content
+	 * @return tx_egovapi_domain_model_block_fee
+	 */
+	public function setContent($content) {
+		$this->content = $content;
+		return $this;
 	}
 
 	/**
@@ -109,6 +143,11 @@ class tx_egovapi_domain_model_block_fee {
 	 * @return string
 	 */
 	public function __toString() {
+		if ($this->content) {
+				// Version 1.0
+			return $this->content;
+		}
+
 		$output = $this->description;
 		if (count($this->pricings)) {
 			$output .= sprintf(' <ul><li>%s</li></ul>', implode('</li><li>', $this->pricings));

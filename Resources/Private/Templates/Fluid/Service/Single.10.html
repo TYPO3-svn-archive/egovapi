@@ -1,0 +1,189 @@
+<f:if condition="{showLevelInformation}">
+	<!-- Level information -->
+	<h1 class="tx_egovapi_service"><span class="block_number">1.</span> {service.name} <span class="service_id">({service.id})</span></h1>
+
+	<table class="tx_egovapi_block_header">
+		<tr>
+			<td><f:translate key="common_service_id">Service ID</f:translate></td>
+			<td>{service.id}</td>
+		</tr>
+		<tr>
+			<td><f:translate key="common_version_id">Version</f:translate></td>
+			<td>{service.versionId}</td>
+		</tr>
+		<tr>
+			<td><f:translate key="common_version_name">Community</f:translate></td>
+			<td>{service.versionName}</td>
+		</tr>
+		<tr>
+			<td><f:translate key="common_last_modification_date">Last modification</f:translate></td>
+			<td><f:format.date format="d.m.Y">{service.localLastModificationDate}</f:format.date></td>
+		</tr>
+		<tr>
+			<td><f:translate key="common_provider">Provider</f:translate></td>
+			<td>{service.provider}</td>
+		</tr>
+		<tr>
+			<td><f:translate key="common_customer">Customer</f:translate></td>
+			<td>{service.customer}</td>
+		</tr>
+	</table>
+</f:if>
+
+<f:if condition="{showGeneralInformation}">
+	<!-- General information -->
+	<h2 class="tx_egovapi_block_generalInformation"><span class="block_number">2.</span> <f:translate key="block_general_information">General information</f:translate></h2>
+	<div class="tx_egovapi_block_generalInformation">
+		<f:format.html>{service.generalInformation}</f:format.html>
+	</div>
+</f:if>
+
+<f:if condition="{showPrerequisites}">
+	<!-- Prerequisites -->
+	<h2 class="tx_egovapi_block_prerequisites"><span class="block_number">3.</span> <f:translate key="block_prerequisites">Prerequisites</f:translate></h2>
+	<ul class="tx_egovapi_block_prerequisites">
+		<f:for each="{service.prerequisites.items}" as="item">
+			<li>{item.description}</li>
+		</f:for>
+	</ul>
+</f:if>
+
+<f:if condition="{showProcedure}">
+	<!-- Procedure -->
+	<h2 class="tx_egovapi_block_procedure"><span class="block_number">4.</span> <f:translate key="block_procedure">Procedure</f:translate></h2>
+	<ol class="tx_egovapi_block_procedure">
+		<f:for each="{service.procedure.items}" as="item">
+			<li>{item.description}</li>
+		</f:for>
+	</ol>
+</f:if>
+
+<f:if condition="{showForms}">
+	<!-- Forms -->
+	<h2 class="tx_egovapi_block_forms"><span class="block_number">5.</span> <f:translate key="block_forms">Form(s)</f:translate></h2>
+	<dl class="tx_egovapi_block_forms">
+		<f:for each="{service.forms.items}" as="item">
+			<dt><f:link.external uri="{item.uri}">{item.name}</f:link.external></dt>
+			<dd>{item.description}</dd>
+		</f:for>
+	</dl>
+	<div class="clear"></div>
+</f:if>
+
+<f:if condition="{showDocumentsRequired}">
+	<!-- Documents required -->
+	<h2 class="tx_egovapi_block_documentsRequired"><span class="block_number">6.</span> <f:translate key="block_documents_required">Document required</f:translate></h2>
+	<dl class="tx_egovapi_block_documentsRequired">
+		<f:for each="{service.documentsRequired.items}" as="item">
+			<dt>{item.name}</dt>
+			<dd>{item.description}</dd>
+		</f:for>
+	</dl>
+	<div class="clear"></div>
+</f:if>
+
+<f:if condition="{showServiceProvided}">
+	<!-- Service provided -->
+	<h2 class="tx_egovapi_block_serviceProvided"><span class="block_number">7.</span> <f:translate key="block_service_provided">Service provided</f:translate></h2>
+	<p class="tx_egovapi_block_serviceProvided">{service.serviceProvided}</p>
+</f:if>
+
+<f:if condition="{showFee}">
+	<!-- Fee -->
+	<h2 class="tx_egovapi_block_fee"><span class="block_number">8.</span> <f:translate key="block_fee">Fee</f:translate></h2>
+	<p>{service.fee}</p>
+</f:if>
+
+<f:if condition="{showLegalRegulation}">
+	<!-- Legal regulation -->
+	<h2 class="tx_egovapi_block_legalRegulation"><span class="block_number">9.</span> <f:translate key="block_legal_regulation">Legal regulation</f:translate></h2>
+	<dl class="tx_egovapi_block_legalRegulation">
+		<f:for each="{service.legalRegulation.items}" as="item">
+			<dt><f:link.external uri="{item.uri}">{item.name}</f:link.external></dt>
+			<dd>{item.description}</dd>
+		</f:for>
+	</dl>
+	<div class="clear"></div>
+</f:if>
+
+<f:if condition="{showDocumentsOther}">
+	<!-- Other documents -->
+	<h2 class="tx_egovapi_block_documentsOther"><span class="block_number">10.</span> <f:translate key="block_documents_other">Other documents</f:translate></h2>
+	<dl class="tx_egovapi_block_documentsOther">
+		<f:for each="{service.documentsOther.items}" as="item">
+			<dt>{item.name}</dt>
+			<dd>{item.description}</dd>
+		</f:for>
+	</dl>
+	<div class="clear"></div>
+</f:if>
+
+<f:if condition="{showRemarks}">
+	<!-- Remarks -->
+	<h2 class="tx_egovapi_block_remarks"><span class="block_number">11.</span> <f:translate key="block_remarks">Remarks</f:translate></h2>
+	<p class="tx_egovapi_block_remarks">{service.remarks}</p>
+</f:if>
+
+<f:if condition="{showApproval}">
+	<!-- Approval -->
+	<h2 class="tx_egovapi_block_approval"><span class="block_number">12.</span> <f:translate key="block_approval">Approval</f:translate></h2>
+	<p class="tx_egovapi_block_approval">{service.approval}</p>
+</f:if>
+
+<f:if condition="{showContact}">
+	<!-- Contact -->
+	<h2 class="tx_egovapi_block_contact"><span class="block_number">13.</span> <f:translate key="block_contact">Contact</f:translate></h2>
+	<div class="tx_egovapi_block_contact">
+		<div class="half left">
+			<div class="tx_egovapi_block_contact_logo"><img src="{service.contact.logo}" alt="{service.contact.office}" /></div>
+			<div class="vcard"><!-- hCard-enabled: http://microformats.org/ -->
+				<div class="org fn">
+					<div class="tx_egovapi_block_contact_office organization-name">{service.contact.department}</div>
+					<div class="tx_egovapi_block_contact_department organization-unit">{service.contact.office}</div>
+				</div>
+				<div class="adr">
+					<span class="type" style="display:none">Work</span>
+					<div class="tx_egovapi_block_contact_address street-address">{service.contact.address}</div>
+					<span style="display:none">
+						<abbr title="Switzerland" class="country-name">CH</abbr> -
+					</span>
+					<span class="tx_egovapi_block_contact_postalCode postal-code">{service.contact.postalCode}</span>
+					<span class="tx_egovapi_block_contact_municipality locality">{service.contact.municipality}</span>
+				</div>
+				<div class="tx_egovapi_block_contact_phone1">
+					<span class="label">
+						<f:translate key="common_phone">Phone:</f:translate>
+					</span>
+					<span class="tel">
+						<span class="type" style="display:none">Work</span> {service.contact.phone1}
+					</span>
+				</div>
+				<div class="tx_egovapi_block_contact_fax">
+					<span class="label">
+						<f:translate key="common_fax">Fax:</f:translate>
+					</span>
+					<span class="tel">
+						<span class="type" style="display:none">Fax</span> {service.contact.fax}
+					</span>
+				</div>
+				<div class="tx_egovapi_block_contact_email">
+					<span class="email" style="display:none">{service.contact.email}</span>
+					<f:link.email email="{service.contact.email}">{service.contact.email}</f:link.email>
+				</div>
+			</div>
+		</div>
+		<div class="half left">
+			<div class="tx_egovapi_block_contact_openingHours"><f:format.html>{service.contact.openingHours}</f:format.html></div>
+		</div>
+		<div class="clear"></div>
+		<p class="tx_egovapi_vcard">
+			<a href="{vcardUrl}"><f:translate key="action_download_vcard">Download as vCard</f:translate></a>
+		</p>
+	</div>
+</f:if>
+
+<f:if condition="{hasParent}">
+	<p class="tx_egovapi_backToList">
+		<f:link.action action="service" arguments="{topic: service.topic.id, mode: 'list'}" pageUid="{targets.service.listPid}"><f:translate key="action_back_to_list">Back to list</f:translate></f:link.action>
+	</p>
+</f:if>

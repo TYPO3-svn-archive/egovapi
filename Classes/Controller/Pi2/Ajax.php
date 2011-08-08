@@ -587,7 +587,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 			// $organization may be empty when retrieving the list of them
 		$this->conf['organizationID'] = t3lib_div::_GET('organization');
 
-		if (!$this->conf['wsdl']) {
+		if (!$this->conf['wsdlVersion']) {
 			throw new Exception('Plugin ' . $this->prefixId . ' is not configured properly!', 1306143131);
 		}
 

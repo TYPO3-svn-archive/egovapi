@@ -74,7 +74,7 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 
 		$this->pi_loadLL();
 
-		if (!$this->conf['wsdl']) {
+		if (!$this->conf['wsdlVersion']) {
 			die('Plugin ' . $this->prefixId . ' is not configured properly!');
 		}
 
@@ -240,7 +240,7 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 			}
 		}
 
-		if ($this->conf['wsdl']) {
+		if ($this->conf['wsdlVersion']) {
 			$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $this->conf);
 			tx_egovapi_domain_repository_factory::injectDao($dao);
 		}
@@ -291,13 +291,9 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 			}
 		}
 
-		if ($this->conf['wsdl']) {
+		if ($this->conf['wsdlVersion']) {
 			$dao = tx_egovapi_domain_repository_factory::getDao();
 			$dao->updateSettings($this->conf);
-		}
-
-		if ($this->conf['wsdl'] === 'http://ref.cyberadmin.ch/WS/ServiceContract/WS.wsdl') {
-			throw new RuntimeException('Deprecated web service end-point detected: ' . $this->conf['wsdl'], 1308646147);
 		}
 
 		$requestUrl = t3lib_div::getIndpEnv('TYPO3_REQUEST_URL');
