@@ -81,16 +81,7 @@ class tx_egovapi_dao_webService {
 		$this->settings = $settings;
 		$this->debug = $settings['enableDebug'];
 
-		switch ($this->settings['wsdlVersion']) {
-			case '1.0':
-				$this->version = self::VERSION_10;
-				break;
-			case '2.0':
-				$this->version = self::VERSION_20;
-				break;
-			default:
-				throw new RuntimeException('Invalid WSDL version "' . $this->settings['wsdlVersion'] . '"', 1312794194);
-		}
+		$this->version = self::getWsdlVersion($this->settings['wsdlVersion']);
 		if (!$this->settings['wsdl']) {
 			$this->settings['wsdl'] = $this->getWsdl();
 		}
@@ -125,6 +116,30 @@ class tx_egovapi_dao_webService {
         } catch (Exception $e) {
         	die('Could not initialize SOAP.');
         }
+	}
+
+	/**
+	 * Returns the WSDL version (using a constant) out of a version string.
+	 * Note: To be used for testing the version of the WSDL service!
+	 *
+	 * @param string $version
+	 * @return integer One of the constants tx_egovapi_dao_webService::VERSION_10, ...
+	 * @throws RuntimeException
+	 * @api
+	 */
+	public static function getWsdlVersion($version) {
+		switch ($version) {
+			case '1.0':
+				$wsdlVersion = self::VERSION_10;
+				break;
+			case '2.0':
+				$wsdlVersion = self::VERSION_20;
+				break;
+			default:
+				throw new RuntimeException('Invalid WSDL version "' . $version . '"', 1312794194);
+		}
+
+		return $wsdlVersion;
 	}
 
 	/**

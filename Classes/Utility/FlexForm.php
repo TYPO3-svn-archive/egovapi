@@ -337,34 +337,43 @@ class tx_egovapi_utility_flexform {
 				$output .= '<td>' . $service->getId() . '</td>';
 				$output .= '<td>' . $service->getVersionId() . '</td>';
 
-				$output .= '<td><select onchange="egovapi_updateVersionMapping(\'' . $service->getId() . '\', this.value)">';
-					// Always use default version
-				$output .= '<option value="">&lt;--</option>';
-				$versions = $service->getVersions();
-				foreach ($versions as $version) {
-					if ($version->isDefault()) {
-							// We don't care about actual status
-						$status = '•';
-					} else {
-						switch ($version->getStatus()) {
-							case tx_egovapi_domain_model_constants::VERSION_STATUS_DRAFT:
-								$status = 'D';
-								break;
-							case tx_egovapi_domain_model_constants::VERSION_STATUS_PUBLISHED:
-								$status = 'P';
-								break;
-							case tx_egovapi_domain_model_constants::VERSION_STATUS_ARCHIVED:
-								$status = 'A';
-								break;
-							default:
-								$status = '-';
-								break;
+				$wsdlVersion = tx_egovapi_dao_webService::getWsdlVersion($this->settings['wsdlVersion']);
+				switch ($wsdlVersion) {
+					case tx_egovapi_dao_webService::VERSION_10:
+						$output .= '<td><input type="text" value="' . $versionId . '" onchange="egovapi_updateVersionMapping(\'' . $service->getId() . '\', this.value)" size="6" maxlength="6" /></td>';
+						break;
+
+					default:
+						$output .= '<td><select onchange="egovapi_updateVersionMapping(\'' . $service->getId() . '\', this.value)">';
+							// Always use default version
+						$output .= '<option value="">&lt;--</option>';
+						$versions = $service->getVersions();
+						foreach ($versions as $version) {
+							if ($version->isDefault()) {
+									// We don't care about actual status
+								$status = '•';
+							} else {
+								switch ($version->getStatus()) {
+									case tx_egovapi_domain_model_constants::VERSION_STATUS_DRAFT:
+										$status = 'D';
+										break;
+									case tx_egovapi_domain_model_constants::VERSION_STATUS_PUBLISHED:
+										$status = 'P';
+										break;
+									case tx_egovapi_domain_model_constants::VERSION_STATUS_ARCHIVED:
+										$status = 'A';
+										break;
+									default:
+										$status = '-';
+										break;
+								}
+							}
+							$label = $version->getId() . ' (' . $status . ')';
+							$output .= '<option value="' . $version->getId() . '"' . ($version->getId() == $versionId ? ' selected="selected"' : '') . '>' . $label . '</option>';
 						}
-					}
-					$label = $version->getId() . ' (' . $status . ')';
-					$output .= '<option value="' . $version->getId() . '"' . ($version->getId() == $versionId ? ' selected="selected"' : '') . '>' . $label . '</option>';
+						$output .= '</select></td>';
+						break;
 				}
-				$output .= '</select></td>';
 
 				$output .= '<td>' . $service->getName() . '</td>';
 				$output .= '</tr>';

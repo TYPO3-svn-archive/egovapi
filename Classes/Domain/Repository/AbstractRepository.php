@@ -114,7 +114,7 @@ abstract class tx_egovapi_domain_repository_abstractRepository implements t3lib_
 	 * @return integer
 	 */
 	protected function getWsdlVersion() {
-		return $this->settings['wsdlVersion'];
+		return tx_egovapi_dao_webService::getWsdlVersion($this->settings['wsdlVersion']);
 	}
 
 }

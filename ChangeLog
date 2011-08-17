@@ -1,5 +1,6 @@
 2011-08-17  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Add proper fallback between version 1.0 and version 2.0
 	* [BUGFIX] Pi1 FlexForm crashes in backend
 
 2011-08-08  Xavier Perseguers  <xavier@causal.ch>
