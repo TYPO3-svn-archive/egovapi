@@ -70,7 +70,7 @@ class tx_egovapi_utility_constants {
 				FALSE, FALSE
 			);
 
-			//if (!$constants['wsdl']) {
+			//if (!$constants['wsdlVersion']) {
 			//	return 'WSDL is not defined.';
 			//}
 

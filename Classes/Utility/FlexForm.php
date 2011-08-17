@@ -451,7 +451,7 @@ class tx_egovapi_utility_flexform {
 			}
 		}
 
-		if ($this->settings['wsdl']) {
+		if ($this->settings['wsdlVersion']) {
 			$this->dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $this->settings);
 			tx_egovapi_domain_repository_factory::injectDao($this->dao);
 		}
@@ -462,7 +462,7 @@ class tx_egovapi_utility_flexform {
 		// Updating the settings does not make sense here as the lists of items
 		// have already been prepared by TYPO3...
 		/*
-		if ($this->settings['wsdl']) {
+		if ($this->settings['wsdlVersion']) {
 			$dao = tx_egovapi_domain_repository_factory::getDao();
 			$dao->updateSettings($this->settings);
 		}

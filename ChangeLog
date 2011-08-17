@@ -1,3 +1,7 @@
+2011-08-17  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] Pi1 FlexForm crashes in backend
+
 2011-08-08  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Add support for both versions 1.0 and 2.0 of the Web Service
