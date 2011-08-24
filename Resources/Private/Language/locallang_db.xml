@@ -22,6 +22,7 @@
 			<label index="constants.useFluid">Use Fluid as rendering engine</label>
 			<label index="constants.enableDebug">Enable debugging information: Provide additional information with error messages. 3rd party devLog extension may be required for full support</label>
 			<label index="constants.enableSelectorPlugins">Enable selector plugins: Provide a selector form plugin and its counterpart to show a service from URL parameters</label>
+			<label index="constants.wsdl.global">WSDL for the eGov API: URL of the eGov API web service. BEWARE: Leave empty unless you know what you do</label>
 			<label index="constants.wsdlVersion">Version of the Web Service to use</label>
 			<label index="constants.wsdlVersion.inherit">Inherit from global configuration</label>
 			<label index="constants.wsdlVersion.oneZero">Version 1.0</label>

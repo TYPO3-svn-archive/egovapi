@@ -6,3 +6,6 @@ cacheLifetime=604800
 
 	# cat=advanced/enable; type=boolean; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.enableSelectorPlugins
 enableSelectorPlugins=0
+
+	# cat=advanced/api; type:string; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdl.global
+wsdl=http://ref.cyberadmin.ch/WS20/ServiceContract/WS.wsdl

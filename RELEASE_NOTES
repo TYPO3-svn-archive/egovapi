@@ -13,6 +13,9 @@ CHANGES & IMPROVEMENTS between egovapi 1.3 and 1.4
 	Extension Manager (EM) and reconfigure default settings of this
 	extension. This will ensure you have a clean global configuration.
 
+	If this is not an option for you, you really should clear the
+	WSDL URI in the advanced configuration.
+
 === Configuration ===
 
 	Support for eCHmunicipalityID has finally been dropped. Please

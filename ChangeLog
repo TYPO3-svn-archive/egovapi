@@ -1,5 +1,6 @@
 2011-08-24  Xavier Perseguers  <xavier@causal.ch>
 
+	* [BUGFIX] #29207: Cleanup task crashes if web service does not exist
 	* [TASK] Reintroduce subcategory "API" in Extension Manager
 
 2011-08-17  Xavier Perseguers  <xavier@causal.ch>
