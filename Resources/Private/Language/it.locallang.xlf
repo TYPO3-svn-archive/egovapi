@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="EN" target-language="it" datatype="plaintext" original="messages" date="Thu, 25 Aug 2011 19:54:45 +0200" product-name="egovapi">
+		<header/>
+		<body>
+			<trans-unit id="pi1_title">
+				<source>eGov API</source>
+				<target approved="yes">eGov API</target>
+			</trans-unit>
+			<trans-unit id="pi1_plus_wiz_description">
+				<source>Adds a frontend plugin showing data from the eGov web service.</source>
+				<target approved="yes">Aggiungi un modulo di accesso ai dati del web service eGov.</target>
+			</trans-unit>
+			<trans-unit id="pi2_title">
+				<source>eGov API - Selector Form</source>
+				<target approved="yes">eGov API - Selector Form</target>
+			</trans-unit>
+			<trans-unit id="pi2_plus_wiz_description">
+				<source>Adds a frontend plugin showing a selector form for the eGov web service.</source>
+				<target approved="yes">Adds a frontend plugin showing a selector form for the eGov web service.</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_general">
+				<source>General</source>
+				<target approved="yes">Generale</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_audience">
+				<source>Audience</source>
+				<target approved="yes">Gruppo di utenti</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_view">
+				<source>View</source>
+				<target approved="yes">Visualizzazione</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_domain">
+				<source>Domain</source>
+				<target approved="yes">Dominio</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_topic">
+				<source>Topic</source>
+				<target approved="yes">Tema</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_service">
+				<source>Service</source>
+				<target approved="yes">Servizio</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_version">
+				<source>Version</source>
+				<target approved="yes">Versione</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_misc">
+				<source>Other Settings</source>
+				<target approved="yes">Altri parametri</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_audienceShortDescription">
+				<source>Configuration of level Audience</source>
+				<target approved="yes">Configurazione del livello Gruppo di utenti</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_viewShortDescription">
+				<source>Configuration of level View</source>
+				<target approved="yes">Configurazione del livello Visualizzazione</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_domainShortDescription">
+				<source>Configuration of level Domain</source>
+				<target approved="yes">Configurazione del livello Dominio</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_topicShortDescription">
+				<source>Configuration of level Topic</source>
+				<target approved="yes">Configurazione del livello Tema</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_serviceShortDescription">
+				<source>Configuration of level Service</source>
+				<target approved="yes">Configurazione del livello Servizio</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_versionDescription">
+				<source>Advanced configuration of service versions to be used. Beware: invalid configuration is likely to yield empty services.</source>
+				<target approved="yes">Configurazione avanzata delle versioni dei servizi che devono essere utilizzati. Attenzione: una configurazione sbagliata potrebbe condurre a una lista di servizi vuota.</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_versionShortDescription">
+				<source>Configuration of service versions</source>
+				<target approved="yes">Configurazione delle versioni dei servizi</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.sheet_saveToContinue">
+				<source>Changes on this form will impact other configuration sheets. Please save configuration before moving on to next sheet.</source>
+				<target approved="yes">Le modifiche apportate al presente modulo avranno effetti sulle altre schede. Si prega di salvare le modifiche prima di passare alla prossima scheda.</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayLevels">
+				<source>Authorized levels</source>
+				<target approved="yes">Livelli di visualizzazione autorizzati</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayLevels.AUDIENCE">
+				<source>Audience</source>
+				<target approved="yes">Gruppo di utenti</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayLevels.VIEW">
+				<source>  View</source>
+				<target approved="yes">  Visualizzazione</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayLevels.DOMAIN">
+				<source>    Domain</source>
+				<target approved="yes">    Dominio</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayLevels.TOPIC">
+				<source>      Topic</source>
+				<target approved="yes">      Tema</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayLevels.SERVICE">
+				<source>        Service</source>
+				<target approved="yes">        Servizio</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayMode">
+				<source>Display Mode</source>
+				<target approved="yes">Modalità di visualizzazione</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayMode.codeFromTS">
+				<source>Defined by TypoScript / Automatic</source>
+				<target approved="yes">Definito mediante TypoScript / Automatico</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayMode.LIST">
+				<source>List view (LIST)</source>
+				<target approved="yes">Visualizzazione lista (LIST)</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayMode.SINGLE">
+				<source>Detail view (SINGLE)</source>
+				<target approved="yes">Visualizzazione singola (SINGLE)</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.audiences">
+				<source>Audiences to show (LIST) / Authorized audiences (SINGLE)</source>
+				<target approved="yes">Gruppo di utenti da visualizzare (LIST) / Gruppo di utenti autorizzati (SINGLE)</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.views">
+				<source>Views to show (LIST) / Authorized views (SINGLE)</source>
+				<target approved="yes">Visualizzazioni da visualizzare (LIST) / Visualizzazioni autorizzate (SINGLE)</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.domains">
+				<source>Domains to show (LIST) / Authorized domains (SINGLE)</source>
+				<target approved="yes">Domini da visualizzare (LIST) / Domini autorizzati (SINGLE)</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.topics">
+				<source>Topics to show (LIST) / Authorized topics (SINGLE)</source>
+				<target approved="yes">Temi da visualizzare (LIST) / Temi autorizzati (SINGLE)</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.services">
+				<source>Services to show (LIST) / Authorized services (SINGLE)</source>
+				<target approved="yes">Servizi da visualizzare (LIST) / Servizi autorizzati (SINGLE)</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.tsconfig">
+				<source>Typoscript for this content element (plugin.egovapi_pi1.[your TS])</source>
+				<target approved="yes">Typoscript per questo elemento di contenuto (plugin.egovapi_pi1.[vostro TS])</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks">
+				<source>Blocks to show</source>
+				<target approved="yes">Blocchi da visualizzare</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.APPROVAL">
+				<source>12. Approval</source>
+				<target approved="yes">12. Approvazione</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.BACK_TO_LIST">
+				<source>Back to list</source>
+				<target approved="yes">Ritorna alla lista</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.CONTACT">
+				<source>13. Contact</source>
+				<target approved="yes">13. Indirizzo della/e autorità competente/i</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.DESCRIPTOR">
+				<source>5. Descriptors</source>
+				<target approved="yes">5. Descrittori</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.DOCUMENTS_OTHER">
+				<source>10. Other document(s)</source>
+				<target approved="yes">10. Altro/i documento/i</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.DOCUMENTS_REQUIRED">
+				<source>6. Required document(s)</source>
+				<target approved="yes">6. Documento/i richiesto/i</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.FEE">
+				<source>8. Fee</source>
+				<target approved="yes">8. Costi del servizio</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.FORMS">
+				<source>5. Form(s)</source>
+				<target approved="yes">5. Modulo/i</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.GENERAL_INFORMATION">
+				<source>2. General information</source>
+				<target approved="yes">2. Informazioni generali</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.LEGAL_REGULATION">
+				<source>9. Legal regulation</source>
+				<target approved="yes">9. Basi giuridiche</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.LEVEL_INFORMATION">
+				<source>1. Level information</source>
+				<target approved="yes">1. Informazioni sul livello attuale</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.NEWS">
+				<source>3. News</source>
+				<target approved="yes">3. Novità</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.PREREQUISITES">
+				<source>3. Prerequisites</source>
+				<target approved="yes">3. Condizioni preliminari</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.PROCEDURE">
+				<source>4. Procedure</source>
+				<target approved="yes">4. Procedimento</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.REMARKS">
+				<source>11. Remarks</source>
+				<target approved="yes">11. Osservazioni</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.SERVICE_PROVIDED">
+				<source>7. Service provided</source>
+				<target approved="yes">7. Servizio fornito</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.SUBDOMAINS">
+				<source>4. Subdomains</source>
+				<target approved="yes">4. Sottopagine</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.SUBTOPICS">
+				<source>4. Subtopics</source>
+				<target approved="yes">4. Sottopagine</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.displayBlocks.SYNONYM">
+				<source>6. Synonyms</source>
+				<target approved="yes">6. Sinonimi</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.templates.audienceLIST">
+				<source>Override template to use for the list of audiences</source>
+				<target approved="yes">Utilizzare uno schema particolare per la lista del gruppo di utenti</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.templates.audienceSINGLE">
+				<source>Override template to use for details of an audience</source>
+				<target approved="yes">Utilizzare uno schema particolare per i dettagli di un gruppo di utenti</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.templates.viewLIST">
+				<source>Override template to use for the list of views</source>
+				<target approved="yes">Utilizzare uno schema particolare per la lista delle visualizzazioni</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.templates.viewSINGLE">
+				<source>Override template to use for details of a view</source>
+				<target approved="yes">Utilizzare uno schema particolare per i dettagli di una visualizzazione</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.templates.domainLIST">
+				<source>Override template to use for the list of domains</source>
+				<target approved="yes">Utilizzare uno schema particolare per la lista dei domini</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.templates.domainSINGLE">
+				<source>Override template to use for details of a domain</source>
+				<target approved="yes">Utilizzare uno schema particolare per i dettagli di un dominio</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.templates.topicLIST">
+				<source>Override template to use for the list of topics</source>
+				<target approved="yes">Utilizzare uno schema particolare per la lista dei temi</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.templates.topicSINGLE">
+				<source>Override template to use for details of a topic</source>
+				<target approved="yes">Utilizzare uno schema particolare per i dettagli di un tema</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.templates.serviceLIST">
+				<source>Override template to use for the list of services</source>
+				<target approved="yes">Utilizzare uno schema particolare per la lista dei servizi</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.templates.serviceSINGLE">
+				<source>Override template to use for details of a service</source>
+				<target approved="yes">Utilizzare uno schema particolare per i dettagli di un servizio</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.versions.mapping">
+				<source>Force service versions</source>
+				<target approved="yes">Forzare l'uso della versione di servizio</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.versions.serviceId">
+				<source>Service ID</source>
+				<target approved="yes">ID del servizio</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.versions.version">
+				<source>Default version</source>
+				<target approved="yes">Versione di default</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.versions.useVersion">
+				<source>Version to use</source>
+				<target approved="yes">Versione da utilizzare</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.versions.description">
+				<source>Description</source>
+				<target approved="yes">Descrizione</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.targets.list.audience">
+				<source>Target page for list of audiences</source>
+				<target approved="yes">Pagina di arrivo per la lista del gruppo di utenti</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.targets.list.view">
+				<source>Target page for list of views</source>
+				<target approved="yes">Pagina di arrivo per la lista delle visualizzazioni</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.targets.list.domain">
+				<source>Target page for list of domains</source>
+				<target approved="yes">Pagina di arrivo per la lista dei domini</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.targets.list.topic">
+				<source>Target page for list topics</source>
+				<target approved="yes">Pagina di arrivo per la lista dei temi</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.targets.list.service">
+				<source>Target page for list of services</source>
+				<target approved="yes">Pagina di arrivo per la lista dei servizi</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.targets.single.audience">
+				<source>Target page for details of an audience</source>
+				<target approved="yes">Pagina di arrivo per i dettagli di un gruppo di utenti</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.targets.single.view">
+				<source>Target page for details of a view</source>
+				<target approved="yes">Pagina di arrivo per i dettagli di una visualizzazione</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.targets.single.domain">
+				<source>Target page for details of a domain</source>
+				<target approved="yes">Pagina di arrivo per i dettagli di un dominio</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.targets.single.topic">
+				<source>Target page for details of a topic</source>
+				<target approved="yes">Pagina di arrivo per i dettagli di un tema</target>
+			</trans-unit>
+			<trans-unit id="pi_flexform.targets.single.service">
+				<source>Target page for details of a service</source>
+				<target approved="yes">Pagina di arrivo per i dettagli di un servizio</target>
+			</trans-unit>
+			<trans-unit id="header_community">
+				<source>Community</source>
+				<target approved="yes">Comunità</target>
+			</trans-unit>
+			<trans-unit id="header_organization">
+				<source>Organization</source>
+				<target approved="yes">Comune</target>
+			</trans-unit>
+			<trans-unit id="header_audiences">
+				<source>Audiences</source>
+				<target approved="yes">Gruppi di utenti</target>
+			</trans-unit>
+			<trans-unit id="header_audience">
+				<source>Audience</source>
+				<target approved="yes">Gruppo di utenti</target>
+			</trans-unit>
+			<trans-unit id="header_views">
+				<source>Views</source>
+				<target approved="yes">Visualizzazioni</target>
+			</trans-unit>
+			<trans-unit id="header_view">
+				<source>View</source>
+				<target approved="yes">Visualizzazione</target>
+			</trans-unit>
+			<trans-unit id="header_domains">
+				<source>Domains</source>
+				<target approved="yes">Domini</target>
+			</trans-unit>
+			<trans-unit id="header_domain">
+				<source>Domain</source>
+				<target approved="yes">Domino</target>
+			</trans-unit>
+			<trans-unit id="header_topics">
+				<source>Topics</source>
+				<target approved="yes">Temi</target>
+			</trans-unit>
+			<trans-unit id="header_topic">
+				<source>Topic</source>
+				<target approved="yes">Tema</target>
+			</trans-unit>
+			<trans-unit id="header_services">
+				<source>Services</source>
+				<target approved="yes">Servizi</target>
+			</trans-unit>
+			<trans-unit id="header_service">
+				<source>Service</source>
+				<target approved="yes">Servizio</target>
+			</trans-unit>
+			<trans-unit id="common_action">
+				<source>Action</source>
+				<target approved="yes">Tipo di azione</target>
+			</trans-unit>
+			<trans-unit id="common_author">
+				<source>Author</source>
+				<target approved="yes">Autore</target>
+			</trans-unit>
+			<trans-unit id="common_creation_date">
+				<source>Creation date</source>
+				<target approved="yes">Data di creazione</target>
+			</trans-unit>
+			<trans-unit id="common_customer">
+				<source>Customer</source>
+				<target approved="yes">Destinatario</target>
+			</trans-unit>
+			<trans-unit id="common_last_modification_date">
+				<source>Last modification</source>
+				<target approved="yes">Ultima modifica</target>
+			</trans-unit>
+			<trans-unit id="common_provider">
+				<source>Provider</source>
+				<target approved="yes">Fornitore</target>
+			</trans-unit>
+			<trans-unit id="common_release">
+				<source>Release</source>
+				<target approved="yes">Pubblicazione</target>
+			</trans-unit>
+			<trans-unit id="common_remarks">
+				<source>Remarks</source>
+				<target approved="yes">Osservazioni</target>
+			</trans-unit>
+			<trans-unit id="common_service_type">
+				<source>Type of service</source>
+				<target approved="yes">Tipo di servizio amministrativo</target>
+			</trans-unit>
+			<trans-unit id="common_status">
+				<source>Status</source>
+				<target approved="yes">Stato</target>
+			</trans-unit>
+			<trans-unit id="common_version_id">
+				<source>Version</source>
+				<target approved="yes">Versione</target>
+			</trans-unit>
+			<trans-unit id="common_version_name">
+				<source>Community</source>
+				<target approved="yes">Community</target>
+			</trans-unit>
+			<trans-unit id="common_service_id">
+				<source>Service ID</source>
+				<target approved="yes">ID del servizio</target>
+			</trans-unit>
+			<trans-unit id="common_language">
+				<source>Language</source>
+				<target approved="yes">Lingua</target>
+			</trans-unit>
+			<trans-unit id="common_ok">
+				<source>OK</source>
+				<target approved="yes">OK</target>
+			</trans-unit>
+			<trans-unit id="common_phone">
+				<source>Phone:</source>
+				<target approved="yes">Tel:</target>
+			</trans-unit>
+			<trans-unit id="common_fax">
+				<source>Fax:</source>
+				<target approved="yes">Fax:</target>
+			</trans-unit>
+			<trans-unit id="action_back_to_list">
+				<source>Back to list</source>
+				<target approved="yes">Ritorna alla lista</target>
+			</trans-unit>
+			<trans-unit id="action_toggle_marks">
+				<source>Mark All/Mark none</source>
+				<target approved="yes">Seleziona tutti/nessuno</target>
+			</trans-unit>
+			<trans-unit id="action_download_vcard">
+				<source>Download as vCard</source>
+				<target approved="yes">Scarica comme vCard</target>
+			</trans-unit>
+			<trans-unit id="block_approval">
+				<source>Approval</source>
+				<target approved="yes">Approvazione</target>
+			</trans-unit>
+			<trans-unit id="block_categories">
+				<source>Topics</source>
+				<target approved="yes">Categorie</target>
+			</trans-unit>
+			<trans-unit id="block_contact">
+				<source>Contact</source>
+				<target approved="yes">Indirizzi della/e autorità competente/i</target>
+			</trans-unit>
+			<trans-unit id="block_descriptors">
+				<source>Descriptors</source>
+				<target approved="yes">Descrittori</target>
+			</trans-unit>
+			<trans-unit id="block_documents_other">
+				<source>Other document(s)</source>
+				<target approved="yes">Altro/i documento/i</target>
+			</trans-unit>
+			<trans-unit id="block_documents_required">
+				<source>Required document(s)</source>
+				<target approved="yes">Documento/i richiesto/i</target>
+			</trans-unit>
+			<trans-unit id="block_fee">
+				<source>Fee</source>
+				<target approved="yes">Costi del servizio</target>
+			</trans-unit>
+			<trans-unit id="block_forms">
+				<source>Form(s)</source>
+				<target approved="yes">Modulo/i</target>
+			</trans-unit>
+			<trans-unit id="block_general_information">
+				<source>General information</source>
+				<target approved="yes">Informazioni generali</target>
+			</trans-unit>
+			<trans-unit id="block_legal_regulation">
+				<source>Legal regulation</source>
+				<target approved="yes">Basi giuridiche</target>
+			</trans-unit>
+			<trans-unit id="block_news">
+				<source>News</source>
+				<target approved="yes">Novità</target>
+			</trans-unit>
+			<trans-unit id="block_prerequisites">
+				<source>Prerequisites</source>
+				<target approved="yes">Condizioni preliminari</target>
+			</trans-unit>
+			<trans-unit id="block_procedure">
+				<source>Procedure</source>
+				<target approved="yes">Procedimento</target>
+			</trans-unit>
+			<trans-unit id="block_remarks">
+				<source>Remarks</source>
+				<target approved="yes">Osservazioni</target>
+			</trans-unit>
+			<trans-unit id="block_service_provided">
+				<source>Service provided</source>
+				<target approved="yes">Servizio fornito</target>
+			</trans-unit>
+			<trans-unit id="block_services">
+				<source>Services</source>
+				<target approved="yes">Servizi amministrativi</target>
+			</trans-unit>
+			<trans-unit id="block_subdomains">
+				<source>Subdomains</source>
+				<target approved="yes">Sottopagine</target>
+			</trans-unit>
+			<trans-unit id="block_subtopics">
+				<source>Subtopics</source>
+				<target approved="yes">Sottopagine</target>
+			</trans-unit>
+			<trans-unit id="block_synonyms">
+				<source>Synonyms</source>
+				<target approved="yes">Sinonimi</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
