@@ -1,3 +1,6 @@
+2011-08-25  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] #29255: [part 1] Use XLIFF as new translation format
 2011-08-24  Xavier Perseguers  <xavier@causal.ch>
 
 	* [BUGFIX] #29207: Cleanup task crashes if web service does not exist

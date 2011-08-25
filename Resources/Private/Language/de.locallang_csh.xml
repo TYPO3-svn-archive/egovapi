@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>CSH</type>
+		<description>Context Sensitive Help language labels for plugin &quot;tx_egovapi_pi1&quot;</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index=".alttitle">eGov API</label>
+
+			<!-- CSH for sheet General -->
+			<label index="displayLevels.alttitle">Ausgewählte Ebenen</label>
+			<label index="displayLevels.description">Ermöglicht Ihnen die Auswahl der Display-Ebenen, die verfügbar sein sollten. Das erste ausgewählte Ebene wird als Einstieg genutzt werden.</label>
+			<label index="displayLevels.details">
+				Bitte beachten Sie, dass das Display Ebenen dieses Plugin zu beschränken, müssen Sie sicherstellen, dass Ihre Vorlage entweder nicht einen Link zu einigen nicht autorisierte Anzeige Niveau oder richtig die Zielseite des Links zum Thema konfiguriert zu einer anderen Seite mit leihen ein Plugin ermöglicht die entsprechende Anzeige Niveau.
+
+				Standardeinstellung (leer) ist, damit das Plugin frei durch alle Ebenen anzeigen zu navigieren.
+			</label>
+			<label index="displayMode.alttitle">Anzeigemodus</label>
+			<label index="displayMode.description">Hier können Sie den Modus Kraft des Plugins (entweder Liste oder Einzelwert) und damit das automatische Umschalten von einem Modus zum anderen.</label>
+			<label index="displayMode.details">
+				Bitte beachten Sie, dass, wenn Sie den Anzeigemodus des Plugins zu beschränken, müssen Sie sicherstellen, dass Ihre Vorlage entweder nicht einen Link zu einigen nicht autorisierte Anzeige-Modus oder man richtig die Zielseite des Links zum Thema konfiguriert zu einer anderen Seite mit leihen ein Plugin ermöglicht den entsprechenden Anzeigemodus.
+
+				Die Standardeinstellung ist, damit das Plugin automatisch von LIST-Modus auf SINGLE und von SINGLE zu LIST zurück.
+			</label>
+
+			<!-- CSH for sheet Audience -->
+			<label index="audiences.alttitle">Ausgewählte Publikum</label>
+			<label index="audiences.description">Ermöglicht Ihnen die Auswahl der Zielgruppen, die verfügbar sein und in welcher Reihenfolge sie angezeigt werden soll.</label>
+			<label index="audiences.details">
+				Wenn eine Liste von Publikum gezeigt wird oder Informationen über ein bestimmtes Publikum wird gebeten (die Liste der Ansichten zum Beispiel), das Publikum von Ihnen ausgewählten berücksichtigt werden, den Zugang zu denen, die nicht verfügbar sein zu beschränken.
+
+				Wenn kein Publikum ausgewählt wird, wird Setup-Wert (aus TypoScript) berücksichtigt werden und wenn letztlich kein Publikum ausgewählt wird, dann keine Einschränkung wird aktiviert und alle Zielgruppen zur Verfügung stehen.
+			</label>
+
+			<!-- CSH for sheet View -->
+			<label index="views.alttitle">Ausgewählte Views</label>
+			<label index="views.description">Ermöglicht Ihnen die Auswahl der Ansichten, die zur Verfügung stehen und in welcher Reihenfolge sie angezeigt werden soll.</label>
+			<label index="views.details">
+				Wenn eine Liste der Ansichten gezeigt wird oder Informationen über eine bestimmte Ansicht wird gebeten (die Liste der Domains zum Beispiel), die Ansichten, die Sie ausgewählt haben, wird in Betracht gezogen werden, den Zugang zu denen, die nicht verfügbar sein zu beschränken.
+
+				Wenn keine Aussicht gewählt ist, wird Setup-Wert (aus TypoScript) berücksichtigt werden und wenn letztlich keine Aussicht gewählt wird, dann keine Einschränkung wird aktiviert und alle Ansichten verfügbar sein wird.
+			</label>
+
+			<!-- CSH for sheet Domain -->
+			<label index="domains.alttitle">Ausgewählte Domänen</label>
+			<label index="domains.description">Ermöglicht Ihnen die Auswahl der Domains, die zur Verfügung stehen und in welcher Reihenfolge sie angezeigt werden soll.</label>
+			<label index="domains.details">
+				Immer wenn eine Liste von Domänen wird gezeigt oder Informationen über eine bestimmte Domäne beantragt wird (die Liste der Themen zum Beispiel), die Domains, die Sie ausgewählt haben, wird in Betracht gezogen werden, den Zugang zu denen, die nicht verfügbar sein zu beschränken.
+
+				Wenn keine Domäne ausgewählt ist, wird Setup-Wert (aus TypoScript) berücksichtigt werden und wenn letztlich keine Domäne ausgewählt ist, dann keine Einschränkung wird aktiviert und alle Domänen zur Verfügung stehen.
+			</label>
+			<label index="blocks_domain.alttitle">Domäne-Blöcke</label>
+			<label index="blocks_domain.description">Hier können Sie wählen, welche Blöcke von Informationen sichtbar sein sollen.</label>
+			<label index="blocks_domain.details">Dies ist eine einfache Liste von Blöcken die aktiviert sind. Bestellung nicht berücksichtigt werden. Bitte beachten Sie, dass diese bis zu der Vorlage, diese Einschränkung zu berücksichtigen ist.</label>
+
+			<!-- CSH for sheet Topic -->
+			<label index="topics.alttitle">Ausgewählte Themen</label>
+			<label index="topics.description">Ermöglicht Ihnen die Auswahl der Themen, die zur Verfügung stehen und in welcher Reihenfolge sie angezeigt werden soll.</label>
+			<label index="topics.details">
+				Wenn eine Liste der Themen gezeigt wird, oder Informationen über ein bestimmtes Thema gebeten wird (die Liste der Dienste zum Beispiel), die Themen, die Sie ausgewählt haben, wird in Betracht gezogen werden, den Zugang zu denen, die nicht verfügbar sein zu beschränken.
+
+				Wenn kein Thema ausgewählt ist, wird Setup-Wert (aus TypoScript) berücksichtigt werden und wenn letztlich kein Thema ausgewählt ist, wird keine Einschränkung wird aktiviert und alle Themen zur Verfügung stehen.
+			</label>
+			<label index="blocks_topic.alttitle">Thema-Blöcke</label>
+			<label index="blocks_topic.description">Hier können Sie wählen, welche Blöcke von Informationen sichtbar sein sollen.</label>
+			<label index="blocks_topic.details">Dies ist eine einfache Liste von Blöcken die aktiviert sind. Bestellung nicht berücksichtigt werden. Bitte beachten Sie, dass diese bis zu der Vorlage, diese Einschränkung zu berücksichtigen ist.</label>
+
+			<!-- CSH for sheet Service -->
+			<label index="services.alttitle">Ausgewählte Dienstleistungen</label>
+			<label index="services.description">Ermöglicht Ihnen die Auswahl der Dienste, die verfügbar sein sollen. Sie werden immer alphabetisch nach Namen sortiert werden.</label>
+			<label index="services.details">
+				Wenn eine Liste der Dienste angezeigt oder Informationen über einen bestimmten Dienst angefordert wird, wird die Dienstleistungen, die Sie ausgewählt berücksichtigt werden, den Zugang zu denen, die nicht verfügbar sein zu beschränken.
+
+				Wenn kein Service ausgewählt ist, wird Setup-Wert (aus TypoScript) berücksichtigt werden und wenn letztlich kein Service aktiviert ist, dann keine Einschränkung wird aktiviert und alle Dienste verfügbar sein werden.
+			</label>
+			<label index="blocks_service.alttitle">Dienstleistung-Blöcke</label>
+			<label index="blocks_service.description">Hier können Sie wählen, welche Blöcke von Informationen sichtbar sein sollen.</label>
+			<label index="blocks_service.details">Dies ist eine einfache Liste von Blöcken die aktiviert sind. Bestellung nicht berücksichtigt werden. Bitte beachten Sie, dass diese bis zu der Vorlage, diese Einschränkung zu berücksichtigen ist.</label>
+		</languageKey>
+	</data>
+</T3locallang>

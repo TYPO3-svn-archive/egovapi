@@ -5,10 +5,6 @@
 		<description>Language labels for module fields belonging to extension 'egovapi'</description>
 	</meta>
 	<data type="array">
-		<!-- ******************************************************************************************************
-		                                                 ENGLISH
-		*********************************************************************************************************** -->
-
 		<languageKey index="default" type="array">
 			<label index="latestChangesCleanupTask.name">Latest changes in eGov API</label>
 			<label index="latestChangesCleanupTask.description">This task retrieves the list of latest changes to the services and the associated hierarchy structure and clears corresponding deprecated cache entries.</label>
@@ -17,44 +13,6 @@
 			<label index="label.latestChangesCleanup.community">Community to retrieve changes for</label>
 
 			<label index="msg.invalidCommunity">Please selected a community.</label>
-		</languageKey>
-
-
-
-
-
-		<!-- ******************************************************************************************************
-		                                                     GERMAN
-		     ****************************************************************************************************** -->
-
-		<languageKey index="de" type="array">
-			<label index="latestChangesCleanupTask.name">Letzte Änderungen in eGov API</label>
-			<label index="latestChangesCleanupTask.description">Diese Aufgabe sucht nach letzten Änderungen in der Dienstleistungen und die damit verbundenen hierarchischen Struktur und löscht entsprechende veraltet Cache-Einträge.</label>
-		</languageKey>
-
-
-
-
-
-		<!-- ******************************************************************************************************
-		                                                     FRENCH
-		     ****************************************************************************************************** -->
-
-		<languageKey index="fr" type="array">
-			<label index="latestChangesCleanupTask.name">Dernières modifications de l'API eGov</label>
-			<label index="latestChangesCleanupTask.description">Cette tâche récupère la liste des derniers changements effectués sur les services et la structure hiérarchique correspondante et efface les entrées correspondantes de mise en cache.</label>
-		</languageKey>
-
-
-
-
-
-		<!-- ******************************************************************************************************
-		                                                     ITALIAN
-		     ****************************************************************************************************** -->
-
-		<languageKey index="it" type="array">
-
 		</languageKey>
 	</data>
 </T3locallang>
