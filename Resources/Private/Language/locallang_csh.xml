@@ -91,7 +91,7 @@
 		                                                     GERMAN
 		     ****************************************************************************************************** -->
 
-		<languageKey index="default" type="array">
+		<languageKey index="de" type="array">
 			<label index=".alttitle">eGov API</label>
 
 			<!-- CSH for sheet General -->
