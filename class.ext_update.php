@@ -54,7 +54,7 @@ class ext_update extends t3lib_SCbase {
 	 * @return boolean
 	 */
 	public function access() {
-		return ($this->version < 4007000);
+		return ($this->version < 4006000);
 	}
 
 	/**
