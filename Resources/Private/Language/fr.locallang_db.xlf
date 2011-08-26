@@ -3,141 +3,141 @@
 	<file source-language="EN" target-language="fr" datatype="plaintext" original="messages" date="Thu, 25 Aug 2011 19:55:32 +0200" product-name="egovapi">
 		<header/>
 		<body>
-			<trans-unit id="tt_content.list_type_pi1">
+			<trans-unit id="tt_content.list_type_pi1" approved="yes">
 				<source>eGov API</source>
-				<target approved="yes">API eGov</target>
+				<target>API eGov</target>
 			</trans-unit>
-			<trans-unit id="tt_content.list_type_pi2">
+			<trans-unit id="tt_content.list_type_pi2" approved="yes">
 				<source>eGov API - Selector Form</source>
-				<target approved="yes">eGov API - Formulaire de sélection</target>
+				<target>eGov API - Formulaire de sélection</target>
 			</trans-unit>
-			<trans-unit id="constants.subcategories.api">
+			<trans-unit id="constants.subcategories.api" approved="yes">
 				<source>API</source>
-				<target approved="yes">API</target>
+				<target>API</target>
 			</trans-unit>
-			<trans-unit id="constants.subcategories.service">
+			<trans-unit id="constants.subcategories.service" approved="yes">
 				<source>Service</source>
-				<target approved="yes">Service</target>
+				<target>Service</target>
 			</trans-unit>
-			<trans-unit id="constants.eCHlanguageID">
+			<trans-unit id="constants.eCHlanguageID" approved="yes">
 				<source>Language of the web service's data: de = Deutsch, en = English, fr = Français, it = Italiano, rm = Rumantsch</source>
-				<target approved="yes">Langue des données du web service: de = Deutsch, en = English, fr = Français, it = Italiano, rm = Rumantsch</target>
+				<target>Langue des données du web service: de = Deutsch, en = English, fr = Français, it = Italiano, rm = Rumantsch</target>
 			</trans-unit>
-			<trans-unit id="constants.eCHcommunityID">
+			<trans-unit id="constants.eCHcommunityID" approved="yes">
 				<source>Community</source>
-				<target approved="yes">Communauté</target>
+				<target>Communauté</target>
 			</trans-unit>
-			<trans-unit id="constants.organizationID">
+			<trans-unit id="constants.organizationID" approved="yes">
 				<source>Organization ID: Identifier of the organization (e.g., 99001=Swiss Confederation, 00619=Oberdiessbach, 02196=Fribourg)</source>
-				<target approved="yes">ID organisation : Identifiant de l'organisation (p. ex. 99001=Confédération, 00619=Oberdiessbach, 02196=Fribourg)</target>
+				<target>ID organisation : Identifiant de l'organisation (p. ex. 99001=Confédération, 00619=Oberdiessbach, 02196=Fribourg)</target>
 			</trans-unit>
-			<trans-unit id="constants.useFluid">
+			<trans-unit id="constants.useFluid" approved="yes">
 				<source>Use Fluid as rendering engine</source>
-				<target approved="yes">Utiliser Fluid comme moteur de rendu</target>
+				<target>Utiliser Fluid comme moteur de rendu</target>
 			</trans-unit>
-			<trans-unit id="constants.enableDebug">
+			<trans-unit id="constants.enableDebug" approved="yes">
 				<source>Enable debugging information: Provide additional information with error messages. 3rd party devLog extension may be required for full support</source>
-				<target approved="yes">Activer les informations de déboguage: Fournit des informations supplémentaires aec les messages d'erreur. Une extension tierce devLog peut être nécessaire pour un support complet</target>
+				<target>Activer les informations de déboguage: Fournit des informations supplémentaires aec les messages d'erreur. Une extension tierce devLog peut être nécessaire pour un support complet</target>
 			</trans-unit>
-			<trans-unit id="constants.enableSelectorPlugins">
+			<trans-unit id="constants.enableSelectorPlugins" approved="yes">
 				<source>Enable selector plugins: Provide a selector form plugin and its counterpart to show a service from URL parameters</source>
-				<target approved="yes">Enable selector plugins: Provide a selector form plugin and its counterpart to show a service from URL parameters</target>
+				<target>Enable selector plugins: Provide a selector form plugin and its counterpart to show a service from URL parameters</target>
 			</trans-unit>
-			<trans-unit id="constants.wsdl.global">
+			<trans-unit id="constants.wsdl.global" approved="yes">
 				<source>WSDL for the eGov API: URL of the eGov API web service. BEWARE: Leave empty unless you know what you do</source>
-				<target approved="yes">WSDL for the eGov API: URL of the eGov API web service. BEWARE: Leave empty unless you know what you do</target>
+				<target>WSDL for the eGov API: URL of the eGov API web service. BEWARE: Leave empty unless you know what you do</target>
 			</trans-unit>
-			<trans-unit id="constants.wsdlVersion">
+			<trans-unit id="constants.wsdlVersion" approved="yes">
 				<source>Version of the Web Service to use</source>
-				<target approved="yes">Version of the Web Service to use</target>
+				<target>Version of the Web Service to use</target>
 			</trans-unit>
-			<trans-unit id="constants.wsdlVersion.inherit">
+			<trans-unit id="constants.wsdlVersion.inherit" approved="yes">
 				<source>Inherit from global configuration</source>
-				<target approved="yes">Inherit from global configuration</target>
+				<target>Inherit from global configuration</target>
 			</trans-unit>
-			<trans-unit id="constants.wsdlVersion.oneZero">
+			<trans-unit id="constants.wsdlVersion.oneZero" approved="yes">
 				<source>Version 1.0</source>
-				<target approved="yes">Version 1.0</target>
+				<target>Version 1.0</target>
 			</trans-unit>
-			<trans-unit id="constants.wsdlVersion.twoZero">
+			<trans-unit id="constants.wsdlVersion.twoZero" approved="yes">
 				<source>Version 2.0</source>
-				<target approved="yes">Version 2.0</target>
+				<target>Version 2.0</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime">
+			<trans-unit id="constants.cacheLifetime" approved="yes">
 				<source>Lifetime of web service cached data: Make sure to activate caching framework in localconf.php</source>
-				<target approved="yes">Durée de vie des données du web service mises en cache: Assurez-vous d'activer le framework de mise en cache dans localconf.php</target>
+				<target>Durée de vie des données du web service mises en cache: Assurez-vous d'activer le framework de mise en cache dans localconf.php</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.one_minute">
+			<trans-unit id="constants.cacheLifetime.one_minute" approved="yes">
 				<source>1 minute</source>
-				<target approved="yes">1 minute</target>
+				<target>1 minute</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.five_minutes">
+			<trans-unit id="constants.cacheLifetime.five_minutes" approved="yes">
 				<source>5 minutes</source>
-				<target approved="yes">5 minutes</target>
+				<target>5 minutes</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.one_hour">
+			<trans-unit id="constants.cacheLifetime.one_hour" approved="yes">
 				<source>1 hour</source>
-				<target approved="yes">1 heure</target>
+				<target>1 heure</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.one_day">
+			<trans-unit id="constants.cacheLifetime.one_day" approved="yes">
 				<source>1 day</source>
-				<target approved="yes">1 jour</target>
+				<target>1 jour</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.one_week">
+			<trans-unit id="constants.cacheLifetime.one_week" approved="yes">
 				<source>1 week</source>
-				<target approved="yes">1 semaine</target>
+				<target>1 semaine</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.unlimited">
+			<trans-unit id="constants.cacheLifetime.unlimited" approved="yes">
 				<source>Unlimited</source>
-				<target approved="yes">Illimité</target>
+				<target>Illimité</target>
 			</trans-unit>
-			<trans-unit id="constants.data.communities">
+			<trans-unit id="constants.data.communities" approved="yes">
 				<source>Community data file: CSV file containing the list of communities</source>
-				<target approved="yes">Fichier de données des communautés: Fichier CSV contenant la liste des communautés</target>
+				<target>Fichier de données des communautés: Fichier CSV contenant la liste des communautés</target>
 			</trans-unit>
-			<trans-unit id="constants.data.organizations">
+			<trans-unit id="constants.data.organizations" approved="yes">
 				<source>Organization data file: CSV file containing the list of organizations</source>
-				<target approved="yes">Fichier de données des organisations: Fichier CSV contenant la liste des organisations</target>
+				<target>Fichier de données des organisations: Fichier CSV contenant la liste des organisations</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.list.audience">
+			<trans-unit id="constants.targets.list.audience" approved="yes">
 				<source>Target page for audiences: ID of the page to use for links showing a list of audiences</source>
-				<target approved="yes">Page cible pour les publics cibles: ID de la page à utiliser pour les liens vers une liste de publics cibles</target>
+				<target>Page cible pour les publics cibles: ID de la page à utiliser pour les liens vers une liste de publics cibles</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.list.view">
+			<trans-unit id="constants.targets.list.view" approved="yes">
 				<source>Target page for views: ID of the page to use for links showing a list of views</source>
-				<target approved="yes">Page cible pour les vues: ID de la page à utiliser pour les liens vers une liste de vues</target>
+				<target>Page cible pour les vues: ID de la page à utiliser pour les liens vers une liste de vues</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.list.domain">
+			<trans-unit id="constants.targets.list.domain" approved="yes">
 				<source>Target page for domains: ID of the page to use for links showing a list of domains</source>
-				<target approved="yes">Page cible pour les domaines: ID de la page à utiliser pour les liens vers une liste de domaines</target>
+				<target>Page cible pour les domaines: ID de la page à utiliser pour les liens vers une liste de domaines</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.list.topic">
+			<trans-unit id="constants.targets.list.topic" approved="yes">
 				<source>Target page for topics: ID of the page to use for links showing a list of topics</source>
-				<target approved="yes">Page cible pour les catégories de services: ID de la page à utiliser pour les liens vers une liste de catégories de services</target>
+				<target>Page cible pour les catégories de services: ID de la page à utiliser pour les liens vers une liste de catégories de services</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.list.service">
+			<trans-unit id="constants.targets.list.service" approved="yes">
 				<source>Target page for services: ID of the page to use for links showing a list of services</source>
-				<target approved="yes">Page cible pour les services: ID de la page à utiliser pour les liens vers une liste de services</target>
+				<target>Page cible pour les services: ID de la page à utiliser pour les liens vers une liste de services</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.single.audience">
+			<trans-unit id="constants.targets.single.audience" approved="yes">
 				<source>Target page for audience: ID of the page to use for links showing details of an audience</source>
-				<target approved="yes">Page cible pour un public cible: ID de la page à utiliser pour les liens vers les détails d'un public cible</target>
+				<target>Page cible pour un public cible: ID de la page à utiliser pour les liens vers les détails d'un public cible</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.single.view">
+			<trans-unit id="constants.targets.single.view" approved="yes">
 				<source>Target page for view: ID of the page to use for links showing details of a view</source>
-				<target approved="yes">Page cible pour une vue: ID de la page à utiliser pour les liens vers les détails d'une vue</target>
+				<target>Page cible pour une vue: ID de la page à utiliser pour les liens vers les détails d'une vue</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.single.domain">
+			<trans-unit id="constants.targets.single.domain" approved="yes">
 				<source>Target page for domain: ID of the page to use for links showing details of a domain</source>
-				<target approved="yes">Page cible pour un domaine: ID de la page à utiliser pour les liens vers les détails d'un domaine</target>
+				<target>Page cible pour un domaine: ID de la page à utiliser pour les liens vers les détails d'un domaine</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.single.topic">
+			<trans-unit id="constants.targets.single.topic" approved="yes">
 				<source>Target page for topic: ID of the page to use for links showing details of a topic</source>
-				<target approved="yes">Page cible pour une catégorie de services: ID de la page à utiliser pour les liens vers les détails d'une catégorie de services</target>
+				<target>Page cible pour une catégorie de services: ID de la page à utiliser pour les liens vers les détails d'une catégorie de services</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.single.service">
+			<trans-unit id="constants.targets.single.service" approved="yes">
 				<source>Target page for service: ID of the page to use for links showing details of a service</source>
-				<target approved="yes">Page cible pour un service: ID de la page à utiliser pour les liens vers les détails d'un service</target>
+				<target>Page cible pour un service: ID de la page à utiliser pour les liens vers les détails d'un service</target>
 			</trans-unit>
 		</body>
 	</file>

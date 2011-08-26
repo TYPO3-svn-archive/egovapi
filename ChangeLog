@@ -1,6 +1,10 @@
+2011-08-26  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] #29262: XLIFF: Approved attribute is on wrong element
+
 2011-08-25  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] #29255: [parts 1-3] Use XLIFF as new translation format
+	* [TASK] #29255: Use XLIFF as new translation format
 
 2011-08-24  Xavier Perseguers  <xavier@causal.ch>
 
