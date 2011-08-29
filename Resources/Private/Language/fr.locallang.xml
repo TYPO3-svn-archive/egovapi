@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for plugin &quot;tx_egovapi_pi1&quot;</description>
+	</meta>
+	<data type="array">
+		<languageKey index="fr" type="array">
+			<label index="pi1_title">API eGov</label>
+			<label index="pi1_plus_wiz_description">Ajoute un module d'accès aux données du web service eGov.</label>
+			<label index="pi2_title">eGov API - Formulaire de sélection</label>
+			<label index="pi2_plus_wiz_description">Ajoute un formulaire de sélection pour le web service eGov.</label>
+
+			<label index="pi_flexform.sheet_general">Général</label>
+			<label index="pi_flexform.sheet_audience">Public cible</label>
+			<label index="pi_flexform.sheet_view">Vue</label>
+			<label index="pi_flexform.sheet_domain">Domaine</label>
+			<label index="pi_flexform.sheet_topic">Catégorie de services</label>
+			<label index="pi_flexform.sheet_service">Service</label>
+			<label index="pi_flexform.sheet_version">Version</label>
+			<label index="pi_flexform.sheet_misc">Autres paramètres</label>
+			<label index="pi_flexform.sheet_audienceShortDescription">Configuration du niveau Public cible</label>
+			<label index="pi_flexform.sheet_viewShortDescription">Configuration du niveau Vue</label>
+			<label index="pi_flexform.sheet_domainShortDescription">Configuration du niveau Domaine</label>
+			<label index="pi_flexform.sheet_topicShortDescription">Configuration du niveau Catégorie de services</label>
+			<label index="pi_flexform.sheet_serviceShortDescription">Configuration du niveau Service</label>
+			<label index="pi_flexform.sheet_versionDescription">Configuration avancée des versions de services à utiliser. Attention : un paramétrage erroné conduira probablement à une liste vide de services.</label>
+			<label index="pi_flexform.sheet_versionShortDescription">Configuration des versions de services</label>
+			<label index="pi_flexform.sheet_saveToContinue">Les changements apportés à ce formulaire ont des répercutions sur les autres onglets. Veuillez enregistrer vos changements avant de continuer à configurer ce module.</label>
+
+			<label index="pi_flexform.displayLevels">Niveaux autorisés pour l'affichage</label>
+			<label index="pi_flexform.displayLevels.AUDIENCE">Public cible</label>
+			<label index="pi_flexform.displayLevels.VIEW">&#160;&#160;Vue</label>
+			<label index="pi_flexform.displayLevels.DOMAIN">&#160;&#160;&#160;&#160;Domaine</label>
+			<label index="pi_flexform.displayLevels.TOPIC">&#160;&#160;&#160;&#160;&#160;&#160;Catégorie de services</label>
+			<label index="pi_flexform.displayLevels.SERVICE">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Service</label>
+			<label index="pi_flexform.displayMode">Mode d'affichage</label>
+			<label index="pi_flexform.displayMode.codeFromTS">Défini en TypoScript / Automatique</label>
+			<label index="pi_flexform.displayMode.LIST">Vue liste (LIST)</label>
+			<label index="pi_flexform.displayMode.SINGLE">Vue fiche détaillée (SINGLE)</label>
+			<label index="pi_flexform.audiences">Publics cibles à afficher (LIST) / Publics cibles autoriés (SINGLE)</label>
+			<label index="pi_flexform.views">Vues à afficher (LIST) / Vues autorisées (SINGLE)</label>
+			<label index="pi_flexform.domains">Domaines à afficher (LIST) / Domaines autorisés (SINGLE)</label>
+			<label index="pi_flexform.topics">Catégories de services à afficher (LIST) / Catégories de services autorisées (SINGLE)</label>
+			<label index="pi_flexform.services">Services à afficher (LIST) / Service autorisés (SINGLE)</label>
+			<label index="pi_flexform.tsconfig">Typoscript pour cet élément de contenu (plugin.egovapi_pi1.[votre TS])</label>
+			<label index="pi_flexform.displayBlocks">Blocs à afficher</label>
+			<label index="pi_flexform.displayBlocks.APPROVAL">12. Approbation</label>
+			<label index="pi_flexform.displayBlocks.BACK_TO_LIST">Retour à la liste</label>
+			<label index="pi_flexform.displayBlocks.CONTACT">13. Adresse de(s) office(s) compétent(s)</label>
+			<label index="pi_flexform.displayBlocks.DESCRIPTOR">5. Descripteurs</label>
+			<label index="pi_flexform.displayBlocks.DOCUMENTS_OTHER">10. Autre(s) document(s)</label>
+			<label index="pi_flexform.displayBlocks.DOCUMENTS_REQUIRED">6. Document(s) à fournir</label>
+			<label index="pi_flexform.displayBlocks.FEE">8. Coût(s) de la prestation</label>
+			<label index="pi_flexform.displayBlocks.FORMS">5. Formulaire(s)</label>
+			<label index="pi_flexform.displayBlocks.GENERAL_INFORMATION">2. Informations générales</label>
+			<label index="pi_flexform.displayBlocks.LEGAL_REGULATION">9. Références juridiques</label>
+			<label index="pi_flexform.displayBlocks.LEVEL_INFORMATION">1. Information sur le niveau courant</label>
+			<label index="pi_flexform.displayBlocks.NEWS">3. Actualités</label>
+			<label index="pi_flexform.displayBlocks.PREREQUISITES">3. Conditions préalables</label>
+			<label index="pi_flexform.displayBlocks.PROCEDURE">4. Démarche</label>
+			<label index="pi_flexform.displayBlocks.REMARKS">11. Remarques</label>
+			<label index="pi_flexform.displayBlocks.SERVICE_PROVIDED">7. Prestation fournie</label>
+			<label index="pi_flexform.displayBlocks.SUBDOMAINS">4. Sous-pages</label>
+			<label index="pi_flexform.displayBlocks.SUBTOPICS">4. Sous-pages</label>
+			<label index="pi_flexform.displayBlocks.SYNONYM">6. Synonymes</label>
+			<label index="pi_flexform.templates.audienceLIST">Utiliser un gabarit particulier pour la liste des publics cibles</label>
+			<label index="pi_flexform.templates.audienceSINGLE">Utiliser un gabarit particulier pour les détails d'un public cible</label>
+			<label index="pi_flexform.templates.viewLIST">Utiliser un gabarit particulier pour la liste des vues</label>
+			<label index="pi_flexform.templates.viewSINGLE">Utiliser un gabarit particulier pour les détails d'une vue</label>
+			<label index="pi_flexform.templates.domainLIST">Utiliser un gabarit particulier pour la liste des domaines</label>
+			<label index="pi_flexform.templates.domainSINGLE">Utiliser un gabarit particulier pour les détails d'un domaine</label>
+			<label index="pi_flexform.templates.topicLIST">Utiliser un gabarit particulier pour la liste des catégories de services</label>
+			<label index="pi_flexform.templates.topicSINGLE">Utiliser un gabarit particulier pour les détails d'une catégorie de services</label>
+			<label index="pi_flexform.templates.serviceLIST">Utiliser un gabarit particulier pour la liste des services</label>
+			<label index="pi_flexform.templates.serviceSINGLE">Utiliser un gabarit particulier pour les détails d'un service</label>
+			<label index="pi_flexform.versions.mapping">Utilisation de versions spécifiques</label>
+			<label index="pi_flexform.versions.serviceId">ID du service</label>
+			<label index="pi_flexform.versions.version">Version par défaut</label>
+			<label index="pi_flexform.versions.useVersion">Version à utiliser</label>
+			<label index="pi_flexform.versions.description">Description</label>
+			<label index="pi_flexform.targets.list.audience">Page cible pour la liste des publics cibles</label>
+			<label index="pi_flexform.targets.list.view">Page cible pour la liste des vues</label>
+			<label index="pi_flexform.targets.list.domain">Page cible pour la liste des domaines</label>
+			<label index="pi_flexform.targets.list.topic">Page cible pour la liste des catégories de services</label>
+			<label index="pi_flexform.targets.list.service">Page cible pour la liste des services</label>
+			<label index="pi_flexform.targets.single.audience">Page cible pour les détails d'un public cible</label>
+			<label index="pi_flexform.targets.single.view">Page cible pour les détails d'une vue</label>
+			<label index="pi_flexform.targets.single.domain">Page cible pour les détails d'un domaine</label>
+			<label index="pi_flexform.targets.single.topic">Page cible pour les détails d'une catégorie de services</label>
+			<label index="pi_flexform.targets.single.service">Page cible pour les détails d'un service</label>
+
+			<label index="header_community">Canton</label>
+			<label index="header_organization">Commune</label>
+			<label index="header_audiences">Publics cibles</label>
+			<label index="header_audience">Public cible</label>
+			<label index="header_views">Vues</label>
+			<label index="header_view">Vue</label>
+			<label index="header_domains">Domaines</label>
+			<label index="header_domain">Domaine</label>
+			<label index="header_topics">Catégories de services</label>
+			<label index="header_topic">Catégorie de services</label>
+			<label index="header_services">Services</label>
+			<label index="header_service">Service</label>
+
+			<label index="common_action">Type d'action</label>
+			<label index="common_author">Auteur</label>
+			<label index="common_creation_date">Date de création</label>
+			<label index="common_customer">Destinataire</label>
+			<label index="common_last_modification_date">Dernière modification</label>
+			<label index="common_provider">Prestataire</label>
+			<label index="common_release">Parution</label>
+			<label index="common_remarks">Remarques</label>
+			<label index="common_service_type">Type de prestation administrative</label>
+			<label index="common_status">Statut</label>
+			<label index="common_version_id">Version</label>
+			<label index="common_version_name">Communauté</label>
+			<label index="common_service_id">Service ID</label>
+			<label index="common_language">Langue</label>
+			<label index="common_ok">OK</label>
+			<label index="common_phone">Tél. :</label>
+			<label index="common_fax">Fax :</label>
+
+			<label index="action_back_to_list">Retour à la liste</label>
+			<label index="action_toggle_marks">Sélectionner tout/rien</label>
+			<label index="action_download_vcard">Télécharger comme vCard</label>
+
+			<label index="block_approval">Approbation</label>
+			<label index="block_categories">Catégories</label>
+			<label index="block_contact">Adresse de(s) office(s) compétent(s)</label>
+			<label index="block_descriptors">Descripteurs</label>
+			<label index="block_documents_other">Autre(s) document(s)</label>
+			<label index="block_documents_required">Document(s) à fournir</label>
+			<label index="block_fee">Coût(s) de la prestation</label>
+			<label index="block_forms">Formulaire(s)</label>
+			<label index="block_general_information">Informations générales</label>
+			<label index="block_legal_regulation">Références juridiques</label>
+			<label index="block_news">Actualités</label>
+			<label index="block_prerequisites">Conditions préalables</label>
+			<label index="block_procedure">Démarche</label>
+			<label index="block_remarks">Remarques</label>
+			<label index="block_service_provided">Prestation fournie</label>
+			<label index="block_services">Prestations administratives</label>
+			<label index="block_subdomains">Sous-pages</label>
+			<label index="block_subtopics">Sous-pages</label>
+			<label index="block_synonyms">Synonymes</label>
+		</languageKey>
+	</data>
+</T3locallang>
