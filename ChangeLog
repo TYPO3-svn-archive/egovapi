@@ -1,5 +1,6 @@
 2011-08-29  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Use an official version number
 	* [TASK] Use EXT:xliff instead of manually crafted class.ext_update.php
 
 2011-08-26  Xavier Perseguers  <xavier@causal.ch>
