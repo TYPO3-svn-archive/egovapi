@@ -12,7 +12,7 @@
 			<label index="constants.subcategories.api">API</label>
 			<label index="constants.subcategories.service">Service</label>
 
-			<label index="constants.eCHlanguageID">DLangue des données du web service: de = Deutsch, en = English, fr = Français, it = Italiano, rm = Rumantsch</label>
+			<label index="constants.eCHlanguageID">Langue des données du web service: de = Deutsch, en = English, fr = Français, it = Italiano, rm = Rumantsch</label>
 			<label index="constants.eCHcommunityID">Communauté</label>
 			<label index="constants.organizationID">ID organisation : Identifiant de l'organisation (p. ex. 99001=Confédération, 00619=Oberdiessbach, 02196=Fribourg)</label>
 			<label index="constants.useFluid">Utiliser Fluid comme moteur de rendu</label>
