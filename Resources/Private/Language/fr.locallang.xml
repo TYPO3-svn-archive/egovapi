@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<T3locallang>
+<T3locallangExt>
 	<meta type="array">
 		<type>module</type>
 		<description>Language labels for plugin &quot;tx_egovapi_pi1&quot;</description>
@@ -146,4 +146,4 @@
 			<label index="block_synonyms">Synonymes</label>
 		</languageKey>
 	</data>
-</T3locallang>
+</T3locallangExt>
