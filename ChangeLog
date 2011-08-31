@@ -1,3 +1,7 @@
+2011-08-31  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] Invalid ll-XML reference for plugin wizards when using TYPO3 4.6
+
 2011-08-29  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Use an official version number
