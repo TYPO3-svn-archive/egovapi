@@ -72,6 +72,9 @@ class tx_egovapi_dao_webService {
 	 */
 	protected $debug;
 
+	/** @var SoapFault */
+	protected $lastSoapFault;
+
 	/**
 	 * Default constructor.
 	 *
@@ -116,6 +119,15 @@ class tx_egovapi_dao_webService {
         } catch (Exception $e) {
         	die('Could not initialize SOAP.');
         }
+	}
+
+	/**
+	 * Returns the last SOAP fault.
+	 *
+	 * @return SoapFault
+	 */
+	public function getLastSoapFault() {
+		return $this->lastSoapFault;
 	}
 
 	/**
@@ -195,6 +207,12 @@ class tx_egovapi_dao_webService {
 			// Sort audiences by (localized) name
 		$this->sort($audiences, 'name');
 
+		$this->callHooks(
+			'audiences',
+			array(),
+			$audiences
+		);
+
 		return $audiences;
 	}
 
@@ -237,6 +255,14 @@ class tx_egovapi_dao_webService {
 			// Sort views by (localized) name
 		$this->sort($views, 'name');
 
+		$this->callHooks(
+			'views',
+			array(
+				'audienceId' => $audienceId,
+			),
+			$views
+		);
+
 		return $views;
 	}
 
@@ -266,6 +292,14 @@ class tx_egovapi_dao_webService {
 
 			// Sort topics by (localized) name
 		$this->sort($domains, 'name');
+
+		$this->callHooks(
+			'domains',
+			array(
+				'viewId' => $viewId,
+			),
+			$domains
+		);
 
 		return $domains;
 	}
@@ -350,6 +384,16 @@ class tx_egovapi_dao_webService {
 			}
 		}
 
+		$this->callHooks(
+			'domainDetails',
+			array(
+				'domainId' => $domainId,
+				'versionId' => $versionId,
+				'isParent' => $isParent,
+			),
+			$details
+		);
+
 		return $details;
 	}
 
@@ -379,6 +423,14 @@ class tx_egovapi_dao_webService {
 
 			// Sort topics by (localized) name
 		$this->sort($topics, 'name');
+
+		$this->callHooks(
+			'topics',
+			array(
+				'domainId' => $domainId,
+			),
+			$topics
+		);
 
 		return $topics;
 	}
@@ -463,6 +515,16 @@ class tx_egovapi_dao_webService {
 			}
 		}
 
+		$this->callHooks(
+			'topicDetails',
+			array(
+				'topicId' => $topicId,
+				'versionId' => $versionId,
+				'isParent' => $isParent,
+			),
+			$details
+		);
+
 		return $details;
 	}
 
@@ -491,6 +553,14 @@ class tx_egovapi_dao_webService {
 
 			// Sort services by (localized) name
 		$this->sort($services, 'name');
+
+		$this->callHooks(
+			'services',
+			array(
+				'topicId' => $topicId,
+			),
+			$services
+		);
 
 		return $services;
 	}
@@ -628,6 +698,15 @@ class tx_egovapi_dao_webService {
 			}
 		}
 
+		$this->callHooks(
+			'serviceDetails',
+			array(
+				'serviceId' => $serviceId,
+				'version' => $versionId,
+			),
+			$details
+		);
+
 		return $details;
 	}
 
@@ -663,6 +742,14 @@ class tx_egovapi_dao_webService {
 				}
 			}
 		}
+
+		$this->callHooks(
+			'versions',
+			array(
+				'serviceId' => $serviceId,
+			),
+			$versions
+		);
 
 		return $versions;
 	}
@@ -746,6 +833,16 @@ class tx_egovapi_dao_webService {
 
 			// Restore settings
 		$this->settings = $backupSettings;
+
+		$this->callHooks(
+			'latestChanges',
+			array(
+				'communityId' => $communityId,
+				'since' => $since,
+				'language' => $language,
+			),
+			$changes
+		);
 
 		return $changes;
 	}
@@ -831,12 +928,14 @@ class tx_egovapi_dao_webService {
 		}
 
 		try {
+			$this->lastSoapFault = NULL;
 			$ret = $this->soap->call($method, array('parameters' => $parameters));
 
 			if ($this->debug) {
 				t3lib_div::devLog('Result "' . $method . '"', 'egovapi', self::DEVLOG_OK, $ret);
 			}
 		} catch (SoapFault $e) {
+			$this->lastSoapFault = $e;
 			if ($this->debug) {
 				t3lib_div::devLog('Error while invoking web service: ' . $e->getMessage(), 'egovapi', self::DEVLOG_FATAL);
 			}
@@ -845,6 +944,32 @@ class tx_egovapi_dao_webService {
 
 		return $ret;
 	}
+
+	/**
+	 * Calls the registered hooks.
+	 *
+	 * @param string $method
+	 * @param array $parameters
+	 * @param array $data
+	 * @return void
+	 * @throws UnexpectedValueException
+	 */
+	protected function callHooks($method, array $parameters, array $data) {
+		if (is_array($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['webServiceHook'])) {
+			$pObj = NULL;
+			foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['webServiceHook'] as $classRef) {
+				/** @var tx_egovapi_interfaces_webServiceHook $hookObject */
+				$hookObject = t3lib_div::getUserObj($classRef);
+
+				if (!($hookObject instanceof tx_egovapi_interfaces_webServiceHook)) {
+					throw new UnexpectedValueException('$hookObject must implement interface tx_egovapi_interfaces_webServiceHook', 1296950396);
+				}
+
+				$hookObject->afterSoapPreprocessing($method, $parameters, $data, NULL);
+			}
+		}
+	}
+
 }
 
 

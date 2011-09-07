@@ -1,3 +1,7 @@
+2011-09-07  Xavier Perseguers  <xavier@causal.ch>
+
+	* [FEATURE] Add hooks after SOAP pre-processing
+
 2011-08-31  Xavier Perseguers  <xavier@causal.ch>
 
 	* [BUGFIX] Invalid ll-XML reference for plugin wizards when using TYPO3 4.6
