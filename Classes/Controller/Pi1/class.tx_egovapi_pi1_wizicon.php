@@ -65,15 +65,11 @@ class tx_egovapi_pi1_wizicon {
 				: t3lib_div::int_from_ver(TYPO3_version);
 		if ($version < 4006000) {
 			$llFile = t3lib_extMgm::extPath('egovapi') . 'Resources/Private/Language/locallang.xml';
-			$LOCAL_LANG = t3lib_div::readLLXMLfile($llFile, $GLOBALS['LANG']->lang);
 		} else {
 			$llFile = t3lib_extMgm::extPath('egovapi') . 'Resources/Private/Language/locallang.xlf';
-			/** @var $xliffParser t3lib_l10n_parser_xliff */
-			$xliffParser = t3lib_div::makeInstance('t3lib_l10n_parser_xliff');
-			$LOCAL_LANG = $xliffParser->getParsedData($llFile, $GLOBALS['LANG']->lang);
 		}
 
-		return $LOCAL_LANG;
+		return $GLOBALS['LANG']->includeLLFile($llFile, FALSE);
 	}
 }
 

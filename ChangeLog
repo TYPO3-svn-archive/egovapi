@@ -1,3 +1,7 @@
+2011-09-08  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] New CE wizards are not compatible with language dependencies when using TYPO3 4.6
+
 2011-09-07  Xavier Perseguers  <xavier@causal.ch>
 
 	* [FEATURE] Add hooks after SOAP pre-processing
