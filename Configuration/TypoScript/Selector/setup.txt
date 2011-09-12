@@ -1,9 +1,11 @@
 	# Include jQuery library
 page.includeJSlibs {
-	jquery = http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js
-	jquery.external = 1
-	jquery.disableCompression = 1
+	jQueryEgovApi = http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js
+	jQueryEgovApi.external = 1
+	jQueryEgovApi.disableCompression = 1
+}
 
+page.includeJSFooterlibs {
 	egovapi_selector = EXT:egovapi/Resources/Public/JavaScript/selector.js
 }
 
