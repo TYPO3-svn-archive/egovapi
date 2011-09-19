@@ -5,6 +5,7 @@ $extensionPath = t3lib_extMgm::extPath('egovapi');
 $classPath = $extensionPath . 'Classes/';
 
 return array(
+	'tx_egovapi_cache_frontend_variablefrontend' => $classPath . 'Cache/Frontend/VariableFrontend.php',
 	'tx_egovapi_dao_dao' => $classPath . 'Dao/Dao.php',
 	'tx_egovapi_dao_webservice' => $classPath . 'Dao/WebService.php',
 	'tx_egovapi_domain_model_abstractentity' => $classPath . 'Domain/Model/AbstractEntity.php',
