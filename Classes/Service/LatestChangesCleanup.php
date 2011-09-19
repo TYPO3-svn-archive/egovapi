@@ -73,7 +73,11 @@ class tx_egovapi_service_latestChangesCleanup {
 	 * @return boolean TRUE if cleanup succeeded, otherwise FALSE
 	 */
 	public function cleanup() {
-		if (!TYPO3_UseCachingFramework) {
+		// @deprecated: Can be removed when TYPO3 4.5 is not supported anymore
+		$version = class_exists('t3lib_utility_VersionNumber')
+				? t3lib_utility_VersionNumber::convertVersionNumberToInteger(TYPO3_version)
+				: t3lib_div::int_from_ver(TYPO3_version);
+		if ($version < 4006000 && !TYPO3_UseCachingFramework) {
 			return TRUE;
 		}
 
@@ -82,7 +86,6 @@ class tx_egovapi_service_latestChangesCleanup {
 
 		/** @var tx_egovapi_domain_repository_communityRepository $communityRepository */
 		$communityRepository = tx_egovapi_domain_repository_factory::getRepository('community');
-		/** @var tx_egovapi_domain_model_community[] $communities */
 
 		if ($this->task->allCommunities) {
 			$communities = $communityRepository->findAll();
