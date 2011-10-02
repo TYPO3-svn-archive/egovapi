@@ -8,4 +8,4 @@ cacheLifetime=604800
 enableSelectorPlugins=0
 
 	# cat=advanced/api; type:string; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdl.global
-wsdl=http://ref.cyberadmin.ch/WS20/ServiceContract/WS.wsdl
+wsdl=
