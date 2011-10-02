@@ -1,3 +1,7 @@
+2011-10-02  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Set default WSDL version to 1.0
+
 2011-09-19  Xavier Perseguers  <xavier@causal.ch>
 
 	* [BUGFIX] #30007: Caching is much less efficient in TYPO3 4.6

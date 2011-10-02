@@ -1,5 +1,5 @@
 # customsubcategory=api=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.subcategories.api; cat=basic/api; type=options[LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdlVersion.oneZero=1.0,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdlVersion.twoZero=2.0]; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdlVersion
-wsdlVersion=2.0
+wsdlVersion=1.0
 
 	# cat=basic/api; type=options[LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime.one_minute=60,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime.five_minutes=300,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime.one_hour=3600,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime.one_day=86400,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime.one_week=604800,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime.unlimited=0]; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.cacheLifetime
 cacheLifetime=604800
@@ -8,4 +8,4 @@ cacheLifetime=604800
 enableSelectorPlugins=0
 
 	# cat=advanced/api; type:string; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdl.global
-wsdl=http://ref.cyberadmin.ch/WS20/ServiceContract/WS.wsdl
+wsdl=
