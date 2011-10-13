@@ -1,3 +1,7 @@
+2011-10-13  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK][DOC] Fix paragraph styles for better HTML rendering on typo3.org
+
 2011-10-12  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Raise version to 1.4.0
