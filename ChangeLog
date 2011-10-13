@@ -1,5 +1,6 @@
 2011-10-13  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK][DOC] Enhance tables with simplified syntax (thanks to Martin Bless)
 	* [TASK][DOC] Add markers and subparts
 	* [TASK][DOC] Add Domain Model
 	* [TASK][DOC] Add chapter Administration
