@@ -201,8 +201,56 @@ plugin.tx_egovapi_pi2
 Tutorial
 ========
 
+This tutorial is best suited for day-to-day webmasters or editors having to integrate the eGov API
+within their website. It assumes an administrator already properly installed this extension (see
+chapter `Administration`_). It is targeted at users and as such section “`Plugin options`_” of
+chapter `User manual`_) is part of the basic know-how the webmaster or editor should have to be
+able to use this extension.
+
 Use case
 --------
+
+Description
+```````````
+
+You would like to show the list of service domains available for the audience “Personne privée”
+(100) in some part of your website.
+
+Step-by-step explanation
+````````````````````````
+
+1. Open Web > Page module and navigate within your website to the page where you would like to
+   add the eGov API plugin.
+2. Click on icon |new_ce| to add a content element to your page
+3. Move to section “Plugins” and select the eGov API plugin:
+
+.. |new_ce| image:: images/tutorial/new_ce.png
+.. image:: images/tutorial/ce_wizard.png
+
+After having given a header to your content element as a best practice (possibly set its rendering
+Type to hidden), you should configure the eGov API plugin:
+
+.. image:: images/tutorial/edit_ce.png
+
+1. Move to the “Plugin” tab to access plugin's configuration options
+2. Select “General” option tab
+3. Authorize level “Domain” to be shown. As this is the only selected level, it will be used as
+   entry point for the plugin and will not allow navigation to other levels. If you need this, you
+   may either add other authorized levels after the entry point level or configure redirect pages
+   containing plugins for the other levels on “Other Settings” option tab.
+
+Last step is to configure the plugin in order to only show the audience “Personne privée”:
+
+.. image:: images/tutorial/audience_personne_privee.png
+
+1. Select “Audience” option tab
+2. Select audience “Personne privée”.
+
+That's it! If you show your page, you should have a list of domains related to the audience
+“Personne privée”:
+
+.. image:: images/tutorial/result.png
+
 
 
 
@@ -210,14 +258,54 @@ Use case
 Developer manual
 ================
 
+This chapter is really targeted at extension developers. Most TYPO3 integrators should never have
+the need to go that deep in order for them to configure the eGov API extension to fit their
+integration needs. If however you encounter some limitation you cannot solve using TypoScript
+configuration, you may want to read the following sections to learn how to take more control.
+
 Hooks
 -----
+
+Some hooks have been integrated into the eGov API extension. They are primarily targeted at letting
+you post-process the subparts and markers prior to the actual rendering process, when using
+marker-based templates or to post-process the AJAX returned data. Hooks have not been used for
+Fluid-based templates as you may achieve the same goal with TypoScript configuration or use of
+ViewHelpers.
+
+Following hooks are available:
+
+- Final post-processing:
+    ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['renderHook']``
+- Post-processing of audience subparts and markers:
+    ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['prepareAudienceHook']``
+- Post-processing of view subparts and markers:
+    ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['prepareViewHook']``
+- Post-processing of domain subparts and markers:
+    ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['prepareDomainHook']``
+- Post-processing of topic subparts and markers:
+    ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['prepareTopicHook']``
+- Post-processing of service subparts and markers:
+    ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['prepareServiceHook']``
+- Post-processing of AJAX returned data:
+    ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['ajaxHook']``
 
 API documentation
 -----------------
 
+The latest API documentation may be manually generated using doxygen configuration file
+``doc/doxygen.conf``.
+
+Alternatively, you may access it from http://api.causal.ch/egovapi/.
+
 eGov web service
 ----------------
+
+The eGov web service is documented by the corresponding WSDL.
+
+When accessing this WSDL endpoint, XML schemas are defined as namespaces. The underlying XSD files
+may be retrieved by prefixing the namespace by http://ref.cyberadmin.ch/WS20/ServiceContract/.
+E.g., the schema of "dataCommonBlocks" may be accessed with
+http://ref.cyberadmin.ch/WS20/Service/Contract/MessageContract/DataContract/CommonBlocks.xsd.
 
 
 
@@ -226,12 +314,18 @@ eGov web service
 Known problems
 ==============
 
+Please use the extension's bug tracker on Forge to report bugs:
+http://forge.typo3.org/projects/extension-egovapi/issues.
+
 
 
 
 
 To-Do list
 ==========
+
+Please use the extension's bug tracker on Forge to propose new features:
+http://forge.typo3.org/projects/extension-egovapi/issues.
 
 
 
