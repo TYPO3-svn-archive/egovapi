@@ -1,5 +1,6 @@
 2011-10-13  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK][DOC] Initiate conversion to reStructuredText
 	* [TASK][DOC] Fix paragraph styles for better HTML rendering on typo3.org
 
 2011-10-02  Xavier Perseguers  <xavier@causal.ch>
