@@ -1,5 +1,8 @@
 2011-10-13  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK][DOC] Add Domain Model
+	* [TASK][DOC] Add chapter Administration
+	* [TASK][DOC] Add chapter Tutorial, Developer manual, Known problems and To-Do list
 	* [TASK][DOC] Initiate conversion to reStructuredText
 	* [TASK][DOC] Fix paragraph styles for better HTML rendering on typo3.org
 
