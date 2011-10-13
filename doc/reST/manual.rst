@@ -1,5 +1,4 @@
 .. sectnum::
-.. Ã„Ã–ÃœÃ¤Ã¶Ã¼ÃŸ
 .. coding: utf-8 without BOM
 .. _Show files in current folder: .
 
@@ -235,11 +234,163 @@ have to do so as it will severely impact the web service performances.
 
 Please refer to the TYPO3 documentation for further configuration options.
 
+Configure advanced data caching
+```````````````````````````````
+
+Since web service version 2, the eGov API extension can take advantage of an operation returning
+recently updated services. This lets you configuring an unlimited cache lifetime (see chapter
+`Configuration`_) and invalidate cache entry as they are updated. This is done by regularly running
+(e.g., every 1-2 days) scheduler task “Latest changes in eGov API” for all communities you are
+retrieving data for.
+
+Configure RealURL
+`````````````````
+
+If you are using RealURL, the good news is that the eGov API extension comes with a configuration
+for RealURL.
+
+If your configuration is automatically generated (you have a ``typo3conf/realurl_autoconf.php``
+file), delete it. It will be recreated by RealURL the next time you render your page and will
+integrate our postVarSets configuration.
+
+If you manually tweaked the configuration (you have a ``typo3conf/realurl_conf.php`` file), here is
+the configuration we suggest:
+
+::
+
+	'postVarSets' => array(
+		'_DEFAULT' => array(
+			'audience' => array(
+				array(
+					'GETvar' => 'tx_egovapi_pi1[audience]',
+				),
+			),
+			'view' => array(
+				array(
+					'GETvar' => 'tx_egovapi_pi1[view]',
+				),
+			),
+			'domain' => array(
+				array(
+					'GETvar' => 'tx_egovapi_pi1[domain]',
+				),
+			),
+			'topic' => array(
+				array(
+					'GETvar' => 'tx_egovapi_pi1[topic]',
+				),
+			),
+			'service' => array(
+				array(
+					'GETvar' => 'tx_egovapi_pi1[service]',
+				),
+			),
+			'action' => array(
+				array(
+					'GETvar' => 'tx_egovapi_pi1[action]',
+				)
+			),
+			'mode' => array(
+				array(
+					'GETvar' => 'tx_egovapi_pi1[mode]',
+				)
+			),
+		),
+	),
+
 TypoScript configuration
 ------------------------
 
+In order for this extension to be usable, make sure to include at least the static template
+“settings” from the eGov API extension. To do that, click on Web > Template in the left frame and
+then select the root page of the website. You template will show up. Then click on link “Edit the
+whole template record”, open tab “Includes” and add static template from extension egovapi.
+
+You are presented with two items in the list of available items. One is “eGov API settings
+(egovapi)”, the other is “eGov API CSS-styles (egovapi)”. You should at least add the settings. The
+CSS styles may serve as example for styling the extension's output and should even be omitted if
+you want to use your own CSS.
+
+.. image:: images/administration/info_modify.png
+
+.. image:: images/administration/include_ts.png
+
+Save changes to your templates and close this form. Then open the Constant Editor from the drop-down
+menu and update global configuration to fit your needs:
+
+.. image:: images/administration/constant_editor.png
+
+There are many other options such as the language of the web service which should typically be
+related to the value of config.language in your setup.
+
+If you are running a recent version of TYPO3 (≥ 4.5.0), you definitively should use Fluid as
+rendering engine. This requires system extension fluid to be loaded. Using Fluid will highly ease
+the way you prepare your templates and will let you have full control over the way web service data
+are rendered.
+
 Selector Form Plugin
 --------------------
+
+If you activated the selector form plugin within the Extension Manager, you will see an additional
+plugin available in the new content element wizard:
+
+.. image:: images/administration/selector_form_plugin.png
+
+The selector form plugin requires a dedicated static TypoScript, the “eGov API selector settings”
+and possibly the default CSS styles, as for the main plugin. Make sure to properly configure
+constant plugin.tx_egovapi.targets.single.service with the UID of the page containing the main
+plugin.
+
+The plugin is shipped with a standard jQuery-based javascript using AJAX queries to refresh the
+form. A custom demo version has been integrated on
+http://fr.causal.ch/realisations/api-e-government/demo/.
+
+**Beware:** The main plugin should use settings “eGov API selector settings” too and not the
+default ones.
+
+Generating legacy parametrized URL
+``````````````````````````````````
+
+You may want to use the selector form plugin to generate parametrized URL compatible with the
+legacy service handler on www.cyberadmin.ch. Below is a configuration example for generating such
+URLs.
+
+::
+
+	plugin.tx_egovapi_pi2.parametrizedUrl = TEXT
+	plugin.tx_egovapi_pi2.parametrizedUrl {
+		typolink {
+			parameter = http://www.cyberadmin.ch/eGovApi/
+			parameter.wrap.cObject = COA
+			parameter.wrap.cObject {
+				1 = TEXT
+				1.value = |
+				
+				10 = TEXT
+				10.data = GP:language
+				10.wrap = ?eCHlanguageID=|
+				10.case = upper
+				20 = TEXT
+				20.data = GP:organization
+				20.wrap = &eCHmunicipalityID=|
+				30 = TEXT
+				30.field = id
+				30.wrap = &eCHserviceID=|
+				40 = TEXT
+				40.field = versionId
+				40.wrap = &eCHserviceVersionID=|
+				50 = TEXT
+				50.data = GP:blocks
+				50.wrap = &eCHserviceBlock=|
+				60 = TEXT
+				60.value = htmlpagecss
+				60.wrap = &eCHapiFormat=|
+				70 = TEXT
+				70.value = utf-8
+				70.wrap = &eCHapiEncode=|
+			}
+		}
+	}
 
 
 
