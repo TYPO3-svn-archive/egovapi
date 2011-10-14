@@ -1,3 +1,7 @@
+2011-10-14  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK][DOC] Fix reST documentation for better PDF output
+
 2011-10-13  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK][DOC] Enhance tables with simplified syntax (thanks to Martin Bless)

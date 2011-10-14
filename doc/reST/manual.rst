@@ -50,6 +50,7 @@ Screenshots
 -----------
 
 .. image:: images/screenshots/overview.jpg
+	:align: center
 
 
 
@@ -70,6 +71,7 @@ General
 ```````
 
 .. image:: images/user_manual/general.png
+	:align: center
 
 The rules are as follows:
 
@@ -91,11 +93,13 @@ Before actually describing the options of the level configuration tabs, it may h
 overview of the level hierarchy within the eGov web service:
 
 .. image:: images/user_manual/hierarchy.png
+	:align: center
 
 Audience
 ````````
 
 .. image:: images/user_manual/audience.png
+	:align: center
 
 By selecting items, you trim down the list of items being shown by the plugin and this additionally
 lets you manually order them.
@@ -111,11 +115,14 @@ View
 ````
 
 .. image:: images/user_manual/view.png
+	:align: center
 
 Domain
 ``````
 
 .. image:: images/user_manual/domain.png
+	:align: center
+
 
 **Blocks to show:** This section is used when showing the details of a single domain. It allows us
 to trim down the amount of information or to split them among multiple copies of the plugin on a
@@ -125,16 +132,19 @@ Topic
 `````
 
 .. image:: images/user_manual/topic.png
+	:align: center
 
 Service
 ```````
 
 .. image:: images/user_manual/service.png
+	:align: center
 
 Version
 ```````
 
 .. image:: images/user_manual/version.png
+	:align: center
 
 Domain Model
 ------------
@@ -361,7 +371,11 @@ Service (``tx_egovapi_domain_model_block_contact``)
 Available markers and subparts
 ------------------------------
 
-When using marker-based templates, domain model attributes are available as ``###{ENTITY}_{ATTRIBUTE}###``. The full list of available markers is as follows:
+When using marker-based templates, domain model attributes are available as
+
+``###{ENTITY}_{ATTRIBUTE}###``
+
+The full list of available markers is as follows:
 
 Audience
 ````````
@@ -583,16 +597,16 @@ before installing the eGov API extension. The minimum required version of this s
 1.3.0 meaning it requires TYPO3 4.5 or above as Fluid template within the eGov API extension are
 using the FLUIDTEMPLATE content object which was introduced with TYPO3 4.5.
 
-If you use TYPO3 4.5 or below, you have to create the two proposed caching tables
-(``tx_egovapi_cache`` and ``tx_egovapi_cache_tags``). These tables (not needed anymore with
-TYPO3 4.6 and above) are being used by the TYPO3 caching framework if you choose to use a database
-backend (see below).
+If you use TYPO3 4.5 or below, you have to create the two proposed caching tables. These tables
+(not needed anymore with TYPO3 4.6 and above) are being used by the TYPO3 caching framework if you
+choose to use a database backend (see below).
 
 Since version 1.2.0 a selector plugin has been added, allowing you to show a form aimed at
 dynamically generating parametrized URIs, for non-TYPO3 websites willing to integrate e-government
 web service anyway. It has to be activated in Extension Manager:
 
 .. image:: images/administration/advanced_settings.png
+	:align: center
 
 Configure data caching
 ``````````````````````
@@ -616,7 +630,7 @@ the eGov API extension. A typical configuration to cache data in the database is
 ::
 
 	$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['egovapi'] = array(
-		'frontend' => 't3lib_cache_frontend_VariableFrontend', // Should not be needed for TYPO3 4.5 and above
+		'frontend' => 't3lib_cache_frontend_VariableFrontend',
 		'backend' => 't3lib_cache_backend_DbBackend',
 		'options' => array(
 			'cacheTable' => 'tx_egovapi_cache',
@@ -628,10 +642,6 @@ the eGov API extension. A typical configuration to cache data in the database is
 TYPO3 4.6 and above as the caching framework uses it own table structure (creation of the
 corresponding tables when installing the eGov API extension is thus useless as well). See the
 corresponding task on Forge if you want to learn more.
-
-**Beware:** In TYPO3 4.6 and above, the “clear all cache” will flush the eGov API cache too, as
-expected after all. This is a good reason to make sure you do not clear all cache unless you really
-have to do so as it will severely impact the web service performances.
 
 Please refer to the TYPO3 documentation for further configuration options.
 
@@ -713,13 +723,16 @@ CSS styles may serve as example for styling the extension's output and should ev
 you want to use your own CSS.
 
 .. image:: images/administration/info_modify.png
+	:align: center
 
 .. image:: images/administration/include_ts.png
+	:align: center
 
 Save changes to your templates and close this form. Then open the Constant Editor from the drop-down
 menu and update global configuration to fit your needs:
 
 .. image:: images/administration/constant_editor.png
+	:align: center
 
 There are many other options such as the language of the web service which should typically be
 related to the value of config.language in your setup.
@@ -736,6 +749,7 @@ If you activated the selector form plugin within the Extension Manager, you will
 plugin available in the new content element wizard:
 
 .. image:: images/administration/selector_form_plugin.png
+	:align: center
 
 The selector form plugin requires a dedicated static TypoScript, the “eGov API selector settings”
 and possibly the default CSS styles, as for the main plugin. Make sure to properly configure
@@ -850,11 +864,13 @@ Step-by-step explanation
 
 .. |new_ce| image:: images/tutorial/new_ce.png
 .. image:: images/tutorial/ce_wizard.png
+	:align: center
 
 After having given a header to your content element as a best practice (possibly set its rendering
 Type to hidden), you should configure the eGov API plugin:
 
 .. image:: images/tutorial/edit_ce.png
+	:align: center
 
 1. Move to the “Plugin” tab to access plugin's configuration options
 2. Select “General” option tab
@@ -866,6 +882,7 @@ Type to hidden), you should configure the eGov API plugin:
 Last step is to configure the plugin in order to only show the audience “Personne privée”:
 
 .. image:: images/tutorial/audience_personne_privee.png
+	:align: center
 
 1. Select “Audience” option tab
 2. Select audience “Personne privée”.
@@ -874,6 +891,7 @@ That's it! If you show your page, you should have a list of domains related to t
 “Personne privée”:
 
 .. image:: images/tutorial/result.png
+	:align: center
 
 
 
@@ -899,18 +917,31 @@ ViewHelpers.
 Following hooks are available:
 
 - Final post-processing:
+
     ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['renderHook']``
+
 - Post-processing of audience subparts and markers:
+
     ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['prepareAudienceHook']``
+
 - Post-processing of view subparts and markers:
+
     ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['prepareViewHook']``
+
 - Post-processing of domain subparts and markers:
+
     ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['prepareDomainHook']``
+
 - Post-processing of topic subparts and markers:
+
     ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['prepareTopicHook']``
+
 - Post-processing of service subparts and markers:
+
     ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['prepareServiceHook']``
+
 - Post-processing of AJAX returned data:
+
     ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['ajaxHook']``
 
 API documentation
