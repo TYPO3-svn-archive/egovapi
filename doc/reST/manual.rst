@@ -633,8 +633,8 @@ the eGov API extension. A typical configuration to cache data in the database is
 		'frontend' => 't3lib_cache_frontend_VariableFrontend',
 		'backend' => 't3lib_cache_backend_DbBackend',
 		'options' => array(
-			'cacheTable' => 'tx_egovapi_cache',
-			'tagsTable' => 'tx_egovapi_cache_tags',
+			'cacheTable' => 'cf_egovapi',
+			'tagsTable' => 'cf_egovapi_tags',
 		)
 	);
 

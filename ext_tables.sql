@@ -1,7 +1,7 @@
 #
-# Table structure for table 'tx_egovapi_cache'
+# Table structure for table 'cf_egovapi'
 #
-CREATE TABLE tx_egovapi_cache (
+CREATE TABLE cf_egovapi (
   id int(11) unsigned NOT NULL auto_increment,
   identifier varchar(128) DEFAULT '' NOT NULL,
   crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -13,9 +13,9 @@ CREATE TABLE tx_egovapi_cache (
 
 
 #
-# Table structure for table 'tx_egovapi_cache_tags'
+# Table structure for table 'cf_egovapi_tags'
 #
-CREATE TABLE tx_egovapi_cache_tags (
+CREATE TABLE cf_egovapi_tags (
   id int(11) unsigned NOT NULL auto_increment,
   identifier varchar(128) DEFAULT '' NOT NULL,
   tag varchar(128) DEFAULT '' NOT NULL,

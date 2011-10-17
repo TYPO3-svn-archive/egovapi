@@ -1,3 +1,7 @@
+2011-10-17  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] #31000: Use same CF table name for TYPO3 4.5
+
 2011-10-14  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK][DOC] Fix reST documentation for better PDF output
