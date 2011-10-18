@@ -1,143 +1,109 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-	<file source-language="EN" target-language="en" datatype="plaintext" original="messages" date="Thu, 25 Aug 2011 19:55:32 +0200" product-name="egovapi">
+	<file source-language="en" datatype="plaintext" original="messages" date="2011-10-18T11:41:47Z" product-name="egovapi">
 		<header/>
 		<body>
-			<trans-unit id="tt_content.list_type_pi1" approved="yes">
+			<trans-unit id="tt_content.list_type_pi1">
 				<source>eGov API</source>
-				<target>eGov API</target>
 			</trans-unit>
-			<trans-unit id="tt_content.list_type_pi2" approved="yes">
+			<trans-unit id="tt_content.list_type_pi2">
 				<source>eGov API - Selector Form</source>
-				<target>eGov API - Selector Form</target>
 			</trans-unit>
-			<trans-unit id="constants.subcategories.api" approved="yes">
+			<trans-unit id="constants.subcategories.api">
 				<source>API</source>
-				<target>API</target>
 			</trans-unit>
-			<trans-unit id="constants.subcategories.service" approved="yes">
+			<trans-unit id="constants.subcategories.service">
 				<source>Service</source>
-				<target>Service</target>
 			</trans-unit>
-			<trans-unit id="constants.eCHlanguageID" approved="yes">
+			<trans-unit id="constants.eCHlanguageID">
 				<source>Language of the web service's data: de = Deutsch, en = English, fr = Français, it = Italiano, rm = Rumantsch</source>
-				<target>Language of the web service's data: de = Deutsch, en = English, fr = Français, it = Italiano, rm = Rumantsch</target>
 			</trans-unit>
-			<trans-unit id="constants.eCHcommunityID" approved="yes">
+			<trans-unit id="constants.eCHcommunityID">
 				<source>Community</source>
-				<target>Community</target>
 			</trans-unit>
-			<trans-unit id="constants.organizationID" approved="yes">
+			<trans-unit id="constants.organizationID">
 				<source>Organization ID: Identifier of the organization (e.g., 99001=Swiss Confederation, 00619=Oberdiessbach, 02196=Fribourg)</source>
-				<target>Organization ID: Identifier of the organization (e.g., 99001=Swiss Confederation, 00619=Oberdiessbach, 02196=Fribourg)</target>
 			</trans-unit>
-			<trans-unit id="constants.useFluid" approved="yes">
+			<trans-unit id="constants.useFluid">
 				<source>Use Fluid as rendering engine</source>
-				<target>Use Fluid as rendering engine</target>
 			</trans-unit>
-			<trans-unit id="constants.enableDebug" approved="yes">
+			<trans-unit id="constants.enableDebug">
 				<source>Enable debugging information: Provide additional information with error messages. 3rd party devLog extension may be required for full support</source>
-				<target>Enable debugging information: Provide additional information with error messages. 3rd party devLog extension may be required for full support</target>
 			</trans-unit>
-			<trans-unit id="constants.enableSelectorPlugins" approved="yes">
+			<trans-unit id="constants.enableSelectorPlugins">
 				<source>Enable selector plugins: Provide a selector form plugin and its counterpart to show a service from URL parameters</source>
-				<target>Enable selector plugins: Provide a selector form plugin and its counterpart to show a service from URL parameters</target>
 			</trans-unit>
-			<trans-unit id="constants.wsdl.global" approved="yes">
+			<trans-unit id="constants.wsdl.global">
 				<source>WSDL for the eGov API: URL of the eGov API web service. BEWARE: Leave empty unless you know what you do</source>
-				<target>WSDL for the eGov API: URL of the eGov API web service. BEWARE: Leave empty unless you know what you do</target>
 			</trans-unit>
-			<trans-unit id="constants.wsdlVersion" approved="yes">
+			<trans-unit id="constants.wsdlVersion">
 				<source>Version of the Web Service to use</source>
-				<target>Version of the Web Service to use</target>
 			</trans-unit>
-			<trans-unit id="constants.wsdlVersion.inherit" approved="yes">
+			<trans-unit id="constants.wsdlVersion.inherit">
 				<source>Inherit from global configuration</source>
-				<target>Inherit from global configuration</target>
 			</trans-unit>
-			<trans-unit id="constants.wsdlVersion.oneZero" approved="yes">
+			<trans-unit id="constants.wsdlVersion.oneZero">
 				<source>Version 1.0</source>
-				<target>Version 1.0</target>
 			</trans-unit>
-			<trans-unit id="constants.wsdlVersion.twoZero" approved="yes">
+			<trans-unit id="constants.wsdlVersion.twoZero">
 				<source>Version 2.0</source>
-				<target>Version 2.0</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime" approved="yes">
+			<trans-unit id="constants.cacheLifetime">
 				<source>Lifetime of web service cached data: Make sure to activate caching framework in localconf.php</source>
-				<target>Lifetime of web service cached data: Make sure to activate caching framework in localconf.php</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.one_minute" approved="yes">
+			<trans-unit id="constants.cacheLifetime.one_minute">
 				<source>1 minute</source>
-				<target>1 minute</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.five_minutes" approved="yes">
+			<trans-unit id="constants.cacheLifetime.five_minutes">
 				<source>5 minutes</source>
-				<target>5 minutes</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.one_hour" approved="yes">
+			<trans-unit id="constants.cacheLifetime.one_hour">
 				<source>1 hour</source>
-				<target>1 hour</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.one_day" approved="yes">
+			<trans-unit id="constants.cacheLifetime.one_day">
 				<source>1 day</source>
-				<target>1 day</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.one_week" approved="yes">
+			<trans-unit id="constants.cacheLifetime.one_week">
 				<source>1 week</source>
-				<target>1 week</target>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.unlimited" approved="yes">
+			<trans-unit id="constants.cacheLifetime.unlimited">
 				<source>Unlimited</source>
-				<target>Unlimited</target>
 			</trans-unit>
-			<trans-unit id="constants.data.communities" approved="yes">
+			<trans-unit id="constants.data.communities">
 				<source>Community data file: CSV file containing the list of communities</source>
-				<target>Community data file: CSV file containing the list of communities</target>
 			</trans-unit>
-			<trans-unit id="constants.data.organizations" approved="yes">
+			<trans-unit id="constants.data.organizations">
 				<source>Organization data file: CSV file containing the list of organizations</source>
-				<target>Organization data file: CSV file containing the list of organizations</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.list.audience" approved="yes">
+			<trans-unit id="constants.targets.list.audience">
 				<source>Target page for audiences: ID of the page to use for links showing a list of audiences</source>
-				<target>Target page for audiences: ID of the page to use for links showing a list of audiences</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.list.view" approved="yes">
+			<trans-unit id="constants.targets.list.view">
 				<source>Target page for views: ID of the page to use for links showing a list of views</source>
-				<target>Target page for views: ID of the page to use for links showing a list of views</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.list.domain" approved="yes">
+			<trans-unit id="constants.targets.list.domain">
 				<source>Target page for domains: ID of the page to use for links showing a list of domains</source>
-				<target>Target page for domains: ID of the page to use for links showing a list of domains</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.list.topic" approved="yes">
+			<trans-unit id="constants.targets.list.topic">
 				<source>Target page for topics: ID of the page to use for links showing a list of topics</source>
-				<target>Target page for topics: ID of the page to use for links showing a list of topics</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.list.service" approved="yes">
+			<trans-unit id="constants.targets.list.service">
 				<source>Target page for services: ID of the page to use for links showing a list of services</source>
-				<target>Target page for services: ID of the page to use for links showing a list of services</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.single.audience" approved="yes">
+			<trans-unit id="constants.targets.single.audience">
 				<source>Target page for audience: ID of the page to use for links showing details of an audience</source>
-				<target>Target page for audience: ID of the page to use for links showing details of an audience</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.single.view" approved="yes">
+			<trans-unit id="constants.targets.single.view">
 				<source>Target page for view: ID of the page to use for links showing details of a view</source>
-				<target>Target page for view: ID of the page to use for links showing details of a view</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.single.domain" approved="yes">
+			<trans-unit id="constants.targets.single.domain">
 				<source>Target page for domain: ID of the page to use for links showing details of a domain</source>
-				<target>Target page for domain: ID of the page to use for links showing details of a domain</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.single.topic" approved="yes">
+			<trans-unit id="constants.targets.single.topic">
 				<source>Target page for topic: ID of the page to use for links showing details of a topic</source>
-				<target>Target page for topic: ID of the page to use for links showing details of a topic</target>
 			</trans-unit>
-			<trans-unit id="constants.targets.single.service" approved="yes">
+			<trans-unit id="constants.targets.single.service">
 				<source>Target page for service: ID of the page to use for links showing details of a service</source>
-				<target>Target page for service: ID of the page to use for links showing details of a service</target>
 			</trans-unit>
 		</body>
 	</file>

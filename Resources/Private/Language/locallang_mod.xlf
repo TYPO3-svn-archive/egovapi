@@ -1,27 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-	<file source-language="EN" target-language="en" datatype="plaintext" original="messages" date="Thu, 25 Aug 2011 19:55:50 +0200" product-name="egovapi">
+	<file source-language="en" datatype="plaintext" original="messages" date="2011-10-18T11:41:47Z" product-name="egovapi">
 		<header/>
 		<body>
-			<trans-unit id="latestChangesCleanupTask.name" approved="yes">
+			<trans-unit id="latestChangesCleanupTask.name">
 				<source>Latest changes in eGov API</source>
-				<target>Latest changes in eGov API</target>
 			</trans-unit>
-			<trans-unit id="latestChangesCleanupTask.description" approved="yes">
+			<trans-unit id="latestChangesCleanupTask.description">
 				<source>This task retrieves the list of latest changes to the services and the associated hierarchy structure and clears corresponding deprecated cache entries.</source>
-				<target>This task retrieves the list of latest changes to the services and the associated hierarchy structure and clears corresponding deprecated cache entries.</target>
 			</trans-unit>
-			<trans-unit id="label.latestChangesCleanup.allCommunities" approved="yes">
+			<trans-unit id="label.latestChangesCleanup.allCommunities">
 				<source>Retrieve changes for all communities</source>
-				<target>Retrieve changes for all communities</target>
 			</trans-unit>
-			<trans-unit id="label.latestChangesCleanup.community" approved="yes">
+			<trans-unit id="label.latestChangesCleanup.community">
 				<source>Community to retrieve changes for</source>
-				<target>Community to retrieve changes for</target>
 			</trans-unit>
-			<trans-unit id="msg.invalidCommunity" approved="yes">
+			<trans-unit id="msg.invalidCommunity">
 				<source>Please selected a community.</source>
-				<target>Please selected a community.</target>
 			</trans-unit>
 		</body>
 	</file>
