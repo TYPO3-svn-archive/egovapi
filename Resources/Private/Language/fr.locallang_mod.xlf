@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="EN" target-language="fr" datatype="plaintext" original="messages" date="Thu, 25 Aug 2011 19:55:50 +0200" product-name="egovapi">
+	<file source-language="EN" target-language="fr" datatype="plaintext" original="messages" date="2011-10-18T11:41:47Z" product-name="egovapi" xml:space="preserve">
 		<header/>
 		<body>
 			<trans-unit id="latestChangesCleanupTask.name" approved="yes">

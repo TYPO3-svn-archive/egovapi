@@ -1,3 +1,7 @@
+2011-10-19  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] XLIFF files should contain the flag xml:space="preserve"
+
 2011-10-18  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] #31066: English XLIFF files should not contain target element
