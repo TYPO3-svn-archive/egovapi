@@ -14,9 +14,9 @@
 			</trans-unit>
 			<trans-unit id="displayLevels.details">
 				<source>
-					Please note that if you restrict the display levels of this plugin, you will have to make sure your template either does not provide a link to some non authorized display level or you properly configured the target page of the related links to lend to another page with a plugin allowing the corresponding display level.
+Please note that if you restrict the display levels of this plugin, you will have to make sure your template either does not provide a link to some non authorized display level or you properly configured the target page of the related links to lend to another page with a plugin allowing the corresponding display level.
 
-					Default setting (empty) is to let the plugin freely navigate through all display levels.
+Default setting (empty) is to let the plugin freely navigate through all display levels.
 				</source>
 			</trans-unit>
 			<trans-unit id="displayMode.alttitle">
@@ -27,9 +27,9 @@
 			</trans-unit>
 			<trans-unit id="displayMode.details">
 				<source>
-					Please note that if you restrict the display mode of this plugin, you will have to make sure your template either does not provide a link to some non authorized display mode or you properly configured the target page of the related links to lend to another page with a plugin allowing the corresponding display mode.
+Please note that if you restrict the display mode of this plugin, you will have to make sure your template either does not provide a link to some non authorized display mode or you properly configured the target page of the related links to lend to another page with a plugin allowing the corresponding display mode.
 
-					Default setting is to let the plugin automatically switch from LIST mode to SINGLE and from SINGLE to LIST.
+Default setting is to let the plugin automatically switch from LIST mode to SINGLE and from SINGLE to LIST.
 				</source>
 			</trans-unit>
 			<trans-unit id="audiences.alttitle">
@@ -40,9 +40,9 @@
 			</trans-unit>
 			<trans-unit id="audiences.details">
 				<source>
-					Whenever a list of audiences is shown or information related to a given audience is requested (the list of views for instance), the audiences you selected will be taken into account to restrict access to those that should not be available.
+Whenever a list of audiences is shown or information related to a given audience is requested (the list of views for instance), the audiences you selected will be taken into account to restrict access to those that should not be available.
 
-					If no audience is selected, setup value (from TypoScript) will be taken into account and if ultimately no audience is selected, then no restriction will be enabled and all audiences will be available.
+If no audience is selected, setup value (from TypoScript) will be taken into account and if ultimately no audience is selected, then no restriction will be enabled and all audiences will be available.
 				</source>
 			</trans-unit>
 			<trans-unit id="views.alttitle">
@@ -53,9 +53,9 @@
 			</trans-unit>
 			<trans-unit id="views.details">
 				<source>
-					Whenever a list of views is shown or information related to a given view is requested (the list of domains for instance), the views you selected will be taken into account to restrict access to those that should not be available.
+Whenever a list of views is shown or information related to a given view is requested (the list of domains for instance), the views you selected will be taken into account to restrict access to those that should not be available.
 
-					If no view is selected, setup value (from TypoScript) will be taken into account and if ultimately no view is selected, then no restriction will be enabled and all views will be available.
+If no view is selected, setup value (from TypoScript) will be taken into account and if ultimately no view is selected, then no restriction will be enabled and all views will be available.
 				</source>
 			</trans-unit>
 			<trans-unit id="domains.alttitle">
@@ -66,9 +66,9 @@
 			</trans-unit>
 			<trans-unit id="domains.details">
 				<source>
-					Whenever a list of domains is shown or information related to a given domain is requested (the list of topics for instance), the domains you selected will be taken into account to restrict access to those that should not be available.
+Whenever a list of domains is shown or information related to a given domain is requested (the list of topics for instance), the domains you selected will be taken into account to restrict access to those that should not be available.
 
-					If no domain is selected, setup value (from TypoScript) will be taken into account and if ultimately no domain is selected, then no restriction will be enabled and all domains will be available.
+If no domain is selected, setup value (from TypoScript) will be taken into account and if ultimately no domain is selected, then no restriction will be enabled and all domains will be available.
 				</source>
 			</trans-unit>
 			<trans-unit id="blocks_domain.alttitle">
@@ -88,9 +88,9 @@
 			</trans-unit>
 			<trans-unit id="topics.details">
 				<source>
-					Whenever a list of topics is shown or information related to a given topic is requested (the list of services for instance), the topics you selected will be taken into account to restrict access to those that should not be available.
+Whenever a list of topics is shown or information related to a given topic is requested (the list of services for instance), the topics you selected will be taken into account to restrict access to those that should not be available.
 
-					If no topic is selected, setup value (from TypoScript) will be taken into account and if ultimately no topic is selected, then no restriction will be enabled and all topics will be available.
+If no topic is selected, setup value (from TypoScript) will be taken into account and if ultimately no topic is selected, then no restriction will be enabled and all topics will be available.
 				</source>
 			</trans-unit>
 			<trans-unit id="blocks_topic.alttitle">
@@ -110,9 +110,9 @@
 			</trans-unit>
 			<trans-unit id="services.details">
 				<source>
-					Whenever a list of services is shown or information related to a given service is requested, the services you selected will be taken into account to restrict access to those that should not be available.
+Whenever a list of services is shown or information related to a given service is requested, the services you selected will be taken into account to restrict access to those that should not be available.
 
-					If no service is selected, setup value (from TypoScript) will be taken into account and if ultimately no service is selected, then no restriction will be enabled and all services will be available.
+If no service is selected, setup value (from TypoScript) will be taken into account and if ultimately no service is selected, then no restriction will be enabled and all services will be available.
 				</source>
 			</trans-unit>
 			<trans-unit id="blocks_service.alttitle">
