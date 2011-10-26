@@ -696,6 +696,20 @@ class tx_egovapi_dao_webService {
 			if (is_array($details['documentOtherBlock']) && !isset($details['documentOtherBlock'][0])) {
 				$details['documentOtherBlock'] = array($details['documentOtherBlock']);
 			}
+
+				// Post-process the pricing list
+			if (is_array($details['feeBlock']['pricingList']['pricing'])) {
+				$pricingList = array();
+				foreach ($details['feeBlock']['pricingList']['pricing'] as $pricing) {
+					$pricingList[] = array(
+						'epaymentEnabled' => $this->getValue($pricing, 'epaymentEnabled'),
+						'fee' => $this->getValue($pricing, 'fee'),
+						'price' => $this->getValue($pricing, 'price'),
+						'vatCode' => $this->getValue($pricing, 'vatCode'),
+					);
+				}
+				$details['feeBlock']['pricingList'] = $pricingList;
+			}
 		}
 
 		$this->callHooks(

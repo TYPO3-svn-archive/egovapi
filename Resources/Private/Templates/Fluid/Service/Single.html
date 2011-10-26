@@ -94,10 +94,12 @@
 	<p class="tx_egovapi_block_fee">{service.fee.description}</p>
 	<f:if condition="{service.fee.pricings}">
 		<ul class="tx_egovapi_block_fee_pricing">
-			<li>
-				<f:format.currency currencySign="CHF">{service.fee.pricing.price}</f:format.currency> /
-				<f:format.currency currencySign="CHF">{service.fee.pricing.fee}</f:format.currency>
-			</li>
+			<f:for each="{service.fee.pricings}" as="pricing">
+				<li>
+					<f:format.currency currencySign="CHF">{pricing.price}</f:format.currency> /
+					<f:format.currency currencySign="CHF">{pricing.fee}</f:format.currency>
+				</li>
+			</f:for>
 		</ul>
 	</f:if>
 </f:if>
