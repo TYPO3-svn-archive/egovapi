@@ -1,3 +1,7 @@
+2011-10-26  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] #31313: Prices are not rendered correctly
+
 2011-10-25  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Remove translation files (now managed on http://translation.typo3.org)
