@@ -1,3 +1,7 @@
+2011-11-02  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Change default WSDL version to 2.0
+
 2011-10-26  Xavier Perseguers  <xavier@causal.ch>
 
 	* [BUGFIX] #31313: Prices are not rendered correctly
