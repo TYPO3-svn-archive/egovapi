@@ -10,6 +10,8 @@ CHANGES & IMPROVEMENTS between egovapi 1.4 and 1.5
 	Manager and re-create the tables accordingly if using TYPO3 4.5
 	or below.
 
+
+
 ************************************************************************
 CHANGES & IMPROVEMENTS between egovapi 1.3 and 1.4
 (for technical details see ChangeLog)
@@ -48,6 +50,14 @@ CHANGES & IMPROVEMENTS between egovapi 1.3 and 1.4
 	tx_egovapi_domain_model_block_fee fields were changed:
 	- DELETED: content
 	- ADDED: description, pricings
+
+=== Localization ===
+
+	Localization files are not included anymore in the extension. Only
+	English (default language) is part of the release. French, German
+	and Italian are retrieved from the TYPO3 Extension Manager as
+	language packages. Typos in labels may be fixed by contributing on
+	http://translation.typo3.org/projects/TYPO3.TYPO3.ext.egovapi/
 
 
 
