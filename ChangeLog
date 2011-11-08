@@ -1,3 +1,7 @@
+2011-11-06  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Raise version to 1.4.1
+
 2011-10-26  Xavier Perseguers  <xavier@causal.ch>
 
 	* [BUGFIX] #31313: Prices are not rendered correctly
@@ -32,6 +36,10 @@
 	* [TASK][DOC] Add chapter Tutorial, Developer manual, Known problems and To-Do list
 	* [TASK][DOC] Initiate conversion to reStructuredText
 	* [TASK][DOC] Fix paragraph styles for better HTML rendering on typo3.org
+
+2011-10-12  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Raise version to 1.4.0
 
 2011-10-02  Xavier Perseguers  <xavier@causal.ch>
 
