@@ -16,6 +16,8 @@ CHANGES & IMPROVEMENTS between egovapi 1.4 and 1.5
 	the Google Map and whether to activate it or not. Please make
 	sure to include hidden form fields in your own custom template
 	if needed.
+	In addition, the selector JavaScript has been largely refactored
+	and reworked.
 
 === Localization ===
 
