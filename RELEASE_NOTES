@@ -10,6 +10,14 @@ CHANGES & IMPROVEMENTS between egovapi 1.4 and 1.5
 	Manager and re-create the tables accordingly if using TYPO3 4.5
 	or below.
 
+=== Localization ===
+
+	Localization files have been converted to XLIFF to be compatible
+	with the native localization format in TYPO3 4.6. A dependency
+	to extension 'xliff' has been added which allows you to
+	dynamically generate the ll-XML translation files whenever
+	extension 'egovapi' is installed in TYPO3 4.4 or TYPO3 4.5.
+
 
 
 ************************************************************************
