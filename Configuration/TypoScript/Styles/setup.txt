@@ -172,6 +172,10 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 	height               : 200px;
 }
 
+#tx_egovapi_map {
+	display              : none;
+}
+
 #tx_egovapi_selectorForm_organization_loader,
 #tx_egovapi_selectorForm_service_loader,
 #tx_egovapi_selectorForm_version_loader {

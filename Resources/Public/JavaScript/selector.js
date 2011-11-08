@@ -392,6 +392,7 @@ function showMap(origin) {
 		mapTypeControl: false,
 		streetViewControl: false
 	};
+	$("#tx_egovapi_map").show();
 	var map = new google.maps.Map(document.getElementById("tx_egovapi_map"), mapOptions);
 	var marker = new google.maps.Marker({
 		map: map,
