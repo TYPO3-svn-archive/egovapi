@@ -366,7 +366,15 @@ TX_EGOVAPI.selector = {
 	}
 }
 
-// This method MUST be global
+// These methods MUST be global
+function setOrganization(id) {
+    if (!$("select#tx_egovapi_organization").text()) {
+        setTimeout('setOrganization("' + id + '")', 200);
+    }
+    $("select#tx_egovapi_organization").val(id);
+    $("select#tx_egovapi_organization").change();
+}
+
 function showMap(origin) {
 	var mapOptions = {
 		zoom: 12,
