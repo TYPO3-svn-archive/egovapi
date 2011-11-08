@@ -140,6 +140,7 @@ TX_EGOVAPI.selector = {
 	 */
 	reset: function() {
 		$("select#tx_egovapi_organization").html("");
+		$("#tx_egovapi_map").hide();
 		$("select#tx_egovapi_service").html("");
 		$("select#tx_egovapi_version").html("");
 		$("select#tx_egovapi_language").val(this.defaultLanguage);
@@ -177,6 +178,7 @@ TX_EGOVAPI.selector = {
 						}
 					}
 					$("select#tx_egovapi_organization").html(options);
+					$("#tx_egovapi_map").hide();
 					$("select#tx_egovapi_service").html('');
 					$("select#tx_egovapi_version").html("");
 					$("#tx_egovapi_result").html("");
