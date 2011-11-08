@@ -114,7 +114,7 @@ TX_EGOVAPI.selector = {
     findNearestOrganization: function(position) {
 		var language = $("select#tx_egovapi_language").val();
 
-		this.showMap(position);
+		showMap(position);
 		$.getJSON(
 			this.ajaxUrl,
 			{
@@ -198,7 +198,7 @@ TX_EGOVAPI.selector = {
 				alert('No geolocation available for the organization. Possible misconfiguration!');
 			} else {
 				var origin = new google.maps.LatLng(position.lat, position.lng);
-				self.showMap(origin);
+				showMap(origin);
 			}
 		}
 
@@ -363,24 +363,25 @@ TX_EGOVAPI.selector = {
 
 	hideLoading: function() {
 		$("#tx_egovapi_resultoverlay").hide();
-	},
-
-	showMap: function(origin) {
-		var mapOptions = {
-			zoom: 12,
-			center: origin,
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			zoomControl: false,
-			mapTypeControl: false,
-			streetViewControl: false
-		};
-		var map = new google.maps.Map(document.getElementById("#tx_egovapi_map"), mapOptions);
-		var marker = new google.maps.Marker({
-			map: map,
-			position: origin,
-			animation: google.maps.Animation.DROP
-		});
 	}
+}
+
+// This method MUST be global
+function showMap(origin) {
+	var mapOptions = {
+		zoom: 12,
+		center: origin,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		zoomControl: false,
+		mapTypeControl: false,
+		streetViewControl: false
+	};
+	var map = new google.maps.Map(document.getElementById("tx_egovapi_map"), mapOptions);
+	var marker = new google.maps.Marker({
+		map: map,
+		position: origin,
+		animation: google.maps.Animation.DROP
+	});
 }
 
 $(document).ready(function() {
