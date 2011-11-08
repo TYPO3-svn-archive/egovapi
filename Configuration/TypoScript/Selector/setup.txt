@@ -120,8 +120,10 @@ plugin.tx_egovapi_pi2 {
 	data.communities   = {$plugin.tx_egovapi.data.communities}
 	data.organizations = {$plugin.tx_egovapi.data.organizations}
 
-	ajaxLoader.cObject = IMAGE
-	ajaxLoader.cObject.file = EXT:egovapi/Resources/Public/Images/ajax-loader.gif
+	ajaxLoaderLarge.cObject = IMAGE
+	ajaxLoaderLarge.cObject.file = EXT:egovapi/Resources/Public/Images/ajax-loader-large.gif
+	ajaxLoaderSmall.cObject = IMAGE
+	ajaxLoaderSmall.cObject.file = EXT:egovapi/Resources/Public/Images/ajax-loader-small.gif
 
 	service = TEXT
 	service.data = GP:service

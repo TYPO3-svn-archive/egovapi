@@ -83,7 +83,8 @@ class tx_egovapi_utility_ts {
 			'includeCHServices', 'displayLevels', 'level', 'mode',
 			'audiences', 'views', 'domains', 'topics', 'services', /* 'version', */
 			// Pi2
-			'coordinates', 'showGoogleMap', 'template', 'ajaxLoader', 'service', 'version', 'latitude', 'longitude',
+			'coordinates', 'showGoogleMap', 'template', 'ajaxLoaderLarge', 'ajaxLoaderSmall', 'service', 'version',
+			'latitude', 'longitude',
 			// Pi1 used by Pi2
 			'dynamicConfig',
 		);

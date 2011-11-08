@@ -143,6 +143,7 @@ TX_EGOVAPI.selector = {
 		$("select#tx_egovapi_service").html("");
 		$("select#tx_egovapi_version").html("");
 		$("select#tx_egovapi_language").val(this.defaultLanguage);
+		$("#tx_egovapi_result").html("");
 	},
 
 	/**
@@ -153,7 +154,7 @@ TX_EGOVAPI.selector = {
 		var self = this;
 		var language = $("select#tx_egovapi_language").val();
 
-		self.showLoading();
+		self.showLoading("tx_egovapi_selectorForm_organization_loader", false);
 		$.getJSON(
 			this.ajaxUrl,
 			{
@@ -163,7 +164,7 @@ TX_EGOVAPI.selector = {
 				community: community
 			},
 			function (response) {
-				self.hideLoading();
+				self.hideLoading("tx_egovapi_selectorForm_organization_loader");
 				if (response.success) {
 					var data = response.data;
 					var options = '<option value=""></option>';
@@ -178,6 +179,7 @@ TX_EGOVAPI.selector = {
 					$("select#tx_egovapi_organization").html(options);
 					$("select#tx_egovapi_service").html('');
 					$("select#tx_egovapi_version").html("");
+					$("#tx_egovapi_result").html("");
 				}
 			}
 		)
@@ -202,7 +204,8 @@ TX_EGOVAPI.selector = {
 			}
 		}
 
-		self.showLoading();
+		self.showLoading("tx_egovapi_resultoverlay", true);
+		self.showLoading("tx_egovapi_selectorForm_service_loader", false);
 		$.getJSON(
 			this.ajaxUrl,
 			{
@@ -213,7 +216,8 @@ TX_EGOVAPI.selector = {
 				organization: organization
 			},
 			function (response) {
-				self.hideLoading();
+				self.hideLoading("tx_egovapi_selectorForm_service_loader");
+				self.hideLoading("tx_egovapi_resultoverlay");
 				if (response.success) {
 					var data = response.data;
 					var options = '<option value=""></option>';
@@ -230,6 +234,7 @@ TX_EGOVAPI.selector = {
 
 					$("select#tx_egovapi_service").html(options);
 					$("select#tx_egovapi_version").html("");
+					$("#tx_egovapi_result").html("");
 				}
 			}
 		)
@@ -245,7 +250,7 @@ TX_EGOVAPI.selector = {
 		var organization = $("select#tx_egovapi_organization").val();
 		var language = $("select#tx_egovapi_language").val();
 
-		self.showLoading();
+		self.showLoading("tx_egovapi_selectorForm_version_loader", false);
 		$.getJSON(
 			this.ajaxUrl,
 			{
@@ -257,7 +262,7 @@ TX_EGOVAPI.selector = {
 				service: service
 			},
 			function (response) {
-				self.hideLoading();
+				self.hideLoading("tx_egovapi_selectorForm_version_loader");
 				if (response.success) {
 					var data = response.data;
 					var options = '<option value="' + defaultVersion + '"></option>';
@@ -284,6 +289,7 @@ TX_EGOVAPI.selector = {
 					}
 
 					$("select#tx_egovapi_version").html(options);
+					$("#tx_egovapi_result").html("");
 				}
 			}
 		);
@@ -316,7 +322,7 @@ TX_EGOVAPI.selector = {
 			service = info[0];
 		}
 
-		self.showLoading();
+		self.showLoading("tx_egovapi_resultoverlay", true);
 		$.getJSON(
 			this.ajaxUrl,
 			{
@@ -330,7 +336,7 @@ TX_EGOVAPI.selector = {
 				blocks: selectedBlocks.join(",")
 			},
 			function (response) {
-				self.hideLoading();
+				self.hideLoading("tx_egovapi_resultoverlay");
 				var result = "";
 				if (response.success) {
 					var data = response.data;
@@ -352,17 +358,19 @@ TX_EGOVAPI.selector = {
 		);
 	},
 
-	showLoading: function() {
-		var overlay = $("#tx_egovapi_resultoverlay");
-		overlay.css('top', $("#tx_egovapi_result").position().top);
-		overlay.css('height', Math.max(200, $("#tx_egovapi_result").height()) + 20);
-		overlay.css('left', $("#tx_egovapi_result").position().left);
-		overlay.css('width', $("#tx_egovapi_result").width());
-		overlay.show();
+	showLoading: function(id, isOverlay) {
+		var element = $("#" + id);
+		if (isOverlay) {
+			element.css('top', $("#tx_egovapi_result").position().top);
+			element.css('height', Math.max(200, $("#tx_egovapi_result").height()) + 20);
+			element.css('left', $("#tx_egovapi_result").position().left);
+			element.css('width', $("#tx_egovapi_result").width());
+		}
+		element.show();
 	},
 
-	hideLoading: function() {
-		$("#tx_egovapi_resultoverlay").hide();
+	hideLoading: function(id) {
+		$("#" + id).hide();
 	}
 }
 
