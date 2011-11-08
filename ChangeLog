@@ -1,5 +1,7 @@
 2011-11-08  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Change dependency on 'xliff' to a suggestion instead
+	* [TASK] Integrate AJAX loading mask
 	* [TASK] Refactor selector.js
 
 2011-11-06  Xavier Perseguers  <xavier@causal.ch>
