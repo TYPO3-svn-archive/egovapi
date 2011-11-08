@@ -72,8 +72,10 @@ TX_EGOVAPI.selector = {
 	 * @param community
 	 */
 	updateOrganizations: function(community) {
+		var self = this;
 		var language = $("select#tx_egovapi_language").val();
 
+		self.showLoading();
 		$.getJSON(
 			this.ajaxUrl,
 			{
@@ -83,6 +85,7 @@ TX_EGOVAPI.selector = {
 				community: community
 			},
 			function (response) {
+				self.hideLoading();
 				if (response.success) {
 					var data = response.data;
 					var options = '<option value=""></option>';
@@ -102,9 +105,11 @@ TX_EGOVAPI.selector = {
 	 * @param organization
 	 */
 	updateServices: function(organization) {
+		var self = this;
 		var community = $("select#tx_egovapi_community").val();
 		var language = $("select#tx_egovapi_language").val();
 
+		self.showLoading();
 		$.getJSON(
 			this.ajaxUrl,
 			{
@@ -115,6 +120,7 @@ TX_EGOVAPI.selector = {
 				organization: organization
 			},
 			function (response) {
+				self.hideLoading();
 				if (response.success) {
 					var data = response.data;
 					var options = '<option value=""></option>';
@@ -141,10 +147,12 @@ TX_EGOVAPI.selector = {
 	 * @param service
 	 */
 	updateVersions: function(service, defaultVersion) {
+		var self = this;
 		var community = $("select#tx_egovapi_community").val();
 		var organization = $("select#tx_egovapi_organization").val();
 		var language = $("select#tx_egovapi_language").val();
 
+		self.showLoading();
 		$.getJSON(
 			this.ajaxUrl,
 			{
@@ -156,6 +164,7 @@ TX_EGOVAPI.selector = {
 				service: service
 			},
 			function (response) {
+				self.hideLoading();
 				if (response.success) {
 					var data = response.data;
 					var options = '<option value="' + defaultVersion + '"></option>';
@@ -191,6 +200,7 @@ TX_EGOVAPI.selector = {
 	 * Generate the service links.
 	 */
 	generateLinks: function() {
+		var self = this;
 		var community = $("select#tx_egovapi_community").val();
 		var organization = $("select#tx_egovapi_organization").val();
 		var service = $("select#tx_egovapi_service").val();
@@ -212,6 +222,8 @@ TX_EGOVAPI.selector = {
 			var info = service.split("-");
 			service = info[0];
 		}
+
+		self.showLoading();
 		$.getJSON(
 			this.ajaxUrl,
 			{
@@ -225,6 +237,7 @@ TX_EGOVAPI.selector = {
 				blocks: selectedBlocks.join(",")
 			},
 			function (response) {
+				self.hideLoading();
 				var result = "";
 				if (response.success) {
 					var data = response.data;
@@ -244,6 +257,19 @@ TX_EGOVAPI.selector = {
 				$("#tx_egovapi_result").html(result);
 			}
 		);
+	},
+
+	showLoading: function() {
+		var overlay = $("#tx_egovapi_resultoverlay");
+		overlay.css('top', $("#tx_egovapi_result").position().top);
+		overlay.css('height', Math.max(200, $("#tx_egovapi_result").height()) + 20);
+		overlay.css('left', $("#tx_egovapi_result").position().left);
+		overlay.css('width', $("#tx_egovapi_result").width());
+		overlay.show();
+	},
+
+	hideLoading: function() {
+		$("#tx_egovapi_resultoverlay").hide();
 	}
 }
 

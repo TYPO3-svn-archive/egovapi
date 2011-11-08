@@ -5,165 +5,180 @@
 plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 
 .tx-egovapi-pi1 {
-	font-family: Verdana,Arial,Helvetica,sans-serif;
-	font-size: 100%;
-	text-align: justify;
-	width: 100%;
+	font-family          : Verdana,Arial,Helvetica,sans-serif;
+	font-size            : 100%;
+	text-align           : justify;
+	width                : 100%;
 }
 
 .tx-egovapi-pi1 h2 {
-	margin: 1em 0 0 0;
+	margin               : 1em 0 0 0;
 }
 
 .tx-egovapi-pi1 .block_number {
-	display:none;
+	display              :none;
 }
 
 .tx-egovapi-pi1 .service_id {
-	font-size: 50%;
-	display: none;
+	font-size            : 50%;
+	display              : none;
 }
 
 .tx-egovapi-pi1 table {
-	border-width: 0;
-	border-style: none;
+	border-width         : 0;
+	border-style         : none;
 }
 
 .tx-egovapi-pi1 table.tx_egovapi_block_header td {
-	width: 200px;
+	width                : 200px;
 }
 
 .tx-egovapi-pi1 table.tx_egovapi_block_contact td {
-	width: 270px;
+	width                : 270px;
 }
 
 .tx-egovapi-pi1 dt {
-	font-weight: bold;
-	float: left;
-	clear: both;
-	width: 100px;
-	margin-top: 5px;
+	font-weight          : bold;
+	float                : left;
+	clear                : both;
+	width                : 100px;
+	margin-top           : 5px;
 }
 
 .tx-egovapi-pi1 dd {
-	margin-left: 110px;
-	margin-top: 5px;
+	margin-left          : 110px;
+	margin-top           : 5px;
 }
 
 .tx-egovapi-pi1 .half {
-	width: 49%;
-	min-width: 300px;
+	width                : 49%;
+	min-width            : 300px;
 }
 
 .tx-egovapi-pi1 .left {
-	float: left;
+	float                : left;
 }
 
 .tx-egovapi-pi1 .right {
-	float: right;
+	float                : right;
 }
 
 .tx-egovapi-pi1 .clear {
-	clear: both;
+	clear                : both;
 }
 
 .tx-egovapi-pi1 .back_to_list {
-	margin: 1em 0 0 0;
+	margin               : 1em 0 0 0;
 }
 
 .tx-egovapi-pi2 form label {
-	float: left;
-	width: 150px;
+	float                : left;
+	width                : 150px;
 }
 
 .tx-egovapi-pi2 form div {
-	clear: left;
-	margin: 2px 0;
+	clear                : left;
+	margin               : 2px 0;
 }
 
 .tx-egovapi-pi2 form select {
-	width: 300px;
+	width                : 300px;
 }
 
 .tx-egovapi-pi2 #tx_egovapi_version option.status_draft {
-	background-color: #f63;
+	background-color     : #f63;
 }
 
 .tx-egovapi-pi2 #tx_egovapi_version option.status_published {
-	background-color: #fff;
+	background-color     : #fff;
 }
 
 .tx-egovapi-pi2 #tx_egovapi_version option.status_archived {
-	background-color: #fc0;
+	background-color     : #fc0;
 }
 
 .tx-egovapi-pi2 #tx_egovapi_version option.status_default {
-	background-color: #690;
+	background-color     : #690;
 }
 
 .tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+	list-style           : none;
+	margin               : 0;
+	padding              : 0;
 }
 
 .tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks ul li {
-	padding: 5px 0 0 10px;
-	clear: right;
+	padding              : 5px 0 0 10px;
+	clear                : right;
 }
 
 .tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks label {
-	float: right;
-	width: 185px;
-	margin-left: 5px;
+	float                : right;
+	width                : 185px;
+	margin-left          : 5px;
 }
 
 .tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks fieldset {
-	border: none;
-	padding: 0;
-	width: 450px;
+	border               : none;
+	padding              : 0;
+	width                : 450px;
 }
 
 .tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks legend {
-	padding: 0;
+	padding              : 0;
 }
 
 .tx-egovapi-pi2 .tx_egovapi_selectorForm_blocksLeft {
-	float: left;
+	float                : left;
 }
 
 .tx-egovapi-pi2 .tx_egovapi_selectorForm_blocksRight {
-	float: right;
+	float                : right;
 }
 
 .tx-egovapi-pi2 #tx_egovapi_selectorForm_blocks .toggleBlocks {
-	float: right;
-	clear: both;
+	float                : right;
+	clear                : both;
 }
 
 #tx_egovapi_selectorForm_submit {
-	margin: 15px 0 0 150px;
-	width: 300px;
+	margin               : 15px 0 0 150px;
+	width                : 300px;
 }
 
 #tx_egovapi_result > ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	font-weight: bold;
+	list-style           : none;
+	padding              : 0;
+	margin               : 0;
+	font-weight          : bold;
 }
 
 #tx_egovapi_result > ul li {
-	margin-top: 1em;
+	margin-top           : 1em;
 }
 
 #tx_egovapi_result > ul ul {
-	list-style-type: square;
-	font-weight: normal;
+	list-style-type      : square;
+	font-weight          : normal;
 }
 
 #tx_egovapi_result > ul ul li {
-	margin-top: 0;
+	margin-top           : 0;
+}
+
+#tx_egovapi_resultoverlay {
+	display              : none;
+	background-color     : black;
+	filter               : alpha(opacity=50); /* IE */
+	opacity              : 0.5; /* Safari, Opera */
+	-moz-opacity         : 0.50; /* FireFox */
+	z-index              : 20;
+	position             : absolute;
+	text-align           : center;
+}
+
+#tx_egovapi_resultoverlay img {
+	margin-top           : 80px;
 }
 
 )

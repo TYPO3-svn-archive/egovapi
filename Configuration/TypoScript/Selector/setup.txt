@@ -101,6 +101,9 @@ plugin.tx_egovapi_pi2 {
 	data.communities   = {$plugin.tx_egovapi.data.communities}
 	data.organizations = {$plugin.tx_egovapi.data.organizations}
 
+	ajaxLoader.cObject = IMAGE
+	ajaxLoader.cObject.file = EXT:egovapi/Resources/Public/Images/ajax-loader.gif
+
 	service = TEXT
 	service.data = GP:service
 	version = TEXT

@@ -100,9 +100,11 @@ class tx_egovapi_pi2 extends tx_egovapi_pibase {
 			'LABEL_TOGGLE_MARKS' => $this->pi_getLL('action_toggle_marks'),
 			'LABEL_LANGUAGE'     => $this->pi_getLL('common_language'),
 			'LABEL_OK'           => $this->pi_getLL('common_ok'),
+			'AJAX_LOADER'        => $this->conf['ajaxLoader'],
 			'AJAX_URL'           => $this->pi_getPageLink($GLOBALS['TSFE']->id),
 			'LANGUAGE'           => t3lib_div::inList('de,en,fr,it,rm', $GLOBALS['TSFE']->lang) ? $GLOBALS['TSFE']->lang : 'de',
 		);
+
 		$subparts = array(
 			'COMMUNITIES' => $utilityConstants->getCommunities(array('fieldName' => 'tx_egovapi_community')),
 		);
