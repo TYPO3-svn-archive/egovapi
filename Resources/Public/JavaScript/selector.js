@@ -4,13 +4,19 @@ if (typeof TX_EGOVAPI == 'undefined') TX_EGOVAPI = {};
 TX_EGOVAPI.selector = {
 	eID: "egovapi_pi2",
 	ajaxUrl: '',
+	showGoogleMap: '',
 	defaultLanguage: '',
+	coordinates: {},
+	initialLocation: '',
+	organizationBern: '',
+	browserSupportFlag: new Boolean(),
 
 	/**
 	 * Initialize this class.
 	 */
 	init: function() {
 		this.ajaxUrl = $("input#tx_egovapi_ajaxUrl").val();
+		this.showGoogleMap = $("input#tx_egovapi_showGoogleMap").val();
 		this.defaultLanguage = $("input#tx_egovapi_defaultLanguage").val();
 		var self = this;
 
@@ -55,6 +61,78 @@ TX_EGOVAPI.selector = {
 				return false;
 			});
 		});
+
+		if (this.showGoogleMap) {
+			this.organizationBern = new google.maps.LatLng(46.94792, 7.44461);
+
+			// Try W3C Geolocation (Preferred)
+			if (navigator.geolocation) {
+				self.browserSupportFlag = true;
+				navigator.geolocation.getCurrentPosition(function(position) {
+					self.initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+					self.findNearestOrganization(self.initialLocation);
+				}, function() {
+					self.handleNoGeolocation(self.browserSupportFlag);
+				},
+				{
+					timeout: 10000
+				});
+				// Try Google Gears Geolocation
+			} else if (google.gears) {
+				self.browserSupportFlag = true;
+				var geo = google.gears.factory.create("beta.geolocation");
+				geo.getCurrentPosition(function(position) {
+					self.initialLocation = new google.maps.LatLng(position.latitude, position.longitude);
+					self.findNearestOrganization(self.initialLocation);
+				}, function() {
+					self.handleNoGeoLocation(self.browserSupportFlag);
+				},
+				{
+					timeout: 10000
+				});
+			// Browser doesn't support Geolocation
+			} else {
+				self.browserSupportFlag = false;
+				self.handleNoGeolocation(self.browserSupportFlag);
+			}
+		}
+	},
+
+	// When geolocation is not possible
+	handleNoGeolocation: function(errorFlag) {
+		if (errorFlag == true) {
+			alert("Geolocation service failed.");
+			this.initialLocation = this.organizationBern;
+		} else {
+			alert("Your browser doesn't support geolocation. We've placed you in Bern.");
+			this.initialLocation = this.organizationBern;
+		}
+		this.findNearestOrganization(this.initialLocation);
+	},
+
+    // Find the nearest organization
+    findNearestOrganization: function(position) {
+		var language = $("select#tx_egovapi_language").val();
+
+		this.showMap(position);
+		$.getJSON(
+			this.ajaxUrl,
+			{
+				eID: this.eID,
+				action: "nearest",
+				language: language,
+				lat: position.lat(),
+				lng: position.lng()
+			},
+			function (response) {
+				if (response.success) {
+					var data = response.data;
+					$("select#tx_egovapi_community").val(data.community.id);
+					$("select#tx_egovapi_community").change();
+					setTimeout('setOrganization("' + data.organization.id + '")', 200);
+				}
+			}
+		);
 	},
 
 	/**
@@ -89,8 +167,13 @@ TX_EGOVAPI.selector = {
 				if (response.success) {
 					var data = response.data;
 					var options = '<option value=""></option>';
+					self.coordinates = {};
 					for (var i = 0; i < data.length; i++) {
 						options += '<option value="' + data[i].id + '">' + data[i].name + '</option>';
+						self.coordinates[data[i].id] = {
+							lat: data[i].latitude,
+							lng: data[i].longitude
+						}
 					}
 					$("select#tx_egovapi_organization").html(options);
 					$("select#tx_egovapi_service").html('');
@@ -108,6 +191,16 @@ TX_EGOVAPI.selector = {
 		var self = this;
 		var community = $("select#tx_egovapi_community").val();
 		var language = $("select#tx_egovapi_language").val();
+
+		if (self.showGoogleMap) {
+			var position = self.coordinates[organization];
+			if (!(position.lat && position.lng)) {
+				alert('No geolocation available for the organization. Possible misconfiguration!');
+			} else {
+				var origin = new google.maps.LatLng(position.lat, position.lng);
+				self.showMap(origin);
+			}
+		}
 
 		self.showLoading();
 		$.getJSON(
@@ -270,6 +363,23 @@ TX_EGOVAPI.selector = {
 
 	hideLoading: function() {
 		$("#tx_egovapi_resultoverlay").hide();
+	},
+
+	showMap: function(origin) {
+		var mapOptions = {
+			zoom: 12,
+			center: origin,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			zoomControl: false,
+			mapTypeControl: false,
+			streetViewControl: false
+		};
+		var map = new google.maps.Map(document.getElementById("#tx_egovapi_map"), mapOptions);
+		var marker = new google.maps.Marker({
+			map: map,
+			position: origin,
+			animation: google.maps.Animation.DROP
+		});
 	}
 }
 

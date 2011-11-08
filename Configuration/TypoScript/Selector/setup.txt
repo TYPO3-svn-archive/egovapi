@@ -1,12 +1,23 @@
 	# Include jQuery library
 page.includeJSlibs {
 	jQueryEgovApi = http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js
-	jQueryEgovApi.external = 1
-	jQueryEgovApi.disableCompression = 1
+	jQueryEgovApi {
+		external = 1
+		disableCompression = 1
+		excludeFromConcatenation = 1
+	}
 }
 
 page.includeJSFooterlibs {
-	egovapi_selector = EXT:egovapi/Resources/Public/JavaScript/selector.js
+	googleMap = http://maps.google.com/maps/api/js?sensor=true
+	googleMap {
+		forceOnTop = 1
+		external = 1
+		disableCompression = 1
+		excludeFromConcatenation = 1
+	}
+
+	egovapiSelector = EXT:egovapi/Resources/Public/JavaScript/selector.js
 }
 
 plugin.tx_egovapi_pi1 {
@@ -96,6 +107,14 @@ plugin.tx_egovapi_pi2 {
 	cacheLifetime      =
 	enableDebug        = {$plugin.tx_egovapi.enableDebug}
 	includeCHServices  = 1
+
+		# AJAX should return coordinates for organizations
+	coordinates        = 1
+
+		# You should unset page.includeJSFooterlibs.googleMap if set to 0
+		# Beware: Make sure coordinates above is set to 1 and data.organizations
+		#         contains geographic data
+	showGoogleMap      = 1
 
 	template           = EXT:egovapi/Resources/Private/Templates/Pi2/form.html
 	data.communities   = {$plugin.tx_egovapi.data.communities}

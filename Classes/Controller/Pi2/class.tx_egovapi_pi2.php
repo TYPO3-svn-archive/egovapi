@@ -102,6 +102,7 @@ class tx_egovapi_pi2 extends tx_egovapi_pibase {
 			'LABEL_OK'           => $this->pi_getLL('common_ok'),
 			'AJAX_LOADER'        => $this->conf['ajaxLoader'],
 			'AJAX_URL'           => $this->pi_getPageLink($GLOBALS['TSFE']->id),
+			'SHOW_GOOGLEMAP'     => $this->conf['showGoogleMap'],
 			'LANGUAGE'           => t3lib_div::inList('de,en,fr,it,rm', $GLOBALS['TSFE']->lang) ? $GLOBALS['TSFE']->lang : 'de',
 		);
 

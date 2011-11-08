@@ -166,6 +166,12 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 	margin-top           : 0;
 }
 
+#tx_egovapi_map {
+	margin-left          : 150px;
+	width                : 300px;
+	height               : 200px;
+}
+
 #tx_egovapi_resultoverlay {
 	display              : none;
 	background-color     : black;

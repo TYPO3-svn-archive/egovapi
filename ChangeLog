@@ -1,5 +1,6 @@
 2011-11-08  Xavier Perseguers  <xavier@causal.ch>
 
+	* [FEATURE] Add Google Map
 	* [TASK][DOC] Update RELEASE_NOTES
 	* [TASK] Change dependency on 'xliff' to a suggestion instead
 	* [TASK] Integrate AJAX loading mask
