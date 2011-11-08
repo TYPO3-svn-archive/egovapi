@@ -110,8 +110,8 @@ TX_EGOVAPI.selector = {
 		this.findNearestOrganization(this.initialLocation);
 	},
 
-    // Find the nearest organization
-    findNearestOrganization: function(position) {
+	// Find the nearest organization
+	findNearestOrganization: function(position) {
 		var language = $("select#tx_egovapi_language").val();
 
 		showMap(position);
@@ -194,7 +194,7 @@ TX_EGOVAPI.selector = {
 
 		if (self.showGoogleMap) {
 			var position = self.coordinates[organization];
-			if (!(position.lat && position.lng)) {
+			if (!position || !(position.lat && position.lng)) {
 				alert('No geolocation available for the organization. Possible misconfiguration!');
 			} else {
 				var origin = new google.maps.LatLng(position.lat, position.lng);
