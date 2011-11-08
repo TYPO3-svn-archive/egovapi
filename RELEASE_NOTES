@@ -10,6 +10,13 @@ CHANGES & IMPROVEMENTS between egovapi 1.4 and 1.5
 	Manager and re-create the tables accordingly if using TYPO3 4.5
 	or below.
 
+=== Templates ===
+
+	Selector form template has been updated to include markers for
+	the Google Map and whether to activate it or not. Please make
+	sure to include hidden form fields in your own custom template
+	if needed.
+
 === Localization ===
 
 	Localization files have been converted to XLIFF to be compatible
