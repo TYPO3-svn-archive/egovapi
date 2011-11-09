@@ -763,10 +763,13 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 				$markers['SERVICE_CONTACT_ADDRESS']       = $service->getContact()->getAddress();
 				$markers['SERVICE_CONTACT_POSTAL_CASE']   = $service->getContact()->getPostalCase();
 				$markers['SERVICE_CONTACT_POSTAL_CODE']   = $service->getContact()->getPostalCode();
-				$markers['SERVICE_CONTACT_MUNICIPALITY']  = $service->getContact()->getMunicipality();
+				// @deprecated Marker SERVICE_CONTACT_MUNICIPALITY will be removed in egovapi 1.6
+				$markers['SERVICE_CONTACT_MUNICIPALITY']  = $service->getContact()->getLocality();
+				$markers['SERVICE_CONTACT_LOCALITY']  = $service->getContact()->getLocality();
 				$markers['SERVICE_CONTACT_PERSON']        = $service->getContact()->getPerson();
-				$markers['SERVICE_CONTACT_PHONE1']        = $service->getContact()->getPhone1();
-				$markers['SERVICE_CONTACT_PHONE2']        = $service->getContact()->getPhone2();
+				// @deprecated Marker SERVICE_CONTACT_PHONE1 will be removed in egovapi 1.6
+				$markers['SERVICE_CONTACT_PHONE1']        = $service->getContact()->getPhone();
+				$markers['SERVICE_CONTACT_PHONE']         = $service->getContact()->getPhone();
 				$markers['SERVICE_CONTACT_FAX']           = $service->getContact()->getFax();
 				$markers['SERVICE_CONTACT_EMAIL']         = str_replace(array('@', '.'), array('&#64;', '&#46;'), $service->getContact()->getEmail());
 				$markers['SERVICE_CONTACT_EMAIL_LINK']    = $this->cObj->typoLink(

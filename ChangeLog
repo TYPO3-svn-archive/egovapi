@@ -1,3 +1,7 @@
+2011-11-09  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] #31689: Incompatibility between WS v1 and WS v2
+
 2011-11-08  Xavier Perseguers  <xavier@causal.ch>
 
 	* [FEATURE] Add smaller loading animation in front of the dropdown lists

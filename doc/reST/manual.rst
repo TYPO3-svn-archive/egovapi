@@ -165,13 +165,13 @@ Audience (``tx_egovapi_domain_model_audience``)
 ```````````````````````````````````````````````
 
 ======================   =========
- Property                 Type                               
+ Property                 Type
 ======================   =========
- id                       integer                            
- author                   string                             
- creationDate             integer (timestamp)                
- lastModificationDate     integer (timestamp)                
- name                     string                             
+ id                       integer
+ author                   string
+ creationDate             integer (timestamp)
+ lastModificationDate     integer (timestamp)
+ name                     string
  views                    tx_egovapi_domain_model_view_ []
 ======================   =========
 
@@ -181,15 +181,15 @@ View (``tx_egovapi_domain_model_view``)
 ```````````````````````````````````````
 
 ======================   =========
- Property                 Type                               
+ Property                 Type
 ======================   =========
- id                       integer                            
- author                   string                             
- creationDate             integer (timestamp)                
- lastModificationDate     integer (timestamp)                
- name                     string                             
- domains                  tx_egovapi_domain_model_domain_ [] 
- audience                 tx_egovapi_domain_model_audience_  
+ id                       integer
+ author                   string
+ creationDate             integer (timestamp)
+ lastModificationDate     integer (timestamp)
+ name                     string
+ domains                  tx_egovapi_domain_model_domain_ []
+ audience                 tx_egovapi_domain_model_audience_
 ======================   =========
 
 Additional template values:
@@ -202,13 +202,13 @@ Domain (``tx_egovapi_domain_model_domain``)
 ```````````````````````````````````````````
 
 ======================   =========
- Property                 Type                               
+ Property                 Type
 ======================   =========
- id                       integer                            
- author                   string                             
- creationDate             integer (timestamp)                
- lastModificationDate     integer (timestamp)                
- name                     string                             
+ id                       integer
+ author                   string
+ creationDate             integer (timestamp)
+ lastModificationDate     integer (timestamp)
+ name                     string
  description              string
  isParent                 boolean
  versionId                integer
@@ -244,13 +244,13 @@ Topic (``tx_egovapi_domain_model_topic``)
 `````````````````````````````````````````
 
 ======================   =========
- Property                 Type                               
+ Property                 Type
 ======================   =========
- id                       integer                            
- author                   string                             
- creationDate             integer (timestamp)                
- lastModificationDate     integer (timestamp)                
- name                     string                             
+ id                       integer
+ author                   string
+ creationDate             integer (timestamp)
+ lastModificationDate     integer (timestamp)
+ name                     string
  description              string
  isParent                 boolean
  versionId                integer
@@ -284,13 +284,13 @@ Service (``tx_egovapi_domain_model_service``)
 `````````````````````````````````````````````
 
 ======================   =========
- Property                 Type                               
+ Property                 Type
 ======================   =========
- id                       integer                            
- author                   string                             
- creationDate             integer (timestamp)                
- lastModificationDate     integer (timestamp)                
- name                     string                             
+ id                       integer
+ author                   string
+ creationDate             integer (timestamp)
+ lastModificationDate     integer (timestamp)
+ name                     string
  description              string
  isParent                 boolean
  versionId                integer
@@ -349,17 +349,16 @@ Service (``tx_egovapi_domain_model_block_contact``)
 ```````````````````````````````````````````````````
 
 ======================   =========
- Property                 Type                               
+ Property                 Type
 ======================   =========
  department               string
  office                   string
  address                  string
  postalCase               string
  postalCode               string
- municipality             string
+ locality                 string
  person                   string
- phone1                   string
- phone2                   string
+ phone                    string
  fax                      string
  email                    string
  publicKey                string
@@ -535,10 +534,9 @@ Markers
 - SERVICE_CONTACT_ADDRESS
 - SERVICE_CONTACT_POSTAL_CASE
 - SERVICE_CONTACT_POSTAL_CODE
-- SERVICE_CONTACT_MUNICIPALITY
+- SERVICE_CONTACT_LOCALITY
 - SERVICE_CONTACT_PERSON
-- SERVICE_CONTACT_PHONE1
-- SERVICE_CONTACT_PHONE2
+- SERVICE_CONTACT_PHONE
 - SERVICE_CONTACT_FAX
 - SERVICE_CONTACT_EMAIL
 - SERVICE_CONTACT_EMAIL_LINK
@@ -780,7 +778,7 @@ URLs.
 			parameter.wrap.cObject {
 				1 = TEXT
 				1.value = |
-				
+
 				10 = TEXT
 				10.data = GP:language
 				10.wrap = ?eCHlanguageID=|
