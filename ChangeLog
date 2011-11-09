@@ -1,5 +1,6 @@
 2011-11-09  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Add missing TypoScript for finding nearest organization
 	* [TASK][DOC] Update ChangeLog section
 	* [BUGFIX] #31689: Incompatibility between WS v1 and WS v2
 

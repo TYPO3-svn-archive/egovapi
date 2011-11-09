@@ -10,6 +10,7 @@ TX_EGOVAPI.selector = {
 	initialLocation: '',
 	organizationBern: '',
 	browserSupportFlag: new Boolean(),
+	processing: false,
 
 	/**
 	 * Initialize this class.
@@ -24,6 +25,8 @@ TX_EGOVAPI.selector = {
 
 		// Register handler for updating the list of organizations
 		$("select#tx_egovapi_community").change(function() {
+			if (self.processing) return;
+			self.processing = true;
 			self.updateOrganizations($(this).val());
 		});
 
@@ -165,6 +168,7 @@ TX_EGOVAPI.selector = {
 				community: community
 			},
 			function (response) {
+				self.processing = false;
 				self.hideLoading("tx_egovapi_selectorForm_organization_loader");
 				if (response.success) {
 					var data = response.data;
@@ -198,8 +202,10 @@ TX_EGOVAPI.selector = {
 
 		if (self.showGoogleMap) {
 			var position = self.coordinates[organization];
-			if (!position || !(position.lat && position.lng)) {
-				alert('No geolocation available for the organization. Possible misconfiguration!');
+			if (!(position && position.lat && position.lng)) {
+				if (organization) {
+					alert('No geolocation available for the organization. Possible misconfiguration!');
+				}
 			} else {
 				var origin = new google.maps.LatLng(position.lat, position.lng);
 				showMap(origin);
