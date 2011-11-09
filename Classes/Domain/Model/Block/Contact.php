@@ -304,6 +304,7 @@ class tx_egovapi_domain_model_block_contact {
 	 * @deprecated Use getPhone() instead. This method will be removed in egovapi 1.6
 	 */
 	public function getPhone1() {
+		t3lib_div::logDeprecatedFunction();
 		return $this->phone;
 	}
 
@@ -315,6 +316,7 @@ class tx_egovapi_domain_model_block_contact {
 	 * @deprecated Use setPhone() instead. This method will be removed in egovapi 1.6
 	 */
 	public function setPhone1($phone1) {
+		t3lib_div::logDeprecatedFunction();
 		$this->phone = $phone1;
 		return $this;
 	}
