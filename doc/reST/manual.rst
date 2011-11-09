@@ -994,6 +994,9 @@ the ChangeLog file included with the extension or `read it online
 +-------------+----------------------------------------------------------------------------------+
 | Version     | Changes                                                                          |
 +=============+==================================================================================+
+| 1.5.0       | - Google Map and loading mask support                                            |
+|             | - Localization files have been converted to XLIFF                                |
++-------------+----------------------------------------------------------------------------------+
 | 1.4.0       | - Added support for both the existing web service and its upcoming new version   |
 |             | - Tested with TYPO3 4.6                                                          |
 +-------------+----------------------------------------------------------------------------------+
