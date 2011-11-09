@@ -307,6 +307,10 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 						$fee->setDescription($detailsDao['feeBlock']['description']);
 					}
 
+					if (!is_array($detailsDao['feeBlock']['pricingList'])) {
+							// Most probably a caching issue with data from v1 of the Web Service
+						$detailsDao['feeBlock']['pricingList'] = array();
+					}
 					foreach ($detailsDao['feeBlock']['pricingList'] as $itemDao) {
 						/** @var $pricing tx_egovapi_domain_model_block_pricing */
 						$pricing = t3lib_div::makeInstance('tx_egovapi_domain_model_block_pricing');
@@ -397,16 +401,25 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 				->setAddress($contactBlock['address'])
 				->setPostalCase($contactBlock['postalCase'])
 				->setPostalCode($contactBlock['postalCode'])
-				->setMunicipality($contactBlock['municipality'])
 				->setPerson($contactBlock['person'])
-				->setPhone1($contactBlock['phone1'])
-				->setPhone2($contactBlock['phone2'])
 				->setFax($contactBlock['fax'])
 				->setEmail($contactBlock['email'])
 				->setPublicKey($contactBlock['publicKey'])
 				->setLogo($contactBlock['logoUrl'])
 				->setBanner($contactBlock['bannerUrl'])
 				->setOpeningHours($contactBlock['openingHours']);
+
+			switch ($this->getWsdlVersion()) {
+				case tx_egovapi_dao_webService::VERSION_10:
+					$contact->setLocality($contactBlock['municipality']);
+					$contact->setPhone($contactBlock['phone1']);
+					break;
+
+				default:
+					$contact->setLocality($contactBlock['locality']);
+					$contact->setPhone($contactBlock['phone']);
+					break;
+			}
 
 			$service->setContact($contact);
 		}

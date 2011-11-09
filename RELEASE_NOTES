@@ -28,6 +28,14 @@ CHANGES & IMPROVEMENTS between egovapi 1.3 and 1.4
 	behavior script (Resources/Public/JavaScript/selector.js) changed
 	as well to accomodate this modification.
 
+	Due to changes in the underlying web service for both v1 and v2,
+	following service contact fields were changed in the data model
+	and in the templates:
+
+	- 'phone1' has been renamed to 'phone'
+	- 'phone2' has been removed (it never got implemented)
+	- 'municipality' has been renamed to 'locality'
+
 === Domain Model ===
 
 	To accomodate changes in the web service, the domain model has

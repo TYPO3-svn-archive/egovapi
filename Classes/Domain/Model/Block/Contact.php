@@ -63,7 +63,7 @@ class tx_egovapi_domain_model_block_contact {
 	/**
 	 * @var string
 	 */
-	protected $municipality;
+	protected $locality;
 
 	/**
 	 * @var string
@@ -73,7 +73,7 @@ class tx_egovapi_domain_model_block_contact {
 	/**
 	 * @var string
 	 */
-	protected $phone1;
+	protected $phone;
 
 	/**
 	 * @var string
@@ -211,12 +211,35 @@ class tx_egovapi_domain_model_block_contact {
 	}
 
 	/**
-	 * Gets the municipality.
+	 * Gets the locality.
 	 *
 	 * @return string
 	 */
+	public function getLocality() {
+		return $this->locality;
+	}
+
+	/**
+	 * Sets the locality.
+	 *
+	 * @param string $locality
+	 * @return tx_egovapi_domain_model_block_contact
+	 */
+	public function setLocality($locality) {
+		$this->locality = $locality;
+		return $this;
+	}
+
+	/**
+	 * Gets the municipality.
+	 *
+	 * @return string
+	 * @see tx_egovapi_domain_model_block_contact::getLocality()
+	 * @deprecated Use getLocality() instead. This method will be removed in egovapi 1.6
+	 */
 	public function getMunicipality() {
-		return $this->municipality;
+		t3lib_div::logDeprecatedFunction();
+		return $this->locality;
 	}
 
 	/**
@@ -224,9 +247,12 @@ class tx_egovapi_domain_model_block_contact {
 	 *
 	 * @param string $municipality
 	 * @return tx_egovapi_domain_model_block_contact
+	 * @see tx_egovapi_domain_model_block_contact::setLocality()
+	 * @deprecated Use setLocality() instead. This method will be removed in egovapi 1.6
 	 */
 	public function setMunicipality($municipality) {
-		$this->municipality = $municipality;
+		t3lib_div::logDeprecatedFunction();
+		$this->locality = $municipality;
 		return $this;
 	}
 
@@ -251,21 +277,47 @@ class tx_egovapi_domain_model_block_contact {
 	}
 
 	/**
-	 * Gets the phone 1.
+	 * Gets the phone.
 	 *
 	 * @return string
 	 */
+	public function getPhone() {
+		return $this->phone;
+	}
+
+	/**
+	 * Sets the phone.
+	 *
+	 * @param string $phone
+	 * @return tx_egovapi_domain_model_block_contact
+	 */
+	public function setPhone($phone) {
+		$this->phone = $phone;
+		return $this;
+	}
+
+	/**
+	 * Gets the phone 1.
+	 *
+	 * @return string
+	 * @see tx_egovapi_domain_model_block_contact::getPhone()
+	 * @deprecated Use getPhone() instead. This method will be removed in egovapi 1.6
+	 */
 	public function getPhone1() {
-		return $this->phone1;
+		t3lib_div::logDeprecatedFunction();
+		return $this->phone;
 	}
 
 	/**
 	 * Sets the phone 1.
 	 * @param string $phone1
 	 * @return tx_egovapi_domain_model_block_contact
+	 * @see tx_egovapi_domain_model_block_contact::setPhone()
+	 * @deprecated Use setPhone() instead. This method will be removed in egovapi 1.6
 	 */
 	public function setPhone1($phone1) {
-		$this->phone1 = $phone1;
+		t3lib_div::logDeprecatedFunction();
+		$this->phone = $phone1;
 		return $this;
 	}
 
@@ -273,17 +325,22 @@ class tx_egovapi_domain_model_block_contact {
 	 * Gets the phone 2.
 	 *
 	 * @return string
+	 * @deprecated This method will be removed in egovapi 1.6
 	 */
 	public function getPhone2() {
+		t3lib_div::logDeprecatedFunction();
 		return $this->phone2;
 	}
 
 	/**
 	 * Sets the phone 2.
+	 *
 	 * @param string $phone2
 	 * @return tx_egovapi_domain_model_block_contact
+	 * @deprecated This method will be removed in egovapi 1.6
 	 */
 	public function setPhone2($phone2) {
+		t3lib_div::logDeprecatedFunction();
 		$this->phone2 = $phone2;
 		return $this;
 	}
@@ -425,9 +482,9 @@ class tx_egovapi_domain_model_block_contact {
 						{$this->department}<br />
 						{$this->office}<br />
 						{$this->address}<br />
-						{$this->postalCode} {$this->municipality}<br />
+						{$this->postalCode} {$this->locality}<br />
 						<br />
-						{$this->phone1}<br />
+						{$this->phone}<br />
 						{$this->fax}<br />
 						{$emailLink}
 					</td>

@@ -1,3 +1,7 @@
+2011-11-09  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] #31689: Incompatibility between WS v1 and WS v2
+
 2011-11-06  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Raise version to 1.4.1
