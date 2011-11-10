@@ -698,6 +698,10 @@ class tx_egovapi_dao_webService {
 			}
 
 			if ($this->version != self::VERSION_10) {
+				if (is_array($details['feeBlock']['pricingList']['pricing']) && !isset($details['feeBlock']['pricingList']['pricing'][0])) {
+					$details['feeBlock']['pricingList']['pricing'] = array($details['feeBlock']['pricingList']['pricing']);
+				}
+
 					// Post-process the pricing list
 				if (is_array($details['feeBlock']['pricingList']['pricing'])) {
 					$pricingList = array();
