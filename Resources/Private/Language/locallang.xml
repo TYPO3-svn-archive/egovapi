@@ -145,9 +145,5 @@
 			<label index="block_subtopics">Subtopics</label>
 			<label index="block_synonyms">Synonyms</label>
 		</languageKey>
-
-		<languageKey index="de">EXT:egovapi/Resources/Private/Language/de.locallang.xml</languageKey>
-		<languageKey index="fr">EXT:egovapi/Resources/Private/Language/fr.locallang.xml</languageKey>
-		<languageKey index="it">EXT:egovapi/Resources/Private/Language/it.locallang.xml</languageKey>
 	</data>
 </T3locallang>

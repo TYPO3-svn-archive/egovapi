@@ -45,9 +45,5 @@
 			<label index="constants.targets.single.topic">Target page for topic: ID of the page to use for links showing details of a topic</label>
 			<label index="constants.targets.single.service">Target page for service: ID of the page to use for links showing details of a service</label>
 		</languageKey>
-
-		<languageKey index="de">EXT:egovapi/Resources/Private/Language/de.locallang_db.xml</languageKey>
-		<languageKey index="fr">EXT:egovapi/Resources/Private/Language/fr.locallang_db.xml</languageKey>
-		<languageKey index="it">EXT:egovapi/Resources/Private/Language/it.locallang_db.xml</languageKey>
 	</data>
 </T3locallang>

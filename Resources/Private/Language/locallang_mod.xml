@@ -14,8 +14,5 @@
 
 			<label index="msg.invalidCommunity">Please selected a community.</label>
 		</languageKey>
-
-		<languageKey index="de">EXT:egovapi/Resources/Private/Language/de.locallang_mod.xml</languageKey>
-		<languageKey index="fr">EXT:egovapi/Resources/Private/Language/fr.locallang_mod.xml</languageKey>
 	</data>
 </T3locallang>
