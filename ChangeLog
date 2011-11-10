@@ -1,5 +1,10 @@
+2011-11-10  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK][DOC] Update list of TypoScript configuration properties
+
 2011-11-09  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Raise version to 1.4.2
 	* [TASK] Add missing TypoScript for finding nearest organization
 	* [TASK][DOC] Update ChangeLog section
 	* [BUGFIX] #31689: Incompatibility between WS v1 and WS v2
