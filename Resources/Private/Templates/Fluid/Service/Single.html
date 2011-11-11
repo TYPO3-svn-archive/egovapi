@@ -96,6 +96,9 @@
 		<ul class="tx_egovapi_block_fee_pricing">
 			<f:for each="{service.fee.pricings}" as="pricing">
 				<li>
+					<f:if condition="{pricing.form}">
+						{pricing.form.name}:
+					</f:if>
 					<f:format.currency currencySign="CHF">{pricing.price}</f:format.currency> /
 					<f:format.currency currencySign="CHF">{pricing.fee}</f:format.currency>
 				</li>

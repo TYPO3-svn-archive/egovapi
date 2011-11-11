@@ -235,6 +235,7 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 			}
 			$service->setProcedure($procedure);
 		}
+		$indexForms = array();
 		if (isset($detailsDao['formularBlock']) && is_array($detailsDao['formularBlock'])) {
 			/** @var tx_egovapi_domain_model_block_forms $forms */
 			$forms = t3lib_div::makeInstance('tx_egovapi_domain_model_block_forms');
@@ -253,6 +254,9 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 				}
 
 				$forms->addItem($form);
+				if (isset($itemDao['idx'])) {
+					$indexForms[$itemDao['idx']] = $form;
+				}
 			}
 			$service->setForms($forms);
 		}
@@ -319,6 +323,10 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 						$pricing->setFee($itemDao['fee']);
 						$pricing->setHasEPayment((bool) $itemDao['epaymentEnabled']);
 						$pricing->setVatCode($itemDao['vatCode']);
+
+						if (isset($indexForms[$itemDao['formId']])) {
+							$pricing->setForm($indexForms[$itemDao['formId']]);
+						}
 
 						$fee->addPricing($pricing);
 					}
