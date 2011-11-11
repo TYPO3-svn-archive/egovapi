@@ -1,5 +1,6 @@
 2011-11-10  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Raise version to 1.4.3
 	* [BUGFIX] #31728: Exception when using custom form URLs in Dir
 	* [TASK][DOC] Update list of TypoScript configuration properties
 
