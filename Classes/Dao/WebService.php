@@ -711,6 +711,7 @@ class tx_egovapi_dao_webService {
 							'fee' => $this->getValue($pricing, 'fee'),
 							'price' => $this->getValue($pricing, 'price'),
 							'vatCode' => $this->getValue($pricing, 'vatCode'),
+							'formId' => $this->getValue($pricing, 'idx'),
 						);
 					}
 					$details['feeBlock']['pricingList'] = $pricingList;

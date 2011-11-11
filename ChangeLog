@@ -1,3 +1,7 @@
+2011-11-11  Xavier Perseguers  <xavier@causal.ch>
+
+	* [FEATURE] #31764: Prices should show the corresponding form name
+
 2011-11-10  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Raise version to 1.4.3

@@ -56,6 +56,11 @@ class tx_egovapi_domain_model_block_pricing {
 	protected $vatCode;
 
 	/**
+	 * @var tx_egovapi_domain_model_block_form
+	 */
+	protected $form;
+
+	/**
 	 * Gets the price.
 	 *
 	 * @return float
@@ -136,12 +141,45 @@ class tx_egovapi_domain_model_block_pricing {
 	}
 
 	/**
+	 * Gets the form.
+	 *
+	 * @return tx_egovapi_domain_model_block_form
+	 */
+	public function getForm() {
+		return $this->form;
+	}
+
+	/**
+	 * Sets the form.
+	 *
+	 * @param tx_egovapi_domain_model_block_form $form
+	 * @return tx_egovapi_domain_model_block_pricing
+	 */
+	public function setForm(tx_egovapi_domain_model_block_form $form) {
+		$this->form = $form;
+		return $this;
+	}
+
+	/**
 	 * Helper method to cast this object to a string.
 	 *
 	 * @return string
 	 */
 	public function __toString() {
-		return sprintf('%s / %s', money_format('%i', $this->price), money_format('%i', $this->fee));
+		if ($this->form) {
+			return sprintf(
+				'%s: %s / %s',
+				$this->form->getName(),
+				money_format('%i', $this->price),
+				money_format('%i', $this->fee)
+			);
+		} else {
+			return sprintf(
+				'%s / %s',
+				money_format('%i', $this->price),
+				money_format('%i', $this->fee)
+			);
+		}
 	}
 
 }
