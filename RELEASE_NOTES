@@ -35,6 +35,7 @@ CHANGES & IMPROVEMENTS between egovapi 1.3 and 1.4
 	- 'phone1' has been renamed to 'phone'
 	- 'phone2' has been removed (it never got implemented)
 	- 'municipality' has been renamed to 'locality'
+	- 'postalCase' has been renamed to 'poBox'
 
 === Domain Model ===
 

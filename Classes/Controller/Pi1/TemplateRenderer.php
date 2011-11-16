@@ -51,6 +51,11 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 	protected $markers;
 
 	/**
+	 * @var array
+	 */
+	protected $deprecatedMarkers;
+
+	/**
 	 * Renders the output of plugin Pi1.
 	 *
 	 * @return string
@@ -69,6 +74,16 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 				}
 
 				$hookObject->postProcessRenderSubpartsMarkers($this->subparts, $this->markers, $this);
+			}
+		}
+
+		foreach ($this->deprecatedMarkers as $info) {
+			if (strpos($this->template, $info['old']) !== FALSE) {
+					// Template is using a deprecated marker
+				t3lib_div::deprecationLog(
+					'Marker ' . $info['old'] . ' is deprecated and will be removed in egovapi '
+						. $info['version'] . '. Please use ' . $info['new'] . ' instead.'
+				);
 			}
 		}
 
@@ -761,13 +776,18 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 				$markers['SERVICE_CONTACT_DEPARTMENT']    = $service->getContact()->getDepartment();
 				$markers['SERVICE_CONTACT_OFFICE']        = $service->getContact()->getOffice();
 				$markers['SERVICE_CONTACT_ADDRESS']       = $service->getContact()->getAddress();
-				$markers['SERVICE_CONTACT_POSTAL_CASE']   = $service->getContact()->getPostalCase();
+				// @deprecated Marker SERVICE_CONTACT_POSTAL_CASE will be removed in egovapi 1.6
+				$this->deprecateMarker('SERVICE_CONTACT_POSTAL_CASE', 'SERVICE_CONTACT_PO_BOX', '1.6');
+				$markers['SERVICE_CONTACT_POSTAL_CASE']   = $service->getContact()->getPoBox();
+				$markers['SERVICE_CONTACT_PO_BOX']        = $service->getContact()->getPoBox();
 				$markers['SERVICE_CONTACT_POSTAL_CODE']   = $service->getContact()->getPostalCode();
 				// @deprecated Marker SERVICE_CONTACT_MUNICIPALITY will be removed in egovapi 1.6
+				$this->deprecateMarker('SERVICE_CONTACT_MUNICIPALITY', 'SERVICE_CONTACT_LOCALITY', '1.6');
 				$markers['SERVICE_CONTACT_MUNICIPALITY']  = $service->getContact()->getLocality();
-				$markers['SERVICE_CONTACT_LOCALITY']  = $service->getContact()->getLocality();
+				$markers['SERVICE_CONTACT_LOCALITY']      = $service->getContact()->getLocality();
 				$markers['SERVICE_CONTACT_PERSON']        = $service->getContact()->getPerson();
 				// @deprecated Marker SERVICE_CONTACT_PHONE1 will be removed in egovapi 1.6
+				$this->deprecateMarker('SERVICE_CONTACT_PHONE1', 'SERVICE_CONTACT_PHONE', '1.6');
 				$markers['SERVICE_CONTACT_PHONE1']        = $service->getContact()->getPhone();
 				$markers['SERVICE_CONTACT_PHONE']         = $service->getContact()->getPhone();
 				$markers['SERVICE_CONTACT_FAX']           = $service->getContact()->getFax();
@@ -917,12 +937,29 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 		$this->subparts = array();
 
 		// Load all labels without a dot in the key as available marker
+		$this->deprecatedMarkers = array();
 		$this->markers = array();
 		foreach ($this->pObj->LOCAL_LANG['default'] as $key => $label) {
 			if (strpos($key, '.') === FALSE) {
 				$this->markers[strtoupper($key)] = $this->pObj->pi_getLL($key);
 			}
 		}
+	}
+
+	/**
+	 * Deprecates a marker.
+	 *
+	 * @param string $oldMarker
+	 * @param string $newMarker
+	 * @param string $versionRemoval
+	 * @return void
+	 */
+	protected function deprecateMarker($oldMarker, $newMarker, $versionRemoval) {
+		$this->deprecatedMarkers[] = array(
+			'old' => $oldMarker,
+			'new' => $newMarker,
+			'version' => $versionRemoval,
+		);
 	}
 
 }
