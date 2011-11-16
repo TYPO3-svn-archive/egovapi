@@ -53,7 +53,7 @@ class tx_egovapi_domain_model_block_contact {
 	/**
 	 * @var string
 	 */
-	protected $postalCase;
+	protected $poBox;
 
 	/**
 	 * @var string
@@ -174,9 +174,10 @@ class tx_egovapi_domain_model_block_contact {
 	 * Gets the postal case.
 	 *
 	 * @return string
+	 * @deprecated Use getPoBox() instead. This method will be removed in egovapi 1.6
 	 */
 	public function getPostalCase() {
-		return $this->postalCase;
+		return $this->poBox;
 	}
 
 	/**
@@ -184,9 +185,30 @@ class tx_egovapi_domain_model_block_contact {
 	 *
 	 * @param string $postalCase
 	 * @return tx_egovapi_domain_model_block_contact
+	 * @deprecated Use setPoBox() instead. This method will be removed in egovapi 1.6
 	 */
 	public function setPostalCase($postalCase) {
-		$this->postalCase = $postalCase;
+		$this->poBox = $postalCase;
+		return $this;
+	}
+
+	/**
+	 * Gets the post office box.
+	 *
+	 * @return string
+	 */
+	public function getPoBox() {
+		return $this->poBox;
+	}
+
+	/**
+	 * Sets the postal office box.
+	 *
+	 * @param string $poBox
+	 * @return tx_egovapi_domain_model_block_contact
+	 */
+	public function setPoBox($poBox) {
+		$this->poBox = $poBox;
 		return $this;
 	}
 

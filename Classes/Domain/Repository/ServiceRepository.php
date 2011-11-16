@@ -407,7 +407,7 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 				->setDepartment($contactBlock['department'])
 				->setOffice($contactBlock['office'])
 				->setAddress($contactBlock['address'])
-				->setPostalCase($contactBlock['postalCase'])
+				->setPoBox($contactBlock['postalCase'])
 				->setPostalCode($contactBlock['postalCode'])
 				->setPerson($contactBlock['person'])
 				->setFax($contactBlock['fax'])
