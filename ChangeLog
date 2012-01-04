@@ -374,89 +374,89 @@
 
 2011-02-13  Xavier Perseguers  <xavier@causal.ch>
 
-	* Added option to show time needed to generate plugin's output
+	* [FEATURE] Add option to show time needed to generate plugin's output
 
 2011-02-12  Xavier Perseguers  <xavier@causal.ch>
 
-	* Added context-sensitive help for FlexForm configuration
-	* Enhanced FlexForm configuration with additional labels and tooltips
+	* [TASK] Add context-sensitive help for FlexForm configuration
+	* [FEATURE] Enhanced FlexForm configuration with additional labels and tooltips
 
 2011-02-11  Xavier Perseguers  <xavier@causal.ch>
 
-	* Raised version to 0.6.2
-	* Raised version to 0.6.1
-	* Added FlexForm configuration option to restrict blocks to be shown (domain, topic, service)
-	* Added condition to remove link to parent view if not authorized
-	* Added default CSS
-	* Added general header for describing services
-	* Added "Other Settings" FlexForm tab with override of targets
-	* Updated French translations
+	* [TASK] Raise version to 0.6.2
+	* [TASK] Raise version to 0.6.1
+	* [TASK] Add FlexForm configuration option to restrict blocks to be shown (domain, topic, service)
+	* [TASK] Add condition to remove link to parent view if not authorized
+	* [TASK] Add default CSS
+	* [TASK] Add general header for describing services
+	* [TASK] Add "Other Settings" FlexForm tab with override of targets
+	* [TASK] Update French translations
 
 2011-02-09  Xavier Perseguers  <xavier@causal.ch>
 
-	* Renamed methods getById() to findById()
+	* [TASK] Rename methods getById() to findById()
 
 2011-02-07  Xavier Perseguers  <xavier@causal.ch>
 
-	* Raised version to 0.6.0
-	* Raised version to 0.5.0
-	* Implemented retrieval of service contactBlock
-	* Sanitized input with strip_tags()
-	* Updated documentation
-	* Implemented details of an audience, a view, a domain and a topic using marker-based templates
-	* Added author, creation date and last modification date to domain model
+	* [TASK] Raise version to 0.6.0
+	* [TASK] Raise version to 0.5.0
+	* [TASK] Implement retrieval of service contactBlock
+	* [TASK][!!!] Sanitize input with strip_tags()
+	* [TASK][DOC] Update documentation
+	* [TASK] Implement details of an audience, a view, a domain and a topic using marker-based templates
+	* [TASK] Add author, creation date and last modification date to domain model
 
 2011-02-06  Xavier Perseguers  <xavier@causal.ch>
 
-	* Implemented details of a service using marker-based templates
-	* Added some German/French translation
-	* Updated documentation of templates and hooks
-	* Added hooks to postprocess subparts and markers
-	* Implemented list of services using marker-based templates
-	* Implemented list of topics using marker-based templates
+	* [TASK] Implemente details of a service using marker-based templates
+	* [TASK] Add some German/French translation
+	* [TASK][DOC] Update documentation of templates and hooks
+	* [TASK] Add hooks to postprocess subparts and markers
+	* [TASK] Implement list of services using marker-based templates
+	* [TASK] Implement list of topics using marker-based templates
 
 2011-02-05  Xavier Perseguers  <xavier@causal.ch>
 
-	* Implemented list of domains using marker-based templates
-	* Implemented list of views using marker-based templates
-	* Implemented list of audiences using marker-based templates
-	* Refactored rendering to have common code for Fluid and marker-based templates in a common abstract class
+	* [TASK] Implement list of domains using marker-based templates
+	* [TASK] Implement list of views using marker-based templates
+	* [TASK] Implement list of audiences using marker-based templates
+	* [TASK] Refactor rendering to have common code for Fluid and marker-based templates in a common abstract class
 
 2011-02-04  Xavier Perseguers  <xavier@causal.ch>
 
-	* Added details to domains
-	* Added details to topics
-	* Added details to services
-	* Added flexform override of templates
+	* [TASK] Add details to domains
+	* [TASK] Add details to topics
+	* [TASK] Add details to services
+	* [TASK] Add flexform override of templates
 
 2011-02-03  Xavier Perseguers  <xavier@causal.ch>
 
-	* Updated WSDL default URL
+	* [TASK][!!!] Update WSDL default URL
 
 2011-02-02  Xavier Perseguers  <xavier@causal.ch>
 
-	* Added output for audiences and views
-	* Refactoring domain repositories
+	* [TASK] Add output for audiences and views
+	* [TASK] Refactor domain repositories
 
 2011-01-28  Xavier Perseguers  <xavier@causal.ch>
 
-	* Reorganized project structure
-	* Added communities
+	* [TASK][!!!] Reorganize project structure
+	* [TASK] Add communities
 
 2010-12-14  Xavier Perseguers  <xavier@causal.ch>
 
-	* Fixed instantiation of SOAP object with TYPO3 4.5
+	* [BUGFIX] Fix instantiation of SOAP object with TYPO3 4.5
 
 2010-11-10  Xavier Perseguers  <xavier@causal.ch>
 
-	* Added translations
-	* Fixed oddities found in web service result
+	* [TASK] Add translations
+	* [BUGFIX] Fix oddities found in web service result
 
 2010-11-05  Xavier Perseguers  <xavier@causal.ch>
 
-	* Enhanced domain model from web service information
-	* Added web service cache (based on TYPO3's caching framework)
+	* [TASK] Enhanced domain model from web service information
+	* [TASK] Add web service cache (based on TYPO3's caching framework)
 
 2010-11-04  Xavier Perseguers  <xavier@causal.ch>
 
-	* Added domain model and repository skeletons
+	* [TASK] Add domain model and repository skeletons
