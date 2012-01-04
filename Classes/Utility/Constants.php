@@ -63,10 +63,10 @@ class tx_egovapi_utility_constants {
 	 * @return string
 	 */
 	public function getCommunities(array $params, t3lib_tsparser_ext $pObj = NULL) {
-		if (isset($pObj->setup['constants']['plugin.']['tx_' . $this->extKey . '.'])) {
+		if (isset($pObj->setup['constants']['plugin.']['tx_' . str_replace('_', '', $this->extKey) . '.'])) {
 			$constants = t3lib_div::array_merge_recursive_overrule(
 				$this->constants,
-				$pObj->setup['constants']['plugin.']['tx_' . $this->extKey . '.'],
+				$pObj->setup['constants']['plugin.']['tx_' . str_replace('_', '', $this->extKey) . '.'],
 				FALSE, FALSE
 			);
 
@@ -96,14 +96,14 @@ class tx_egovapi_utility_constants {
 				$name = $community->getName();
 				// Strip off "Kanton" or "Canton"
 				$name = substr($name, strpos($name, ' ') + 1);
-				$html .= '<optgroup label="' . $name . '">';
+				$html .= '<optgroup label="' . htmlspecialchars($name) . '">';
 			}
 
 			$html .= '<option value="' . $community->getId() . '"';
 			if ($community->getId() === $params['fieldValue']) {
 				$html .= ' selected="selected"';
 			}
-			$html .= '>' . $community->getName() . '</option>';
+			$html .= '>' . htmlspecialchars($community->getName()) . '</option>';
 
 			$previousCanton = substr($community->getId(), 0, 2);
 		}

@@ -1,3 +1,7 @@
+2012-01-04  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX][SECURITY] Fix potential XSS issue
+
 2011-11-11  Xavier Perseguers  <xavier@causal.ch>
 
 	* [FEATURE] #31747: Add postal office box in default template
@@ -12,18 +16,18 @@
 2011-11-09  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Raise version to 1.4.2
-	* [TASK] Add missing TypoScript for finding nearest organization
+	* [TASK][1.5] Add missing TypoScript for finding nearest organization
 	* [TASK][DOC] Update ChangeLog section
 	* [BUGFIX] #31689: Incompatibility between WS v1 and WS v2
 
 2011-11-08  Xavier Perseguers  <xavier@causal.ch>
 
-	* [FEATURE] Add smaller loading animation in front of the dropdown lists
-	* [FEATURE] Add Google Map
+	* [FEATURE][1.5] Add smaller loading animation in front of the dropdown lists
+	* [FEATURE][1.5] Add Google Map
 	* [TASK][DOC] Update RELEASE_NOTES
-	* [TASK] Change dependency on 'xliff' to a suggestion instead
-	* [TASK] Integrate AJAX loading mask
-	* [TASK] Refactor selector.js
+	* [TASK][1.5] Change dependency on 'xliff' to a suggestion instead
+	* [TASK][1.5] Integrate AJAX loading mask
+	* [TASK][1.5] Refactor selector.js
 
 2011-11-06  Xavier Perseguers  <xavier@causal.ch>
 
@@ -39,11 +43,11 @@
 
 2011-10-19  Xavier Perseguers  <xavier@causal.ch>
 
-	* [BUGFIX] XLIFF files should contain the flag xml:space="preserve"
+	* [BUGFIX][1.5] XLIFF files should contain the flag xml:space="preserve"
 
 2011-10-18  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] #31066: English XLIFF files should not contain target element
+	* [TASK][1.5] #31066: English XLIFF files should not contain target element
 
 2011-10-17  Xavier Perseguers  <xavier@causal.ch>
 
