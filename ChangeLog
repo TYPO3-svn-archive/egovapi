@@ -454,8 +454,8 @@
 
 2010-11-05  Xavier Perseguers  <xavier@causal.ch>
 
-	* [TASK] Enhanced domain model from web service information
-	* [TASK] Add web service cache (based on TYPO3's caching framework)
+	* [TASK] Enhance domain model from web service information
+	* [FEATURE] Add web service cache (based on TYPO3's caching framework)
 
 2010-11-04  Xavier Perseguers  <xavier@causal.ch>
 
