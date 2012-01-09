@@ -1,5 +1,6 @@
 2012-01-04  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] #33056: Temporarily remove dependency to 'xliff'
 	* [TASK] Update copyright year
 	* [BUGFIX][SECURITY] Fix potential XSS issue
 

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'egovapi'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tt_content.list_type_pi1">eGov API</label>
+			<label index="tt_content.list_type_pi2">eGov API - Selector Form</label>
+			<label index="constants.subcategories.api">API</label>
+			<label index="constants.subcategories.service">Service</label>
+			<label index="constants.eCHlanguageID">Language of the web service's data: de = Deutsch, en = English, fr = Français, it = Italiano, rm = Rumantsch</label>
+			<label index="constants.eCHcommunityID">Community</label>
+			<label index="constants.organizationID">Organization ID: Identifier of the organization (e.g., 99001=Swiss Confederation, 00619=Oberdiessbach, 02196=Fribourg)</label>
+			<label index="constants.useFluid">Use Fluid as rendering engine</label>
+			<label index="constants.enableDebug">Enable debugging information: Provide additional information with error messages. 3rd party devLog extension may be required for full support</label>
+			<label index="constants.enableSelectorPlugins">Enable selector plugins: Provide a selector form plugin and its counterpart to show a service from URL parameters</label>
+			<label index="constants.wsdl.global">WSDL for the eGov API: URL of the eGov API web service. BEWARE: Leave empty unless you know what you do</label>
+			<label index="constants.wsdlVersion">Version of the Web Service to use</label>
+			<label index="constants.wsdlVersion.inherit">Inherit from global configuration</label>
+			<label index="constants.wsdlVersion.oneZero">Version 1.0</label>
+			<label index="constants.wsdlVersion.twoZero">Version 2.0</label>
+			<label index="constants.cacheLifetime">Lifetime of web service cached data: Make sure to activate caching framework in localconf.php</label>
+			<label index="constants.cacheLifetime.one_minute">1 minute</label>
+			<label index="constants.cacheLifetime.five_minutes">5 minutes</label>
+			<label index="constants.cacheLifetime.one_hour">1 hour</label>
+			<label index="constants.cacheLifetime.one_day">1 day</label>
+			<label index="constants.cacheLifetime.one_week">1 week</label>
+			<label index="constants.cacheLifetime.unlimited">Unlimited</label>
+			<label index="constants.data.communities">Community data file: CSV file containing the list of communities</label>
+			<label index="constants.data.organizations">Organization data file: CSV file containing the list of organizations</label>
+			<label index="constants.targets.list.audience">Target page for audiences: ID of the page to use for links showing a list of audiences</label>
+			<label index="constants.targets.list.view">Target page for views: ID of the page to use for links showing a list of views</label>
+			<label index="constants.targets.list.domain">Target page for domains: ID of the page to use for links showing a list of domains</label>
+			<label index="constants.targets.list.topic">Target page for topics: ID of the page to use for links showing a list of topics</label>
+			<label index="constants.targets.list.service">Target page for services: ID of the page to use for links showing a list of services</label>
+			<label index="constants.targets.single.audience">Target page for audience: ID of the page to use for links showing details of an audience</label>
+			<label index="constants.targets.single.view">Target page for view: ID of the page to use for links showing details of a view</label>
+			<label index="constants.targets.single.domain">Target page for domain: ID of the page to use for links showing details of a domain</label>
+			<label index="constants.targets.single.topic">Target page for topic: ID of the page to use for links showing details of a topic</label>
+			<label index="constants.targets.single.service">Target page for service: ID of the page to use for links showing details of a service</label>
+		</languageKey>
+	</data>
+</T3locallang>
