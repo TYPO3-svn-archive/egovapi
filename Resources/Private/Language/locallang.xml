@@ -28,10 +28,10 @@
 			<label index="pi_flexform.sheet_saveToContinue">Changes on this form will impact other configuration sheets. Please save configuration before moving on to next sheet.</label>
 			<label index="pi_flexform.displayLevels">Authorized levels</label>
 			<label index="pi_flexform.displayLevels.AUDIENCE">Audience</label>
-			<label index="pi_flexform.displayLevels.VIEW">&nbsp;&nbsp;View</label>
-			<label index="pi_flexform.displayLevels.DOMAIN">&nbsp;&nbsp;&nbsp;&nbsp;Domain</label>
-			<label index="pi_flexform.displayLevels.TOPIC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Topic</label>
-			<label index="pi_flexform.displayLevels.SERVICE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Service</label>
+			<label index="pi_flexform.displayLevels.VIEW"><![CDATA[&nbsp;&nbsp;View]]></label>
+			<label index="pi_flexform.displayLevels.DOMAIN"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;Domain]]></label>
+			<label index="pi_flexform.displayLevels.TOPIC"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Topic]]></label>
+			<label index="pi_flexform.displayLevels.SERVICE"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Service]]></label>
 			<label index="pi_flexform.displayMode">Display Mode</label>
 			<label index="pi_flexform.displayMode.codeFromTS">Defined by TypoScript / Automatic</label>
 			<label index="pi_flexform.displayMode.LIST">List view (LIST)</label>
