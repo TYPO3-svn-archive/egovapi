@@ -76,6 +76,9 @@ class tx_egovapi_utility_cache {
 				$backend = 't3lib_cache_backend_TransientMemoryBackend';
 				$options = array();
 			}
+			if (!$backend || !is_array($options)) {
+				throw new RuntimeException('Invalid cache configuration for egovapi. Please read documentation properly.', 1327912760);
+			}
 
 			$GLOBALS['typo3CacheFactory']->create(
 				'egovapi',

@@ -1,3 +1,9 @@
+2012-01-30  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Remove &nbsp; entities which are not needed anymore
+	* [TASK] Throw exception when cache configuration is invalid
+	* [BUGFIX] #33523: Undeclared entity error in locallang.xml
+
 2012-01-10  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Raise version to 1.5.0
