@@ -10,6 +10,8 @@
 			<label index="pi1_plus_wiz_description">Adds a frontend plugin showing data from the eGov web service.</label>
 			<label index="pi2_title">eGov API - Selector Form</label>
 			<label index="pi2_plus_wiz_description">Adds a frontend plugin showing a selector form for the eGov web service.</label>
+			<label index="pi3_title">eGov API - RDF Generator</label>
+			<label index="pi3_plus_wiz_description">Adds a frontend plugin showing a RDF generator form for the eGov web service.</label>
 			<label index="pi_flexform.sheet_general">General</label>
 			<label index="pi_flexform.sheet_audience">Audience</label>
 			<label index="pi_flexform.sheet_view">View</label>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2011-10-18T11:41:47Z" product-name="egovapi">
+	<file source-language="en" datatype="plaintext" original="messages" date="2012-03-20T14:52:47Z" product-name="egovapi">
 		<header/>
 		<body>
 			<trans-unit id="tt_content.list_type_pi1">
@@ -8,6 +8,9 @@
 			</trans-unit>
 			<trans-unit id="tt_content.list_type_pi2">
 				<source>eGov API - Selector Form</source>
+			</trans-unit>
+			<trans-unit id="tt_content.list_type_pi3">
+				<source>eGov API - RDF Generator</source>
 			</trans-unit>
 			<trans-unit id="constants.subcategories.api">
 				<source>API</source>
@@ -31,7 +34,10 @@
 				<source>Enable debugging information: Provide additional information with error messages. 3rd party devLog extension may be required for full support</source>
 			</trans-unit>
 			<trans-unit id="constants.enableSelectorPlugins">
-				<source>Enable selector plugins: Provide a selector form plugin and its counterpart to show a service from URL parameters</source>
+				<source>Enable selector plugin: Provide a selector form plugin and its counterpart to show a service from URL parameters</source>
+			</trans-unit>
+			<trans-unit id="constants.enableRdfGenerator">
+				<source>Enable RDF generator plugin: Provide a RDF form plugin to generate skeletons of RDF files</source>
 			</trans-unit>
 			<trans-unit id="constants.wsdl.global">
 				<source>WSDL for the eGov API: URL of the eGov API web service. BEWARE: Leave empty unless you know what you do</source>

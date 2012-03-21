@@ -8,6 +8,7 @@
 		<languageKey index="default" type="array">
 			<label index="tt_content.list_type_pi1">eGov API</label>
 			<label index="tt_content.list_type_pi2">eGov API - Selector Form</label>
+			<label index="tt_content.list_type_pi3">eGov API - RDF Generator</label>
 			<label index="constants.subcategories.api">API</label>
 			<label index="constants.subcategories.service">Service</label>
 			<label index="constants.eCHlanguageID">Language of the web service's data: de = Deutsch, en = English, fr = Français, it = Italiano, rm = Rumantsch</label>
@@ -15,7 +16,8 @@
 			<label index="constants.organizationID">Organization ID: Identifier of the organization (e.g., 99001=Swiss Confederation, 00619=Oberdiessbach, 02196=Fribourg)</label>
 			<label index="constants.useFluid">Use Fluid as rendering engine</label>
 			<label index="constants.enableDebug">Enable debugging information: Provide additional information with error messages. 3rd party devLog extension may be required for full support</label>
-			<label index="constants.enableSelectorPlugins">Enable selector plugins: Provide a selector form plugin and its counterpart to show a service from URL parameters</label>
+			<label index="constants.enableSelectorPlugins">Enable selector plugin: Provide a selector form plugin and its counterpart to show a service from URL parameters</label>
+			<label index="constants.enableRdfGenerator">Enable RDF generator plugin: Provide a RDF form plugin to generate skeletons of RDF files</label>
 			<label index="constants.wsdl.global">WSDL for the eGov API: URL of the eGov API web service. BEWARE: Leave empty unless you know what you do</label>
 			<label index="constants.wsdlVersion">Version of the Web Service to use</label>
 			<label index="constants.wsdlVersion.inherit">Inherit from global configuration</label>

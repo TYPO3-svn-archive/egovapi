@@ -15,6 +15,12 @@
 			<trans-unit id="pi2_plus_wiz_description">
 				<source>Adds a frontend plugin showing a selector form for the eGov web service.</source>
 			</trans-unit>
+			<trans-unit id="pi3_title">
+				<source>eGov API - RDF Generator</source>
+			</trans-unit>
+			<trans-unit id="pi3_plus_wiz_description">
+				<source>Adds a frontend plugin showing a RDF generator form for the eGov web service.</source>
+			</trans-unit>
 			<trans-unit id="pi_flexform.sheet_general">
 				<source>General</source>
 			</trans-unit>

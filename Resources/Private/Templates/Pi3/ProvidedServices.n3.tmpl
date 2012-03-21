@@ -1,0 +1,18 @@
+@prefix :<http://semantic.cyberadmin.ch/ontologies/spso#> .
+
+<!-- ###PROVIDED_SERVICE### [begin] -->
+<###MUNICIPALITY_HOST###/providedservice/###SERVICE_ID###-###VERSION###-###MUNICIPALITY_ID###-###LANGUAGE###>
+	a :ProvidedService ;
+	:isService <http://semantic.cyberadmin.ch/service/###SERVICE_ID###> ;
+	:url "###MUNICIPALITY_HOST###/path/to/your/service.html" ;
+	:language "###LANGUAGE###" .
+
+<!-- ###PROVIDED_SERVICE### [end] -->
+
+<http://semantic.cyberadmin.ch/municipality/###MUNICIPALITY_ID###>
+<!-- ###PROVIDED_SERVICE_REF_STD### [begin] -->
+	:providesService <###MUNICIPALITY_HOST###/providedservice/###SERVICE_ID###-###VERSION###-###MUNICIPALITY_ID###-###LANGUAGE###> ;
+<!-- ###PROVIDED_SERVICE_REF_STD### [end] -->
+<!-- ###PROVIDED_SERVICE_REF_LAST### [begin] -->
+	:providesService <###MUNICIPALITY_HOST###/providedservice/###SERVICE_ID###-###VERSION###-###MUNICIPALITY_ID###-###LANGUAGE###> .
+<!-- ###PROVIDED_SERVICE_REF_LAST### [end] -->

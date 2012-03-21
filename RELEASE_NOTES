@@ -1,4 +1,15 @@
 ************************************************************************
+CHANGES & IMPROVEMENTS between egovapi 1.5 and 2.0
+(for technical details see ChangeLog)
+************************************************************************
+
+=== Plugins ===
+
+	A new plugin has been added which allows skeleton of RDF files to be
+	created for municipalities not running TYPO3 or running TYPO3 but
+	not using this extension for listing the services they provide.
+
+************************************************************************
 CHANGES & IMPROVEMENTS between egovapi 1.4 and 1.5
 (for technical details see ChangeLog)
 ************************************************************************
