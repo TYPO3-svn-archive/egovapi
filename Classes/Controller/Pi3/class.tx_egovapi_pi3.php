@@ -199,7 +199,57 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 	 * @return string
 	 */
 	protected function step3() {
+		$rdf = array();
+		$rdf[] = '@prefix :<http://semantic.cyberadmin.ch/ontologies/spso#> .';
 
+		$communityWebsite = rtrim($this->sessionData['website'], '/') . '/';
+		$references = array();
+
+		foreach ($this->sessionData['url'] as $serviceId => $url) {
+			list($service, $version) = explode('-', $serviceId, 2);
+			$identifier = sprintf(
+				'%s-%s-%s-%s',
+				$service,
+				$this->sessionData['organization'],
+				$this->sessionData['language'],
+				$version
+			);
+			$reference = $communityWebsite . $identifier;
+			$rdf[] = sprintf('
+<%s>
+	a :ProvidedService ;
+	:isService <http://data.cyberadmin.ch/service/%s> ;
+	:url "%s" ;
+	:language "%s" .
+',
+				$communityWebsite . $identifier,
+				$service,
+				htmlspecialchars($url),
+				strtoupper($this->sessionData['language'])
+			);
+
+			$references[] = $reference;
+		}
+
+		if (count($references) > 0) {
+			$rdf[] = sprintf('<http://data.cyberadmin.ch/municipality/%s>', $this->sessionData['organization']);
+			for ($i = 0; $i < count($references); $i++) {
+				$pattern = $i == count($references) - 1
+						? ':providesService <%s>.'
+						: ':providesService <%s> ;';
+				$rdf[] = TAB . sprintf($pattern, $references[$i]);
+			}
+		}
+
+		$template = $this->cObj->getSubpart($this->template, '###TEMPLATE_STEP3###');
+
+		$markers = array(
+			'RDF_CONTENT' => htmlentities(implode(LF, $rdf)),
+		);
+
+		$output = $this->cObj->substituteMarkerArray($template, $markers, '###|###');
+
+		return $output;
 	}
 
 	/**

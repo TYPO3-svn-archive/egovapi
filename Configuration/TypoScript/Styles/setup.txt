@@ -214,6 +214,11 @@ input.tx_egovapi_generatorForm_url {
 	width                : 600px;
 }
 
+#tx_egovapi_generatorForm_3 pre {
+	border               : 1px solid lightBlue;
+	padding              : 1em;
+}
+
 )
 
 ### SVN id ###
