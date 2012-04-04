@@ -39,6 +39,16 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 	public $scriptRelPath = 'Classes/Controller/Pi3/class.tx_egovapi_pi3.php';
 
 	/**
+	 * @var string
+	 */
+	protected $template;
+
+	/**
+	 * @var array
+	 */
+	protected $sessionData;
+
+	/**
 	 * Main function.
 	 *
 	 * @param string $content: The Plugin content
@@ -55,7 +65,51 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 			die('Plugin ' . $this->prefixId . ' is not configured properly!');
 		}
 
-		$output = $this->pi_wrapInBaseClass('Output of the RDF Generator');
+		$templateFile = $this->conf['template'];
+		$this->template = $this->cObj->fileResource($templateFile);
+
+		switch ($this->sessionData['step']) {
+			case 1:
+				$output = $this->step1();
+				break;
+			default:
+				$output = 'INVALID STEP!';
+		}
+
+		$GLOBALS['TSFE']->fe_user->setKey('ses', $this->prefixId, $this->sessionData);
+
+		$output = $this->pi_wrapInBaseClass($output);
+		return $output;
+	}
+
+	/**
+	 * Prepares step 1 of the wizard.
+	 *
+	 * @return string
+	 */
+	protected function step1() {
+		$template = $this->cObj->getSubpart($this->template, '###TEMPLATE_STEP1###');
+
+		/** @var $utilityConstants tx_egovapi_utility_constants */
+		$utilityConstants = t3lib_div::makeInstance('tx_egovapi_utility_constants');
+
+		$markers = array(
+			'LABEL_COMMUNITY'    => $this->pi_getLL('header_community'),
+			'LABEL_ORGANIZATION' => $this->pi_getLL('header_organization'),
+			'LABEL_WEBSITE'      => $this->pi_getLL('common_website'),
+			'LABEL_NEXT'         => $this->pi_getLL('common_next'),
+			'AJAX_LOADER_SMALL'  => $this->conf['ajaxLoaderSmall'],
+			'AJAX_URL'           => $this->pi_getPageLink($GLOBALS['TSFE']->id),
+			'LANGUAGE'           => t3lib_div::inList('de,en,fr,it,rm', $GLOBALS['TSFE']->lang) ? $GLOBALS['TSFE']->lang : 'de',
+		);
+
+		$subparts = array(
+			'COMMUNITIES' => $utilityConstants->getCommunities(array('fieldName' => 'tx_egovapi_community')),
+		);
+
+		$output = $this->cObj->substituteSubpartArray($template, $subparts);
+		$output = $this->cObj->substituteMarkerArray($output, $markers, '###|###');
+
 		return $output;
 	}
 
@@ -81,6 +135,15 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 		if ($this->conf['wsdlVersion']) {
 			$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $this->conf);
 			tx_egovapi_domain_repository_factory::injectDao($dao);
+		}
+
+		$data = $GLOBALS['TSFE']->fe_user->getKey('ses', $this->prefixId);
+		$this->sessionData = is_array($data) ? $data : array();
+		if (!isset($this->sessionData['step'])) {
+			$this->sessionData['step'] = 1;
+		} else {
+			$totalSteps = 3;
+			$this->sessionData['step'] = max(1, min($totalSteps, $this->sessionData['step']));
 		}
 	}
 

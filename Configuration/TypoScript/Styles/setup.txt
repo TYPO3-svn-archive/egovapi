@@ -178,7 +178,8 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 
 #tx_egovapi_selectorForm_organization_loader,
 #tx_egovapi_selectorForm_service_loader,
-#tx_egovapi_selectorForm_version_loader {
+#tx_egovapi_selectorForm_version_loader,
+#tx_egovapi_generatorForm_organization_loader {
 	display              : none;
 }
 

@@ -18,6 +18,9 @@ if ($enableSelectorPlugins) {
 
 if ($enableRdfGenerator) {
 	t3lib_extMgm::addPItoST43($_EXTKEY, 'Classes/Controller/Pi3/class.tx_egovapi_pi3.php', '_pi3', 'list_type', 0);
+
+	// Ajax configuration (through eID)
+	$TYPO3_CONF_VARS['FE']['eID_include'][$_EXTKEY . '_pi2'] = 'EXT:' . $_EXTKEY . '/Classes/Controller/Pi2/Ajax.php';
 }
 
 // Allow manual flush of cache entries (mandatory in TYPO3 4.6)

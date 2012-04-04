@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Template for the RDF generator form</title>
+</head>
+<body>
+
+<!-- ###TEMPLATE_STEP1### [begin] -->
+
+<form id="tx_egovapi_generatorForm_1" action="">
+	<div id="tx_egovapi_generatorForm_community">
+		<label for="tx_egovapi_community">###LABEL_COMMUNITY###</label>
+		<!-- ###COMMUNITIES### [begin] -->
+		<select id="tx_egovapi_community">
+			<optgroup label="Fribourg">
+				<option value="10-00">Canton Fribourg</option>
+				<option value="10-01">District de la Broye</option>
+			</optgroup>
+		</select>
+		<!-- ###COMMUNITIES### [end] -->
+	</div>
+	<div id="tx_egovapi_generatorForm_organization">
+		<label for="tx_egovapi_organization">###LABEL_ORGANIZATION###</label>
+		<select id="tx_egovapi_organization">
+			<option value=""></option>
+			<option value="02004">Bussy (FR) - 02004</option>
+			<option value="02005">Châbles - 02005</option>
+			<option value="02008">Châtillon (FR) - 02008</option>
+			<option value="02008">Cheiry - 02008</option>
+		</select>
+		<span id="tx_egovapi_generatorForm_organization_loader">
+			###AJAX_LOADER_SMALL###
+		</span>
+	</div>
+	<div id="tx_egovapi_generatorForm_website">
+		<label for="tx_egovapi_website">###LABEL_WEBSITE###</label>
+		<input id="tx_egovapi_website" type="textbox" size="50" maxlength="50" />
+	</div>
+	<input type="hidden" id="tx_egovapi_ajaxUrl" value="###AJAX_URL###" />
+	<input type="hidden" id="tx_egovapi_generatorForm_language" value="###LANGUAGE###" />
+	<input type="button" id="tx_egovapi_generatorForm_submit" value="###LABEL_NEXT###" />
+</form>
+
+<!-- ###TEMPLATE_STEP1### [end] -->
+
+<!-- ###TEMPLATE_STEP2### [begin] -->
+
+<form id="tx_egovapi_generatorForm_2" action="">
+	<div id="tx_egovapi_generatorForm_service">
+		<label for="tx_egovapi_service">###LABEL_SERVICE###</label>
+		<select id="tx_egovapi_service">
+			<option value=""></option>
+			<option value="01170">Attestation de domicile - 01170</option>
+		</select>
+		<span id="tx_egovapi_generatorForm_service_loader">
+			###AJAX_LOADER_SMALL###
+		</span>
+	</div>
+	<div id="tx_egovapi_generatorForm_version">
+		<label for="tx_egovapi_version">###LABEL_VERSION###</label>
+		<select id="tx_egovapi_version">
+			<option value="13479" class="status_archived">13479 (A)</option>
+			<option value="13514" class="status_default status_published" selected="selected">13514 (•)</option>
+			<option value="13228" class="status_published">13228 (P)</option>
+			<option value="13437" class="status_published">13437 (P)</option>
+			<option value="13483" class="status_draft">13483 (D)</option>
+		</select>
+		<span id="tx_egovapi_generatorForm_version_loader">
+			###AJAX_LOADER_SMALL###
+		</span>
+	</div>
+	<div>
+		<input type="hidden" id="tx_egovapi_ajaxUrl" value="###AJAX_URL###" />
+		<input type="hidden" id="tx_egovapi_defaultLanguage" value="###LANGUAGE###" />
+		<input type="button" id="tx_egovapi_generatorForm_submit" value="###LABEL_OK###" />
+	</div>
+</form>
+
+<!-- ###TEMPLATE_STEP2### [end] -->
+
+</body>
+</html>

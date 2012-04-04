@@ -46,6 +46,9 @@ t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Styles/', 'eGov 
 if ($enableSelectorPlugins) {
 	t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Selector/', 'eGov API Selector settings');
 }
+if ($enableRdfGenerator) {
+	t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/RdfGenerator/', 'eGov API RDF Generator settings');
+}
 
 if (TYPO3_MODE === 'BE') {
 	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['tx_egovapi_pi1_wizicon'] = t3lib_extMgm::extPath($_EXTKEY) . 'Classes/Controller/Pi1/class.tx_egovapi_pi1_wizicon.php';

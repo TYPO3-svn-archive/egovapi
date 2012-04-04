@@ -1,0 +1,38 @@
+	# Include jQuery library
+page.includeJSlibs {
+	jQueryEgovApi = http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js
+	jQueryEgovApi {
+		external = 1
+		disableCompression = 1
+		excludeFromConcatenation = 1
+	}
+}
+
+page.includeJSFooterlibs {
+	egovapiGenerator = EXT:egovapi/Resources/Public/JavaScript/rdf-generator.js
+}
+
+	# Configuration needed for AJAX
+plugin.tx_egovapi_pi3 {
+	wsdlVersion        = {$plugin.tx_egovapi.wsdlVersion}
+	wsdl               =
+	cacheLifetime      =
+	enableDebug        = {$plugin.tx_egovapi.enableDebug}
+	includeCHServices  = 1
+
+		# AJAX should return coordinates for organizations
+	coordinates        = 1
+
+	template           = EXT:egovapi/Resources/Private/Templates/Pi3/form.html
+	data.communities   = {$plugin.tx_egovapi.data.communities}
+	data.organizations = {$plugin.tx_egovapi.data.organizations}
+
+	ajaxLoaderSmall.cObject = IMAGE
+	ajaxLoaderSmall.cObject.file = EXT:egovapi/Resources/Public/Images/ajax-loader-small.gif
+}
+
+plugin.tx_egovapi_pi2.data.communities < plugin.tx_egovapi_pi3.data.communities
+plugin.tx_egovapi_pi2.data.organizations < plugin.tx_egovapi_pi3.data.organizations
+
+### SVN id ###
+# $Id$
