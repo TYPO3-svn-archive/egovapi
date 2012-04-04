@@ -57,7 +57,6 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 	 */
 	public function main($content, array $conf) {
 		$this->init($conf);
-		$this->pi_setPiVarDefaults();
 		$this->pi_USER_INT_obj = 1;	// Configuring so caching is not expected.
 		$this->pi_loadLL();
 
@@ -68,7 +67,7 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 		$templateFile = $this->conf['template'];
 		$this->template = $this->cObj->fileResource($templateFile);
 
-		switch ($this->sessionData['step']) {
+		switch ($this->piVars['step']) {
 			case 1:
 				$output = $this->step1();
 				break;
@@ -103,8 +102,16 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 			'LANGUAGE'           => t3lib_div::inList('de,en,fr,it,rm', $GLOBALS['TSFE']->lang) ? $GLOBALS['TSFE']->lang : 'de',
 		);
 
+		foreach ($this->sessionData as $key => $value) {
+			$markers[strtoupper($key)] = $value;
+		}
+
 		$subparts = array(
-			'COMMUNITIES' => $utilityConstants->getCommunities(array('fieldName' => 'tx_egovapi_community')),
+			'COMMUNITIES' => $utilityConstants->getCommunities(array(
+				'fieldId' => 'tx_egovapi_community',
+				'fieldName' => $this->prefixId . '[community]',
+				'fieldValue' => $this->sessionData['community'],
+			)),
 		);
 
 		$output = $this->cObj->substituteSubpartArray($template, $subparts);
@@ -139,11 +146,21 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 
 		$data = $GLOBALS['TSFE']->fe_user->getKey('ses', $this->prefixId);
 		$this->sessionData = is_array($data) ? $data : array();
-		if (!isset($this->sessionData['step'])) {
-			$this->sessionData['step'] = 1;
+
+		$this->pi_setPiVarDefaults();
+
+		$transferDataKeys = array('community', 'organization', 'website');
+		foreach ($transferDataKeys as $key) {
+			if (isset($this->piVars[$key])) {
+				$this->sessionData[$key] = $this->piVars[$key];
+			}
+		}
+
+		if (!isset($this->piVars['step'])) {
+			$this->piVars['step'] = 1;
 		} else {
 			$totalSteps = 3;
-			$this->sessionData['step'] = max(1, min($totalSteps, $this->sessionData['step']));
+			$this->piVars['step'] = max(1, min($totalSteps, $this->piVars['step']));
 		}
 	}
 

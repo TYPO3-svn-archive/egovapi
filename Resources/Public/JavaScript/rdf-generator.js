@@ -22,10 +22,29 @@ TX_EGOVAPI.generator = {
 			self.updateOrganizations($(this).val());
 		});
 
-		// Register handler for updating the list of services
 		$("select#tx_egovapi_organization").change(function() {
-			self.updateServices($(this).val());
+			self.toggleNextButton();
 		});
+
+		$("input#tx_egovapi_website").keypress(function() {
+			self.toggleNextButton();
+		});
+
+		if ($("select#tx_egovapi_community").val()) {
+			$("select#tx_egovapi_community").trigger('change');
+		}
+	},
+
+	toggleNextButton: function() {
+		var buttonNext = $("input#tx_egovapi_generatorForm_next");
+		var organization = $("select#tx_egovapi_organization").val();
+		var website = $("input#tx_egovapi_website").val();
+
+		if (organization.length > 0 && website.length > 0) {
+			buttonNext.removeAttr("disabled");
+		} else {
+			buttonNext.attr("disabled", true);
+		}
 	},
 
 	/**
@@ -41,7 +60,7 @@ TX_EGOVAPI.generator = {
 	 */
 	updateOrganizations: function(community) {
 		var self = this;
-		var language = $("input#tx_egovapi_generatorForm_language").val();
+		var language = $("input#tx_egovapi_defaultLanguage").val();
 
 		self.showLoading("tx_egovapi_generatorForm_organization_loader");
 		$.getJSON(
@@ -67,6 +86,9 @@ TX_EGOVAPI.generator = {
 						}
 					}
 					$("select#tx_egovapi_organization").html(options);
+
+					var defaultOrganization = $("input#tx_egovapi_defaultOrganization").val();
+					$("select#tx_egovapi_organization").val(defaultOrganization);
 				}
 			}
 		)

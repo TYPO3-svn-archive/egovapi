@@ -84,7 +84,8 @@ class tx_egovapi_utility_constants {
 		$communities = $communityRepository->findAll();
 
 		$html = '';
-		$html .= '<select name="' . $params['fieldName'] . '" id="' . $params['fieldName'] . '">';
+		$fieldId = isset($params['fieldId']) ? $params['fieldId'] : $params['fieldName'];
+		$html .= '<select name="' . $params['fieldName'] . '" id="' . $fieldId . '">';
 		$html .= '<option value="00-00"></option>';
 
 		$previousCanton = '';

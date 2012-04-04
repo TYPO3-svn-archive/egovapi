@@ -9,10 +9,11 @@
 <!-- ###TEMPLATE_STEP1### [begin] -->
 
 <form id="tx_egovapi_generatorForm_1" action="">
+	<input type="hidden" name="tx_egovapi_pi3[step]" value="2" />
 	<div id="tx_egovapi_generatorForm_community">
 		<label for="tx_egovapi_community">###LABEL_COMMUNITY###</label>
 		<!-- ###COMMUNITIES### [begin] -->
-		<select id="tx_egovapi_community">
+		<select id="tx_egovapi_community" name="tx_egovapi_pi3[community]">
 			<optgroup label="Fribourg">
 				<option value="10-00">Canton Fribourg</option>
 				<option value="10-01">District de la Broye</option>
@@ -22,7 +23,7 @@
 	</div>
 	<div id="tx_egovapi_generatorForm_organization">
 		<label for="tx_egovapi_organization">###LABEL_ORGANIZATION###</label>
-		<select id="tx_egovapi_organization">
+		<select id="tx_egovapi_organization" name="tx_egovapi_pi3[organization]">
 			<option value=""></option>
 			<option value="02004">Bussy (FR) - 02004</option>
 			<option value="02005">Châbles - 02005</option>
@@ -35,11 +36,12 @@
 	</div>
 	<div id="tx_egovapi_generatorForm_website">
 		<label for="tx_egovapi_website">###LABEL_WEBSITE###</label>
-		<input id="tx_egovapi_website" type="textbox" size="50" maxlength="50" />
+		<input type="textbox" id="tx_egovapi_website" name="tx_egovapi_pi3[website]" size="50" maxlength="50" value="###WEBSITE###" />
 	</div>
 	<input type="hidden" id="tx_egovapi_ajaxUrl" value="###AJAX_URL###" />
-	<input type="hidden" id="tx_egovapi_generatorForm_language" value="###LANGUAGE###" />
-	<input type="button" id="tx_egovapi_generatorForm_submit" value="###LABEL_NEXT###" />
+	<input type="hidden" id="tx_egovapi_defaultLanguage" value="###LANGUAGE###" />
+	<input type="hidden" id="tx_egovapi_defaultOrganization" value="###ORGANIZATION###" />
+	<input type="button" id="tx_egovapi_generatorForm_next" value="###LABEL_NEXT###" disabled="disabled" />
 </form>
 
 <!-- ###TEMPLATE_STEP1### [end] -->
@@ -73,7 +75,7 @@
 	<div>
 		<input type="hidden" id="tx_egovapi_ajaxUrl" value="###AJAX_URL###" />
 		<input type="hidden" id="tx_egovapi_defaultLanguage" value="###LANGUAGE###" />
-		<input type="button" id="tx_egovapi_generatorForm_submit" value="###LABEL_OK###" />
+		<input type="submit" value="###LABEL_OK###" />
 	</div>
 </form>
 
