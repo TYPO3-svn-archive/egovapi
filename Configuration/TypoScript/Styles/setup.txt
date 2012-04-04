@@ -198,6 +198,22 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 	margin-top           : 80px;
 }
 
+#tx_egovapi_generatorForm_2 tr.even {
+	background-color     : lightBlue;
+}
+
+.tx_egovapi_generatorForm_provider td {
+	font-weight          : bold;
+}
+
+td.tx_egovapi_generatorForm_serviceName {
+	width                : 400px;
+}
+
+input.tx_egovapi_generatorForm_url {
+	width                : 600px;
+}
+
 )
 
 ### SVN id ###

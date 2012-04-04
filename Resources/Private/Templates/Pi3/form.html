@@ -10,6 +10,16 @@
 
 <form id="tx_egovapi_generatorForm_1" action="">
 	<input type="hidden" name="tx_egovapi_pi3[step]" value="2" />
+	<div id="tx_egovapi_selectorForm_language">
+		<label for="tx_egovapi_language">###LABEL_LANGUAGE###</label>
+		<select id="tx_egovapi_language" name="tx_egovapi_pi3[language]">
+			<option value="de">Deutsch</option>
+			<option value="en">English</option>
+			<option value="fr">Français</option>
+			<option value="it">Italiano</option>
+			<option value="rm">Rumantsch</option>
+		</select>
+	</div>
 	<div id="tx_egovapi_generatorForm_community">
 		<label for="tx_egovapi_community">###LABEL_COMMUNITY###</label>
 		<!-- ###COMMUNITIES### [begin] -->
@@ -36,12 +46,12 @@
 	</div>
 	<div id="tx_egovapi_generatorForm_website">
 		<label for="tx_egovapi_website">###LABEL_WEBSITE###</label>
-		<input type="textbox" id="tx_egovapi_website" name="tx_egovapi_pi3[website]" size="50" maxlength="50" value="###WEBSITE###" />
+		<input type="text" id="tx_egovapi_website" name="tx_egovapi_pi3[website]" size="50" maxlength="50" value="###WEBSITE###" />
 	</div>
 	<input type="hidden" id="tx_egovapi_ajaxUrl" value="###AJAX_URL###" />
 	<input type="hidden" id="tx_egovapi_defaultLanguage" value="###LANGUAGE###" />
 	<input type="hidden" id="tx_egovapi_defaultOrganization" value="###ORGANIZATION###" />
-	<input type="button" id="tx_egovapi_generatorForm_next" value="###LABEL_NEXT###" disabled="disabled" />
+	<input type="submit" id="tx_egovapi_generatorForm_next" value="###LABEL_NEXT###" disabled="disabled" />
 </form>
 
 <!-- ###TEMPLATE_STEP1### [end] -->
@@ -49,33 +59,35 @@
 <!-- ###TEMPLATE_STEP2### [begin] -->
 
 <form id="tx_egovapi_generatorForm_2" action="">
-	<div id="tx_egovapi_generatorForm_service">
-		<label for="tx_egovapi_service">###LABEL_SERVICE###</label>
-		<select id="tx_egovapi_service">
-			<option value=""></option>
-			<option value="01170">Attestation de domicile - 01170</option>
-		</select>
-		<span id="tx_egovapi_generatorForm_service_loader">
-			###AJAX_LOADER_SMALL###
-		</span>
-	</div>
-	<div id="tx_egovapi_generatorForm_version">
-		<label for="tx_egovapi_version">###LABEL_VERSION###</label>
-		<select id="tx_egovapi_version">
-			<option value="13479" class="status_archived">13479 (A)</option>
-			<option value="13514" class="status_default status_published" selected="selected">13514 (•)</option>
-			<option value="13228" class="status_published">13228 (P)</option>
-			<option value="13437" class="status_published">13437 (P)</option>
-			<option value="13483" class="status_draft">13483 (D)</option>
-		</select>
-		<span id="tx_egovapi_generatorForm_version_loader">
-			###AJAX_LOADER_SMALL###
-		</span>
-	</div>
+	<input type="hidden" name="tx_egovapi_pi3[step]" value="3" />
+	<table>
+		<thead>
+			<tr>
+				<th>###LABEL_SERVICE###</th>
+				<th>###LABEL_URL###</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- ###TEMPLATE_PROVIDER### [begin] -->
+			<tr class="tx_egovapi_generatorForm_provider">
+				<td colspan="2">###PROVIDER###</td>
+			</tr>
+			<!-- ###TEMPLATE_PROVIDER### [end] -->
+			<!-- ###TEMPLATE_SERVICE### [begin] -->
+			<tr class="tx_egovapi_generatorForm_service ###CYCLE###">
+				<td class="tx_egovapi_generatorForm_serviceName">
+					<input type="hidden" name="tx_egovapi_pi3[service][###COUNTER###]" value="###SERVICE_ID###" />
+					###SERVICE###
+				</td>
+				<td valign="top">
+					<input type="text" size="40" name="tx_egovapi_pi3[url][###COUNTER###]" value="###URL###" class="tx_egovapi_generatorForm_url" />
+				</td>
+			</tr>
+			<!-- ###TEMPLATE_SERVICE### [end] -->
+		</tbody>
+	</table>
 	<div>
-		<input type="hidden" id="tx_egovapi_ajaxUrl" value="###AJAX_URL###" />
-		<input type="hidden" id="tx_egovapi_defaultLanguage" value="###LANGUAGE###" />
-		<input type="submit" value="###LABEL_OK###" />
+		<input type="submit" value="###LABEL_GENERATE###" />
 	</div>
 </form>
 

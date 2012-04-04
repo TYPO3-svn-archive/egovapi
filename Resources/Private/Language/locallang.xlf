@@ -336,6 +336,9 @@
 			<trans-unit id="common_next">
 				<source>Next</source>
 			</trans-unit>
+			<trans-unit id="common_generate">
+				<source>Generate RDF</source>
+			</trans-unit>
 			<trans-unit id="common_phone">
 				<source>Phone:</source>
 			</trans-unit>
@@ -344,6 +347,9 @@
 			</trans-unit>
 			<trans-unit id="common_website">
 				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="common_url">
+				<source>URL</source>
 			</trans-unit>
 			<trans-unit id="action_back_to_list">
 				<source>Back to list</source>

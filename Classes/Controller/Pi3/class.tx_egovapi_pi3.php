@@ -71,6 +71,12 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 			case 1:
 				$output = $this->step1();
 				break;
+			case 2:
+				$output = $this->step2();
+				break;
+			case 3:
+				$output = $this->step3();
+				break;
 			default:
 				$output = 'INVALID STEP!';
 		}
@@ -93,13 +99,13 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 		$utilityConstants = t3lib_div::makeInstance('tx_egovapi_utility_constants');
 
 		$markers = array(
+			'LABEL_LANGUAGE'     => $this->pi_getLL('common_language'),
 			'LABEL_COMMUNITY'    => $this->pi_getLL('header_community'),
 			'LABEL_ORGANIZATION' => $this->pi_getLL('header_organization'),
 			'LABEL_WEBSITE'      => $this->pi_getLL('common_website'),
 			'LABEL_NEXT'         => $this->pi_getLL('common_next'),
 			'AJAX_LOADER_SMALL'  => $this->conf['ajaxLoaderSmall'],
 			'AJAX_URL'           => $this->pi_getPageLink($GLOBALS['TSFE']->id),
-			'LANGUAGE'           => t3lib_div::inList('de,en,fr,it,rm', $GLOBALS['TSFE']->lang) ? $GLOBALS['TSFE']->lang : 'de',
 		);
 
 		foreach ($this->sessionData as $key => $value) {
@@ -121,6 +127,136 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 	}
 
 	/**
+	 * Prepares step 2 of the wizard.
+	 *
+	 * @return string
+	 */
+	protected function step2() {
+		if (!$this->sessionData['community']) {
+			return $this->step1();
+		}
+		$services = $this->getDomainServices();
+
+		$template = $this->cObj->getSubpart($this->template, '###TEMPLATE_STEP2###');
+		$providerTemplate = $this->cObj->getSubpart($template, '###TEMPLATE_PROVIDER###');
+		$serviceTemplate = $this->cObj->getSubpart($template, '###TEMPLATE_SERVICE###');
+		$formServices = array();
+
+		$i = 1;
+		$lastProvider = '';
+		$odd = TRUE;
+		foreach ($services as $service) {
+			if ($lastProvider !== $service->getProvider()) {
+				$formServices[] = $this->cObj->substituteMarkerArray(
+					$providerTemplate,
+					array(
+						'PROVIDER' => $service->getProvider(),
+					),
+					'###|###'
+				);
+				$odd = TRUE;
+			}
+			$serviceId = $service->getId() . '-' . $service->getVersionId();
+			$markers = array(
+				'COUNTER'     => $i,
+				'CYCLE'       => $odd ? 'odd' : 'even',
+				'SERVICE'     => sprintf('%s (%s)', $service->getName(), $service->getVersionId()),
+				'SERVICE_ID'  => $serviceId,
+				'URL'         => isset($this->sessionData['url'][$serviceId]) ? $this->sessionData['url'][$serviceId] : '',
+			);
+
+			$formServices[] = $this->cObj->substituteMarkerArray($serviceTemplate, $markers, '###|###');
+
+			$i++;
+			$lastProvider = $service->getProvider();
+			$odd = !$odd;
+		}
+
+		$markers = array(
+			'LABEL_SERVICE'      => $this->pi_getLL('header_service'),
+			'LABEL_URL'          => $this->pi_getLL('common_url'),
+			'LABEL_GENERATE'     => $this->pi_getLL('common_generate'),
+		);
+
+		foreach ($this->sessionData as $key => $value) {
+			$markers[strtoupper($key)] = $value;
+		}
+
+		$subparts = array(
+			'TEMPLATE_PROVIDER'  => '',
+			'TEMPLATE_SERVICE'   => implode(LF, $formServices),
+		);
+
+		$output = $this->cObj->substituteSubpartArray($template, $subparts);
+		$output = $this->cObj->substituteMarkerArray($output, $markers, '###|###');
+
+		return $output;
+	}
+
+	/**
+	 * Prepares step 3 of the wizard.
+	 *
+	 * @return string
+	 */
+	protected function step3() {
+
+	}
+
+	/**
+	 * Returns available services as domain model objects.
+	 *
+	 * @return tx_egovapi_domain_model_service[]
+	 */
+	protected function getDomainServices() {
+		$services = array();
+		$serviceIds = array();
+
+		/** @var tx_egovapi_domain_repository_audienceRepository $audienceRepository */
+		$audienceRepository = tx_egovapi_domain_repository_factory::getRepository('audience');
+
+		$audiences = $audienceRepository->findAll();
+		foreach ($audiences as $audience) {
+			foreach ($audience->getViews() as $view) {
+				foreach ($view->getDomains() as $domain) {
+					foreach ($domain->getTopics() as $topic) {
+						foreach ($topic->getServices() as $service) {
+							$serviceId = $service->getId();
+							if (!in_array($serviceId, $serviceIds)) {
+								$services[] = $service;
+								$serviceIds[] = $serviceId;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		if (!count($services)) {
+				// Invalid community?
+			return array();
+		}
+
+			// Sort services by provider and then by name
+		tx_egovapi_utility_objects::sort($services, 'provider');
+		$providersServices = array();
+		foreach ($services as $service) {
+			$provider = $service->getProvider();
+			if (!isset($providersServices[$provider])) {
+				$providersServices[$provider] = array();
+			}
+			$providersServices[$provider][] = $service;
+		}
+		$buffer = array();
+		foreach ($providersServices as $provider => &$services) {
+			tx_egovapi_utility_objects::sort($services, 'name');
+			$buffer = array_merge($buffer, $services);
+		}
+		$services = $buffer;
+
+		return $services;
+	}
+
+	/**
 	 * This method performs various initializations.
 	 *
 	 * @param array $settings: Plugin configuration, as received by the main() method
@@ -139,20 +275,25 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 		// Basically process stdWrap over all global parameters
 		$this->conf = tx_egovapi_utility_ts::preprocessConfiguration($this->cObj, $this->conf);
 
-		if ($this->conf['wsdlVersion']) {
-			$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $this->conf);
-			tx_egovapi_domain_repository_factory::injectDao($dao);
-		}
-
 		$data = $GLOBALS['TSFE']->fe_user->getKey('ses', $this->prefixId);
 		$this->sessionData = is_array($data) ? $data : array();
 
 		$this->pi_setPiVarDefaults();
 
-		$transferDataKeys = array('community', 'organization', 'website');
+		$transferDataKeys = array('language', 'community', 'organization', 'website');
 		foreach ($transferDataKeys as $key) {
 			if (isset($this->piVars[$key])) {
 				$this->sessionData[$key] = $this->piVars[$key];
+			}
+		}
+
+		if (isset($this->piVars['service']) && isset($this->piVars['url'])) {
+			$this->sessionData['url'] = array();
+			foreach ($this->piVars['url'] as $key => $url) {
+				if (preg_match('#^https?://.+#', trim($url))) {
+					$serviceId = $this->piVars['service'][$key];
+					$this->sessionData['url'][$serviceId] = trim($url);
+				}
 			}
 		}
 
@@ -161,6 +302,22 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 		} else {
 			$totalSteps = 3;
 			$this->piVars['step'] = max(1, min($totalSteps, $this->piVars['step']));
+		}
+
+		if (!isset($this->sessionData['language'])) {
+			$this->sessionData['language'] = t3lib_div::inList('de,en,fr,it,rm', $GLOBALS['TSFE']->lang) ? $GLOBALS['TSFE']->lang : 'de';
+		}
+		$this->conf['eCHlanguageID'] = $this->sessionData['language'];
+		if (isset($this->sessionData['community'])) {
+			$this->conf['eCHcommunityID'] = $this->sessionData['community'];
+		}
+		if (isset($this->sessionData['organization'])) {
+			$this->conf['organizationID'] = $this->sessionData['organization'];
+		}
+
+		if ($this->conf['wsdlVersion']) {
+			$dao = t3lib_div::makeInstance('tx_egovapi_dao_dao', $this->conf);
+			tx_egovapi_domain_repository_factory::injectDao($dao);
 		}
 	}
 

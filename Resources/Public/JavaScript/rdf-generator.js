@@ -4,6 +4,7 @@ if (typeof TX_EGOVAPI == 'undefined') TX_EGOVAPI = {};
 TX_EGOVAPI.generator = {
 	eID: "egovapi_pi2",
 	ajaxUrl: '',
+	defaultLanguage: '',
 	processing: false,
 
 	/**
@@ -11,6 +12,7 @@ TX_EGOVAPI.generator = {
 	 */
 	init: function() {
 		this.ajaxUrl = $("input#tx_egovapi_ajaxUrl").val();
+		this.defaultLanguage = $("input#tx_egovapi_defaultLanguage").val();
 		var self = this;
 
 		this.reset();
@@ -51,6 +53,7 @@ TX_EGOVAPI.generator = {
 	 * Reset the form fields.
 	 */
 	reset: function() {
+		$("select#tx_egovapi_language").val(this.defaultLanguage);
 		$("select#tx_egovapi_organization").html("");
 	},
 
@@ -60,7 +63,7 @@ TX_EGOVAPI.generator = {
 	 */
 	updateOrganizations: function(community) {
 		var self = this;
-		var language = $("input#tx_egovapi_defaultLanguage").val();
+		var language = $("select#tx_egovapi_language").val();
 
 		self.showLoading("tx_egovapi_generatorForm_organization_loader");
 		$.getJSON(
@@ -89,6 +92,7 @@ TX_EGOVAPI.generator = {
 
 					var defaultOrganization = $("input#tx_egovapi_defaultOrganization").val();
 					$("select#tx_egovapi_organization").val(defaultOrganization);
+					self.toggleNextButton();
 				}
 			}
 		)

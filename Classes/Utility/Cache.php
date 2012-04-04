@@ -95,7 +95,7 @@ class tx_egovapi_utility_cache {
 	 * Returns a proper cache key.
 	 *
 	 * @param mixed $config
-	 * @return void
+	 * @return string
 	 */
 	public static function getCacheKey($config) {
 		if (is_array($config)) {

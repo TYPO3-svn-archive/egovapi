@@ -117,9 +117,11 @@
 			<label index="common_language">Language</label>
 			<label index="common_ok">OK</label>
 			<label index="common_next">Next</label>
+			<label index="common_generate">Generate RDF</label>
 			<label index="common_phone">Phone:</label>
 			<label index="common_fax">Fax:</label>
 			<label index="common_website">Website</label>
+			<label index="common_url">URL</label>
 			<label index="action_back_to_list">Back to list</label>
 			<label index="action_toggle_marks">Mark All/Mark none</label>
 			<label index="action_download_vcard">Download as vCard</label>
