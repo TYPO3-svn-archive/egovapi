@@ -67,6 +67,10 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 		$templateFile = $this->conf['template'];
 		$this->template = $this->cObj->fileResource($templateFile);
 
+		if ($this->piVars['action'] === 'download') {
+			$this->downloadRDF();
+		}
+
 		switch ($this->piVars['step']) {
 			case 1:
 				$output = $this->step1();
@@ -210,6 +214,37 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 	 * @return string
 	 */
 	protected function step3() {
+		$template = $this->cObj->getSubpart($this->template, '###TEMPLATE_STEP3###');
+
+		$markers = array(
+			'RDF_CONTENT' => htmlentities($this->getRDF()),
+		);
+		$subparts = array(
+			'LINK_DOWNLOAD' => $this->cObj->typolinkWrap(array(
+				'parameter' => $GLOBALS['TSFE']->id,
+				'additionalParams' => '&tx_egovapi_pi3[action]=download',
+			))
+		);
+
+		$output = $this->cObj->substituteSubpartArray($template, $subparts);
+		$output = $this->cObj->substituteMarkerArray($output, $markers, '###|###');
+
+		return $output;
+	}
+
+	/**
+	 * Generates and sends the RDF for download.
+	 *
+	 * @return void
+	 */
+	protected function downloadRDF() {
+		header('Content-type: text/n3');
+		header('Content-Disposition: attachment; filename="services.n3"');
+		echo $this->getRDF();
+		exit;
+	}
+
+	protected function getRDF() {
 		$rdf = array();
 		$rdf[] = '@prefix :<http://semantic.cyberadmin.ch/ontologies/spso#> .';
 
@@ -246,21 +281,13 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 			$rdf[] = sprintf('<http://semantic.cyberadmin.ch/municipality/%s>', intval($this->sessionData['organization']));
 			for ($i = 0; $i < count($references); $i++) {
 				$pattern = $i == count($references) - 1
-						? ':providesService <%s>.'
-						: ':providesService <%s> ;';
+					? ':providesService <%s>.'
+					: ':providesService <%s> ;';
 				$rdf[] = TAB . sprintf($pattern, $references[$i]);
 			}
 		}
 
-		$template = $this->cObj->getSubpart($this->template, '###TEMPLATE_STEP3###');
-
-		$markers = array(
-			'RDF_CONTENT' => htmlentities(implode(LF, $rdf)),
-		);
-
-		$output = $this->cObj->substituteMarkerArray($template, $markers, '###|###');
-
-		return $output;
+		return implode(LF, $rdf);
 	}
 
 	/**
