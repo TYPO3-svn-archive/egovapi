@@ -158,20 +158,28 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 				);
 				$odd = TRUE;
 			}
-			$serviceId = $service->getId() . '-' . $service->getVersionId();
-			$markers = array(
-				'COUNTER'     => $i,
-				'CYCLE'       => $odd ? 'odd' : 'even',
-				'SERVICE'     => sprintf('%s (%s)', $service->getName(), $service->getVersionId()),
-				'SERVICE_ID'  => $serviceId,
-				'URL'         => isset($this->sessionData['url'][$serviceId]) ? $this->sessionData['url'][$serviceId] : '',
-			);
+			foreach ($service->getVersions() as $version) {
+				/** @var $version tx_egovapi_domain_model_version */
+				$serviceId = $service->getId() . '-' . $version->getId();
+				if ($version->isDefault()) {
+					$servicePattern = '%s (•%s)';
+				} else {
+					$servicePattern = '<em>%s (%s)</em>';
+				}
 
-			$formServices[] = $this->cObj->substituteMarkerArray($serviceTemplate, $markers, '###|###');
+				$markers = array(
+					'COUNTER'     => $i++,
+					'CYCLE'       => $odd ? 'odd' : 'even',
+					'SERVICE'     => sprintf($servicePattern, $service->getName(), $version->getId()),
+					'SERVICE_ID'  => $serviceId,
+					'URL'         => isset($this->sessionData['url'][$serviceId]) ? $this->sessionData['url'][$serviceId] : '',
+				);
 
-			$i++;
+				$formServices[] = $this->cObj->substituteMarkerArray($serviceTemplate, $markers, '###|###');
+				$odd = !$odd;
+			}
+
 			$lastProvider = $service->getProvider();
-			$odd = !$odd;
 		}
 
 		$markers = array(

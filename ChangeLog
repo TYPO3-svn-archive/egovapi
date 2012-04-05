@@ -1,5 +1,6 @@
 2012-04-05  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Allow RDF to be generated for all versions of a service
 	* [BUGFIX] Fix references in the generate RDF file (thanks to Martin Maillard)
 
 2012-04-04  Xavier Perseguers  <xavier@causal.ch>
