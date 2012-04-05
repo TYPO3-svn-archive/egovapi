@@ -71,17 +71,20 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 	margin               : 1em 0 0 0;
 }
 
-.tx-egovapi-pi2 form label {
+.tx-egovapi-pi2 form label,
+.tx-egovapi-pi3 form label {
 	float                : left;
 	width                : 150px;
 }
 
-.tx-egovapi-pi2 form div {
+.tx-egovapi-pi2 form div,
+.tx-egovapi-pi3 form div{
 	clear                : left;
 	margin               : 2px 0;
 }
 
-.tx-egovapi-pi2 form select {
+.tx-egovapi-pi2 form select,
+.tx-egovapi-pi3 form select {
 	width                : 300px;
 }
 
@@ -141,7 +144,7 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 	clear                : both;
 }
 
-#tx_egovapi_selectorForm_submit {
+.tx_egovapi_form_submit {
 	margin               : 15px 0 0 150px;
 	width                : 300px;
 }
@@ -198,12 +201,23 @@ plugin.tx_egovapi_pi1._CSS_DEFAULT_STYLE (
 	margin-top           : 80px;
 }
 
+#tx_egovapi_website {
+	width                : 300px;
+}
+
+#tx_egovapi_generatorForm_2 table {
+	border-collapse      : collapse;
+}
+
 #tx_egovapi_generatorForm_2 tr.even {
 	background-color     : lightBlue;
 }
 
 .tx_egovapi_generatorForm_provider td {
+	padding              : 1em 0 1em 405px;
 	font-weight          : bold;
+	font-variant         : small-caps;
+	letter-spacing       : .2ex;
 }
 
 td.tx_egovapi_generatorForm_serviceName {
@@ -217,6 +231,10 @@ input.tx_egovapi_generatorForm_url {
 #tx_egovapi_generatorForm_3 pre {
 	border               : 1px solid lightBlue;
 	padding              : 1em;
+}
+
+#tx_egovapi_generatorForm_2 .tx_egovapi_form_submit {
+	margin-left          : 400px;
 }
 
 )
