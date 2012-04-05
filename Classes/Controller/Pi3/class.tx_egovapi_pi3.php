@@ -99,6 +99,7 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 		$utilityConstants = t3lib_div::makeInstance('tx_egovapi_utility_constants');
 
 		$markers = array(
+			'ACTION'             => $this->pi_getPageLink($GLOBALS['TSFE']->id),
 			'LABEL_LANGUAGE'     => $this->pi_getLL('common_language'),
 			'LABEL_COMMUNITY'    => $this->pi_getLL('header_community'),
 			'LABEL_ORGANIZATION' => $this->pi_getLL('header_organization'),
@@ -106,6 +107,7 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 			'LABEL_NEXT'         => $this->pi_getLL('common_next'),
 			'AJAX_LOADER_SMALL'  => $this->conf['ajaxLoaderSmall'],
 			'AJAX_URL'           => $this->pi_getPageLink($GLOBALS['TSFE']->id),
+			'WEBSITE'            => '',
 		);
 
 		foreach ($this->sessionData as $key => $value) {
@@ -173,6 +175,7 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 		}
 
 		$markers = array(
+			'ACTION'             => $this->pi_getPageLink($GLOBALS['TSFE']->id),
 			'LABEL_SERVICE'      => $this->pi_getLL('header_service'),
 			'LABEL_URL'          => $this->pi_getLL('common_url'),
 			'LABEL_GENERATE'     => $this->pi_getLL('common_generate'),
@@ -209,8 +212,8 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 			list($service, $version) = explode('-', $serviceId, 2);
 			$identifier = sprintf(
 				'%s-%s-%s-%s',
-				$service,
-				$this->sessionData['organization'],
+				intval($service),
+				intval($this->sessionData['organization']),
 				$this->sessionData['language'],
 				$version
 			);
@@ -218,12 +221,12 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 			$rdf[] = sprintf('
 <%s>
 	a :ProvidedService ;
-	:isService <http://data.cyberadmin.ch/service/%s> ;
+	:isService <http://semantic.cyberadmin.ch/service/%s> ;
 	:url "%s" ;
 	:language "%s" .
 ',
 				$communityWebsite . $identifier,
-				$service,
+				intval($service),
 				htmlspecialchars($url),
 				strtoupper($this->sessionData['language'])
 			);
@@ -232,7 +235,7 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 		}
 
 		if (count($references) > 0) {
-			$rdf[] = sprintf('<http://data.cyberadmin.ch/municipality/%s>', $this->sessionData['organization']);
+			$rdf[] = sprintf('<http://semantic.cyberadmin.ch/municipality/%s>', intval($this->sessionData['organization']));
 			for ($i = 0; $i < count($references); $i++) {
 				$pattern = $i == count($references) - 1
 						? ':providesService <%s>.'

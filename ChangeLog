@@ -1,3 +1,7 @@
+2012-04-05  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] Fix references in the generate RDF file (thanks to Martin Maillard)
+
 2012-04-04  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Add RDF generator wizard
