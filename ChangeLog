@@ -1,3 +1,7 @@
+2012-04-19  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] Invalid mime-type suggested
+
 2012-04-05  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Add a link to download the generated RDF file
