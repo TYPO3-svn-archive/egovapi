@@ -40,5 +40,5 @@ CREATE TABLE tx_egovapi_rdf (
 	language char(2) DEFAULT 'de' NOT NULL,
 	url varchar(500) DEFAULT '' NOT NULL,
 
-	PRIMARY KEY (uid)
+	PRIMARY KEY (identifier)
 ) ENGINE=InnoDB;
