@@ -1,3 +1,9 @@
+2012-04-21  Xavier Perseguers  <xavier@causal.ch>
+
+	* [FEATURE] #33795: Generate RDF file from provided services
+	* [FEATURE] #33799: Automatic reference for published services
+	* [TASK][DOC] #33796: Describe how to add reference to RDF in page header
+
 2012-04-19  Xavier Perseguers  <xavier@causal.ch>
 
 	* [BUGFIX] Invalid mime-type suggested

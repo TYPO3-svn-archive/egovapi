@@ -228,6 +228,8 @@ class tx_egovapi_controller_pi1_fluidRenderer extends tx_egovapi_controller_pi1_
 	 * @return void
 	 */
 	protected function prepareServiceSingle(/* tx_egovapi_domain_model_service */ $service) {
+		$this->registerServiceForRdf($service);
+
 		$this->view->assign('service', $service);
 		$this->view->assign('vcardUrl', $this->settings['vcardUrl']);
 

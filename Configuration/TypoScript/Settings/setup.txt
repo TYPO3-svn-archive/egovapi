@@ -10,6 +10,21 @@ plugin.tx_egovapi_pi1 {
 	showRenderTime    = 1
 	enableDebug       = {$plugin.tx_egovapi.enableDebug}
 
+		# Uncomment if you need to disable the RDF rendering engine for a given service
+	#enableRdfRenderingEngine = 0
+
+		# URL parameters to be kept when registering a published service for RDF output
+	rdfKeepParameters (
+		id,
+		cHash,
+		no_cache,
+		tx_egovapi_pi1|topic,
+		tx_egovapi_pi1|service,
+		tx_egovapi_pi1|mode,
+		tx_egovapi_pi1|action,
+		tx_egovapi_pi1|controller
+	)
+
 		# Deprecated: Strip HTML tags from many web service information block. Beware: Eventually this won't be configurable anymore and will always be active.
 	stripTags         = 1
 

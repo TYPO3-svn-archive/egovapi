@@ -33,6 +33,9 @@
 			<trans-unit id="constants.enableDebug">
 				<source>Enable debugging information: Provide additional information with error messages. 3rd party devLog extension may be required for full support</source>
 			</trans-unit>
+			<trans-unit id="constants.enableRdfRenderingEngine">
+				<source>Enable RDF rendering engine: If set, published services will be available for semantic web crawler. Please read the extension's manual for additional required configuration</source>
+			</trans-unit>
 			<trans-unit id="constants.enableSelectorPlugins">
 				<source>Enable selector plugin: Provide a selector form plugin and its counterpart to show a service from URL parameters</source>
 			</trans-unit>

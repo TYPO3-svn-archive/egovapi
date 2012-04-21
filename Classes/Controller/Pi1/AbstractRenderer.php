@@ -113,6 +113,101 @@ abstract class tx_egovapi_controller_pi1_abstractRenderer {
 	}
 
 	/**
+	 * Registers a single service for automatic RDF output.
+	 *
+	 * @param tx_egovapi_domain_model_service $service
+	 * @return void
+	 */
+	protected function registerServiceForRdf(/* tx_egovapi_domain_model_service */ $service) {
+		if (!isset($this->settings['enableRdfRenderingEngine']) || !(bool)$this->settings['enableRdfRenderingEngine']) {
+			return;
+		}
+
+		$organization = intval($this->settings['organizationID']);
+		if (!$organization) {
+			throw new RuntimeException('Cannot register service for RDF: the organization is not defined', 1335013644);
+		}
+
+			// Prepare the URL
+		$allowedParameters = array();
+		$keepParameters = t3lib_div::trimExplode(',', $this->settings['rdfKeepParameters'], TRUE);
+		foreach ($keepParameters as $keepParameter) {
+			if (strpos($keepParameter, '|')) {
+				list($key, $subkey) = explode('|', $keepParameter, 2);
+				if (!isset($allowedParameters[$key])) {
+					$allowedParameters[$key] = array();
+				}
+				$allowedParameters[$key][$subkey] = $subkey;
+			} else {
+				$allowedParameters[$keepParameter] = $keepParameter;
+			}
+		}
+		$allParams = t3lib_div::_GET();
+		$additionalParams = array();
+		foreach ($allParams as $key => $value) {
+			if (is_array($value)) {
+				foreach ($value as $subkey => $v) {
+					if (isset($allowedParameters[$key][$subkey])) {
+						$additionalParams[] = sprintf('%s[%s]=%s', $key, $subkey, urlencode($v));
+					}
+				}
+			} else {
+				if (isset($allowedParameters[$key])) {
+					$additionalParams[$key] = sprintf('%s=%s', $key, urlencode($value));
+				}
+			}
+		}
+			// Sort the parameters to prevent duplicate entries in cache
+		asort($additionalParams);
+		$url = $this->cObj->typoLink_URL(array(
+			'parameter' => $GLOBALS['TSFE']->id,
+			'additionalParams' => '&' . implode('&', $additionalParams),
+			'forceAbsoluteUrl' => 1,
+		));
+			// Clean up the URL
+		$url = str_replace(array('%5B', '%5D'), array('[', ']'), $url);
+
+		unset($additionalParams['cHash']);
+		$identifier = md5($GLOBALS['TSFE']->id . '-' . implode('&', $additionalParams));
+
+			// Prune old entries
+		$GLOBALS['TYPO3_DB']->exec_DELETEquery(
+			'tx_egovapi_rdf',
+			'tstamp<' . ($GLOBALS['EXEC_TIME'] - 86400 * 60)
+		);
+
+		if ($GLOBALS['TYPO3_DB']->exec_SELECTcountRows('*', 'tx_egovapi_rdf', 'identifier=' . $GLOBALS['TYPO3_DB']->fullQuoteStr($identifier, 'tx_egovapi_rdf')) > 0) {
+				// Update an existing entry
+			$GLOBALS['TYPO3_DB']->exec_UPDATEquery(
+				'tx_egovapi_rdf',
+				'identifier=' . $GLOBALS['TYPO3_DB']->fullQuoteStr($identifier, 'tx_egovapi_rdf'),
+				array(
+					'tstamp'       => $GLOBALS['EXEC_TIME'],
+					'organization' => $organization,
+					'service'      => intval($service->getId()),
+					'version'      => intval($service->getVersionId()),
+					'language'     => strtolower($this->settings['eCHlanguageID']),
+					'url'          => $url,
+				)
+			);
+		} else {
+				// Create a new entry
+			$GLOBALS['TYPO3_DB']->exec_INSERTquery(
+				'tx_egovapi_rdf',
+				array(
+					'identifier'   => $identifier,
+					'tstamp'       => $GLOBALS['EXEC_TIME'],
+					'organization' => $organization,
+					'service'      => intval($service->getId()),
+					'version'      => intval($service->getVersionId()),
+					'language'     => strtolower($this->settings['eCHlanguageID']),
+					'url'          => $url,
+				)
+			);
+		}
+	}
+
+	/**
 	 * Configures the output to render Audience (either in LIST or SINGLE mode).
 	 *
 	 * @return void

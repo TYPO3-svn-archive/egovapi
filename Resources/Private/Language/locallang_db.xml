@@ -16,6 +16,7 @@
 			<label index="constants.organizationID">Organization ID: Identifier of the organization (e.g., 99001=Swiss Confederation, 00619=Oberdiessbach, 02196=Fribourg)</label>
 			<label index="constants.useFluid">Use Fluid as rendering engine</label>
 			<label index="constants.enableDebug">Enable debugging information: Provide additional information with error messages. 3rd party devLog extension may be required for full support</label>
+			<label index="constants.enableRdfRenderingEngine">Enable RDF rendering engine: If set, published services will be available for semantic web crawler. Please read the extension's manual for additional required configuration</label>
 			<label index="constants.enableSelectorPlugins">Enable selector plugin: Provide a selector form plugin and its counterpart to show a service from URL parameters</label>
 			<label index="constants.enableRdfGenerator">Enable RDF generator plugin: Provide a RDF form plugin to generate skeletons of RDF files</label>
 			<label index="constants.wsdl.global">WSDL for the eGov API: URL of the eGov API web service. BEWARE: Leave empty unless you know what you do</label>

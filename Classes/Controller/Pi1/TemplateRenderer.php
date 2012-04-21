@@ -522,6 +522,8 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 			return;
 		}
 
+		$this->registerServiceForRdf($service);
+
 		$markers = $this->getServiceMarkers($service);
 		foreach ($markers as $key => $value) {
 			$this->markers[$key] = $value;

@@ -3,6 +3,13 @@ CHANGES & IMPROVEMENTS between egovapi 1.5 and 2.0
 (for technical details see ChangeLog)
 ************************************************************************
 
+=== RDF Engine ===
+
+	A RDF rendering engine has been added to automatically generate
+	RDF files for services published on the website. This engine
+	should be manually activated for existing websites. Please read
+	the extension's manual for details.
+
 === Plugins ===
 
 	A new plugin has been added which allows skeleton of RDF files to be
