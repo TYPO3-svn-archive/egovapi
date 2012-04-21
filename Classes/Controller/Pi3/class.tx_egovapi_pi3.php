@@ -371,6 +371,9 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 		$transferDataKeys = array('language', 'community', 'organization', 'website');
 		foreach ($transferDataKeys as $key) {
 			if (isset($this->piVars[$key])) {
+				if ($key === 'website' && !preg_match('#^https?://.+#', trim($this->piVars[$key]))) {
+					$this->piVars[$key] = 'http://' . trim($this->piVars[$key]);
+				}
 				$this->sessionData[$key] = $this->piVars[$key];
 			}
 		}
