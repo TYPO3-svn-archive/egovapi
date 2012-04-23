@@ -10,7 +10,7 @@ plugin.tx_egovapi {
 		communities = EXT:egovapi/Resources/Private/Data/communities.csv
 
 			# cat=plugin.tx_egovapi/file; type=string; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.data.organizations
-		organizations = EXT:egovapi/Resources/Private/Data/organizations_geo.csv
+		organizations = EXT:egovapi/Resources/Private/Data/organizations.csv
 	}
 }
 

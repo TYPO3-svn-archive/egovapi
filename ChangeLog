@@ -1,3 +1,7 @@
+2012-04-23  Xavier Perseguers  <xavier@causal.ch>
+
+	* [!!!][TASK] #36451: Rename organizations_geo.csv as organization.csv
+
 2012-04-21  Xavier Perseguers  <xavier@causal.ch>
 
 	* [FEATURE] #33795: Generate RDF file from provided services
