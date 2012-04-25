@@ -1,185 +1,4 @@
 community_id;community_name
-1900;Kanton Aargau
-1901;Bezirk Aarau
-1902;Bezirk Baden
-1903;Bezirk Bremgarten
-1904;Bezirk Brugg
-1905;Bezirk Kulm
-1906;Bezirk Laufenburg
-1907;Bezirk Lenzburg
-1908;Bezirk Muri
-1909;Bezirk Rheinfelden
-1910;Bezirk Zofingen
-1911;Bezirk Zurzach
-1500;Kanton Appenzel Ausserrhoden
-1501;Bezirk Hinterland
-1502;Bezirk Mittellang
-1503;Bezirk Vorderland
-1600;Kanton Appenzel Innerhoden
-1300;Kanton Basel-Land
-1301;Bezirk Arlesheim
-1302;Bezirk Laufen
-1303;Bezirk Liestal
-1304;Bezirk Sissach
-1305;Bezirk Waldenburg
-1200;Kanton Basel-Stadt
-0200;Kanton Bern
-0201;Amtsbezirk Aarberg
-0202;Amtsbezirk Aarwangen
-0203;Amtsbezirk Bern
-0204;Amtsbezirk Biel
-0205;Amtsbezirk Büren
-0206;Amtsbezirk Burgdorf
-0207;District de Courtelary
-0208;Amtsbezirk Erlach
-0209;Amtsbezirk Fraubrunnen
-0210;Amtsbezirk Frutigen
-0211;Amtsbezirk Interlaken
-0212;Amtsbezirk Konolfingen
-0213;Amtsbezirk Laupen
-0214;District de Moutier
-0215;District de la Neuveville
-0216;Amtsbezirk Nidau
-0217;Amtsbezirk Niedersimmental
-0218;Amtsbezirk Oberhasli
-0219;Amtsbezirk Obersimmental
-0220;Amtsbezirk Saanen
-0221;Amtsbezirk Schwarzenburg
-0222;Amtsbezirk Seftigen
-0223;Amtsbezirk Signau
-0224;Amtsbezirk Thun
-0225;Amtsbezirk Trachselwald
-0226;Amtsbezirk Wangen
-1000;Canton Fribourg
-1001;District de la Broye
-1002;District de la Glâne
-1003;District de la Gruyère
-1004;District de la Sarine
-1005;Bezirk See / District du Lac
-1006;Bezirk Sense
-1007;District de la Veveyse
-1051;Département des finances
-2500;Canton Genève
-0800;Kanton Glarus
-1800;Kanton Graubunden
-1821;Bezirk Hinterland
-1822;Distretto di Bernina
-1823;Bezirk Hinterrhein
-1824;Bezirk Imboden
-1825;Bezirk Inn
-1826;Bezirk Landquart
-1827;Bezirk Maloja / Distretto di Maloggia
-1828;Distretto di Moesa
-1829;Bezirk Plessur
-1830;Bezirk Prättigau-Davos
-1831;Bezirk Surselva
-2600;Canton Jura
-2601;District de Delémont
-2602;District des Franches-Montagnes
-2603;District de Porrentruy
-0300;Kanton Luzern
-0301;Amt Entlebuch
-0302;Amt Hochdorf
-0303;Amt Luzern
-0304;Amt Sursee
-0305;Amt Willisau
-2400;Canton Neuchâtel
-2401;District de Boudry
-2402;District de la Chaux-de-Fonds
-2403;District du Locle
-2404;District de Neuchâtel
-2405;District du Val-de-Ruz
-2406;District du Val-de-Travers
-0700;Kanton Nidwalden
-0600;Kanton Obwalden
-1400;Kanton Schaffhausen
-1401;Bezirk Oberklettgau
-1402;Bezirk Reiat
-1403;Bezirk Schaffhausen
-1404;Bezirk Schleitheim
-1405;Bezirk Stein
-1406;Bezirk Unterklettgau
-0500;Kanton Schwyz
-0501;Bezirk Einsiedeln
-0502;Bezirk Gersau
-0503;Bezirk Höfe
-0504;Bezirk Küssnacht (SZ)
-0505;Bezirk March
-0506;Bezirk Schwyz
-1100;Kanton Solothurn
-1101;Bezirk Gaü
-1102;Bezirk Thal
-1103;Bezirk Bucheggberg
-1104;Bezirk Dorneck
-1105;Bezirk Gösgen
-1106;Bezirk Wasseramt
-1107;Bezirk Lebern
-1108;Bezirk Olten
-1109;Bezirk Solothurn
-1110;Bezirk Thierstein
-1700;Kanton St. Gallen
-1721;Wahlkreis St. Gallen
-1722;Wahlkreis Rorschach
-1723;Wahlkreis Rheintal
-1724;Wahlkreis Werdenberg
-1725;Wahlkreis Sarganserland
-1726;Wahlkreis See-Gaster
-1727;Wahlkreis Toggenburg
-1728;Wahlkreis Wil
-2100;Canton Tessin
-2101;Distretto di Bellinzona
-2102;Distretto di Blenio
-2103;Distretto di Leventina
-2104;Distretto di Locarno
-2105;Distretto di Lugano
-2106;Distretto di Mendrisio
-2107;Distretto di Riviera
-2108;Distretto di Vallemaggia
-2000;Kanton Thurgau
-2001;Bezirk Arbon
-2002;Bezirk Bischofszell
-2003;Bezirk Diessenhofen
-2004;Bezirk Frauenfeld
-2005;Bezirk Kreuzlingen
-2006;Bezirk Münchwilen
-2007;Bezirk Steckborn
-2008;Bezirk Weinfelden
-0400;Kanton Uri
-2300;Canton Valais
-2301;Bezirk Brig
-2302;District de Conthey
-2303;District d'Entremont
-2304;Bezirk Goms
-2305;District d'Hérens
-2306;Bezirk Leuk
-2307;District de Martigny
-2308;District de Monthey
-2309;Bezirk Raron
-2310;District de St-Maurice
-2311;District de Sierre
-2312;District de Sion
-2313;Bezirk Visp
-2200;Canton Vaud
-2201;District d'Aigle
-2202;District d'Aubonne
-2203;District d'Avenches
-2204;District de Cossonay
-2205;District d'Echallens
-2206;District de Grandson
-2207;District de Lausanne
-2208;District de Lavaux
-2209;District de Morges
-2210;District de Moudon
-2211;District de Nyon
-2212;District d'Orbe
-2213;District d'Oron
-2214;District de Payerne
-2215;District du Pays-dEnhaut
-2216;District de Rolle
-2217;District de la Vallée
-2218;District de Vevey
-2219;District d'Yverdon
-0900;Kanton Zug
 0100;Kanton Zürich
 0101;Bezirk Affoltern
 0102;Bezirk Andelfingen
@@ -193,3 +12,155 @@ community_id;community_name
 0110;Bezirk Winterthur
 0111;Bezirk Dietikon
 0112;Bezirk Zürich
+0200;Kanton Bern / Berne
+0241;Arrondissement administratif Jura bernois
+0242;Verwaltungskreis Biel/Bienne
+0243;Verwaltungskreis Seeland
+0244;Verwaltungskreis Oberaargau
+0245;Verwaltungskreis Emmental
+0246;Verwaltungskreis Bern-Mittelland
+0247;Verwaltungskreis Thun
+0248;Verwaltungskreis Obersimmental-Saanen
+0249;Verwaltungskreis Frutigen-Niedersimmental
+0250;Verwaltungskreis Interlaken-Oberhasli
+0300;Kanton Luzern
+0301;Amt Entlebuch
+0302;Amt Hochdorf
+0303;Amt Luzern
+0304;Amt Sursee
+0305;Amt Willisau
+0400;Kanton Uri
+0500;Kanton Schwyz
+0501;Bezirk Einsiedeln
+0502;Bezirk Gersau
+0503;Bezirk Höfe
+0504;Bezirk Küssnacht (SZ)
+0505;Bezirk March
+0506;Bezirk Schwyz
+0600;Kanton Obwalden
+0700;Kanton Nidwalden
+0800;Kanton Glarus
+0900;Kanton Zug
+1000;Canton Fribourg / Kanton Freiburg
+1001;District de la Broye
+1002;District de la Glâne
+1003;District de la Gruyère
+1004;District de la Sarine
+1005;Bezirk See / District du Lac
+1006;Bezirk Sense
+1007;District de la Veveyse
+1100;Kanton Solothurn
+1101;Bezirk Gäu
+1102;Bezirk Thal
+1103;Bezirk Bucheggberg
+1104;Bezirk Dorneck
+1105;Bezirk Gösgen
+1106;Bezirk Wasseramt
+1107;Bezirk Lebern
+1108;Bezirk Olten
+1109;Bezirk Solothurn
+1110;Bezirk Thierstein
+1200;Kanton Basel-Stadt
+1300;Kanton Basel-Landschaft
+1301;Bezirk Arlesheim
+1302;Bezirk Laufen
+1303;Bezirk Liestal
+1304;Bezirk Sissach
+1305;Bezirk Waldenburg
+1400;Kanton Schaffhausen
+1401;Bezirk Oberklettgau
+1402;Bezirk Reiat
+1403;Bezirk Schaffhausen
+1404;Bezirk Schleitheim
+1405;Bezirk Stein
+1406;Bezirk Unterklettgau
+1500;Kanton Appenzell Ausserrhoden
+1501;Bezirk Hinterland
+1502;Bezirk Mittelland
+1503;Bezirk Vorderland
+1600;Kanton Appenzell Innerrhoden
+1700;Kanton St. Gallen
+1721;Wahlkreis St. Gallen
+1722;Wahlkreis Rorschach
+1723;Wahlkreis Rheintal
+1724;Wahlkreis Werdenberg
+1725;Wahlkreis Sarganserland
+1726;Wahlkreis See-Gaster
+1727;Wahlkreis Toggenburg
+1728;Wahlkreis Wil
+1800;Kanton Graubünden / Grigioni / Grischun
+1821;Bezirk Albula
+1822;Distretto di Bernina
+1823;Bezirk Hinterrhein
+1824;Bezirk Imboden
+1825;Bezirk Inn
+1826;Bezirk Landquart
+1827;Bezirk Maloja / Distretto di Maloggia
+1828;Distretto di Moesa
+1829;Bezirk Plessur
+1830;Bezirk Prättigau-Davos
+1831;Bezirk Surselva
+1900;Kanton Aargau
+1901;Bezirk Aarau
+1902;Bezirk Baden
+1903;Bezirk Bremgarten
+1904;Bezirk Brugg
+1905;Bezirk Kulm
+1906;Bezirk Laufenburg
+1907;Bezirk Lenzburg
+1908;Bezirk Muri
+1909;Bezirk Rheinfelden
+1910;Bezirk Zofingen
+1911;Bezirk Zurzach
+2000;Kanton Thurgau
+2011;Bezirk Arbon
+2012;Bezirk Frauenfeld
+2013;Bezirk Kreuzlingen
+2014;Bezirk Münchwilen
+2015;Bezirk Weinfelden
+2100;Canton Ticino
+2101;Distretto di Bellinzona
+2102;Distretto di Blenio
+2103;Distretto di Leventina
+2104;Distretto di Locarno
+2105;Distretto di Lugano
+2106;Distretto di Mendrisio
+2107;Distretto di Riviera
+2108;Distretto di Vallemaggia
+2200;Canton de Vaud
+2221;District d'Aigle
+2222;District de la Broye-Vully
+2223;District du Gros-de-Vaud
+2224;District du Jura-Nord vaudois
+2225;District de Lausanne
+2226;District de Lavaux-Oron
+2227;District de Morges
+2228;District de Nyon
+2229;District de l'Ouest lausannois
+2230;District de la Riviera-Pays-d'Enhaut
+2300;Canton du Valais / Wallis
+2301;Bezirk Brig
+2302;District de Conthey
+2303;District d'Entremont
+2304;Bezirk Goms
+2305;District d'Hérens
+2306;Bezirk Leuk
+2307;District de Martigny
+2308;District de Monthey
+2309;Bezirk Raron
+2310;District de Saint-Maurice
+2311;District de Sierre
+2312;District de Sion
+2313;Bezirk Visp
+2400;Canton de Neuchâtel
+2401;District de Boudry
+2402;District de la Chaux-de-Fonds
+2403;District du Locle
+2404;District de Neuchâtel
+2405;District du Val-de-Ruz
+2406;District du Val-de-Travers
+2500;Canton de Genève
+2600;Canton du Jura
+2601;District de Delémont
+2602;District des Franches-Montagnes
+2603;District de Porrentruy

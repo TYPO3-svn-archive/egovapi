@@ -1,3 +1,7 @@
+2012-04-25  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] #34881: Update the list of communities
+
 2012-04-24  Xavier Perseguers  <xavier@causal.ch>
 
 	* [!!!][TASK] Update compatibility range for TYPO3 since v4.7 is now stable
