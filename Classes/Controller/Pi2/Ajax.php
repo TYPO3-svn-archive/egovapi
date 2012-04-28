@@ -145,6 +145,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 			$item = array(
 				'id' => $organization->getId(),
 				'name' => $organization->getName(),
+				'website' => $organization->getWebsite(),
 			);
 			if (isset($this->conf['coordinates']) && (bool)$this->conf['coordinates']) {
 				$item['latitude'] = $organization->getLatitude();

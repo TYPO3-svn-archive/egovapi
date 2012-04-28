@@ -1,5 +1,6 @@
 2012-04-28  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] Return organization's website with the AJAX request
 	* [TASK] #36685: Add a reference to the website of the organizations
 
 2012-04-25  Xavier Perseguers  <xavier@causal.ch>

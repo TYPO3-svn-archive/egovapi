@@ -53,12 +53,17 @@ class tx_egovapi_domain_model_organization extends tx_egovapi_domain_model_abstr
 	/**
 	 * @var float
 	 */
-	protected $latitude;
+	protected $latitude = 0.0;
 
 	/**
 	 * @var float
 	 */
-	protected $longitude;
+	protected $longitude = 0.0;
+
+	/**
+	 * @var string
+	 */
+	protected $website = '';
 
 	/**
 	 * Default constructor.
@@ -172,6 +177,26 @@ class tx_egovapi_domain_model_organization extends tx_egovapi_domain_model_abstr
 	 */
 	public function setLongitude($longitude) {
 		$this->longitude = $longitude;
+		return $this;
+	}
+
+	/**
+	 * Returns the website.
+	 *
+	 * @return string
+	 */
+	public function getWebsite() {
+		return $this->website;
+	}
+
+	/**
+	 * Sets the website.
+	 *
+	 * @param string $website
+	 * @return tx_egovapi_domain_model_organization the current Organization to allow method chaining
+	 */
+	public function setWebsite($website) {
+		$this->website = $website;
 		return $this;
 	}
 

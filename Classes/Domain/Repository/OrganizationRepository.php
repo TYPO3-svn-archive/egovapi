@@ -95,6 +95,9 @@ class tx_egovapi_domain_repository_organizationRepository extends tx_egovapi_dom
 						->setLatitude((float) $fields[4])
 						->setLongitude((float) $fields[5]);
 				}
+				if (isset($fields[6])) {
+					$organization->setWebsite($fields[6]);
+				}
 				self::$organizations[] = $organization;
 			}
 		}
