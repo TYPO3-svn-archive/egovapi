@@ -12,9 +12,19 @@ CHANGES & IMPROVEMENTS between egovapi 1.5 and 2.0
 
 === Plugins ===
 
-	A new plugin has been added which allows skeleton of RDF files to be
-	created for municipalities not running TYPO3 or running TYPO3 but
-	not using this extension for listing the services they provide.
+	A new plugin has been added which allows skeleton of RDF files
+	to be created for municipalities not running TYPO3 or running
+	TYPO3 but not using this extension for listing the services they
+	provide.
+
+=== Static Data ===
+
+	The lists of organizations and communities have been updated
+	to reflect changes that happened early this year (2012). In
+	addition, official website for the organizations has been added
+	as a new column in the CSV file, after the geographic
+	coordinates. This website is automatically sent back when doing
+	AJAX requests to the egovapi web service.
 
 ************************************************************************
 CHANGES & IMPROVEMENTS between egovapi 1.4 and 1.5
