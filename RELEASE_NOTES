@@ -3,6 +3,13 @@ CHANGES & IMPROVEMENTS between egovapi 1.5 and 2.0
 (for technical details see ChangeLog)
 ************************************************************************
 
+=== Requirements ===
+
+	TYPO3 4.4 is not supported anymore (officially deprecated on
+	http://typo3.org/download/ since 2012/04/24 with the release
+	of TYPO3 4.7). Supported versions of TYPO3 now start with
+	4.5.0 LTS.
+
 === RDF Engine ===
 
 	A RDF rendering engine has been added to automatically generate
@@ -127,7 +134,7 @@ CHANGES & IMPROVEMENTS between egovapi 1.2 and 1.3
 
 	TYPO3 4.3 is not supported anymore (officially deprecated on
 	http://typo3.org/download/packages/ since 2011/01/26 with the release
-	of TYPO3 4.5 LTS). Supported versions of TYPO3 now starts with 4.4.0.
+	of TYPO3 4.5 LTS). Supported versions of TYPO3 now start with 4.4.0.
 
 === Templates ===
 
