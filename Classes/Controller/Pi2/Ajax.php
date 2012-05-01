@@ -180,7 +180,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 			'organization'      => $this->conf['organizationID'],
 		));
 		$data = $this->getCacheData($cacheKey);
-		if ($data) {
+		if ($data !== NULL) {
 			return $data;
 		}
 		$data = array();
@@ -219,7 +219,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 			'service'           => $this->conf['service'],
 		));
 		$data = $this->getCacheData($cacheKey);
-		if ($data) {
+		if ($data !== NULL) {
 			return $data;
 		}
 		$data = array();
@@ -266,7 +266,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 				'organization'      => $this->conf['organizationID'],
 			));
 			$services = $this->getCacheData($cacheKey);
-			if ($services) {
+			if ($services !== NULL) {
 				return $services;
 			}
 		}
@@ -348,7 +348,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 			'parametrizedUrl.'  => $this->conf['parametrizedUrl.'],
 		));
 		$data = $this->getCacheData($cacheKey);
-		if ($data) {
+		if ($data !== NULL) {
 			return $data;
 		}
 
@@ -510,7 +510,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	 * @return array
 	 */
 	protected function getCacheData($cacheKey) {
-		$data = array();
+		$data = NULL;
 		if ($this->ajaxCache) {
 			if ($this->ajaxCache->has($cacheKey)) {
 				$data = $this->ajaxCache->get($cacheKey);
@@ -532,7 +532,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	 * @return void
 	 */
 	protected function storeCacheData($cacheKey, array $data, array $tags = array()) {
-		if ($this->ajaxCache && $data) {
+		if ($this->ajaxCache) {
 			try {
 				$this->ajaxCache->set($cacheKey, $data, $tags, intval($this->conf['cacheLifetime']));
 			} catch (t3lib_cache_Exception $e) {
