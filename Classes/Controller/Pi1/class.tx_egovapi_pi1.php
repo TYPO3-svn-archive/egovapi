@@ -56,6 +56,7 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 	 * @return string Content which appears on the website
 	 */
 	public function main($content, array $conf) {
+		$start = microtime(TRUE);
 		$this->init($conf);
 		$this->pi_setPiVarDefaults();
 		$useCaching = !$this->conf['dynamicConfig'];
@@ -89,7 +90,6 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 			}
 		}
 
-		$start = microtime(TRUE);
 		if ($vcard) {
 			$renderer = t3lib_div::makeInstance('tx_egovapi_controller_pi1_vcardRenderer');
 		} elseif ($this->conf['useFluid']) {
@@ -157,6 +157,7 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 				// and assign each configuration option to $this->settings array...
 			foreach ($piFlexForm['data'] as $sheet => $data) {
 				foreach ($data as $lang => $value) {
+					/** @var $value array */
 					foreach ($value as $key => $val) {
 						$value = $this->pi_getFFvalue($piFlexForm, $key, $sheet);
 						if (trim($value) !== '' && in_array($key, $multiValueKeys)) {
