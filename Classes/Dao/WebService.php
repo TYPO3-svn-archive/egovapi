@@ -75,6 +75,12 @@ class tx_egovapi_dao_webService {
 	/** @var SoapFault */
 	protected $lastSoapFault;
 
+	/** @var float */
+	protected static $elapsedTime = 0;
+
+	/** @var array */
+	protected static $wsCalls = array();
+
 	/**
 	 * Default constructor.
 	 *
@@ -128,6 +134,24 @@ class tx_egovapi_dao_webService {
 	 */
 	public function getLastSoapFault() {
 		return $this->lastSoapFault;
+	}
+
+	/**
+	 * Returns the elapsed time in WS calls.
+	 *
+	 * @return float
+	 */
+	public function getElapsedTime() {
+		return self::$elapsedTime;
+	}
+
+	/**
+	 * Returns the number of WS calls.
+	 *
+	 * @return array
+	 */
+	public function getTotalCalls() {
+		return self::$wsCalls;
 	}
 
 	/**
@@ -948,6 +972,7 @@ class tx_egovapi_dao_webService {
 			t3lib_div::devLog('Call "' . $method . '"', 'egovapi', self::DEVLOG_OK, $parameters);
 		}
 
+		$start = microtime(TRUE);
 		try {
 			$this->lastSoapFault = NULL;
 			$ret = $this->soap->call($method, array('parameters' => $parameters));
@@ -962,6 +987,9 @@ class tx_egovapi_dao_webService {
 			}
 			$ret = array();
 		}
+		self::$elapsedTime += microtime(TRUE) - $start;
+		if (!isset(self::$wsCalls[$method])) self::$wsCalls[$method] = 0;
+		self::$wsCalls[$method]++;
 
 		return $ret;
 	}

@@ -125,6 +125,15 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	}
 
 	/**
+	 * Returns the elapsed time in WS calls.
+	 *
+	 * @return float
+	 */
+	public function getWSElapsedTime() {
+		return tx_egovapi_domain_repository_factory::getDao()->getWSElapsedTime();
+	}
+
+	/**
 	 * Gets the organizations for a given community.
 	 *
 	 * @param tx_egovapi_domain_model_community $community
@@ -635,6 +644,7 @@ $ret = array(
 );
 try {
 	$ret['data'] = $output->main();
+	$ret['ws_time'] = $output->getWSElapsedTime();
 } catch (Exception $e) {
 	$ret['success'] = FALSE;
 	$ret['errors'][] = 'Error ' . $e->getCode() . ': ' . $e->getMessage();

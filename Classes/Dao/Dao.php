@@ -134,6 +134,24 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	}
 
 	/**
+	 * Returns the elapsed time in WS calls.
+	 *
+	 * @return float
+	 */
+	public function getWSElapsedTime() {
+		return $this->getWebService()->getElapsedTime();
+	}
+
+	/**
+	 * Returns the number of WS calls.
+	 *
+	 * @return array
+	 */
+	public function getWSCalls() {
+		return $this->getWebService()->getTotalCalls();
+	}
+
+	/**
 	 * Returns available audiences.
 	 *
 	 * @return tx_egovapi_domain_model_audience[]

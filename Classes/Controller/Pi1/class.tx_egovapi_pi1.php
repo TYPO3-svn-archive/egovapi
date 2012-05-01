@@ -104,7 +104,14 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 		$end = microtime(TRUE) - $start;
 
 		if ($this->conf['showRenderTime']) {
-			$content .= '<!-- ' . $this->prefixId . ' rendered in ' . $end . ' sec -->';
+			$content .= LF . '<!-- ' . $this->prefixId . ' rendered in ' . $end . ' sec -->';
+			if ($this->debug) {
+				$dao = tx_egovapi_domain_repository_factory::getDao();
+				$content .= LF . '<!--' . LF .
+					'Elapsed time in WS: ' . $dao->getWSElapsedTime() . ' sec' . LF .
+					'Calls: <json>' . json_encode($dao->getWSCalls()) . '</json>' . LF .
+					' -->';
+			}
 		}
 
 			// Wrap the whole result, with baseWrap if defined, else with standard pi_wrapInBaseClass() call
