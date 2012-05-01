@@ -165,7 +165,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 		));
 
 		$audiences = $this->getCacheData($cacheKey);
-		if (!$audiences) {
+		if ($audiences === NULL) {
 			$audiences = $this->getWebService()->getAudiences();
 
 			$tags = array(
@@ -193,7 +193,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 		));
 
 		$views = $this->getCacheData($cacheKey);
-		if (!$views) {
+		if ($views === NULL) {
 			$views = $this->getWebService()->getViews($audienceId);
 
 			$tags = array(
@@ -222,7 +222,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 		));
 
 		$domains = $this->getCacheData($cacheKey);
-		if (!$domains) {
+		if ($domains === NULL) {
 			$domains = $this->getWebService()->getDomains($viewId);
 
 			$tags = array(
@@ -255,7 +255,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 		));
 
 		$details = $this->getCacheData($cacheKey);
-		if (!$details) {
+		if ($details === NULL) {
 			$details = $this->getWebService()->getDomainDetails($domainId, $versionId, $isParent);
 
 			$tags = array(
@@ -285,7 +285,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 		));
 
 		$topics = $this->getCacheData($cacheKey);
-		if (!$topics) {
+		if ($topics === NULL) {
 			$topics = $this->getWebService()->getTopics($domainId);
 
 			$tags = array(
@@ -318,7 +318,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 		));
 
 		$details = $this->getCacheData($cacheKey);
-		if (!$details) {
+		if ($details === NULL) {
 			$details = $this->getWebService()->getTopicDetails($topicId, $versionId, $isParent);
 
 			$tags = array(
@@ -348,7 +348,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 		));
 
 		$services = $this->getCacheData($cacheKey);
-		if (!$services) {
+		if ($services === NULL) {
 			$services = $this->getWebService()->getServices($topicId);
 
 			$tags = array(
@@ -379,7 +379,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 		));
 
 		$details = $this->getCacheData($cacheKey);
-		if (!$details) {
+		if ($details === NULL) {
 			$details = $this->getWebService()->getServiceDetails($serviceId, $versionId);
 
 			$tags = array(
@@ -408,7 +408,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 		));
 
 		$versions = $this->getCacheData($cacheKey);
-		if (!$versions) {
+		if ($versions === NULL) {
 			$versions = $this->getWebService()->getVersions($serviceId);
 
 			$tags = array(
@@ -437,10 +437,10 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	 * Gets data from cache (if available).
 	 *
 	 * @param string $cacheKey
-	 * @return array
+	 * @return array|NULL
 	 */
 	protected function getCacheData($cacheKey) {
-		$data = array();
+		$data = NULL;
 		if ($this->webServiceCache) {
 			if ($this->webServiceCache->has($cacheKey)) {
 				$data = $this->webServiceCache->get($cacheKey);
@@ -462,7 +462,7 @@ class tx_egovapi_dao_dao implements t3lib_Singleton {
 	 * @return void
 	 */
 	protected function storeCacheData($cacheKey, array $data, array $tags = array()) {
-		if ($this->webServiceCache && $data) {
+		if ($this->webServiceCache) {
 			try {
 				$this->webServiceCache->set($cacheKey, $data, $tags, intval($this->settings['cacheLifetime']));
 			} catch (t3lib_cache_Exception $e) {

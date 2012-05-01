@@ -1,5 +1,6 @@
 2012-05-01  Xavier Perseguers  <xavier@causal.ch>
 
+	* [BUGFIX] #36760: Extension only caches non-empty responses from WebService
 	* [TASK] Optimize the configuration initialization
 	* [BUGFIX] Invalid calculation of generation time
 	* [TASK] Add WS debugging information
