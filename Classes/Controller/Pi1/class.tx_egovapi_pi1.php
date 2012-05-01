@@ -110,7 +110,7 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 				$content .= LF . '<!--' . LF .
 					'Elapsed time in WS: ' . $dao->getWSElapsedTime() . ' sec' . LF .
 					'Calls: <json>' . json_encode($dao->getWSCalls()) . '</json>' . LF .
-					' -->';
+					'-->';
 			}
 		}
 
