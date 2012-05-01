@@ -254,7 +254,14 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 		}
 
 			// Merge configuration with business logic and local override TypoScript (myTS)
+		$level = $this->conf['level'];
 		$this->conf = tx_egovapi_utility_ts::getMergedConfiguration($this->conf, $this->parameters, $GLOBALS['TSFE']->tmpl->setup);
+		if ($level !== $this->conf['level']) {
+				// Something changed, recompute the merged configuration as some
+				// code within tx_egovapi_utility_ts::getMergedConfiguration() does
+				// optimizations based on selected level
+			$this->conf = tx_egovapi_utility_ts::getMergedConfiguration($this->conf, $this->parameters, $GLOBALS['TSFE']->tmpl->setup);
+		}
 
 		$stripTags = isset($this->conf['stripTags']) ? $this->conf['stripTags'] : FALSE;
 		tx_egovapi_domain_repository_factory::setStripTags($stripTags);

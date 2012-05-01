@@ -140,9 +140,15 @@ class tx_egovapi_utility_ts {
 			// Business processing of configuration
 		$settings = self::processAUDIENCE($settings);
 		$settings = self::processVIEW($settings, $parameters);
-		$settings = self::processDOMAIN($settings, $parameters);
-		$settings = self::processTOPIC($settings, $parameters);
-		$settings = self::processSERVICE($settings, $parameters);
+		if (t3lib_div::inArray(array('VIEW', 'DOMAIN', 'TOPIC', 'SERVICE'), $settings['level'])) {
+			$settings = self::processDOMAIN($settings, $parameters);
+		}
+		if (t3lib_div::inArray(array('DOMAIN', 'TOPIC', 'SERVICE'), $settings['level'])) {
+			$settings = self::processTOPIC($settings, $parameters);
+		}
+		if (t3lib_div::inArray(array('TOPIC', 'SERVICE'), $settings['level'])) {
+			$settings = self::processSERVICE($settings, $parameters);
+		}
 		$settings = self::processBlocksOverrides($settings);
 		$settings = self::processTemplateOverrides($settings);
 		$settings = self::processVersionOverrides($settings);
@@ -390,7 +396,7 @@ class tx_egovapi_utility_ts {
 	 * Processes override of the blocks to show.
 	 *
 	 * @param array $settings
-	 * @return void
+	 * @return array
 	 */
 	protected static function processBlocksOverrides(array $settings) {
 		$levels = array('domain', 'topic', 'service');
@@ -412,7 +418,7 @@ class tx_egovapi_utility_ts {
 	 * Processes override of the service versions to use.
 	 *
 	 * @param array $settings
-	 * @return void
+	 * @return array
 	 */
 	protected static function processVersionOverrides(array $settings) {
 		$versions = $settings['versions_flex'];

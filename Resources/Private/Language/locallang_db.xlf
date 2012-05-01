@@ -60,14 +60,14 @@
 			<trans-unit id="constants.cacheLifetime">
 				<source>Lifetime of web service cached data: Make sure to activate caching framework in localconf.php</source>
 			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.one_minute">
-				<source>1 minute</source>
-			</trans-unit>
-			<trans-unit id="constants.cacheLifetime.five_minutes">
-				<source>5 minutes</source>
-			</trans-unit>
 			<trans-unit id="constants.cacheLifetime.one_hour">
 				<source>1 hour</source>
+			</trans-unit>
+			<trans-unit id="constants.cacheLifetime.six_hours">
+				<source>6 hours</source>
+			</trans-unit>
+			<trans-unit id="constants.cacheLifetime.half_day">
+				<source>12 hours</source>
 			</trans-unit>
 			<trans-unit id="constants.cacheLifetime.one_day">
 				<source>1 day</source>

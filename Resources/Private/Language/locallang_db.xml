@@ -25,9 +25,9 @@
 			<label index="constants.wsdlVersion.oneZero">Version 1.0</label>
 			<label index="constants.wsdlVersion.twoZero">Version 2.0</label>
 			<label index="constants.cacheLifetime">Lifetime of web service cached data: Make sure to activate caching framework in localconf.php</label>
-			<label index="constants.cacheLifetime.one_minute">1 minute</label>
-			<label index="constants.cacheLifetime.five_minutes">5 minutes</label>
 			<label index="constants.cacheLifetime.one_hour">1 hour</label>
+			<label index="constants.cacheLifetime.six_hours">6 hours</label>
+			<label index="constants.cacheLifetime.half_day">12 hours</label>
 			<label index="constants.cacheLifetime.one_day">1 day</label>
 			<label index="constants.cacheLifetime.one_week">1 week</label>
 			<label index="constants.cacheLifetime.unlimited">Unlimited</label>
