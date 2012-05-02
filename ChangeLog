@@ -1,3 +1,7 @@
+2012-05-02  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] Communities should be sorted alphabetically
+
 2012-05-01  Xavier Perseguers  <xavier@causal.ch>
 
 	* [BUGFIX] #36760: Extension only caches non-empty responses from WebService
