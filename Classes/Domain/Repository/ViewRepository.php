@@ -48,6 +48,7 @@ class tx_egovapi_domain_repository_viewRepository extends tx_egovapi_domain_repo
 	 * @param tx_egovapi_domain_model_audience $audience
 	 * @param boolean $cache
 	 * @return tx_egovapi_domain_model_view[]
+	 * @throws InvalidArgumentException
 	 */
 	public function findAll(tx_egovapi_domain_model_audience $audience = NULL, $cache = TRUE) {
 		if ($audience === NULL) {

@@ -43,7 +43,7 @@ class tx_egovapi_utility_ts {
 	/**
 	 * Converts a list of integer into a block of ranges.
 	 *
-	 * @param string $content
+	 * @param string $list
 	 * @param array $params
 	 * @return string
 	 * @see t3lib_div::expandList()

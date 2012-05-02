@@ -204,7 +204,7 @@ class tx_egovapi_service_latestChangesCleanupAdditionalFieldProvider implements 
 	/**
 	 * Takes care of saving the additional fields' values in the task's object
 	 *
-	 * @param array An array containing the data submitted by the add/edit task form
+	 * @param array $submittedData An array containing the data submitted by the add/edit task form
 	 * @param tx_egovapi_service_latestChangesCleanupTask Reference to the scheduler backend module
 	 * @return void
 	 */

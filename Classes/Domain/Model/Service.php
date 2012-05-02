@@ -682,7 +682,7 @@ class tx_egovapi_domain_model_service extends tx_egovapi_domain_model_abstractEn
 	/**
 	 * Sets the documents other.
 	 *
-	 * @param tx_egovapi_domain_model_block_documentsOther $documentOther
+	 * @param tx_egovapi_domain_model_block_documentsOther $documentsOther
 	 * @return tx_egovapi_domain_model_service the current service to allow method chaining
 	 */
 	public function setDocumentsOther(tx_egovapi_domain_model_block_documentsOther $documentsOther) {

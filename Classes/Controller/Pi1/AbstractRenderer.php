@@ -117,6 +117,7 @@ abstract class tx_egovapi_controller_pi1_abstractRenderer {
 	 *
 	 * @param tx_egovapi_domain_model_service $service
 	 * @return void
+	 * @throws RuntimeException
 	 */
 	protected function registerServiceForRdf(/* tx_egovapi_domain_model_service */ $service) {
 		if (!isset($this->settings['enableRdfRenderingEngine']) || !(bool)$this->settings['enableRdfRenderingEngine']) {

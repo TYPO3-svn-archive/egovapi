@@ -59,6 +59,7 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 	 * Renders the output of plugin Pi1.
 	 *
 	 * @return string
+	 * @throws UnexpectedValueException
 	 */
 	public function render() {
 		$this->initializeRender();
@@ -98,6 +99,7 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 	 *
 	 * @param tx_egovapi_domain_model_audience[] $audiences
 	 * @return void
+	 * @throws UnexpectedValueException
 	 */
 	protected function prepareAudienceList(array $audiences) {
 		$audiencesTemplate = $this->cObj->getSubpart($this->template, '###AUDIENCES###');
@@ -156,6 +158,7 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 	 * @param tx_egovapi_domain_model_audience $audience
 	 * @param tx_egovapi_domain_model_view[] $views
 	 * @return void
+	 * @throws UnexpectedValueException
 	 */
 	protected function prepareViewList(/* tx_egovapi_domain_model_audience */ $audience, array $views) {
 		$viewsTemplate = $this->cObj->getSubpart($this->template, '###VIEWS###');
@@ -243,6 +246,7 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 	 * @param tx_egovapi_domain_model_view $view
 	 * @param tx_egovapi_domain_model_domain[] $domains
 	 * @return void
+	 * @throws UnexpectedValueException
 	 */
 	protected function prepareDomainList(/* tx_egovapi_domain_model_view */ $view, array $domains) {
 		$domainsTemplate = $this->cObj->getSubpart($this->template, '###DOMAINS###');
@@ -344,6 +348,7 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 	 * @param tx_egovapi_domain_model_domain $domain
 	 * @param tx_egovapi_domain_model_topic[] $topics
 	 * @return void
+	 * @throws UnexpectedValueException
 	 */
 	protected function prepareTopicList(/* tx_egovapi_domain_model_domain */ $domain, array $topics) {
 		$topicsTemplate = $this->cObj->getSubpart($this->template, '###TOPICS###');
@@ -445,6 +450,7 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 	 * @param tx_egovapi_domain_model_topic $topic
 	 * @param tx_egovapi_domain_model_service[] $services
 	 * @return void
+	 * @throws UnexpectedValueException
 	 */
 	protected function prepareServiceList(/* tx_egovapi_domain_model_topic */ $topic, array $services) {
 		$servicesTemplate = $this->cObj->getSubpart($this->template, '###SERVICES###');

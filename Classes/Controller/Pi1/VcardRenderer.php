@@ -98,10 +98,10 @@ class tx_egovapi_controller_pi1_vcardRenderer extends tx_egovapi_controller_pi1_
 	 * Configures the output to render a SINGLE service.
 	 *
 	 * @param tx_egovapi_domain_model_service $service
-	 * @return return
+	 * @return void
 	 */
 	protected function prepareServiceSingle(/* tx_egovapi_domain_model_service */ $service) {
-		return parent::prepareServiceSingle($service);
+		parent::prepareServiceSingle($service);
 	}
 
 	/**
@@ -110,6 +110,7 @@ class tx_egovapi_controller_pi1_vcardRenderer extends tx_egovapi_controller_pi1_
 	 * @param tx_egovapi_domain_model_topic $topic
 	 * @param tx_egovapi_domain_model_service[] $services
 	 * @return void
+	 * @throws RuntimeException
 	 */
 	protected function prepareServiceList(/* tx_egovapi_domain_model_topic */ $topic, array $services) {
 		throw new RuntimeException('prepareServiceList is not implemented', 1308140884);
@@ -120,6 +121,7 @@ class tx_egovapi_controller_pi1_vcardRenderer extends tx_egovapi_controller_pi1_
 	 *
 	 * @param tx_egovapi_domain_model_topic $topic
 	 * @return void
+	 * @throws RuntimeException
 	 */
 	protected function prepareTopicSingle(/* tx_egovapi_domain_model_topic */ $topic) {
 		throw new RuntimeException('prepareTopicSingle is not implemented', 1308140910);
@@ -131,6 +133,7 @@ class tx_egovapi_controller_pi1_vcardRenderer extends tx_egovapi_controller_pi1_
 	 * @param tx_egovapi_domain_model_domain $domain
 	 * @param tx_egovapi_domain_model_topic[] $topics
 	 * @return void
+	 * @throws RuntimeException
 	 */
 	protected function prepareTopicList(/* tx_egovapi_domain_model_domain */ $domain, array $topics) {
 		throw new RuntimeException('prepareTopicList is not implemented', 1308140928);
@@ -141,6 +144,7 @@ class tx_egovapi_controller_pi1_vcardRenderer extends tx_egovapi_controller_pi1_
 	 *
 	 * @param tx_egovapi_domain_model_domain $domain
 	 * @return void
+	 * @throws RuntimeException
 	 */
 	protected function prepareDomainSingle(/* tx_egovapi_domain_model_domain */ $domain) {
 		throw new RuntimeException('prepareDomainSingle is not implemented', 1308140944);
@@ -152,6 +156,7 @@ class tx_egovapi_controller_pi1_vcardRenderer extends tx_egovapi_controller_pi1_
 	 * @param tx_egovapi_domain_model_view $view
 	 * @param tx_egovapi_domain_model_domain[] $domains
 	 * @return void
+	 * @throws RuntimeException
 	 */
 	protected function prepareDomainList(/* tx_egovapi_domain_model_view */ $view, array $domains) {
 		throw new RuntimeException('prepareDomainList is not implemented', 1308140962);
@@ -162,6 +167,7 @@ class tx_egovapi_controller_pi1_vcardRenderer extends tx_egovapi_controller_pi1_
 	 *
 	 * @param tx_egovapi_domain_model_view $view
 	 * @return void
+	 * @throws RuntimeException
 	 */
 	protected function prepareViewSingle( /* tx_egovapi_domain_model_view */ $view) {
 		throw new RuntimeException('prepareViewSingle is not implemented', 1308140987);
@@ -173,6 +179,7 @@ class tx_egovapi_controller_pi1_vcardRenderer extends tx_egovapi_controller_pi1_
 	 * @param tx_egovapi_domain_model_audience $audience
 	 * @param tx_egovapi_domain_model_view[] $views
 	 * @return void
+	 * @throws RuntimeException
 	 */
 	protected function prepareViewList(/* tx_egovapi_domain_model_audience */ $audience, array $views) {
 		throw new RuntimeException('prepareViewList is not implemented', 1308141020);
@@ -183,6 +190,7 @@ class tx_egovapi_controller_pi1_vcardRenderer extends tx_egovapi_controller_pi1_
 	 *
 	 * @param tx_egovapi_domain_model_audience $audience
 	 * @return void
+	 * @throws RuntimeException
 	 */
 	protected function prepareAudienceSingle(/* tx_egovapi_domain_model_audience */ $audience) {
 		throw new RuntimeException('prepareAudienceSingle is not implemented', 1308141047);
@@ -193,6 +201,7 @@ class tx_egovapi_controller_pi1_vcardRenderer extends tx_egovapi_controller_pi1_
 	 *
 	 * @param tx_egovapi_domain_model_audience[] $audiences
 	 * @return void
+	 * @throws RuntimeException
 	 */
 	protected function prepareAudienceList(array $audiences) {
 		throw new RuntimeException('prepareAudienceList is not implemented', 1308141064);

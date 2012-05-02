@@ -49,6 +49,7 @@ class tx_egovapi_domain_repository_organizationRepository extends tx_egovapi_dom
 	 * Finds all available organizations.
 	 *
 	 * @return tx_egovapi_domain_model_organization[]
+	 * @throws Exception
 	 */
 	public function findAll() {
 		if (!count(self::$organizations)) {
@@ -107,7 +108,7 @@ class tx_egovapi_domain_repository_organizationRepository extends tx_egovapi_dom
 	/**
 	 * Finds an organization given its identifier.
 	 *
-	 * @param string $id
+	 * @param string $uid
 	 * @return tx_egovapi_domain_model_organization
 	 */
 	public function findByUid($uid) {

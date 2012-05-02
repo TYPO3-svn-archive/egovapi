@@ -49,6 +49,7 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 	 * @param boolean $withKey
 	 * @param boolean $cache
 	 * @return tx_egovapi_domain_model_service[]
+	 * @throws InvalidArgumentException
 	 */
 	public function findAll(tx_egovapi_domain_model_topic $topic = NULL, $withKey = FALSE, $cache = TRUE) {
 		if ($topic === NULL) {

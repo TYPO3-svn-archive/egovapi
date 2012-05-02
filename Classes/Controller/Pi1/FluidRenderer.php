@@ -273,6 +273,8 @@ class tx_egovapi_controller_pi1_fluidRenderer extends tx_egovapi_controller_pi1_
 	 *
 	 * @return void
 	 * @see tslib_content_FluidTemplate
+	 * @throws RuntimeException
+	 * @throws InvalidArgumentException
 	 */
 	protected function initializeOutput() {
 		// Check if the needed extensions are installed

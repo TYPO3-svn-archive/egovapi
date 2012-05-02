@@ -122,6 +122,7 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 	 *
 	 * @param array $settings: Plugin configuration, as received by the main() method
 	 * @return void
+	 * @throws RuntimeException
 	 */
 	protected function init(array $settings) {
 			// Initialize default values based on extension TS

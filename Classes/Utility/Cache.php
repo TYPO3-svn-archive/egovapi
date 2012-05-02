@@ -65,6 +65,7 @@ class tx_egovapi_utility_cache {
 	 * Initializes the web service cache.
 	 *
 	 * @return void
+	 * @throws RuntimeException
 	 */
 	public static function initWebServiceCache() {
 		try {

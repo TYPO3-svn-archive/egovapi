@@ -48,6 +48,7 @@ class tx_egovapi_domain_repository_topicRepository extends tx_egovapi_domain_rep
 	 * @param tx_egovapi_domain_model_domain $domain
 	 * @param boolean $cache
 	 * @return tx_egovapi_domain_model_topic[]
+	 * @throws InvalidArgumentException
 	 */
 	public function findAll(tx_egovapi_domain_model_domain $domain = NULL, $cache = TRUE) {
 		if ($domain === NULL) {

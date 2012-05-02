@@ -64,6 +64,9 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	 * Default action.
 	 *
 	 * @return array
+	 * @throws RuntimeException
+	 * @throws UnexpectedValueException
+	 * @throws Exception
 	 */
 	public function main() {
 		$this->initTSFE();
@@ -104,7 +107,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 				$data = $this->getNearestOrganization();
 				break;
 			default:
-				throw new Exception('Invalid action ' . t3lib_div::_GET('action'), 1306143638);
+				throw new RuntimeException('Invalid action ' . t3lib_div::_GET('action'), 1306143638);
 		}
 
 			// Hook for post-processing the data
@@ -568,6 +571,7 @@ class tx_egovapi_controller_pi2_Ajax extends tx_egovapi_pibase {
 	 * Initializes this eID class.
 	 *
 	 * @return void
+	 * @throws Exception
 	 */
 	protected function init() {
 		$settings = $GLOBALS['TSFE']->tmpl->setup['plugin.'][$this->prefixId . '.'];
