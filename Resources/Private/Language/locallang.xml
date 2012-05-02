@@ -122,6 +122,7 @@
 			<label index="common_fax">Fax:</label>
 			<label index="common_website">Website</label>
 			<label index="common_url">URL</label>
+			<label index="common_all_versions">Show all versions</label>
 			<label index="action_back_to_list">Back to list</label>
 			<label index="action_toggle_marks">Mark All/Mark none</label>
 			<label index="action_download_vcard">Download as vCard</label>

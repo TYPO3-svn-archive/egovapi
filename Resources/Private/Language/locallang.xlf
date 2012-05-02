@@ -351,6 +351,9 @@
 			<trans-unit id="common_url">
 				<source>URL</source>
 			</trans-unit>
+			<trans-unit id="common_all_versions">
+				<source>Show all versions</source>
+			</trans-unit>
 			<trans-unit id="action_back_to_list">
 				<source>Back to list</source>
 			</trans-unit>

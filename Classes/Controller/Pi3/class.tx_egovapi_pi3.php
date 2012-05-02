@@ -108,6 +108,7 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 			'LABEL_COMMUNITY'    => $this->pi_getLL('header_community'),
 			'LABEL_ORGANIZATION' => $this->pi_getLL('header_organization'),
 			'LABEL_WEBSITE'      => $this->pi_getLL('common_website'),
+			'LABEL_ALL_VERSIONS' => $this->pi_getLL('common_all_versions'),
 			'LABEL_NEXT'         => $this->pi_getLL('common_next'),
 			'AJAX_LOADER_SMALL'  => $this->conf['ajaxLoaderSmall'],
 			'AJAX_URL'           => $this->pi_getPageLink($GLOBALS['TSFE']->id),
@@ -162,7 +163,20 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 				);
 				$odd = TRUE;
 			}
-			foreach ($service->getVersions() as $version) {
+			if ($this->sessionData['all_versions']) {
+				$versions = $service->getVersions();
+			} else {
+				/** @var $version tx_egovapi_domain_model_version */
+				$version = t3lib_div::makeInstance('tx_egovapi_domain_model_version', $service->getVersionId());
+
+				$version->setService($service);
+				$version->setName($service->getVersionName());
+				$version->setIsDefault(TRUE);
+
+				$versions = array($services);
+			}
+
+			foreach ($versions as $version) {
 				/** @var $version tx_egovapi_domain_model_version */
 				$serviceId = $service->getId() . '-' . $version->getId();
 				if ($version->isDefault()) {
@@ -368,7 +382,7 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 
 		$this->pi_setPiVarDefaults();
 
-		$transferDataKeys = array('language', 'community', 'organization', 'website');
+		$transferDataKeys = array('language', 'community', 'organization', 'website', 'all_versions');
 		foreach ($transferDataKeys as $key) {
 			if (isset($this->piVars[$key])) {
 				if ($key === 'website' && !preg_match('#^https?://.+#', trim($this->piVars[$key]))) {
