@@ -1,5 +1,6 @@
 2012-05-02  Xavier Perseguers  <xavier@causal.ch>
 
+	* [!!!][TASK] Remove code targeted as TYPO3 < 4.5.0
 	* [FEATURE] Let user decide whether all service versions should be retrieved (slower)
 	* [FEATURE] Automatically populate organization's website
 	* [TASK] Communities should be sorted alphabetically
