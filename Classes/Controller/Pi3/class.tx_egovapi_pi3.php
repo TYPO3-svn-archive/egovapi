@@ -382,6 +382,7 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 
 		$this->pi_setPiVarDefaults();
 
+		$this->sessionData['all_versions'] = 0;
 		$transferDataKeys = array('language', 'community', 'organization', 'website', 'all_versions');
 		foreach ($transferDataKeys as $key) {
 			if (isset($this->piVars[$key])) {
