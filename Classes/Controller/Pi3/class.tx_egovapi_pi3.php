@@ -173,7 +173,7 @@ class tx_egovapi_pi3 extends tx_egovapi_pibase {
 				$version->setName($service->getVersionName());
 				$version->setIsDefault(TRUE);
 
-				$versions = array($services);
+				$versions = array($version);
 			}
 
 			foreach ($versions as $version) {
