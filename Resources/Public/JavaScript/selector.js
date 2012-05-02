@@ -380,7 +380,7 @@ TX_EGOVAPI.selector = {
 	hideLoading: function(id) {
 		$("#" + id).hide();
 	}
-}
+};
 
 // These methods MUST be global
 function setOrganization(id) {

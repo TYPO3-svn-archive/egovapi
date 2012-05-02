@@ -123,7 +123,7 @@ TX_EGOVAPI.generator = {
 	hideLoading: function(id) {
 		$("#" + id).hide();
 	}
-}
+};
 
 $(document).ready(function() {
 	TX_EGOVAPI.generator.init();

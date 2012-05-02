@@ -271,13 +271,13 @@ class tx_egovapi_controller_pi1_fluidRenderer extends tx_egovapi_controller_pi1_
 	 * Returns a newly created Tx_Fluid_View_StandaloneView object.
 	 * Code is based on method render of tslib_content_FluidTemplate.
 	 *
-	 * @return void|string
+	 * @return void
 	 * @see tslib_content_FluidTemplate
 	 */
 	protected function initializeOutput() {
 		// Check if the needed extensions are installed
 		if (!t3lib_extMgm::isLoaded('fluid')) {
-			return 'You need to install "Fluid" in order to use a FLUID template';
+			throw new RuntimeException('You need to install "Fluid" in order to use a FLUID template', 1335963295);
 		}
 
 		$mode = strtolower($this->settings['mode']);
