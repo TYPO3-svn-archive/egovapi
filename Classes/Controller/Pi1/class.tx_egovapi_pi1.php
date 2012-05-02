@@ -80,14 +80,7 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 		}
 
 		if ($this->debug) {
-			$version = class_exists('t3lib_utility_VersionNumber')
-					? t3lib_utility_VersionNumber::convertVersionNumberToInteger(TYPO3_version)
-					: t3lib_div::int_from_ver(TYPO3_version);
-			if ($version < 4005000) {
-				t3lib_div::debug($this->conf, 'Settings of ' . $this->prefixId);
-			} else {
-				t3lib_utility_Debug::debug($this->conf, 'Settings of ' . $this->prefixId);
-			}
+			t3lib_utility_Debug::debug($this->conf, 'Settings of ' . $this->prefixId);
 		}
 
 		if ($vcard) {
@@ -265,14 +258,6 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 
 		$stripTags = isset($this->conf['stripTags']) ? $this->conf['stripTags'] : FALSE;
 		tx_egovapi_domain_repository_factory::setStripTags($stripTags);
-
-			// Fluid templates are only available since TYPO3 4.5
-		$version = class_exists('t3lib_utility_VersionNumber')
-				? t3lib_utility_VersionNumber::convertVersionNumberToInteger(TYPO3_version)
-				: t3lib_div::int_from_ver(TYPO3_version);
-		if ($version < 4005000) {
-			$this->conf['useFluid'] = 0;
-		}
 
 		if ($this->conf['fluid'] && !t3lib_extMgm::isLoaded('fluid')) {
 			throw new RuntimeException('You activated Fluid templates (plugin.tx_egovapi_pi1.useFluid=1) without loading extension "fluid".', 1311953003);
