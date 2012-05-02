@@ -5,6 +5,7 @@ TX_EGOVAPI.generator = {
 	eID: "egovapi_pi2",
 	ajaxUrl: '',
 	defaultLanguage: '',
+	websites: {},
 	processing: false,
 
 	/**
@@ -22,6 +23,11 @@ TX_EGOVAPI.generator = {
 			if (self.processing) return;
 			self.processing = true;
 			self.updateOrganizations($(this).val());
+		});
+
+		// Register handler for updating the website
+		$("select#tx_egovapi_organization").change(function() {
+			self.updateWebsite($(this).val());
 		});
 
 		$("select#tx_egovapi_organization").change(function() {
@@ -80,12 +86,11 @@ TX_EGOVAPI.generator = {
 				if (response.success) {
 					var data = response.data;
 					var options = '<option value=""></option>';
-					self.coordinates = {};
+					self.websites = {};
 					for (var i = 0; i < data.length; i++) {
 						options += '<option value="' + data[i].id + '">' + data[i].name + '</option>';
-						self.coordinates[data[i].id] = {
-							lat: data[i].latitude,
-							lng: data[i].longitude
+						self.websites[data[i].id] = {
+							url: data[i].www
 						}
 					}
 					$("select#tx_egovapi_organization").html(options);
@@ -96,6 +101,18 @@ TX_EGOVAPI.generator = {
 				}
 			}
 		)
+	},
+
+	/**
+	 * Update the organization's website.
+	 * @param organization
+	 */
+	updateWebsite: function(organization) {
+		var self = this;
+		var website = self.websites[organization];
+		if (website && website.url) {
+			$("input#tx_egovapi_website").val(website.url);
+		}
 	},
 
 	showLoading: function(id) {
