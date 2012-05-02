@@ -887,7 +887,7 @@ class tx_egovapi_controller_pi1_templateRenderer extends tx_egovapi_controller_p
 	 * @param string $idKey
 	 * @param string $idValue
 	 * @param string $mode Either 'list' or 'single'
-	 * @return void
+	 * @return array
 	 */
 	public function getParentLevelLinkParts($parentLevel, $idKey = '', $idValue = '', $mode = 'list') {
 		$params = array(

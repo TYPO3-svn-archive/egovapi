@@ -98,7 +98,7 @@ class tx_egovapi_controller_pi1_vcardRenderer extends tx_egovapi_controller_pi1_
 	 * Configures the output to render a SINGLE service.
 	 *
 	 * @param tx_egovapi_domain_model_service $service
-	 * @return void
+	 * @return return
 	 */
 	protected function prepareServiceSingle(/* tx_egovapi_domain_model_service */ $service) {
 		return parent::prepareServiceSingle($service);

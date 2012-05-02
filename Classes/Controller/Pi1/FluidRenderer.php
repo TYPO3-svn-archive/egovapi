@@ -271,7 +271,7 @@ class tx_egovapi_controller_pi1_fluidRenderer extends tx_egovapi_controller_pi1_
 	 * Returns a newly created Tx_Fluid_View_StandaloneView object.
 	 * Code is based on method render of tslib_content_FluidTemplate.
 	 *
-	 * @return void
+	 * @return void|string
 	 * @see tslib_content_FluidTemplate
 	 */
 	protected function initializeOutput() {

@@ -364,7 +364,7 @@ class tx_egovapi_helpers_ts {
 	 * Processes override of the blocks to show.
 	 *
 	 * @param array $settings
-	 * @return void
+	 * @return array
 	 */
 	protected static function processBlocksOverrides(array $settings) {
 		$levels = array('domain', 'topic', 'service');
@@ -386,7 +386,7 @@ class tx_egovapi_helpers_ts {
 	 * Processes override of the service versions to use.
 	 *
 	 * @param array $settings
-	 * @return void
+	 * @return array
 	 */
 	protected static function processVersionOverrides(array $settings) {
 		$versions = $settings['versions_flex'];

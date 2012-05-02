@@ -493,6 +493,7 @@ class tx_egovapi_utility_flexform {
 		if (is_array($sheetArray)) {
 			return $this->getFFvalueFromSheetArray($sheetArray, explode('/', $fieldName), $value);
 		}
+		return NULL;
 	}
 
 	/**
