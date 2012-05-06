@@ -13,8 +13,8 @@ should be analyzed with Fluid template examples or by looking at the classes wit
 
 .. _tx_egovapi_domain_model_audience:
 
-Audience (``tx_egovapi_domain_model_audience``)
------------------------------------------------
+Audience (tx_egovapi_domain_model_audience)
+-------------------------------------------
 
 ======================   =========
  Property                 Type
@@ -29,8 +29,8 @@ Audience (``tx_egovapi_domain_model_audience``)
 
 .. _tx_egovapi_domain_model_view:
 
-View (``tx_egovapi_domain_model_view``)
----------------------------------------
+View (tx_egovapi_domain_model_view)
+-----------------------------------
 
 ======================   =========
  Property                 Type
@@ -50,8 +50,8 @@ Additional template values:
 
 .. _tx_egovapi_domain_model_domain:
 
-Domain (``tx_egovapi_domain_model_domain``)
--------------------------------------------
+Domain (tx_egovapi_domain_model_domain)
+---------------------------------------
 
 ======================   =========
  Property                 Type
@@ -92,8 +92,8 @@ Additional template values:
 
 .. _tx_egovapi_domain_model_topic:
 
-Topic (``tx_egovapi_domain_model_topic``)
------------------------------------------
+Topic (tx_egovapi_domain_model_topic)
+-------------------------------------
 
 ======================   =========
  Property                 Type
@@ -132,8 +132,8 @@ Additional template values:
 
 .. _tx_egovapi_domain_model_service:
 
-Service (``tx_egovapi_domain_model_service``)
----------------------------------------------
+Service (tx_egovapi_domain_model_service)
+-----------------------------------------
 
 ======================   =========
  Property                 Type
@@ -197,8 +197,8 @@ Additional template values:
 
 .. _tx_egovapi_domain_model_block_contact:
 
-Service (``tx_egovapi_domain_model_block_contact``)
----------------------------------------------------
+Service (tx_egovapi_domain_model_block_contact)
+-----------------------------------------------
 
 ======================   =========
  Property                 Type
