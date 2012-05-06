@@ -2,25 +2,25 @@
 .. coding: utf-8 without BOM
 .. _Show files in current folder: .
 
-============================================================
+############################################################
 EXT: eGov API
-============================================================
+############################################################
 
 :Extension Key: egovapi
 :Language:      en, de, fr, it
 :Keywords:      e-government, switzerland, administrative services, cyberadministration
 :Author:        Causal Sàrl <xavier@causal.ch> for SECO
-:Date:          2011-10-13
-:Revision:      $Revision$
+:Date:          |today|
+:Revision:      |release|
 :Description:   This is the documentation for the TYPO3 extension egovapi
 
 .. contents::
 
 Introduction
-============
+############
 
 What does it do?
-----------------
+================
 
 In the digital age, enterprises and citizens should be able to ask for an administrative
 authorization or an official register extract electronically. Thanks to the eGov CH Reference
@@ -32,7 +32,7 @@ The eGov API extension aims at providing an easy way to swiss public authorities
 access to the different administrative services they offer through their TYPO3 website.
 
 Sponsorship
------------
+===========
 
 This extension is the official implementation of the swiss eGov Remote API for TYPO3. It has been
 sponsored by the State Secretariat for Economic Affairs SECO which is the Confederation's competence
@@ -47,7 +47,7 @@ Further information:
 - Causal Sàrl: http://causal.ch/
 
 Screenshots
------------
+===========
 
 .. image:: images/screenshots/overview.jpg
 	:align: center
@@ -57,10 +57,10 @@ Screenshots
 
 
 User manual
-===========
+###########
 
 Plugin options
---------------
+==============
 
 The plugin is split among a general configuration tab and then a tab for each and every level of the
 eGov API (Audience, View, Domain, Topic, Service). Finally a “Version” tab allows you to force a
@@ -68,7 +68,7 @@ given version of a service to be used instead of the default one. “Other Setti
 additional configuration options we will describe later on.
 
 General
-```````
+-------
 
 .. image:: images/user_manual/general.png
 	:align: center
@@ -87,7 +87,7 @@ configuration. Any configuration option may be overridden except the web service
 takes place. We assume it is more than unlikely to be needed anyway.
 
 Level hierarchy
-```````````````
+---------------
 
 Before actually describing the options of the level configuration tabs, it may help giving us an
 overview of the level hierarchy within the eGov web service:
@@ -96,7 +96,7 @@ overview of the level hierarchy within the eGov web service:
 	:align: center
 
 Audience
-````````
+--------
 
 .. image:: images/user_manual/audience.png
 	:align: center
@@ -112,13 +112,13 @@ now save the plugin configuration before moving on to tab “View” where we on
 either to “Entreprise” or to “Personne privée” in the available items.
 
 View
-````
+----
 
 .. image:: images/user_manual/view.png
 	:align: center
 
 Domain
-``````
+------
 
 .. image:: images/user_manual/domain.png
 	:align: center
@@ -129,25 +129,25 @@ to trim down the amount of information or to split them among multiple copies of
 detail page.
 
 Topic
-`````
+-----
 
 .. image:: images/user_manual/topic.png
 	:align: center
 
 Service
-```````
+-------
 
 .. image:: images/user_manual/service.png
 	:align: center
 
 Version
-```````
+-------
 
 .. image:: images/user_manual/version.png
 	:align: center
 
 Domain Model
-------------
+============
 
 This section describes the eGov API domain model. The domain model may be accessed directly when
 using Fluid-based templates. If instead you use marker-based templates, only partial access to the
@@ -162,7 +162,7 @@ should be analyzed with Fluid template examples or by looking at the classes wit
 .. _tx_egovapi_domain_model_audience:
 
 Audience (``tx_egovapi_domain_model_audience``)
-```````````````````````````````````````````````
+-----------------------------------------------
 
 ======================   =========
  Property                 Type
@@ -178,7 +178,7 @@ Audience (``tx_egovapi_domain_model_audience``)
 .. _tx_egovapi_domain_model_view:
 
 View (``tx_egovapi_domain_model_view``)
-```````````````````````````````````````
+---------------------------------------
 
 ======================   =========
  Property                 Type
@@ -199,7 +199,7 @@ Additional template values:
 .. _tx_egovapi_domain_model_domain:
 
 Domain (``tx_egovapi_domain_model_domain``)
-```````````````````````````````````````````
+-------------------------------------------
 
 ======================   =========
  Property                 Type
@@ -241,7 +241,7 @@ Additional template values:
 .. _tx_egovapi_domain_model_topic:
 
 Topic (``tx_egovapi_domain_model_topic``)
-`````````````````````````````````````````
+-----------------------------------------
 
 ======================   =========
  Property                 Type
@@ -281,7 +281,7 @@ Additional template values:
 .. _tx_egovapi_domain_model_service:
 
 Service (``tx_egovapi_domain_model_service``)
-`````````````````````````````````````````````
+---------------------------------------------
 
 ======================   =========
  Property                 Type
@@ -346,7 +346,7 @@ Additional template values:
 .. _tx_egovapi_domain_model_block_contact:
 
 Service (``tx_egovapi_domain_model_block_contact``)
-```````````````````````````````````````````````````
+---------------------------------------------------
 
 ======================   =========
  Property                 Type
@@ -368,7 +368,7 @@ Service (``tx_egovapi_domain_model_block_contact``)
 ======================   =========
 
 Available markers and subparts
-------------------------------
+==============================
 
 When using marker-based templates, domain model attributes are available as
 
@@ -377,7 +377,7 @@ When using marker-based templates, domain model attributes are available as
 The full list of available markers is as follows:
 
 Audience
-````````
+--------
 
 Markers
 *******
@@ -395,7 +395,7 @@ Subparts
 - AUDIENCE_LINK_DETAIL
 
 View
-````
+----
 
 Markers
 *******
@@ -416,7 +416,7 @@ Subparts
 - VIEW_LINK_AUDIENCE
 
 Domain
-``````
+------
 
 Markers
 *******
@@ -456,7 +456,7 @@ Subparts
 - SHOW_SYNONYM
 
 Topic
-`````
+-----
 
 Markers
 *******
@@ -496,7 +496,7 @@ Subparts
 - SHOW_SYNONYM
 
 Service
-```````
+-------
 
 Markers
 *******
@@ -570,18 +570,18 @@ Subparts
 - SHOW_BACK_TO_LIST
 
 Administration
-==============
+##############
 
 This chapter describes how to manage the extension from a superuser point of view.
 
 Installing the extension
-------------------------
+========================
 
 There are a few steps necessary to install the eGov API extension. If you have installed other
 extensions in the past, you will run into little new here.
 
 Install the extension from Extension Manager
-````````````````````````````````````````````
+--------------------------------------------
 
 The eGov API extension can ben installed through the typical TYPO3 installation process using the
 Extension Manager.
@@ -607,7 +607,7 @@ web service anyway. It has to be activated in Extension Manager:
 	:align: center
 
 Configure data caching
-``````````````````````
+----------------------
 
 In order to prevent unnecessary traffic with the eGov servers hosting the web service, data caching
 should be configured. The extension makes use of TYPO3 caching framework. If you are using TYPO3
@@ -644,7 +644,7 @@ corresponding task on Forge if you want to learn more.
 Please refer to the TYPO3 documentation for further configuration options.
 
 Configure advanced data caching
-```````````````````````````````
+-------------------------------
 
 Since web service version 2, the eGov API extension can take advantage of an operation returning
 recently updated services. This lets you configuring an unlimited cache lifetime (see chapter
@@ -653,7 +653,7 @@ recently updated services. This lets you configuring an unlimited cache lifetime
 retrieving data for.
 
 Configure RealURL
-`````````````````
+-----------------
 
 If you are using RealURL, the good news is that the eGov API extension comes with a configuration
 for RealURL.
@@ -708,7 +708,7 @@ the configuration we suggest:
 	),
 
 TypoScript configuration
-------------------------
+========================
 
 In order for this extension to be usable, make sure to include at least the static template
 “settings” from the eGov API extension. To do that, click on Web > Template in the left frame and
@@ -741,7 +741,7 @@ the way you prepare your templates and will let you have full control over the w
 are rendered.
 
 Selector Form Plugin
---------------------
+====================
 
 If you activated the selector form plugin within the Extension Manager, you will see an additional
 plugin available in the new content element wizard:
@@ -762,7 +762,7 @@ http://fr.causal.ch/realisations/api-e-government/demo/.
 default ones.
 
 Generating legacy parametrized URL
-``````````````````````````````````
+----------------------------------
 
 You may want to use the selector form plugin to generate parametrized URL compatible with the
 legacy service handler on www.cyberadmin.ch. Below is a configuration example for generating such
@@ -810,32 +810,32 @@ URLs.
 
 
 Configuration
-=============
+#############
 
 plugin.tx_egovapi_pi1
----------------------
+=====================
 
 plugin.tx_egovapi_pi1.displayBlocks
------------------------------------
+===================================
 
 plugin.tx_egovapi_pi1.versions
-------------------------------
+==============================
 
 plugin.tx_egovapi_pi1.targets
------------------------------
+=============================
 
 plugin.tx_egovapi_pi1.templates
--------------------------------
+===============================
 
 plugin.tx_egovapi_pi2
----------------------
+=====================
 
 
 
 
 
 Tutorial
-========
+########
 
 This tutorial is best suited for day-to-day webmasters or editors having to integrate the eGov API
 within their website. It assumes an administrator already properly installed this extension (see
@@ -844,16 +844,16 @@ chapter `User manual`_) is part of the basic know-how the webmaster or editor sh
 able to use this extension.
 
 Use case
---------
+========
 
 Description
-```````````
+-----------
 
 You would like to show the list of service domains available for the audience “Personne privée”
 (100) in some part of your website.
 
 Step-by-step explanation
-````````````````````````
+------------------------
 
 1. Open Web > Page module and navigate within your website to the page where you would like to
    add the eGov API plugin.
@@ -896,7 +896,7 @@ That's it! If you show your page, you should have a list of domains related to t
 
 
 Developer manual
-================
+################
 
 This chapter is really targeted at extension developers. Most TYPO3 integrators should never have
 the need to go that deep in order for them to configure the eGov API extension to fit their
@@ -904,7 +904,7 @@ integration needs. If however you encounter some limitation you cannot solve usi
 configuration, you may want to read the following sections to learn how to take more control.
 
 Hooks
------
+=====
 
 Some hooks have been integrated into the eGov API extension. They are primarily targeted at letting
 you post-process the subparts and markers prior to the actual rendering process, when using
@@ -943,7 +943,7 @@ Following hooks are available:
     ``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['egovapi']['ajaxHook']``
 
 API documentation
------------------
+=================
 
 The latest API documentation may be manually generated using doxygen configuration file
 ``doc/doxygen.conf``.
@@ -951,7 +951,7 @@ The latest API documentation may be manually generated using doxygen configurati
 Alternatively, you may access it from http://api.causal.ch/egovapi/.
 
 eGov web service
-----------------
+================
 
 The eGov web service is documented by the corresponding WSDL.
 
@@ -965,7 +965,7 @@ http://ref.cyberadmin.ch/WS20/Service/Contract/MessageContract/DataContract/Comm
 
 
 Known problems
-==============
+##############
 
 Please use the extension's bug tracker on Forge to report bugs:
 http://forge.typo3.org/projects/extension-egovapi/issues.
@@ -975,7 +975,7 @@ http://forge.typo3.org/projects/extension-egovapi/issues.
 
 
 To-Do list
-==========
+##########
 
 Please use the extension's bug tracker on Forge to propose new features:
 http://forge.typo3.org/projects/extension-egovapi/issues.
@@ -985,7 +985,7 @@ http://forge.typo3.org/projects/extension-egovapi/issues.
 
 
 ChangeLog
-=========
+#########
 
 The following is a very high level overview of the changes in this extension. For more details, see
 the ChangeLog file included with the extension or `read it online

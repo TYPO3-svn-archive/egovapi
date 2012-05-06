@@ -1,3 +1,7 @@
+2012-05-06  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK][DOC] Refactor the reST documentation
+
 2012-05-02  Xavier Perseguers  <xavier@causal.ch>
 
 	* [!!!][TASK] Remove code targeted as TYPO3 < 4.5.0
