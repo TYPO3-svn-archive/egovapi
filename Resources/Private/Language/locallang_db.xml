@@ -24,6 +24,7 @@
 			<label index="constants.wsdlVersion.inherit">Inherit from global configuration</label>
 			<label index="constants.wsdlVersion.oneZero">Version 1.0</label>
 			<label index="constants.wsdlVersion.twoZero">Version 2.0</label>
+			<label index="constants.wsdlVersion.twoOne">Version 2.1</label>
 			<label index="constants.cacheLifetime">Lifetime of web service cached data: Make sure to activate caching framework in localconf.php</label>
 			<label index="constants.cacheLifetime.one_hour">1 hour</label>
 			<label index="constants.cacheLifetime.six_hours">6 hours</label>

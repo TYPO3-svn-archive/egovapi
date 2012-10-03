@@ -41,6 +41,7 @@ class tx_egovapi_dao_webService {
 
 	const VERSION_10     = 1;
 	const VERSION_20     = 2;
+	const VERSION_21     = 3;
 
 	/**
 	 * @var array
@@ -158,6 +159,9 @@ class tx_egovapi_dao_webService {
 			case '2.0':
 				$wsdlVersion = self::VERSION_20;
 				break;
+			case '2.1':
+				$wsdlVersion = self::VERSION_21;
+				break;
 			default:
 				throw new RuntimeException('Invalid WSDL version "' . $version . '"', 1312794194);
 		}
@@ -178,6 +182,9 @@ class tx_egovapi_dao_webService {
 				break;
 			case self::VERSION_20:
 				$wsdl = 'http://ref.cyberadmin.ch/WS20/ServiceContract/WS.wsdl';
+				break;
+			case self::VERSION_21:
+				$wsdl = 'http://ref.cyberadmin.ch/WS21/ServiceContract/WS.wsdl';
 				break;
 		}
 
@@ -640,6 +647,7 @@ class tx_egovapi_dao_webService {
 			'eCHserviceID' => $serviceId,
 			'eCHserviceVersionID' => $versionId,
 			'eCHserviceBlock' => implode(',', $this->array_range(1, 13)),
+			'standaloneMode' => 'false',
 		));
 		if (is_array($serviceDetails['eCHserviceDetail'])) {
 			$serviceDetails = $serviceDetails['eCHserviceDetail'];
@@ -661,6 +669,10 @@ class tx_egovapi_dao_webService {
 
 			if ($this->version == self::VERSION_10) {
 				$blocks['feeBlock'] = 'fee';
+			}
+			if ($this->version == self::VERSION_21) {
+				$blocks['useRefFeeDescription'] = 'useRefFeeDescription';
+				$blocks['serviceForm'] = 'serviceFormList';
 			}
 
 			foreach ($blocks as $block => $key) {

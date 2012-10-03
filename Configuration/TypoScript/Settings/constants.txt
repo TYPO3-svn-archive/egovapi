@@ -8,7 +8,7 @@ plugin.tx_egovapi {
 		#cat=plugin.tx_egovapi/service/b; type=small; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.organizationID
 	organizationID =
 
-		# customsubcategory=api=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.subcategories.api; cat=plugin.tx_egovapi/api; type=options[LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdlVersion.inherit=,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdlVersion.oneZero=1.0,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdlVersion.twoZero=2.0]; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdlVersion
+		# customsubcategory=api=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.subcategories.api; cat=plugin.tx_egovapi/api; type=options[LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdlVersion.inherit=,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdlVersion.oneZero=1.0,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdlVersion.twoZero=2.0,LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdlVersion.twoOne=2.1]; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.wsdlVersion
 	wsdlVersion =
 
 		# cat=plugin.tx_egovapi/enable; type=boolean; label=LLL:EXT:egovapi/Resources/Private/Language/locallang_db.xml:constants.useFluid

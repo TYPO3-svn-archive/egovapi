@@ -57,6 +57,9 @@
 			<trans-unit id="constants.wsdlVersion.twoZero">
 				<source>Version 2.0</source>
 			</trans-unit>
+			<trans-unit id="constants.wsdlVersion.twoOne">
+				<source>Version 2.1</source>
+			</trans-unit>
 			<trans-unit id="constants.cacheLifetime">
 				<source>Lifetime of web service cached data: Make sure to activate caching framework in localconf.php</source>
 			</trans-unit>
