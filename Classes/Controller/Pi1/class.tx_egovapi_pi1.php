@@ -301,7 +301,7 @@ class tx_egovapi_pi1 extends tx_egovapi_pibase {
 		$requestUrl .= (strpos($requestUrl, '?') !== FALSE) ? '&' : '?';
 		$this->conf['vcardUrl'] = $requestUrl . 'vcard=1';
 
-		$this->debug = $this->conf['enableDebug'];
+		$this->debug = $this->conf['enableDebug'] || TYPO3_DLOG;
 	}
 
 }
