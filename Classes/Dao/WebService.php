@@ -97,22 +97,22 @@ class tx_egovapi_dao_webService {
 		}
 
 		$options = array(
-        	'wsdl' => $this->settings['wsdl'],
+			'wsdl' => $this->settings['wsdl'],
 			'soapoptions' => array(
 				'trace' => 1,
 				'exceptions' => $this->debug ? 1 : 0,
 			),
-        );
-        $this->username = FALSE;
-        $this->password = FALSE;
+		);
+		$this->username = FALSE;
+		$this->password = FALSE;
 
 		$this->soap = t3lib_div::makeInstance('tx_em_connection_soap');
 
-        try {
-        	$this->soap->init($options, $this->username, $this->password);
-        } catch (Exception $e) {
-        	die('Could not initialize SOAP.');
-        }
+		try {
+			$this->soap->init($options, $this->username, $this->password);
+		} catch (Exception $e) {
+			die('Could not initialize SOAP.');
+		}
 	}
 
 	/**
