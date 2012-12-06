@@ -168,14 +168,14 @@ class tx_egovapi_domain_model_block_pricing {
 	public function __toString() {
 		if ($this->form) {
 			return sprintf(
-				'%s: %s / %s',
+				'%s: CHF %s / CHF %s',
 				$this->form->getName(),
 				money_format('%i', $this->price),
 				money_format('%i', $this->fee)
 			);
 		} else {
 			return sprintf(
-				'%s / %s',
+				'CHF %s / CHF %s',
 				money_format('%i', $this->price),
 				money_format('%i', $this->fee)
 			);

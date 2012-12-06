@@ -1,5 +1,6 @@
 2012-12-06  Xavier Perseguers  <xavier@causal.ch>
 
+	* [TASK] #43674: Pricing blocks miss the price unit
 	* [BUGFIX] #43671: Missing office address
 	* [TASK] #41623: Use HTML version for blocks "Prerequisites" and "Documents Required"
 
