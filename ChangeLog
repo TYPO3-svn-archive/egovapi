@@ -1,5 +1,6 @@
 2012-12-06  Xavier Perseguers  <xavier@causal.ch>
 
+	* [BUGFIX] #43671: Missing office address
 	* [TASK] #41623: Use HTML version for blocks "Prerequisites" and "Documents Required"
 
 2012-10-03  Xavier Perseguers  <xavier@causal.ch>

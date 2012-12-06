@@ -398,6 +398,11 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 		}
 		if (isset($detailsDao['contactBlock']) && is_array($detailsDao['contactBlock'])) {
 			$contactBlock = $detailsDao['contactBlock'];
+			// Version dev of the WS 2.1 seems to allow multiple contact blocks => take the first one!
+			$keys = array_keys($contactBlock);
+			if ($keys[0] === 0) {
+				$contactBlock = $contactBlock[0];
+			}
 			foreach ($contactBlock as $key => $info) {
 				if (is_array($info) && isset($info['content'])) {
 					$contactBlock[$key] = $info['content'];
