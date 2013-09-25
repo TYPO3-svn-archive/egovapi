@@ -4,7 +4,7 @@ Domain Model
 This section describes the eGov API domain model. The domain model may be accessed directly when
 using Fluid-based templates. If instead you use marker-based templates, only partial access to the
 domain model will be possible and you probably will have to implement one of the available hooks
-(see `Hooks`_ section in `Developer manual`_) for more complex scenarios.
+(see :ref:`hooks` section in Developer manual) for more complex scenarios.
 
 We only describe domain model for the eGov API levels (audience, view, domain, topic, service).
 Attributes for the blocks of information which are typically used for the details view of an entity

@@ -1,17 +1,49 @@
 .. coding: utf-8 without BOM
 .. _Show files in current folder: .
 
+.. _start:
+
 ############################################################
 EXT: eGov API
 ############################################################
 
-:Extension Key: egovapi
-:Language:      en, de, fr, it
-:Keywords:      e-government, switzerland, administrative services, cyberadministration
-:Author:        Causal Sàrl <xavier@causal.ch> for SECO
-:Date:          |today|
-:Revision:      |release|
-:Description:   This is the documentation for the TYPO3 extension egovapi
+.. only:: html
+
+	:Classification:
+		egovapi
+
+	:Version:
+		|release|
+
+	:Language:
+		en, de, fr, it
+
+	:Description:
+		Official implementation of the swiss eGov Remote API (eGovernment) that allows to access the
+		Reference eGov CH application from SECO which hosts and provides administrative services
+		(cyberadministration).
+
+	:Keywords:
+		e-government, switzerland, administrative services, cyberadministration
+
+	:Copyright:
+		2010-2013
+
+	:Author:
+		Xavier Perseguers (Causal) for SECO
+
+	:Email:
+		xavier@causal.ch
+
+	:License:
+		This document is published under the Open Content License
+		available from http://www.opencontent.org/opl.shtml
+
+	:Rendered:
+		|today|
+
+	The content of this document is related to TYPO3,
+	a GNU/GPL CMS/Framework available from `www.typo3.org <http://www.typo3.org/>`_.
 
 Introduction
 ############
@@ -60,8 +92,8 @@ Tutorial
 
 This tutorial is best suited for day-to-day webmasters or editors having to integrate the eGov API
 within their website. It assumes an administrator already properly installed this extension (see
-chapter `Administration`_). It is targeted at users and as such section “`Plugin options`_” of
-chapter `User manual`_) is part of the basic know-how the webmaster or editor should have to be
+chapter Administration). It is targeted at users and as such section "Plugin options" of
+chapter User manual) is part of the basic know-how the webmaster or editor should have to be
 able to use this extension.
 
 .. toctree::

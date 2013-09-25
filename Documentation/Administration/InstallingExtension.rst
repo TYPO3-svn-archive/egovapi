@@ -72,7 +72,7 @@ Configure advanced data caching
 
 Since web service version 2, the eGov API extension can take advantage of an operation returning
 recently updated services. This lets you configuring an unlimited cache lifetime (see chapter
-`Configuration`_) and invalidate cache entry as they are updated. This is done by regularly running
+Configuration) and invalidate cache entry as they are updated. This is done by regularly running
 (e.g., every 1-2 days) scheduler task “Latest changes in eGov API” for all communities you are
 retrieving data for.
 

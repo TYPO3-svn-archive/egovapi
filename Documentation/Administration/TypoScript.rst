@@ -26,7 +26,7 @@ menu and update global configuration to fit your needs:
 There are many other options such as the language of the web service which should typically be
 related to the value of config.language in your setup.
 
-If you are running a recent version of TYPO3 (≥ 4.5.0), you definitively should use Fluid as
+If you are running a recent version of TYPO3 (>= 4.5.0), you definitively should use Fluid as
 rendering engine. This requires system extension fluid to be loaded. Using Fluid will highly ease
 the way you prepare your templates and will let you have full control over the way web service data
 are rendered.
