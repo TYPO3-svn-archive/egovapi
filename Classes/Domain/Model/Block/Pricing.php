@@ -166,18 +166,22 @@ class tx_egovapi_domain_model_block_pricing {
 	 * @return string
 	 */
 	public function __toString() {
+		$decimals = 2;
+		$decimalSeparator = ',';
+		$thousandsSeparator = '&#x202f;';
+
 		if ($this->form) {
 			return sprintf(
 				'%s: CHF %s / CHF %s',
 				$this->form->getName(),
-				money_format('%i', $this->price),
-				money_format('%i', $this->fee)
+				number_format($this->price, $decimals, $decimalSeparator, $thousandsSeparator),
+				number_format($this->fee, $decimals, $decimalSeparator, $thousandsSeparator)
 			);
 		} else {
 			return sprintf(
 				'CHF %s / CHF %s',
-				money_format('%i', $this->price),
-				money_format('%i', $this->fee)
+				number_format($this->price, $decimals, $decimalSeparator, $thousandsSeparator),
+				number_format($this->fee, $decimals, $decimalSeparator, $thousandsSeparator)
 			);
 		}
 	}

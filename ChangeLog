@@ -1,3 +1,7 @@
+2014-03-14  Xavier Perseguers  <xavier@causal.ch>
+
+	* [BUGFIX] #43674: Proper price unit and formatting
+
 2013-09-25  Xavier Perseguers  <xavier@causal.ch>
 
 	* [TASK] Remove PDF version of the doc
