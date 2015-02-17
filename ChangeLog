@@ -1,3 +1,7 @@
+2015-02-16  Xavier Perseguers  <xavier@causal.ch>
+
+	* [TASK] #41623: Strip HTML
+
 2014-03-14  Xavier Perseguers  <xavier@causal.ch>
 
 	* [BUGFIX] #43674: Proper price unit and formatting

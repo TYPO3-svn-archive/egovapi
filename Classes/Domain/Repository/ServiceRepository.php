@@ -209,12 +209,11 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 				/** @var tx_egovapi_domain_model_block_prerequisite $prerequisite */
 				$prerequisite = t3lib_div::makeInstance('tx_egovapi_domain_model_block_prerequisite');
 
-				// HTML not stripped anymore, see https://forge.typo3.org/issues/41623
-				//if ($this->stripTags) {
-				//	$prerequisite->setDescription(strip_tags($itemDao['description']));
-				//} else {
+				if ($this->stripTags) {
+					$prerequisite->setDescription(strip_tags($itemDao['description']));
+				} else {
 					$prerequisite->setDescription($itemDao['description']);
-				//}
+				}
 
 				$prerequisites->addItem($prerequisite);
 			}
@@ -269,14 +268,13 @@ class tx_egovapi_domain_repository_serviceRepository extends tx_egovapi_domain_r
 				/** @var tx_egovapi_domain_model_block_document $document */
 				$document = t3lib_div::makeInstance('tx_egovapi_domain_model_block_document');
 
-				// HTML not stripped anymore, see https://forge.typo3.org/issues/41623
-				//if ($this->stripTags) {
-				//	$document->setName(strip_tags($itemDao['documentName']));
-				//	$document->setDescription(strip_tags($itemDao['description']));
-				//} else {
+				if ($this->stripTags) {
+					$document->setName(strip_tags($itemDao['documentName']));
+					$document->setDescription(strip_tags($itemDao['description']));
+				} else {
 					$document->setName($itemDao['documentName']);
 					$document->setDescription($itemDao['description']);
-				//}
+				}
 
 				$documentsRequired->addItem($document);
 			}
